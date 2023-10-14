@@ -2,4 +2,4 @@ Name         = Snag List
 Version      = 1.0.0
 Essentials   = 21.1
 Credits      = Retro & Chill
-Scripts      = src/data/pokemon_global_metadata.rb,src/data/trainer.rb,src/battle/battle.rb,src/battle/catch_and_store_mixin.rb,src/ui/window_snag_list.rb,src/ui/menu_handlers.rb,src/ui/pokemon_snag_list.rb,src/ui/pokemon_snag_list_scene.rb
+Scripts      = src/data/pokemon_global_metadata.rb,src/data/trainer.rb,src/battle/battle.rb,src/ui/window_snag_list.rb,src/ui/menu_handlers.rb,src/ui/pokemon_snag_list.rb,src/ui/pokemon_snag_list_scene.rb

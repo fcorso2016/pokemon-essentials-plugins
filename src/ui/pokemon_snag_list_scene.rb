@@ -64,8 +64,8 @@ class PokemonSnagListScene
     seenNo = 0
     ownedNo = 0
     @snagOrder.each { |i|
-      seenNo += 1 if $player.shadowSeen.snagged
-      ownedNo += 1 if $player.shadowSeen.purified
+      seenNo += 1 if $player.shadowSeen[i].snagged
+      ownedNo += 1 if $player.shadowSeen[i].purified
     }
     textPos = [
       [_INTL("Snagged:"), 42, 314, :left, base, shadow],
@@ -144,8 +144,8 @@ class PokemonSnagListScene
       [_parsePokemonLocation(species), 435, 214, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
     ]
     textpos.push([_INTL("Heart Gauge"), 238, 246, 0, base, shadow])
-    if $player.shadowSeen.snagged
-      if $player.shadowSeen.purified
+    if $player.shadowSeen[species].snagged
+      if $player.shadowSeen[species].purified
         heartmessage = _INTL("Successfully overcame all difficult challenges!")
       else
         heartmessage = [_INTL("The door to its heart is open! Undo the final lock!"),
@@ -186,7 +186,7 @@ class PokemonSnagListScene
   end
 
   def _parsePokemonLocation(species)
-    return "Fled" unless $player.shadowSeen.snagged
+    return "Fled" unless $player.shadowSeen[species].snagged
     $player.party.each do |pkmn|
       return "Party" if _parseEvolutionLine(species, pkmn)
     end
