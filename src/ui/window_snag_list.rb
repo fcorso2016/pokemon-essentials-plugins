@@ -5,7 +5,7 @@ class Window_SnagList < Window_Pokedex
     echoln @commands[index]
     species = @commands[index][:species]
     if $player.shadowSeen[species]
-      if $player.shadowSeen[species][:snagged]
+      if $player.shadowSeen.snagged
         pbCopyBitmap(self.contents, @pokeballOwn.bitmap, rect.x - 6, rect.y + 8)
       else
         pbCopyBitmap(self.contents, @pokeballSeen.bitmap, rect.x - 6, rect.y + 8)

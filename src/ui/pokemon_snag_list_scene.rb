@@ -6,11 +6,11 @@ class PokemonSnagListScene
   end
 
   def setIconBitmap(species)
-    gender = ($player.shadowSeen[species][:gender] rescue 0)
-    form = ($player.shadowSeen[species][:form] rescue 0)
+    gender = ($player.shadowSeen.gender rescue 0)
+    form = ($player.shadowSeen.form rescue 0)
     echoln species
     echoln $player.shadowSeen[species]
-    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen[species][:purified])
+    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen.purified)
   end
 
   def pbStartScene
@@ -64,8 +64,8 @@ class PokemonSnagListScene
     seenNo = 0
     ownedNo = 0
     @snagOrder.each { |i|
-      seenNo += 1 if $player.shadowSeen[i[:species]][:snagged]
-      ownedNo += 1 if $player.shadowSeen[i[:species]][:purified]
+      seenNo += 1 if $player.shadowSeen.snagged
+      ownedNo += 1 if $player.shadowSeen.purified
     }
     textPos = [
       [_INTL("Snagged:"), 42, 314, :left, base, shadow],
@@ -119,13 +119,13 @@ class PokemonSnagListScene
     @sprites["overlay"].visible = true
     @sprites["overlay"].bitmap.clear
     overlay = @sprites["overlay"].bitmap
-    pokemon = $player.shadowSeen[species][:partyPoke]
+    pokemon = $player.shadowSeen.partyPoke
     imagePos = []
     if pokemon
       ballImage = sprintf("Graphics/UI/Summary/icon_ball_%s", pokemon.poke_ball)
       imagePos.push([ballImage, 14, 60])
     end
-    if $player.shadowSeen[species][:snagged] && !$player.shadowSeen[species][:purified]
+    if $player.shadowSeen.purified
       imagePos.push(["Graphics/UI/SnagList/overlay_shadow", 224, 240, 0, 0, -1, -1])
       shadowFract = pokemon.heart_gauge * 1.0 / GameData::ShadowPokemon::HEART_GAUGE_SIZE
       imagePos.push(["Graphics/UI/Summary/overlay_shadowbar", 242, 280, 0, 0, (shadowFract * 248).floor, -1])
@@ -138,14 +138,14 @@ class PokemonSnagListScene
     textpos = [
       [speciesname, 50, 68, :left, base, shadow],
       [_ISPRINTF("First Seen"), 238, 86, :left, base, shadow],
-      [$player.shadowSeen[species][:location], 435, 118, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
+      [$player.shadowSeen.location, 435, 118, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
       [_INTL("Original Trainer"), 238, 150, :left, base, shadow],
       [_INTL("Location"), 238, 214, :left, base, shadow],
       [_parsePokemonLocation(species), 435, 214, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
     ]
     textpos.push([_INTL("Heart Gauge"), 238, 246, 0, base, shadow])
-    if $player.shadowSeen[species][:snagged]
-      if $player.shadowSeen[species][:purified]
+    if $player.shadowSeen.snagged
+      if $player.shadowSeen.purified
         heartmessage = _INTL("Successfully overcame all difficult challenges!")
       else
         heartmessage = [_INTL("The door to its heart is open! Undo the final lock!"),
@@ -163,30 +163,30 @@ class PokemonSnagListScene
     drawFormattedTextEx(overlay, 234, 308, 276, memo)
     ownerbase = Color.new(64, 64, 64)
     ownershadow = Color.new(176, 176, 176)
-    if $player.shadowSeen[species][:otgender] == 0 # male OT
+    if $player.shadowSeen.otGender == 0 # male OT
       ownerbase = Color.new(24, 112, 216)
       ownershadow = Color.new(136, 168, 208)
-    elsif $player.shadowSeen[species][:otgender] == 1 # female OT
+    elsif $player.shadowSeen.otGender == 1 # female OT
       ownerbase = Color.new(248, 56, 32)
       ownershadow = Color.new(224, 152, 144)
     end
-    textpos.push([$player.shadowSeen[species][:ot], 435, 182, :center, ownerbase, ownershadow])
-    if $player.shadowSeen[species][:gender] == 0
+    textpos.push([$player.shadowSeen.ot, 435, 182, :center, ownerbase, ownershadow])
+    if $player.shadowSeen.gender == 0
       textpos.push([_INTL("♂"), 178, 68, 0, Color.new(24, 112, 216), Color.new(136, 168, 208)])
-    elsif $player.shadowSeen[species][:gender] == 1
+    elsif $player.shadowSeen.gender == 1
       textpos.push([_INTL("♀"), 178, 68, 0, Color.new(248, 56, 32), Color.new(224, 152, 144)])
     end
     pbDrawTextPositions(overlay, textpos)
-    gender = $player.shadowSeen[species][:gender]
-    form = $player.shadowSeen[species][:form]
-    @sprites["entryicon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen[species][:purified])
+    gender = $player.shadowSeen.gender
+    form = $player.shadowSeen.form
+    @sprites["entryicon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen.purified)
     @sprites["entryicon"].x = 112
     @sprites["entryicon"].y = 196
     GameData::Species.play_cry_from_species(species)
   end
 
   def _parsePokemonLocation(species)
-    return "Fled" unless $player.shadowSeen[species][:snagged]
+    return "Fled" unless $player.shadowSeen.snagged
     $player.party.each do |pkmn|
       return "Party" if _parseEvolutionLine(species, pkmn)
     end
