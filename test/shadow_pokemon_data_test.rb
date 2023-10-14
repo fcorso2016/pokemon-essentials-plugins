@@ -16,22 +16,19 @@ class ClassExtensionsTest < Minitest::Test
     assert_equal(2, global_metadata.snagIndex)
   end
 
-  def test_snag_order
-    trainer = Trainer.new("Red", :POKEMONTRAINER)
-    assert_equal([], trainer.snagOrder)
-    trainer.snagOrder = [:BAYLEEF, :QUILAVA, :CROCONAW]
-    assert_equal([:BAYLEEF, :QUILAVA, :CROCONAW], trainer.snagOrder)
-  end
 
-  def test_shadow_seen
+  def test_shadow_and_snag_order
     mock_owner = MockTrainer.new("Grunt", 1)
     mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
     $game_map = MockMap.new(TEST_MAP1)
 
     trainer = Trainer.new("Red", :POKEMONTRAINER)
     assert_equal({}, trainer.shadowSeen)
+    assert_equal([], trainer.snagOrder)
+
     trainer.registerSeenShadow(mock_pokemon)
     assert_equal(1, trainer.shadowSeen.size)
+    assert_equal([:PIKACHU], trainer.snagOrder)
     assert_equal(25, trainer.shadowSeen[:PIKACHU].level)
     assert_equal(0, trainer.shadowSeen[:PIKACHU].gender)
     assert_equal(0, trainer.shadowSeen[:PIKACHU].form)
@@ -52,6 +49,7 @@ class ClassExtensionsTest < Minitest::Test
     $game_map = MockMap.new(TEST_MAP2)
     trainer.registerSeenShadow(mock_pokemon)
     assert_equal(1, trainer.shadowSeen.size)
+    assert_equal([:PIKACHU], trainer.snagOrder)
     assert_equal(25, trainer.shadowSeen[:PIKACHU].level)
     assert_equal(0, trainer.shadowSeen[:PIKACHU].gender)
     assert_equal(0, trainer.shadowSeen[:PIKACHU].form)
@@ -71,6 +69,7 @@ class ClassExtensionsTest < Minitest::Test
     mock_pokemon = MockPokemon.new(:ELEKID, 10, 1, 3, [24, 21, 24, 8, 14, 31], 3, 1, [:THUNDERSHOCK, :GROWL], mock_owner)
     trainer.registerSeenShadow(mock_pokemon)
     assert_equal(2, trainer.shadowSeen.size)
+    assert_equal([:PIKACHU, :ELEKID], trainer.snagOrder)
     assert_equal(10, trainer.shadowSeen[:ELEKID].level)
     assert_equal(1, trainer.shadowSeen[:ELEKID].gender)
     assert_equal(3, trainer.shadowSeen[:ELEKID].form)

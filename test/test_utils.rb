@@ -19,7 +19,7 @@ class MockPokemon
   attr_reader :moves
   attr_reader :owner
 
-  def initialize(species, level, gender, form, ivs, nature, ability, moves, owner)
+  def initialize(species, level, gender, form, ivs, nature, ability, moves, owner, shadow = true)
     @species = species
     @level = level
     @gender = gender
@@ -29,7 +29,26 @@ class MockPokemon
     @ability_index = ability
     @moves = moves
     @owner = owner
+    @shadow = shadow
   end
+
+  def shadowPokemon?
+    @shadow
+  end
+end
+
+class MockBattler
+  attr_reader :pokemon
+
+  def initialize(pokemon, shadow)
+    @pokemon = pokemon
+    @shadowPokemon = shadow
+  end
+
+  def shadowPokemon?
+    @shadowPokemon
+  end
+
 end
 
 class MockMap
@@ -40,8 +59,24 @@ class MockMap
   end
 end
 
+# This exists just to shut RubyMine up about the constructor arguments being wrong
 class Trainer
   def initialize(name, trainer_type)
-    # This exists just to shut RubyMine up about the constructor arguments being wrong
+  end
+end
+
+class Battle
+  attr_accessor :caughtPokemon
+
+  def initialize(scene, p1, p2, player, opponent)
+    @caughtPokemon = []
+  end
+
+  def pbMessagesOnBattlerEnteringBattle(battler)
+
+  end
+
+  def pbRecordAndStoreCaughtPokemon
+    @caughtPokemon.clear
   end
 end
