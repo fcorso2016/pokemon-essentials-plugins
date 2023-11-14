@@ -1,0 +1,4 @@
+[submodule "rpg-maker-rgss"]
+	path = rpg-maker-rgss
+	url = https://github.com/fcorso2016/rpg-maker-rgss.git
+	branch = mkxpz-rgss
