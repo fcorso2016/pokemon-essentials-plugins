@@ -2,4 +2,3 @@ Name         = Snag List
 Version      = 1.0.0
 Essentials   = 21.1
 Credits      = Retro & Chill
-Scripts      = disable_tests.rb
