@@ -16,8 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Start Pulse Audio
-        shell: bash
-        run: source /build/startpulse.sh
+        run: pulseaudio -D
 
       - name: Run Tests
         run: rake
