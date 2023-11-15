@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
 
       - name: Start Pulse Audio
+        shell: bash
         run: source /build/startpulse.sh
 
       - name: Run Tests
