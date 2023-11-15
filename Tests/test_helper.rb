@@ -4,7 +4,7 @@ SimpleCov.start
 require 'minitest/autorun' # Sets up minitest
 require 'spy'
 
-$show_window = true
+$show_window = false
 require_relative '../game_core'
 
 PluginManager.runPlugins
