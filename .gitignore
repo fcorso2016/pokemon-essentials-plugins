@@ -1,7 +1,8 @@
 # Audio, Graphics and Plugins folders
 Audio/
 Graphics/
-Plugins/
+!Graphics/UI/Pokegear/icon_snag_list.png
+!Graphics/UI/SnagList/
 
 # Data folder, but not Data/Scripts folder or messages_core.dat
 Data/*
@@ -31,3 +32,4 @@ Thumbs.db
 # Temp files
 
 ~*
+/coverage/
