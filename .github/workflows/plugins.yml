@@ -1,0 +1,51 @@
+name: Test and Scan Plugins
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    container: ghcr.io/fcorso2016/mkxp-z:latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Start Pulse Audio
+        run: source /build/startpulse.sh
+
+      - name: Run Tests
+        run: rake
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: plugins.tests.${{github.event_name == 'pull_request' && format('PR{0}', github.event.number) || github.ref_name}}-${{steps.short-sha.outputs.sha}}
+          path: coverage/
+
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Install sonar-scanner and build-wrapper
+        uses: SonarSource/sonarcloud-github-c-cpp@v2
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: plugins.tests.${{github.event_name == 'pull_request' && format('PR{0}', github.event.number) || github.ref_name}}-${{steps.short-sha.outputs.sha}}
+          path: coverage/
+
+      - name: Run sonar-scanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          sonar-scanner --define sonar.projectKey=fcorso2016_pokemon_essentials --define sonar.sources=. --define sonar.exclusions=rpg-maker-rgss,Tests,Data,scripts_combine.rb,scripts_extract.rb --define sonar.tests=Tests --define sonar.ruby.coverage.reportPaths=coverage/.resultset.json
