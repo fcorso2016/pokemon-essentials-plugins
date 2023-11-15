@@ -1,5 +1,0 @@
-module PluginManager
-  def self.listAll: -> Array[String]
-
-  def self.runPlugins: -> void
-end

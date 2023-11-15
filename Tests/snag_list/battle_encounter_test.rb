@@ -1,5 +1,5 @@
-unless $disable_tests
-  require_relative 'test_helper'
+require_relative '../test_helper'
+require_relative 'mocks'
 
   class GameData::TrainerType
     def self.get(sym)
@@ -72,4 +72,3 @@ unless $disable_tests
       assert_equal(mock_pokemon1, $player.shadowSeen[:PIKACHU].partyPoke)
     end
   end
-end
