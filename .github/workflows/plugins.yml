@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/fcorso2016/mkxp-z:latest
     steps:
-      - name: Create Null Audio Sink
-        run: pacmd load-module module-null-sink sink_name=MySink
+      - name: Create Fake Audio Device
+        run: modprobe snd-dummy
 
       - uses: actions/checkout@v3
         with:
