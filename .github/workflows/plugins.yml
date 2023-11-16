@@ -12,7 +12,7 @@ jobs:
     container: ghcr.io/fcorso2016/mkxp-z:latest
     steps:
       - name: Create Fake Audio Device
-        run: modprobe snd-dummy
+        run: modprobe snd-aloop
 
       - uses: actions/checkout@v3
         with:
