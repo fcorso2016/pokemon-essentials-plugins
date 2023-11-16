@@ -17,7 +17,7 @@ jobs:
 
       - name: Start Pulse Audio
         shell: bash
-        run: source /build/startpulseaudio.sh
+        run: source /build/startpulse.sh
 
       - name: Run Tests
         run: rake
