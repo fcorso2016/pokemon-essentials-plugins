@@ -9,21 +9,17 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: ghcr.io/fcorso2016/mkxp-z:latest
     services:
-      docker:
-        image: docker:20.10-dind
-        ports:
-          - 2375:2375
-        options: --privileged
-    steps:
-      - name: Start Pulse Audio
-        shell: bash
-        run: source /build/startpulse.sh
+      pulseaudio:
+        image: jlund/pulseaudio
+        options: --name pulseaudio-container
 
+    steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      # TODO: Add install for Ruby and MKXP-Z here
 
       - name: Run Tests
         run: rake
