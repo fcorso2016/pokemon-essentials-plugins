@@ -10,6 +10,12 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container: ghcr.io/fcorso2016/mkxp-z:latest
+    services:
+      docker:
+        image: docker:20.10-dind
+        ports:
+          - 2375:2375
+        options: --privileged
     steps:
       - name: Start Pulse Audio
         shell: bash
