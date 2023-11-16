@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/fcorso2016/mkxp-z:latest
     steps:
+      - name: Create Null Audio Sink
+        run: pacmd load-module module-null-sink sink_name=MySink
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
-      - name: Create Null Audio Sink
-        run: pacmd load-module module-null-sink sink_name=MySink
 
       - name: Run Tests
         run: rake
