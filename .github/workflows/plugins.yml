@@ -6,24 +6,16 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sound-test:
-    name: Sound Test
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Create Fake Audio Device
-        uses: LABSN/sound-ci-helpers@v1
-
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
   test:
     name: Test
     runs-on: ubuntu-latest
     container: ghcr.io/fcorso2016/mkxp-z:latest
     steps:
       - name: Create Fake Audio Device
-        uses: LABSN/sound-ci-helpers@v1
+        run:
+          apt update
+          apt install -y pulseaudio libportaudio2 dbus-x11
+          dbus-launch pulseaudio --start
 
       - uses: actions/checkout@v3
         with:
