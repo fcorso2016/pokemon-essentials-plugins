@@ -12,7 +12,7 @@ jobs:
     container: ghcr.io/fcorso2016/mkxp-z:latest
     steps:
       - name: Create Fake Audio Device
-        run:
+        run: |
           apt update
           apt install -y pulseaudio libportaudio2 dbus-x11
           dbus-launch pulseaudio --start
