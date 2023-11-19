@@ -48,4 +48,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          sonar-scanner --define sonar.projectKey=fcorso2016_pokemon-essentials-plugins --define sonar.sources=Plugins,game_core.rb,game.rb --define sonar.tests=Tests --define sonar.ruby.coverage.reportPaths=coverage/.resultset.json
+          sonar-scanner --define sonar.projectKey=fcorso2016_pokemon-essentials-plugins --define sonar.sources=Plugins,game_core.rb,game.rb --define sonar.tests=Tests --define sonar.ruby.coverage.reportPaths=coverage/coverage.json
