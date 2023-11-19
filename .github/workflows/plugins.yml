@@ -15,6 +15,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Coverage Reporting
+        run: gem install simplecov
+
       - name: Run Tests
         run: rake
 
