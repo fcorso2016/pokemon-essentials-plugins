@@ -43,7 +43,7 @@ require_relative 'mocks'
       battle_spy = Spy.on(@battle, :on_enter_battle_alias_snag_list)
       @battle.pbMessagesOnBattlerEnteringBattle(mock_battler)
       assert(battle_spy.has_been_called?)
-      assert_equal([], $player.snagOrder)
+      assert_equal([], $player.snag_order)
     end
 
     def test_on_battle_entry_with_shadow
@@ -54,21 +54,21 @@ require_relative 'mocks'
       battle_spy = Spy.on(@battle, :on_enter_battle_alias_snag_list)
       @battle.pbMessagesOnBattlerEnteringBattle(mock_battler)
       assert(battle_spy.has_been_called?)
-      assert_equal([:PIKACHU], $player.snagOrder)
+      assert_equal([:PIKACHU], $player.snag_order)
     end
 
     def test_caught_pokemon_add
       mock_owner = MockTrainer.new("Grunt", 1)
       mock_pokemon1 = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
       mock_pokemon2 = MockPokemon.new(:ELEKID, 10, 1, 3, [24, 21, 24, 8, 14, 31], 3, 1, [:THUNDERSHOCK, :GROWL], mock_owner, false)
-      $player.registerSeenShadow(mock_pokemon1)
-      assert(!$player.shadowSeen[:PIKACHU].snagged)
-      assert_nil($player.shadowSeen[:PIKACHU].partyPoke)
+      $player.register_seen_shadow(mock_pokemon1)
+      assert(!$player.shadow_seen[:PIKACHU].snagged)
+      assert_nil($player.shadow_seen[:PIKACHU].party_poke)
 
       @battle.caughtPokemon = [mock_pokemon1, mock_pokemon2]
       @battle.pbRecordAndStoreCaughtPokemon
       assert_empty(@battle.caughtPokemon)
-      assert($player.shadowSeen[:PIKACHU].snagged)
-      assert_equal(mock_pokemon1, $player.shadowSeen[:PIKACHU].partyPoke)
+      assert($player.shadow_seen[:PIKACHU].snagged)
+      assert_equal(mock_pokemon1, $player.shadow_seen[:PIKACHU].party_poke)
     end
   end

@@ -1,117 +1,117 @@
 class PokemonSnagListScene
   SPECIES_NAME_REGEX = "<ac>{1:s}</ac>"
 
-  def pbUpdate
+  def update
     pbUpdateSpriteHash(@sprites)
   end
 
-  def setIconBitmap(species)
-    gender = ($player.shadowSeen.gender rescue 0)
-    form = ($player.shadowSeen.form rescue 0)
+  def set_icon_bitmap(species)
+    gender = ($player.shadow_seen.gender rescue 0)
+    form = ($player.shadow_seen.form rescue 0)
     echoln species
-    echoln $player.shadowSeen[species]
-    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen.purified)
+    echoln $player.shadow_seen[species]
+    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadow_seen.purified)
   end
 
-  def pbStartScene
-    @sliderBitmap = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_slider")
-    @typebitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_types"))
-    @shapebitmap = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_shapes")
-    @hwbitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_hw"))
+  def start_scene
+    @slider_bitmap = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_slider")
+    @type_bitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_types"))
+    @shape_bitmap = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_shapes")
+    @hw_bitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_hw"))
     @sprites = {}
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     addBackgroundPlane(@sprites, "background", "SnagList/bg", @viewport)
     addBackgroundPlane(@sprites, "snagEntry", "SnagList/entry_bg", @viewport)
     @sprites["snagEntry"].visible=false
-    @sprites["snagList"] = Window_SnagList.new(206, 30, 276, 364, @viewport)
+    @sprites["snagList"] = WindowSnagList.new(206, 30, 276, 364, @viewport)
     @sprites["icon"] = PokemonSprite.new(@viewport)
     @sprites["icon"].setOffset(PictureOrigin::CENTER)
     @sprites["icon"].x = 112
     @sprites["icon"].y = 196
     @sprites["overlay"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)
-    pbRefreshSnagList($PokemonGlobal.snag_index)
+    refresh_snag_list($PokemonGlobal.snag_index)
     pbDeactivateWindows(@sprites)
     pbFadeInAndShow(@sprites)
   end
 
-  def pbGetSnagList
-    snagList = []
-    $player.snagOrder.each do |nationalSpecies|
-      snagList.push({:species => nationalSpecies, :name => GameData::Species.get(nationalSpecies).name})
+  def get_snag_list
+    snag_list = []
+    $player.snag_order.each do |nationalSpecies|
+      snag_list.push({:species => nationalSpecies, :name => GameData::Species.get(nationalSpecies).name})
     end
-    return snagList
+    return snag_list
   end
 
-  def pbRefreshSnagList(index = 0)
-    @snagOrder = pbGetSnagList
-    @sprites["snagList"].commands = @snagOrder
+  def refresh_snag_list(index = 0)
+    @snag_order = get_snag_list
+    @sprites["snagList"].commands = @snag_order
     @sprites["snagList"].index    = index
     @sprites["snagList"].refresh
-    pbRefresh
+    refresh
   end
 
-  def pbRefresh
+  def refresh
     overlay = @sprites["overlay"].bitmap
     overlay.clear
     base = Color.new(88, 88, 80)
     shadow = Color.new(168, 184, 184)
-    iconSpecies = @sprites["snagList"].species
-    echoln iconSpecies
-    iconSpecies = nil unless $player.shadowSeen[iconSpecies]
+    icon_species = @sprites["snagList"].species
+    echoln icon_species
+    icon_species = nil unless $player.shadow_seen[icon_species]
 
-    seenNo = 0
-    ownedNo = 0
-    @snagOrder.each { |i|
-      seenNo += 1 if $player.shadowSeen[i].snagged
-      ownedNo += 1 if $player.shadowSeen[i].purified
+    seen_no = 0
+    owned_no = 0
+    @snag_order.each { |i|
+      seen_no += 1 if $player.shadow_seen[i].snagged
+      owned_no += 1 if $player.shadow_seen[i].purified
     }
-    textPos = [
+    text_pos = [
       [_INTL("Snagged:"), 42, 314, :left, base, shadow],
-      [seenNo.to_s, 182, 314, :right, base, shadow],
+      [seen_no.to_s, 182, 314, :right, base, shadow],
       [_INTL("Purified:"), 42, 346, :left, base, shadow],
-      [ownedNo.to_s, 182, 346, :right, base, shadow]
+      [owned_no.to_s, 182, 346, :right, base, shadow]
     ]
-    textPos.push([GameData::Species.get(iconSpecies).name, 112, 58, :center, base, shadow]) if iconSpecies
+    text_pos.push([GameData::Species.get(icon_species).name, 112, 58, :center, base, shadow]) if icon_species
 
     # Draw all text
-    pbDrawTextPositions(overlay, textPos)
+    pbDrawTextPositions(overlay, text_pos)
 
     # Set Pokémon sprite
-    setIconBitmap(iconSpecies)
+    set_icon_bitmap(icon_species)
 
     # Draw slider arrows
-    itemList = @sprites["snagList"]
-    showSlider = false
-    if itemList.top_row > 0
-      overlay.blt(468, 48, @sliderBitmap.bitmap, Rect.new(0, 0, 40, 30))
-      showSlider = true
+    item_list = @sprites["snagList"]
+    show_slider = false
+    if item_list.top_row > 0
+      overlay.blt(468, 48, @slider_bitmap.bitmap, Rect.new(0, 0, 40, 30))
+      show_slider = true
     end
-    if itemList.top_item + itemList.page_item_max < itemList.itemCount
-      overlay.blt(468, 346, @sliderBitmap.bitmap, Rect.new(0, 30, 40, 30))
-      showSlider = true
+    if item_list.top_item + item_list.page_item_max < item_list.itemCount
+      overlay.blt(468, 346, @slider_bitmap.bitmap, Rect.new(0, 30, 40, 30))
+      show_slider = true
     end
     # Draw slider box
-    if showSlider
-      sliderHeight = 268
-      boxHeight = (sliderHeight * itemList.page_row_max / itemList.row_max).floor
-      boxHeight += [(sliderHeight - boxHeight) / 2, sliderHeight / 6].min
-      boxHeight = [boxHeight.floor, 40].max
+    if show_slider
+      slider_height = 268
+      box_height = (slider_height * item_list.page_row_max / item_list.row_max).floor
+      box_height += [(slider_height - box_height) / 2, slider_height / 6].min
+      box_height = [box_height.floor, 40].max
       y = 78
-      y += ((sliderHeight - boxHeight) * itemList.top_row / (itemList.row_max - itemList.page_row_max)).floor
-      overlay.blt(468, y, @sliderBitmap.bitmap, Rect.new(40, 0, 40, 8))
+      y += ((slider_height - box_height) * item_list.top_row / (item_list.row_max - item_list.page_row_max)).floor
+      overlay.blt(468, y, @slider_bitmap.bitmap, Rect.new(40, 0, 40, 8))
       i = 0
-      while i * 16 < boxHeight - 8 - 16
-        height = [boxHeight - 8 - 16 - (i * 16), 16].min
-        overlay.blt(468, y + 8 + (i * 16), @sliderBitmap.bitmap, Rect.new(40, 8, 40, height))
+      while i * 16 < box_height - 8 - 16
+        height = [box_height - 8 - 16 - (i * 16), 16].min
+        overlay.blt(468, y + 8 + (i * 16), @slider_bitmap.bitmap, Rect.new(40, 8, 40, height))
         i += 1
       end
-      overlay.blt(468, y + boxHeight - 16, @sliderBitmap.bitmap, Rect.new(40, 24, 40, 16))
+      overlay.blt(468, y + box_height - 16, @slider_bitmap.bitmap, Rect.new(40, 24, 40, 16))
     end
   end
 
-  def pbChangeToSnagEntry(species)
+  def change_to_snag_entry(species)
     @sprites["entryicon"] = PokemonSprite.new(@viewport)
     @sprites["entryicon"].setOffset(PictureOrigin::CENTER)
     @sprites["entryicon"].visible = true
@@ -119,36 +119,36 @@ class PokemonSnagListScene
     @sprites["overlay"].visible = true
     @sprites["overlay"].bitmap.clear
     overlay = @sprites["overlay"].bitmap
-    pokemon = $player.shadowSeen.partyPoke
-    imagePos = []
+    pokemon = $player.shadow_seen.party_poke
+    image_pos = []
     if pokemon
-      ballImage = sprintf("Graphics/UI/Summary/icon_ball_%s", pokemon.poke_ball)
-      imagePos.push([ballImage, 14, 60])
+      ball_image = sprintf("Graphics/UI/Summary/icon_ball_%s", pokemon.poke_ball)
+      image_pos.push([ball_image, 14, 60])
     end
-    if $player.shadowSeen.purified
-      imagePos.push(["Graphics/UI/SnagList/overlay_shadow", 224, 240, 0, 0, -1, -1])
-      shadowFract = pokemon.heart_gauge * 1.0 / GameData::ShadowPokemon::HEART_GAUGE_SIZE
-      imagePos.push(["Graphics/UI/Summary/overlay_shadowbar", 242, 280, 0, 0, (shadowFract * 248).floor, -1])
+    if $player.shadow_seen.purified
+      image_pos.push(["Graphics/UI/SnagList/overlay_shadow", 224, 240, 0, 0, -1, -1])
+      shadow_fract = pokemon.heart_gauge * 1.0 / GameData::ShadowPokemon::HEART_GAUGE_SIZE
+      image_pos.push(["Graphics/UI/Summary/overlay_shadowbar", 242, 280, 0, 0, (shadow_fract * 248).floor, -1])
     end
-    pbDrawImagePositions(overlay, imagePos)
+    pbDrawImagePositions(overlay, image_pos)
     base = Color.new(248, 248, 248)
     shadow = Color.new(104, 104, 104)
     pbSetSystemFont(overlay)
-    speciesname = GameData::Species.get(species).name
-    textpos = [
-      [speciesname, 50, 68, :left, base, shadow],
+    species_name = GameData::Species.get(species).name
+    text_pos = [
+      [species_name, 50, 68, :left, base, shadow],
       [_ISPRINTF("First Seen"), 238, 86, :left, base, shadow],
-      [$player.shadowSeen.location, 435, 118, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
+      [$player.shadow_seen.location, 435, 118, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
       [_INTL("Original Trainer"), 238, 150, :left, base, shadow],
       [_INTL("Location"), 238, 214, :left, base, shadow],
-      [_parsePokemonLocation(species), 435, 214, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
+      [parse_pokemon_location(species), 435, 214, :center, Color.new(64, 64, 64), Color.new(176, 176, 176)],
     ]
-    textpos.push([_INTL("Heart Gauge"), 238, 246, 0, base, shadow])
-    if $player.shadowSeen[species].snagged
-      if $player.shadowSeen[species].purified
-        heartmessage = _INTL("Successfully overcame all difficult challenges!")
+    text_pos.push([_INTL("Heart Gauge"), 238, 246, 0, base, shadow])
+    if $player.shadow_seen[species].snagged
+      if $player.shadow_seen[species].purified
+        heart_message = _INTL("Successfully overcame all difficult challenges!")
       else
-        heartmessage = [_INTL("The door to its heart is open! Undo the final lock!"),
+        heart_message = [_INTL("The door to its heart is open! Undo the final lock!"),
                         _INTL("The door to its heart is almost fully open."),
                         _INTL("The door to its heart is nearly open."),
                         _INTL("The door to its heart is opening wider."),
@@ -157,83 +157,83 @@ class PokemonSnagListScene
         ][pokemon.heartStage]
       end
     else
-      heartmessage = _INTL("The Pokémon managed to escape capture.")
+      heart_message = _INTL("The Pokémon managed to escape capture.")
     end
-    memo = sprintf("<c3=404040,B0B0B0>%s\n", heartmessage)
+    memo = sprintf("<c3=404040,B0B0B0>%s\n", heart_message)
     drawFormattedTextEx(overlay, 234, 308, 276, memo)
-    ownerbase = Color.new(64, 64, 64)
-    ownershadow = Color.new(176, 176, 176)
-    if $player.shadowSeen.otGender == 0 # male OT
-      ownerbase = Color.new(24, 112, 216)
-      ownershadow = Color.new(136, 168, 208)
-    elsif $player.shadowSeen.otGender == 1 # female OT
-      ownerbase = Color.new(248, 56, 32)
-      ownershadow = Color.new(224, 152, 144)
+    owner_base = Color.new(64, 64, 64)
+    owner_shadow = Color.new(176, 176, 176)
+    if $player.shadow_seen.otGender == 0 # male OT
+      owner_base = Color.new(24, 112, 216)
+      owner_shadow = Color.new(136, 168, 208)
+    elsif $player.shadow_seen.otGender == 1 # female OT
+      owner_base = Color.new(248, 56, 32)
+      owner_shadow = Color.new(224, 152, 144)
     end
-    textpos.push([$player.shadowSeen.ot, 435, 182, :center, ownerbase, ownershadow])
-    if $player.shadowSeen.gender == 0
-      textpos.push([_INTL("♂"), 178, 68, 0, Color.new(24, 112, 216), Color.new(136, 168, 208)])
-    elsif $player.shadowSeen.gender == 1
-      textpos.push([_INTL("♀"), 178, 68, 0, Color.new(248, 56, 32), Color.new(224, 152, 144)])
+    text_pos.push([$player.shadow_seen.ot, 435, 182, :center, owner_base, owner_shadow])
+    if $player.shadow_seen.gender == 0
+      text_pos.push([_INTL("♂"), 178, 68, 0, Color.new(24, 112, 216), Color.new(136, 168, 208)])
+    elsif $player.shadow_seen.gender == 1
+      text_pos.push([_INTL("♀"), 178, 68, 0, Color.new(248, 56, 32), Color.new(224, 152, 144)])
     end
-    pbDrawTextPositions(overlay, textpos)
-    gender = $player.shadowSeen.gender
-    form = $player.shadowSeen.form
-    @sprites["entryicon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadowSeen.purified)
+    pbDrawTextPositions(overlay, text_pos)
+    gender = $player.shadow_seen.gender
+    form = $player.shadow_seen.form
+    @sprites["entryicon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadow_seen.purified)
     @sprites["entryicon"].x = 112
     @sprites["entryicon"].y = 196
     GameData::Species.play_cry_from_species(species)
   end
 
-  def pbSnagEntryOnIndex(index)
-    oldSprites = pbFadeOutAndHide(@sprites)
-    echoln @snagOrder
-    pbChangeToSnagEntry(@snagOrder[index][:species])
+  def snag_entry_on_index(index)
+    old_sprites = pbFadeOutAndHide(@sprites)
+    echoln @snag_order
+    change_to_snag_entry(@snag_order[index][:species])
     pbFadeInAndShow(@sprites)
-    curIndex = index
+    current_index = index
     page = 1
-    newPage = 0
+    new_page = 0
     ret = 0
     pbActivateWindow(@sprites, nil) {
-      _windowLoop(curIndex, newPage, page, ret)
+      window_loop(current_index, new_page, page, ret)
     }
-    $PokemonGlobal.snagIndex = curIndex
-    @sprites["snagList"].index = curIndex
+    $PokemonGlobal.snag_index = current_index
+    @sprites["snagList"].index = current_index
     @sprites["snagList"].refresh
-    pbFadeInAndShow(@sprites, oldSprites)
+    pbFadeInAndShow(@sprites, old_sprites)
   end
 
-  def pbSnagEntry
+  def snag_entry
     pbActivateWindow(@sprites, "snagList") {
       loop do
         Graphics.update
         Input.update
-        oldIndex = @sprites["snagList"].index
-        pbUpdate
-        if oldIndex != @sprites["snagList"].index
-          $PokemonGlobal.snagIndex = @sprites["snagList"].index
+        old_index = @sprites["snagList"].index
+        update
+        if old_index != @sprites["snagList"].index
+          $PokemonGlobal.snag_index = @sprites["snagList"].index
 
-          iconSpecies = @sprites["snagList"].species
-          setIconBitmap(iconSpecies)
+          icon_species = @sprites["snagList"].species
+          set_icon_bitmap(icon_species)
           # Update the slider
-          yCoord = 62
+          y_coord = 62
           if @sprites["snagList"].itemCount > 1
-            yCoord += 188.0 * @sprites["snagList"].index / (@sprites["snagList"].itemCount - 1)
+            y_coord += 188.0 * @sprites["snagList"].index / (@sprites["snagList"].itemCount - 1)
           end
-          @sprites["slider"].y = yCoord
+          @sprites["slider"].y = y_coord
         end
         if Input.trigger?(Input::B)
           pbPlayCancelSE
           break
         elsif Input.trigger?(Input::A)
           pbPlayDecisionSE
-          pbSnagEntryOnIndex(@sprites["snagList"].index)
+          snag_entry_on_index(@sprites["snagList"].index)
         end
       end
     }
   end
 
-  def pbEndScene
+  def end_scene
     pbFadeOutAndHide(@sprites)
     pbDisposeSpriteHash(@sprites)
     @viewport.dispose
@@ -241,100 +241,100 @@ class PokemonSnagListScene
 
   private
 
-  def _parsePokemonLocation(species)
-    return "Fled" unless $player.shadowSeen[species].snagged
+  def parse_pokemon_location(species)
+    return "Fled" unless $player.shadow_seen[species].snagged
     $player.party.each do |pkmn|
-      return "Party" if _parseEvolutionLine(species, pkmn)
+      return "Party" if parse_evolution_line(species, pkmn)
     end
     (0...2).each { |i|
       echoln $PokemonGlobal.day_care[i]
-      return "Day Care" if _parseEvolutionLine(species, $PokemonGlobal.day_care[i].pokemon)
+      return "Day Care" if parse_evolution_line(species, $PokemonGlobal.day_care[i].pokemon)
     }
     $PokemonStorage.boxes.each do |box|
       box.each do |pkmn|
-        return box.name if _parseEvolutionLine(species, pkmn)
+        return box.name if parse_evolution_line(species, pkmn)
       end
     end
     for i in 0...PurifyChamber::NUMSETS
-      return "Set #{i + 1}" if _parseEvolutionLine(species, $PokemonGlobal.purifyChamber.getShadow(i))
+      return "Set #{i + 1}" if parse_evolution_line(species, $PokemonGlobal.purifyChamber.getShadow(i))
       $PokemonGlobal.purifyChamber.setList(i).each do |pkmn|
-        return "Set #{i + 1}" if _parseEvolutionLine(species, pkmn)
+        return "Set #{i + 1}" if parse_evolution_line(species, pkmn)
       end
     end
     return "Released"
   end
 
-  def _parseEvolutionLine(original, pkmn)
+  def parse_evolution_line(original, pkmn)
     return false if pkmn.nil?
-    return false unless $player.shadowSeen[original]
+    return false unless $player.shadow_seen[original]
     return true if original == pkmn.species
     branches = GameData::Species.get(original).get_evolutions(true)
     branches.each do |evo|
-      return true if _parseEvolutionLine(evo[2], pkmn)
+      return true if parse_evolution_line(evo[2], pkmn)
     end
     return false
   end
 
-  def _windowLoop(curIndex, newPage, page, ret)
+  def window_loop(current_index, new_page, page, ret)
     loop do
       Graphics.update if page == 1
       Input.update
-      pbUpdate
+      update
       if Input.trigger?(Input::B) || ret == 1
-        _onWindowCancel(page)
+        on_window_cancel(page)
         break
       elsif Input.trigger?(Input::UP) || ret == 8
-        curIndex, newPage = _cursorUp(curIndex, newPage, page)
+        current_index, new_page = cursor_up(current_index, new_page, page)
       elsif Input.trigger?(Input::DOWN) || ret == 2
-        curIndex, newPage = _cursorDown(curIndex, newPage, page)
+        current_index, new_page = cursor_down(current_index, new_page, page)
       elsif Input.trigger?(Input::A)
-        GameData::Species.play_cry_from_species(@snagOrder[curIndex][:species])
+        GameData::Species.play_cry_from_species(@snag_order[current_index][:species])
       end
       ret = 0
-      if newPage > 0
-        page = newPage
-        newPage = 0
+      if new_page > 0
+        page = new_page
+        new_page = 0
         @sprites["entryicon"].dispose
-        pbChangeToSnagEntry(@snagOrder[curIndex][:species])
+        change_to_snag_entry(@snag_order[current_index][:species])
       end
     end
   end
 
-  def _cursorDown(curIndex, newPage, page)
-    nextIndex = -1
-    (curIndex + 1...@snagOrder.length).each { |i|
-      if $player.shadowSeen[@snagOrder[i][:species]]
-        nextIndex = i
+  def cursor_down(current_index, new_page, page)
+    next_index = -1
+    (current_index + 1...@snag_order.length).each { |i|
+      if $player.shadow_seen[@snag_order[i][:species]]
+        next_index = i
         break
       end
     }
-    if nextIndex >= 0
-      curIndex = nextIndex
-      newPage = page
+    if next_index >= 0
+      current_index = next_index
+      new_page = page
     end
-    pbPlayCursorSE if newPage > 1
-    return curIndex, newPage
+    pbPlayCursorSE if new_page > 1
+    return current_index, new_page
   end
 
-  def _cursorUp(curIndex, newPage, page)
-    nextIndex = -1
-    i = curIndex - 1; loop do
+  def cursor_up(current_index, new_page, page)
+    next_index = -1
+    i = current_index - 1; loop do
       break unless i >= 0
-      if $player.shadowSeen[@snagOrder[i][:species]]
-        nextIndex = i
+      if $player.shadow_seen[@snag_order[i][:species]]
+        next_index = i
         break
       end
       i -= 1
     end
-    if nextIndex >= 0
-      curIndex = nextIndex
-      newPage = page
+    if next_index >= 0
+      current_index = next_index
+      new_page = page
     end
-    pbPlayCursorSE if newPage > 1
-    return curIndex, newPage
+    pbPlayCursorSE if new_page > 1
+    return current_index, new_page
   end
 
-  def _onWindowCancel(page)
+  def on_window_cancel(page)
     if page == 1
       pbPlayCancelSE
       pbFadeOutAndHide(@sprites)

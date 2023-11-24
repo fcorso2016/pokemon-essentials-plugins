@@ -1,12 +1,11 @@
-Set-Location Data/Scripts
-Get-ChildItem -Path . -Recurse -File | Resolve-Path -Relative | ForEach-Object {
-    $targetPath = "../../temp/Data/Scripts/${_}s"
+Get-ChildItem -Path Data/Scripts -Recurse -File -Filter *.rb | Resolve-Path -Relative | ForEach-Object {
+    $targetPath = "sig/${_}s"
     Write-Output "Processing file: ${_}"
     if (-NOT (Test-Path $targetPath)) {
         $directory = Split-Path -Parent $targetPath
         New-Item -ItemType Directory -Force -Path $directory
-        rbs prototype rbi "$_" >> "$targetPath"
-        #typeprof "$targetPath" "$_" -I . >> "$targetPath"
+        rbs prototype rb "$_" >> "$targetPath"
+        #typeprof $_ --show-errors #>> $targetPath
+        #echo "$_ => $targetPath"
     }
 }
-Set-Location ../..
