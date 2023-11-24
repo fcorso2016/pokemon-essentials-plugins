@@ -11,9 +11,9 @@ class SeenShadowPokemon
   attr_reader :location
   attr_reader :snagged
   attr_reader :purified
-  attr_reader :partyPoke
+  attr_reader :party_poke
 
-  def initialize(pokemon, locationName)
+  def initialize(pokemon, location_name)
     @level = pokemon.level
     @gender = pokemon.gender
     @form = pokemon.form
@@ -23,18 +23,18 @@ class SeenShadowPokemon
     @moves = pokemon.moves
     @ot = pokemon.owner.name
     @otGender = pokemon.owner.gender
-    @location = locationName
+    @location = location_name
     @snagged = false
     @purified = false
-    @partyPoke = nil
+    @party_poke = nil
   end
 
-  def registerSnagged(partyPoke)
+  def register_snagged(party_poke)
     @snagged = true
-    @partyPoke = partyPoke
+    @party_poke = party_poke
   end
 
-  def registerPurified
+  def register_purified
     @purified = true
   end
 end

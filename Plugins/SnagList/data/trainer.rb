@@ -1,36 +1,36 @@
 class Trainer
-  attr_writer :shadowSeen
-  attr_writer :snagOrder
+  attr_writer :shadow_seen
+  attr_writer :snag_order
 
-  def shadowSeen
-    return @shadowSeen unless @shadowSeen.nil?
-    @shadowSeen = {}
-    return @shadowSeen
+  def shadow_seen
+    return @shadow_seen unless @shadow_seen.nil?
+    @shadow_seen = {}
+    return @shadow_seen
   end
 
-  def snagOrder
-    return @snagOrder unless @snagOrder.nil?
-    @snagOrder = []
-    return @snagOrder
+  def snag_order
+    return @snag_order unless @snag_order.nil?
+    @snag_order = []
+    return @snag_order
   end
 
-  def registerSeenShadow(pokemon)
+  def register_seen_shadow(pokemon)
     # Initialize All Variables if Needed
-    shadowSeen
-    snagOrder
+    shadow_seen
+    snag_order
     # Process Info
-    return unless @shadowSeen[pokemon.species].nil?
-    @shadowSeen[pokemon.species] = SeenShadowPokemon.new(pokemon, $game_map.name)
-    @snagOrder.push(pokemon.species)
+    return unless @shadow_seen[pokemon.species].nil?
+    @shadow_seen[pokemon.species] = SeenShadowPokemon.new(pokemon, $game_map.name)
+    @snag_order.push(pokemon.species)
   end
 
-  def registerSnag(pokemon)
-    return unless @shadowSeen[pokemon.species]
-    @shadowSeen[pokemon.species].registerSnagged(pokemon)
+  def register_snag(pokemon)
+    return unless @shadow_seen[pokemon.species]
+    @shadow_seen[pokemon.species].register_snagged(pokemon)
   end
 
-  def registerPurification(pokemon)
-    return unless @shadowSeen[pokemon.species]
-    @shadowSeen[pokemon.species].registerPurified
+  def register_purification(pokemon)
+    return unless @shadow_seen[pokemon.species]
+    @shadow_seen[pokemon.species].register_purified
   end
 end

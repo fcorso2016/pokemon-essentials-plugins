@@ -1,15 +1,15 @@
 class Battle
-  alias onEnterBattle_SnagList pbMessagesOnBattlerEnteringBattle
+  alias on_enter_battle_alias_snag_list pbMessagesOnBattlerEnteringBattle
   def pbMessagesOnBattlerEnteringBattle(battler)
-    onEnterBattle_SnagList(battler)
-    $player.registerSeenShadow(battler.pokemon) if battler.shadowPokemon?
+    on_enter_battle_alias_snag_list(battler)
+    $player.register_seen_shadow(battler.pokemon) if battler.shadowPokemon?
   end
 
-  alias recordAndStore_SnagList pbRecordAndStoreCaughtPokemon
+  alias record_and_store_alias_snag_list pbRecordAndStoreCaughtPokemon
   def pbRecordAndStoreCaughtPokemon
     @caughtPokemon.each do |pkmn|
-      $player.registerSnag(pkmn) if pkmn.shadowPokemon?
+      $player.register_snag(pkmn) if pkmn.shadowPokemon?
     end
-    recordAndStore_SnagList
+    record_and_store_alias_snag_list
   end
 end

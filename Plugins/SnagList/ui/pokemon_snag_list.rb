@@ -3,9 +3,9 @@ class PokemonSnagList
     @scene = scene
   end
 
-  def pbStartScreen
-    @scene.pbStartScene
-    @scene.pbSnagEntry
-    @scene.pbEndScene
+  def start_screen
+    @scene.start_scene
+    @scene.snag_entry
+    @scene.end_scene
   end
 end

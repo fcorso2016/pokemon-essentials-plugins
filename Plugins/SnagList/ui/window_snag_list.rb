@@ -1,11 +1,11 @@
-class Window_SnagList < Window_Pokedex
+class WindowSnagList < Window_Pokedex
   def drawItem(index, count, rect)
     return if index >= self.top_row + self.page_item_max
     rect = Rect.new(rect.x + 16, rect.y, rect.width - 16, rect.height)
     echoln @commands[index]
     species = @commands[index][:species]
-    if $player.shadowSeen[species]
-      if $player.shadowSeen[species].snagged
+    if $player.shadow_seen[species]
+      if $player.shadow_seen[species].snagged
         pbCopyBitmap(self.contents, @pokeballOwn.bitmap, rect.x - 6, rect.y + 8)
       else
         pbCopyBitmap(self.contents, @pokeballSeen.bitmap, rect.x - 6, rect.y + 8)
