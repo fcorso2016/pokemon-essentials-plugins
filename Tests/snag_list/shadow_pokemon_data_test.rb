@@ -14,7 +14,7 @@ class ClassExtensionsTest < Minitest::Test
   def test_snag_index
     global_metadata = MockPokemonGlobalMetadata.new
     assert_equal(0, global_metadata.snag_index)
-    global_metadata.snagIndex = 2
+    global_metadata.snag_index = 2
     assert_equal(2, global_metadata.snag_index)
   end
 

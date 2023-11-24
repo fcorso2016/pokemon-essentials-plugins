@@ -12,7 +12,7 @@ require_relative 'mocks'
   class Battle
     attr_accessor :caughtPokemon
 
-    def recordAndStore_SnagList
+    def record_and_store_alias_snag_list
       # We need to stub this method out because it invokes a lot of functionality we don't care for
       @caughtPokemon.clear
     end
