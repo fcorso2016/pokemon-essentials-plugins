@@ -13,9 +13,9 @@ end
 class ClassExtensionsTest < Minitest::Test
   def test_snag_index
     global_metadata = MockPokemonGlobalMetadata.new
-    assert_equal(0, global_metadata.snagIndex)
+    assert_equal(0, global_metadata.snag_index)
     global_metadata.snagIndex = 2
-    assert_equal(2, global_metadata.snagIndex)
+    assert_equal(2, global_metadata.snag_index)
   end
 
   def test_shadow_and_snag_order

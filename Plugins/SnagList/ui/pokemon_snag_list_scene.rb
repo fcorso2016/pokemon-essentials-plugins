@@ -31,7 +31,7 @@ class PokemonSnagListScene
     @sprites["icon"].y = 196
     @sprites["overlay"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)
-    pbRefreshSnagList($PokemonGlobal.snagIndex)
+    pbRefreshSnagList($PokemonGlobal.snag_index)
     pbDeactivateWindows(@sprites)
     pbFadeInAndShow(@sprites)
   end

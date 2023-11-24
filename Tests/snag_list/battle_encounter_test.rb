@@ -40,7 +40,7 @@ require_relative 'mocks'
       mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
       mock_battler = MockBattler.new(mock_pokemon, false)
 
-      battle_spy = Spy.on(@battle, :onEnterBattle_SnagList)
+      battle_spy = Spy.on(@battle, :on_enter_battle_alias_snag_list)
       @battle.pbMessagesOnBattlerEnteringBattle(mock_battler)
       assert(battle_spy.has_been_called?)
       assert_equal([], $player.snagOrder)
@@ -51,7 +51,7 @@ require_relative 'mocks'
       mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
       mock_battler = MockBattler.new(mock_pokemon, true)
 
-      battle_spy = Spy.on(@battle, :onEnterBattle_SnagList)
+      battle_spy = Spy.on(@battle, :on_enter_battle_alias_snag_list)
       @battle.pbMessagesOnBattlerEnteringBattle(mock_battler)
       assert(battle_spy.has_been_called?)
       assert_equal([:PIKACHU], $player.snagOrder)
