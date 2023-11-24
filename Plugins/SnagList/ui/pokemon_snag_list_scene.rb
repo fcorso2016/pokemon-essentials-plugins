@@ -185,40 +185,6 @@ class PokemonSnagListScene
     GameData::Species.play_cry_from_species(species)
   end
 
-  def _parsePokemonLocation(species)
-    return "Fled" unless $player.shadowSeen[species].snagged
-    $player.party.each do |pkmn|
-      return "Party" if _parseEvolutionLine(species, pkmn)
-    end
-    (0...2).each { |i|
-      echoln $PokemonGlobal.day_care[i]
-      return "Day Care" if _parseEvolutionLine(species, $PokemonGlobal.day_care[i].pokemon)
-    }
-    $PokemonStorage.boxes.each do |box|
-      box.each do |pkmn|
-        return box.name if _parseEvolutionLine(species, pkmn)
-      end
-    end
-    for i in 0...PurifyChamber::NUMSETS
-      return "Set #{i + 1}" if _parseEvolutionLine(species, $PokemonGlobal.purifyChamber.getShadow(i))
-      $PokemonGlobal.purifyChamber.setList(i).each do |pkmn|
-        return "Set #{i + 1}" if _parseEvolutionLine(species, pkmn)
-      end
-    end
-    return "Released"
-  end
-
-  def _parseEvolutionLine(original, pkmn)
-    return false if pkmn.nil?
-    return false unless $player.shadowSeen[original]
-    return true if original == pkmn.species
-    branches = GameData::Species.get(original).get_evolutions(true)
-    branches.each do |evo|
-      return true if _parseEvolutionLine(evo[2], pkmn)
-    end
-    return false
-  end
-
   def pbSnagEntryOnIndex(index)
     oldSprites = pbFadeOutAndHide(@sprites)
     echoln @snagOrder
@@ -274,6 +240,40 @@ class PokemonSnagListScene
   end
 
   private
+
+  def _parsePokemonLocation(species)
+    return "Fled" unless $player.shadowSeen[species].snagged
+    $player.party.each do |pkmn|
+      return "Party" if _parseEvolutionLine(species, pkmn)
+    end
+    (0...2).each { |i|
+      echoln $PokemonGlobal.day_care[i]
+      return "Day Care" if _parseEvolutionLine(species, $PokemonGlobal.day_care[i].pokemon)
+    }
+    $PokemonStorage.boxes.each do |box|
+      box.each do |pkmn|
+        return box.name if _parseEvolutionLine(species, pkmn)
+      end
+    end
+    for i in 0...PurifyChamber::NUMSETS
+      return "Set #{i + 1}" if _parseEvolutionLine(species, $PokemonGlobal.purifyChamber.getShadow(i))
+      $PokemonGlobal.purifyChamber.setList(i).each do |pkmn|
+        return "Set #{i + 1}" if _parseEvolutionLine(species, pkmn)
+      end
+    end
+    return "Released"
+  end
+
+  def _parseEvolutionLine(original, pkmn)
+    return false if pkmn.nil?
+    return false unless $player.shadowSeen[original]
+    return true if original == pkmn.species
+    branches = GameData::Species.get(original).get_evolutions(true)
+    branches.each do |evo|
+      return true if _parseEvolutionLine(evo[2], pkmn)
+    end
+    return false
+  end
 
   def _windowLoop(curIndex, newPage, page, ret)
     loop do

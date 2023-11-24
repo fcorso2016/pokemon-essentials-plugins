@@ -1,5 +1,0 @@
-class PokemonGlobalMetadata
-  attr_writer snag_index: Integer
-
-  def snag_index: -> Integer
-end
