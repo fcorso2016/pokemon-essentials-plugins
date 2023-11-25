@@ -6,11 +6,11 @@ module Graphics
   STOP_WHILE_TRANSITION = true
 
   unless defined?(transition_KGC_SpecialTransition)
-    class << Graphics
+    class << self
       alias transition_KGC_SpecialTransition transition
     end
 
-    class << Graphics
+    class << self
       alias update_KGC_SpecialTransition update
     end
   end
