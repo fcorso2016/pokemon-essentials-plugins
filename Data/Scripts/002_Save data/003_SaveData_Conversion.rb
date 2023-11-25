@@ -31,7 +31,7 @@ module SaveData
     # @return [String] trigger version of the conversion
     attr_reader :version
 
-    # @param id [String] conversion ID
+    # @param id [Symbol] conversion ID
     def initialize(id, &block)
       @id = id
       @value_procs = {}
