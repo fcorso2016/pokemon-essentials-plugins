@@ -111,7 +111,7 @@ module GameData
     end
 
     # Creates a battle-ready version of a trainer's data.
-    # @return [Array] all information about a trainer in a usable form
+    # @return [NPCTrainer] all information about a trainer in a usable form
     def to_trainer
       # Determine trainer's name
       tr_name = self.name
