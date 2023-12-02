@@ -36,7 +36,7 @@ end
 
 require "mkxp-z"
 $show_window = true if $show_window.nil?
-MKXP_Z.init_game_state("Pokemon Essentials", [], $show_window)
+MKXP_Z.init_game_state("Pokemon Essentials", ["debug"], $show_window)
 
 Scripts.load_scripts
 

@@ -365,7 +365,7 @@ class RegionalStorage
   end
 
   def pbDelete(box, index)
-    getCurrentStorage.pbDelete(pkmn)
+    getCurrentStorage.pbDelete(box, index)
   end
 end
 
