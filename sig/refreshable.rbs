@@ -1,0 +1,5 @@
+interface _Refreshable
+
+  def refresh: () -> void
+
+end
