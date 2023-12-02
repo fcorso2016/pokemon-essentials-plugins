@@ -3,6 +3,7 @@ Audio/
 Graphics/
 !Graphics/UI/Pokegear/icon_snag_list.png
 !Graphics/UI/SnagList/
+Screenshots/
 
 # Data folder, but not Data/Scripts folder or messages_core.dat
 Data/*
