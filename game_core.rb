@@ -66,3 +66,5 @@ module PluginManager
     end
   end
 end
+
+$RGSS_SCRIPTS = load_data("Data/Scripts.rxdata")
