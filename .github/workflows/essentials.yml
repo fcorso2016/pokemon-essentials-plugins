@@ -22,4 +22,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          sonar-scanner --define sonar.projectKey=fcorso2016_pokemon_essentials --define sonar.sources=Data,scripts_combine.rb,scripts_extract.rb
+          sonar-scanner --define sonar.projectKey=fcorso2016_pokemon_essentials --define sonar.sources=Data,scripts_combine.rb,scripts_extract.rb,sig/Data
