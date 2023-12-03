@@ -1,1 +1,2 @@
 $show_window: bool
+$RGSS_SCRIPTS: Array[[String, String]]
