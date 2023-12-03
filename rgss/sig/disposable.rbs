@@ -1,0 +1,5 @@
+# frozen_string_literal: true
+
+interface _Disposable
+  def dispose: -> void
+end

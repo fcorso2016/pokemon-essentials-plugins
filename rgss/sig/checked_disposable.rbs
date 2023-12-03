@@ -1,0 +1,5 @@
+interface _CheckedDisposable
+  include _Disposable
+
+  def disposed?: -> bool
+end

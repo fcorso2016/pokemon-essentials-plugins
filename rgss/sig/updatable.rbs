@@ -1,0 +1,5 @@
+interface _Updatable
+
+  def update: -> void
+
+end
