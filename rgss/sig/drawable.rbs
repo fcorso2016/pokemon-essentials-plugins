@@ -1,0 +1,7 @@
+interface _Drawable
+
+  def width: -> Integer
+  def height: -> Integer
+
+
+end
