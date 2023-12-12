@@ -1,2 +1,31 @@
 $show_window: bool
 $RGSS_SCRIPTS: Array[[String, String]]
+
+$data_animations: Array[RPG::Animation?]
+$data_tilesets: Array[RPG::Tileset?]
+$data_common_events: Array[RPG::CommonEvent?]
+$data_system: RPG::System
+
+
+$game_system: Game_System
+$game_temp: Game_Temp
+$game_switches: Game_Switches
+$game_self_switches: Game_SelfSwitches
+$game_variables: Game_Variables
+$game_screen: Game_Screen
+$game_map: Game_Map
+$game_player: Game_Player
+
+$scene: _Scene
+$PokemonSystem: PokemonSystem
+$PokemonGlobal: PokemonGlobalMetadata
+$PokemonMap: PokemonMapMetadata
+$map_factory: PokemonMapFactory
+$PokemonEncounters: PokemonEncounters
+$PokemonStorage: PokemonStorage
+$player: Player
+$bag: PokemonBag
+
+$save_engine_version: String
+$save_game_version: String
+$stats: GameStats
