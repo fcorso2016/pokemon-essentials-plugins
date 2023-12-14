@@ -1,16 +1,17 @@
 require_relative '../test_helper'
-require_relative 'mocks'
 
 TEST_MAP1 = "Test Map"
 TEST_MAP2 = "Other Map"
 
-class MockPokemonGlobalMetadata < PokemonGlobalMetadata
-  def initialize
-    # Stub out the constructor to avoid calling a bunch of garbage we don't need
-  end
-end
-
 class ClassExtensionsTest < Minitest::Test
+  def before_setup
+    $show_window = false
+    require_relative '../../game_core'
+
+    PluginManager.runPlugins
+    require_relative 'mocks'
+  end
+
   def test_snag_index
     global_metadata = MockPokemonGlobalMetadata.new
     assert_equal(0, global_metadata.snag_index)

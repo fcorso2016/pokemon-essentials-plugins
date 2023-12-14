@@ -6,11 +6,9 @@ class PokemonSnagListScene
   end
 
   def set_icon_bitmap(species)
-    gender = ($player.shadow_seen.gender rescue 0)
-    form = ($player.shadow_seen.form rescue 0)
-    echoln species
-    echoln $player.shadow_seen[species]
-    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadow_seen.purified)
+    gender = ($player.shadow_seen[species].gender rescue 0)
+    form = ($player.shadow_seen[species].form rescue 0)
+    @sprites["icon"].setSpeciesBitmap(species, (gender == 1), form, false, !$player.shadow_seen[species].purified)
   end
 
   def start_scene
@@ -63,9 +61,9 @@ class PokemonSnagListScene
 
     seen_no = 0
     owned_no = 0
-    @snag_order.each { |i|
-      seen_no += 1 if $player.shadow_seen[i].snagged
-      owned_no += 1 if $player.shadow_seen[i].purified
+    @snag_order.each { |entry|
+      seen_no += 1 if $player.shadow_seen[entry[:species]].snagged
+      owned_no += 1 if $player.shadow_seen[entry[:species]].purified
     }
     text_pos = [
       [_INTL("Snagged:"), 42, 314, :left, base, shadow],

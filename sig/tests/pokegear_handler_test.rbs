@@ -1,0 +1,17 @@
+class PokegearHandlerTest
+  @sample_pokemon: Pokemon
+
+  def before_setup: -> void
+
+  def setup: -> void
+
+  def test_effect_code: -> void
+
+  def test_scene_condition_both_invalid: -> void
+
+  def test_scene_condition_no_shadow_seen: -> void
+
+  def test_scene_condition_no_snag_machine: -> void
+
+  def test_scene_condition_valid: -> void
+end

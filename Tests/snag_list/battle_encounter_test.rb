@@ -1,24 +1,15 @@
 require_relative '../test_helper'
-require_relative 'mocks'
-
-  class GameData::TrainerType
-    def self.get(sym)
-      mock = Minitest::Mock.new
-      def mock.id; return 1; end
-      return mock
-    end
-  end
-
-  class Battle
-    attr_accessor :caughtPokemon
-
-    def record_and_store_alias_snag_list
-      # We need to stub this method out because it invokes a lot of functionality we don't care for
-      @caughtPokemon.clear
-    end
-  end
 
   class BattleEncounterTest < Minitest::Test
+    def before_setup
+      $show_window = false
+      require_relative '../../game_core'
+
+
+      PluginManager.runPlugins
+      require_relative 'mocks'
+    end
+
     def setup
       $player = Trainer.new("Red", :POKEMONTRAINER)
       $game_map = MockMap.new("Test Map")
