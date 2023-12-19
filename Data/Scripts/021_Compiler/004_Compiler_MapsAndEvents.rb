@@ -68,7 +68,7 @@ module Compiler
       next if id == 999   # Ignore 999 (random dungeon map)
       mapinfo = RPG::MapInfo.new
       mapinfo.order = maxOrder
-      mapinfo.name  = sprintf("MAP%03d", id)
+      mapinfo.name  = sprintf("Map%03d", id)
       maxOrder += 1
       mapinfos[id] = mapinfo
       imported = true
@@ -309,7 +309,7 @@ module Compiler
     end
 
     def mapFilename(mapID)
-      return sprintf("Data/map%03d.rxdata", mapID)
+      return sprintf("Data/Map%03d.rxdata", mapID)
     end
 
     def getMap(mapID)
