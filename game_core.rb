@@ -42,7 +42,7 @@ alias native_load_data load_data
 def load_data(filename)
   ret = native_load_data(filename)
   if ret.nil?
-    raise sprintf("Failed to load file: %s", filename)
+    raise sprintf("Failed to load file: %s/%s", Dir.getwd, filename)
   end
 
   return ret
