@@ -38,6 +38,16 @@ require "mkxp-z"
 $show_window = true if $show_window.nil?
 MKXP_Z.init_game_state("Pokemon Essentials", ["debug"], $show_window)
 
+alias native_load_data load_data
+def load_data(filename)
+  ret = native_load_data(filename)
+  if ret.nil?
+    raise sprintf("Failed to load file: %s", filename)
+  end
+
+  return ret
+end
+
 Scripts.load_scripts
 
 module PluginManager
