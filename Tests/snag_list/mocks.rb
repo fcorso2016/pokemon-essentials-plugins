@@ -58,3 +58,18 @@ class MockMap
     @name = name
   end
 end
+
+class Battle
+  attr_accessor :caughtPokemon
+
+  def record_and_store_alias_snag_list
+    # We need to stub this method out because it invokes a lot of functionality we don't care for
+    @caughtPokemon.clear
+  end
+end
+
+class MockPokemonGlobalMetadata < PokemonGlobalMetadata
+  def initialize
+    # Stub out the constructor to avoid calling a bunch of garbage we don't need
+  end
+end
