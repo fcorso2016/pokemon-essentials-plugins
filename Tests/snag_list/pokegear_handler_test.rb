@@ -21,19 +21,19 @@ class PokegearHandlerTest < Minitest::Test
   def test_scene_condition_both_invalid
     $player.has_snag_machine = false
     $player.shadow_seen = {}
-    assert(MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
+    assert(!MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
   end
 
   def test_scene_condition_no_snag_machine
     $player.has_snag_machine = false
     $player.shadow_seen = {:PIKACHU => SeenShadowPokemon.new(@sample_pokemon, "test") }
-    assert(MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
+    assert(!MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
   end
 
   def test_scene_condition_no_shadow_seen
     $player.has_snag_machine = true
     $player.shadow_seen = {}
-    assert(MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
+    assert(!MenuHandlers.call(:pokegear_menu, :snag_list, "condition"))
   end
 
   def test_scene_condition_valid

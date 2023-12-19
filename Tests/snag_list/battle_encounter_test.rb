@@ -5,8 +5,12 @@ require_relative '../test_helper'
       $show_window = false
       require_relative '../../game_core'
 
-
+      $DEBUG = true
       PluginManager.runPlugins
+      Compiler.main
+      Game.initialize
+      Game.set_up_system
+      SaveData.load_new_game_values
       require_relative 'mocks'
     end
 

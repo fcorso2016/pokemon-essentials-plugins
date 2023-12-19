@@ -8,7 +8,12 @@ class ClassExtensionsTest < Minitest::Test
     $show_window = false
     require_relative '../../game_core'
 
+    $DEBUG = true
     PluginManager.runPlugins
+    Compiler.main
+    Game.initialize
+    Game.set_up_system
+    SaveData.load_new_game_values
     require_relative 'mocks'
   end
 
@@ -22,7 +27,9 @@ class ClassExtensionsTest < Minitest::Test
   def test_shadow_and_snag_order
     mock_owner = MockTrainer.new("Grunt", 1)
     mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
+    old_map = $game_map
     $game_map = MockMap.new(TEST_MAP1)
+    $game_map = old_map
 
     trainer = Trainer.new("Red", :POKEMONTRAINER)
     assert_equal({}, trainer.shadow_seen)
