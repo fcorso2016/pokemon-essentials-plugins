@@ -9,7 +9,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: ghcr.io/fcorso2016/mkxp-z:latest
+    container: ghcr.io/fcorso2016/mkxp-z:0f4373e4b1c1a8fc044a59fd4e78d5d669e261ca
     steps:
       - uses: actions/checkout@v3
         with:
