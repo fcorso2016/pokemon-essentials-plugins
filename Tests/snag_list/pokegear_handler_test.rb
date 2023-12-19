@@ -11,7 +11,7 @@ class PokegearHandlerTest < Minitest::Test
     Compiler.main
     Game.initialize
     Game.set_up_system
-    SaveData.load_new_game_values
+    Game.start_new
   end
 
   def setup

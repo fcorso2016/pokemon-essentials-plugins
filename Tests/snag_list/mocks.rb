@@ -59,14 +59,6 @@ class MockMap
   end
 end
 
-class GameData::TrainerType
-  def self.get(sym)
-    mock = Minitest::Mock.new
-    def mock.id; return 1; end
-    return mock
-  end
-end
-
 class Battle
   attr_accessor :caughtPokemon
 

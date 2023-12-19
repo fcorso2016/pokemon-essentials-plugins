@@ -1,7 +1,6 @@
 require_relative '../test_helper'
 
-TEST_MAP1 = "Test Map"
-TEST_MAP2 = "Other Map"
+TEST_MAP1 = "Intro"
 
 class ClassExtensionsTest < Minitest::Test
   def before_setup
@@ -13,7 +12,7 @@ class ClassExtensionsTest < Minitest::Test
     Compiler.main
     Game.initialize
     Game.set_up_system
-    SaveData.load_new_game_values
+    Game.start_new
     require_relative 'mocks'
   end
 
@@ -27,11 +26,8 @@ class ClassExtensionsTest < Minitest::Test
   def test_shadow_and_snag_order
     mock_owner = MockTrainer.new("Grunt", 1)
     mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
-    old_map = $game_map
-    $game_map = MockMap.new(TEST_MAP1)
-    $game_map = old_map
 
-    trainer = Trainer.new("Red", :POKEMONTRAINER)
+    trainer = Trainer.new("Red", :POKEMONTRAINER_Red)
     assert_equal({}, trainer.shadow_seen)
     assert_equal([], trainer.snag_order)
 
@@ -55,7 +51,6 @@ class ClassExtensionsTest < Minitest::Test
     # Adding a the same species does nothing
     mock_owner = MockTrainer.new("Joe", 0)
     mock_pokemon = MockPokemon.new(:PIKACHU, 10, 1, 3, [24, 21, 24, 8, 14, 31], 3, 1, [:THUNDERSHOCK, :GROWL], mock_owner)
-    $game_map = MockMap.new(TEST_MAP2)
     trainer.register_seen_shadow(mock_pokemon)
     assert_equal(1, trainer.shadow_seen.size)
     assert_equal([:PIKACHU], trainer.snag_order)
@@ -88,7 +83,7 @@ class ClassExtensionsTest < Minitest::Test
     assert_equal([:THUNDERSHOCK, :GROWL], trainer.shadow_seen[:ELEKID].moves)
     assert_equal("Joe", trainer.shadow_seen[:ELEKID].ot)
     assert_equal(0, trainer.shadow_seen[:ELEKID].otGender)
-    assert_equal(TEST_MAP2, trainer.shadow_seen[:ELEKID].location)
+    assert_equal(TEST_MAP1, trainer.shadow_seen[:ELEKID].location)
     assert_equal(false, trainer.shadow_seen[:ELEKID].snagged)
     assert_equal(false, trainer.shadow_seen[:ELEKID].purified)
     assert_nil(trainer.shadow_seen[:ELEKID].party_poke)
@@ -97,9 +92,8 @@ class ClassExtensionsTest < Minitest::Test
   def test_register_snag_and_purify
     mock_owner = MockTrainer.new("Grunt", 1)
     mock_pokemon = MockPokemon.new(:PIKACHU, 25, 0, 0, [31, 31, 31, 31, 31, 31], 4, 0, [:THUNDERBOLT, :QUICKATTACK, :IRONTAIL, :VOLTTACKLE], mock_owner)
-    $game_map = MockMap.new(TEST_MAP1)
 
-    trainer = Trainer.new("Red", :POKEMONTRAINER)
+    trainer = Trainer.new("Red", :POKEMONTRAINER_Red)
     trainer.register_seen_shadow(mock_pokemon)
     assert_equal(false, trainer.shadow_seen[:PIKACHU].snagged)
     assert_equal(false, trainer.shadow_seen[:PIKACHU].purified)

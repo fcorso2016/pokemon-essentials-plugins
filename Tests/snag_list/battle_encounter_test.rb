@@ -10,14 +10,11 @@ require_relative '../test_helper'
       Compiler.main
       Game.initialize
       Game.set_up_system
-      SaveData.load_new_game_values
+      Game.start_new
       require_relative 'mocks'
     end
 
     def setup
-      $player = Trainer.new("Red", :POKEMONTRAINER)
-      $game_map = MockMap.new("Test Map")
-
       mock_poke1 = Minitest::Mock.new
       def mock_poke1.item_id; return 0; end
       mock_poke2 = Minitest::Mock.new
@@ -28,6 +25,8 @@ require_relative '../test_helper'
 
     def teardown
       @battle.caughtPokemon.clear
+      $player.snag_order.clear
+      $player.shadow_seen.clear
     end
 
     def test_on_battle_entry_without_shadow
