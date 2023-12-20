@@ -16,7 +16,7 @@ $game_screen: Game_Screen
 $game_map: Game_Map
 $game_player: Game_Player
 
-$scene: _Scene
+$scene: _Scene?
 $PokemonSystem: PokemonSystem
 $PokemonGlobal: PokemonGlobalMetadata
 $PokemonMap: PokemonMapMetadata
