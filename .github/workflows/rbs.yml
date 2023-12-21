@@ -6,8 +6,8 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloud:
-    name: SonarCloud
+  steep:
+    name: Steep
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
