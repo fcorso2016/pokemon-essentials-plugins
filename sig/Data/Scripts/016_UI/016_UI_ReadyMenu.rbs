@@ -59,9 +59,11 @@ end
 #
 # ==============================================================================
 class PokemonReadyMenu
-  include _PokeScreen[PokemonReadyMenu_Scene]
+  include _PokeScreen
 
   @scene: PokemonReadyMenu_Scene
+
+  def initialize: (PokemonReadyMenu_Scene scene) -> void
 
   def pbHideMenu: () -> void
 

@@ -66,10 +66,12 @@ end
 #
 # ==============================================================================
 class PokemonLoadScreen
-  include _PokeScreen[PokemonLoad_Scene]
+  include _PokeScreen
 
   @save_data: Hash[untyped, untyped]
   @scene: PokemonLoad_Scene
+
+  def initialize: (PokemonLoad_Scene scene) -> void
 
   # @param file_path [String] file to load save data from
   # @return [Hash] save data

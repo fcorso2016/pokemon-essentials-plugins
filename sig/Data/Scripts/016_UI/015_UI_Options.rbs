@@ -155,9 +155,11 @@ end
 #
 # ==============================================================================
 class PokemonOptionScreen
-  include _PokeScreen[PokemonOption_Scene]
+  include _PokeScreen
 
   @scene: PokemonOption_Scene
+
+  def initialize: (PokemonOption_Scene scene) -> void
 
   def pbStartScreen: (?bool in_load_screen) -> void
 end

@@ -155,7 +155,7 @@ end
 #
 # ==============================================================================
 class PokemonMartScreen
-  include _PokeScreen[PokemonMart_Scene]
+  include _PokeScreen
 
   @adapter: PokemonMartAdapter
   @scene: PokemonMart_Scene

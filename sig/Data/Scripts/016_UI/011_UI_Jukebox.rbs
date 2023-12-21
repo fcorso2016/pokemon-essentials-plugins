@@ -21,7 +21,9 @@ end
 #
 # ==============================================================================
 class PokemonJukeboxScreen
-  include _PokeScreen[PokemonJukebox_Scene]
+  include _PokeScreen
+
+  def initialize: (PokemonJukebox_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end

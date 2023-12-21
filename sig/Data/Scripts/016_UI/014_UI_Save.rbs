@@ -32,9 +32,11 @@ end
 #
 # ==============================================================================
 class PokemonSaveScreen
-  include _PokeScreen[PokemonSave_Scene]
+  include _PokeScreen
 
   @scene: PokemonSave_Scene
+
+  def initialize: (PokemonSave_Scene screen) -> void
 
   def pbDisplay: (String text, ?bool brief) -> void
 

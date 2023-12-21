@@ -119,7 +119,7 @@ end
 #
 # ==============================================================================
 class PokemonSummaryScreen
-  include _PokeScreen[PokemonSummary_Scene]
+  include _PokeScreen
 
   @inbattle: bool
   @scene: PokemonSummary_Scene

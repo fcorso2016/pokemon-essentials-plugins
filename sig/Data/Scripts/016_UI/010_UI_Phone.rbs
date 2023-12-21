@@ -31,9 +31,11 @@ end
 #
 # ==============================================================================
 class PokemonPhoneScreen
-  include _PokeScreen[PokemonPhone_Scene]
+  include _PokeScreen
 
   @scene: PokemonPhone_Scene
+
+  def initialize: (PokemonPhone_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end

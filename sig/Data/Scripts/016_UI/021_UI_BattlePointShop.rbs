@@ -64,7 +64,7 @@ end
 #
 # ==============================================================================
 class BattlePointShopScreen
-  include _PokeScreen[BattlePointShop_Scene]
+  include _PokeScreen
 
   @adapter: BattlePointShopAdapter
   @scene: BattlePointShop_Scene

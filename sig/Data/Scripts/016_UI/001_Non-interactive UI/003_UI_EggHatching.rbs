@@ -36,9 +36,11 @@ end
 #
 # ==============================================================================
 class PokemonEggHatchScreen
-  include _PokeScreen[PokemonEggHatch_Scene]
+  include _PokeScreen
 
   @scene: PokemonEggHatch_Scene
+
+  def initialize: (PokemonEggHatch_Scene scene) -> void
 
   def pbStartScreen: (Pokemon pokemon) -> void
 end

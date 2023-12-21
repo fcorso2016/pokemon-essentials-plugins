@@ -269,7 +269,7 @@ end
 # PokÃ©mon storage mechanics
 # ==============================================================================
 class PokemonStorageScreen
-  include _PokeScreen[PokemonStorageScene]
+  include _PokeScreen
   include _PokeUpdatable
 
   @pbHeldPokemon: Pokemon?

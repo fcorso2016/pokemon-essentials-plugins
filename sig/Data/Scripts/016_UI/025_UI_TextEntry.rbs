@@ -135,9 +135,11 @@ end
 #
 # ==============================================================================
 class PokemonEntry
-  include _PokeScreen[PokemonEntryScene]
+  include _PokeScreen
 
   @scene: PokemonEntryScene
+
+  def initialize: (PokemonEntryScene scene) -> void
 
   def pbStartScreen: (String helptext, Integer minlength, Integer maxlength, String initialText, ?Integer mode, ?(Pokemon | _ToS)? pokemon) -> String
 end

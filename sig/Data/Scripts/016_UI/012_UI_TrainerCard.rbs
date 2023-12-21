@@ -19,9 +19,11 @@ end
 #
 # ==============================================================================
 class PokemonTrainerCardScreen
-  include _PokeScreen[PokemonTrainerCard_Scene]
+  include _PokeScreen
 
   @scene: PokemonTrainerCard_Scene
+
+  def initialize: (PokemonTrainerCard_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end

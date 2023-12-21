@@ -4,9 +4,7 @@ interface _Scene
 
 end
 
-interface _Screen[T < _Scene]
-
-  def initialize: (T) -> void
+interface _Screen
 
 end
 

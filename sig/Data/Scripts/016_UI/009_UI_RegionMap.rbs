@@ -85,9 +85,11 @@ end
 #
 # ==============================================================================
 class PokemonRegionMapScreen
-  include _PokeScreen[PokemonRegionMap_Scene]
+  include _PokeScreen
 
   @scene: PokemonRegionMap_Scene
+
+  def initialize: (PokemonRegionMap_Scene scene) -> void
 
   def pbStartFlyScreen: () -> void
 

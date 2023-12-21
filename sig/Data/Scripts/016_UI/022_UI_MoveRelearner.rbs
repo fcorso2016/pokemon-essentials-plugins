@@ -30,9 +30,11 @@ end
 # Screen class for handling game logic
 # ==============================================================================
 class MoveRelearnerScreen
-  include _PokeScreen[MoveRelearner_Scene]
+  include _PokeScreen
 
   @scene: MoveRelearner_Scene
+
+  def initialize: (MoveRelearner_Scene scene) -> void
 
   def pbGetRelearnableMoves: (Pokemon pkmn) -> Array[Symbol]
 

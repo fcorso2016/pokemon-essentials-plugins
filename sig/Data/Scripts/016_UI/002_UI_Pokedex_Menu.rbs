@@ -33,15 +33,17 @@ class PokemonPokedexMenu_Scene
   def pbScene: -> Integer
 end
 
-interface _PokeScreen[T < _Scene]
-  include _Screen[T]
+interface _PokeScreen
+  include _Screen
 end
 
 # ==============================================================================
 #
 # ==============================================================================
 class PokemonPokedexMenuScreen
-  include _PokeScreen[PokemonPokedexMenu_Scene]
+  include _PokeScreen
+
+  def initialize: (PokemonPokedexMenu_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end

@@ -132,7 +132,9 @@ end
 #
 # ==============================================================================
 class PokemonPokedexScreen
-  include _PokeScreen[PokemonPokedex_Scene]
+  include _PokeScreen
+
+  def initialize: (PokemonPokedex_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end

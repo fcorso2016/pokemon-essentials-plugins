@@ -58,9 +58,11 @@ end
 #
 # ==============================================================================
 class PokemonPokedexInfoScreen
-  include _PokeScreen[PokemonPokedexInfo_Scene]
+  include _PokeScreen
 
   @scene: PokemonPokedexInfo_Scene
+
+  def initialize: (PokemonPokedexInfo_Scene scene) -> void
 
   def pbStartScreen: (Array[PokemonPokedex_Scene::dex_option] dexlist, Integer index, Integer region) -> void
 

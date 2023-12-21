@@ -25,9 +25,11 @@ end
 #
 # ==============================================================================
 class RelicStoneScreen
-  include _Screen[RelicStoneScene]
+  include _Screen
 
   @scene: RelicStoneScene
+
+  def initialize: (RelicStoneScene) -> void
 
   def pbDisplay: (Integer x) -> void
 

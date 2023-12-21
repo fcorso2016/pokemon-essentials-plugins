@@ -133,7 +133,7 @@ end
 #
 # ==============================================================================
 class PurifyChamberScreen
-  include _PokeScreen[PurifyChamberScene]
+  include _PokeScreen
   include _PokeRefreshable
 
   @chamber: PurifyChamber

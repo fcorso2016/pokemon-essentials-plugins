@@ -87,7 +87,7 @@ end
 # Bag mechanics
 # ==============================================================================
 class PokemonBagScreen
-  include _PokeScreen[PokemonBag_Scene]
+  include _PokeScreen
 
   @bag: PokemonBag
 

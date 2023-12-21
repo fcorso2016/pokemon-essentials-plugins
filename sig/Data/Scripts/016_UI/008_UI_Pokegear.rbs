@@ -46,9 +46,11 @@ end
 #
 # ==============================================================================
 class PokemonPokegearScreen
-  include _PokeScreen[PokemonPokegear_Scene]
+  include _PokeScreen
 
   @scene: PokemonPokegear_Scene
+
+  def initialize: (PokemonPokegear_Scene scene) -> void
 
   def pbStartScreen: () -> void
 end
