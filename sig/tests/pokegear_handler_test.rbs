@@ -1,4 +1,4 @@
-class PokegearHandlerTest
+﻿class PokegearHandlerTest
   @sample_pokemon: Pokemon
 
   def before_setup: -> void

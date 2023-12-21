@@ -1,4 +1,4 @@
-interface _CheckedDisposable
+﻿interface _CheckedDisposable
   include _Disposable
 
   def disposed?: -> bool

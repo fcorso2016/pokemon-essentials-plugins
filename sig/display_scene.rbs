@@ -1,4 +1,4 @@
-interface _DisplayScene
+﻿interface _DisplayScene
 
   def pbDisplay: (String msg) -> void
 

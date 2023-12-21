@@ -1,4 +1,4 @@
-interface _Refreshable
+﻿interface _Refreshable
 
   def refresh: () -> void
 

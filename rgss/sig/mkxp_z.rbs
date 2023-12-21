@@ -1,4 +1,4 @@
-module MKXP_Z
+﻿module MKXP_Z
   def init_game_state: (?visible: bool) -> void
   def start_event_loop: () -> void
 end

@@ -1,4 +1,4 @@
-module Scripts
+﻿module Scripts
   def self.get_scripts: (path: String)-> Array[string]
 
   def self.load_scripts: -> void
