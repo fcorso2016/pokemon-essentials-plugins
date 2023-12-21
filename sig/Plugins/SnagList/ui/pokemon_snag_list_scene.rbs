@@ -1,4 +1,4 @@
-﻿class PokemonSnagListScene
+class PokemonSnagListScene
   SPECIES_NAME_REGEX: String
 
   @hw_bitmap: AnimatedBitmap
@@ -45,3 +45,5 @@
 
   def on_window_cancel: (Integer page) -> void
 end
+
+

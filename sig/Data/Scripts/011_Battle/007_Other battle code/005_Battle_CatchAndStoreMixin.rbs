@@ -1,4 +1,4 @@
-﻿module Battle::CatchAndStoreMixin
+module Battle::CatchAndStoreMixin
   @criticalCapture: bool
 
   @decision: Integer
@@ -8,20 +8,20 @@
   @poke_ball_failed: bool
 
   # ============================================================================
-  # Store caught Pokémon
+  # Store caught PokÃ©mon
   # ============================================================================
   def pbStorePokemon: (Pokemon pkmn) -> void
 
-  # Register all caught Pokémon in the Pokédex, and store them.
+  # Register all caught PokÃ©mon in the PokÃ©dex, and store them.
   def pbRecordAndStoreCaughtPokemon: () -> void
 
   # ============================================================================
-  # Throw a Poké Ball
+  # Throw a PokÃ© Ball
   # ============================================================================
   def pbThrowPokeBall: (Integer idxBattler, Symbol ball, ?Integer? catch_rate, ?bool showPlayer) -> void
 
   # ============================================================================
-  # Calculate how many shakes a thrown Poké Ball will make (4 = capture)
+  # Calculate how many shakes a thrown PokÃ© Ball will make (4 = capture)
   # ============================================================================
   def pbCaptureCalc: (Pokemon pkmn, Battle::Battler battler, Integer catch_rate, Symbol ball) -> Integer
 end
@@ -32,3 +32,5 @@ end
 class Battle
   include CatchAndStoreMixin
 end
+
+

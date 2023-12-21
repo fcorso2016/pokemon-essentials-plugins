@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class TilemapRenderer
@@ -103,3 +103,5 @@ class TilemapRenderer
     def set_bitmap: (String filename, Integer tile_id, bool autotile, bool animated, Integer priority, Bitmap bitmap) -> true
   end
 end
+
+

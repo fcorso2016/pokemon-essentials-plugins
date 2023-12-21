@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -61,3 +61,5 @@ module MapFactoryHelper
   def self.mapInRange?: (Game_Map map) -> bool
   def self.mapInRangeById?: (Integer id, Integer dispx, Integer dispy) -> bool
 end
+
+

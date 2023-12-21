@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class WindowCursorRect
@@ -48,3 +48,5 @@ class Window
   def tileBitmap: (Bitmap dstbitmap, Rect dstrect, Bitmap? srcbitmap, Rect srcrect) -> void
   def privRefresh: (?bool changeBitmap) -> void
 end
+
+

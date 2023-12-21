@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -65,3 +65,5 @@ class GifBitmap
   def initialize: (String dir, String filename, ?Integer hue) -> void
   def copy: -> GifBitmap
 end
+
+

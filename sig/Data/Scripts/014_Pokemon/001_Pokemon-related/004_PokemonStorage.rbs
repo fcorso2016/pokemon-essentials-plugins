@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class PokemonBox
@@ -153,11 +153,13 @@ class Object
   def pbLockWallpaper: (Integer index) -> void
 
   # ==============================================================================
-  # Look through Pokémon in storage
+  # Look through PokÃ©mon in storage
   # ==============================================================================
-  # Yields every Pokémon/egg in storage in turn.
+  # Yields every PokÃ©mon/egg in storage in turn.
   def pbEachPokemon: () { (Pokemon, Integer) -> void } -> void
 
-  # Yields every Pokémon in storage in turn.
+  # Yields every PokÃ©mon in storage in turn.
   def pbEachNonEggPokemon: () { (Pokemon, Integer) -> void } -> void
 end
+
+

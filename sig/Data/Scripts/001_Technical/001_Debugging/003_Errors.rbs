@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -15,3 +15,5 @@ class EventScriptError < Exception
   attr_accessor event_message: String
   def initialize: (String message) -> void
 end
+
+

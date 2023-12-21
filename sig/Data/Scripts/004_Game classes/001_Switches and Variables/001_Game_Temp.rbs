@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Temp
@@ -40,3 +40,5 @@ class Game_Temp
   def initialize: -> void
   def clear_mart_prices: -> void
 end
+
+

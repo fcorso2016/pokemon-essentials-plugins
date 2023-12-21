@@ -1,5 +1,5 @@
-﻿# ==============================================================================
-# Simple battler class for the wild Pokémon in a Safari Zone battle
+# ==============================================================================
+# Simple battler class for the wild PokÃ©mon in a Safari Zone battle
 # ==============================================================================
 class Battle::FakeBattler
   include _BattlerBase
@@ -36,7 +36,7 @@ class Battle::Scene::SafariDataBox < Sprite
 end
 
 # ==============================================================================
-# Shows the player throwing bait at a wild Pokémon in a Safari battle.
+# Shows the player throwing bait at a wild PokÃ©mon in a Safari battle.
 # ==============================================================================
 class Battle::Scene::Animation::ThrowBait < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -46,7 +46,7 @@ class Battle::Scene::Animation::ThrowBait < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows the player throwing a rock at a wild Pokémon in a Safari battle.
+# Shows the player throwing a rock at a wild PokÃ©mon in a Safari battle.
 # ==============================================================================
 class Battle::Scene::Animation::ThrowRock < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -132,3 +132,5 @@ class SafariBattle
   # ----------------------------------------------------------------------------
   def pbEscapeRate: (Integer catch_rate) -> Integer
 end
+
+

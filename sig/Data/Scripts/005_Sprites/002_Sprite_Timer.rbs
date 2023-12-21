@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Sprite_Timer
@@ -12,3 +12,5 @@ class Sprite_Timer
 
   def initialize: (?Viewport? viewport) -> void
 end
+
+

@@ -1,7 +1,9 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module Kernel
   private
   def validate: (Hash[Object, Class | Array[Class] | Symbol] value_pairs) -> void
 end
+
+

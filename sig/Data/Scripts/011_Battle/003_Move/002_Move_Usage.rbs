@@ -1,4 +1,4 @@
-﻿class Battle::Move
+class Battle::Move
   # ============================================================================
   # Effect methods per move usage
   # ============================================================================
@@ -123,3 +123,5 @@
   # Used by Counter/Mirror Coat/Metal Burst/Revenge/Focus Punch/Bide/Assurance.
   def pbRecordDamageLost: (Battle::Battler user, Battle::Battler target) -> void
 end
+
+

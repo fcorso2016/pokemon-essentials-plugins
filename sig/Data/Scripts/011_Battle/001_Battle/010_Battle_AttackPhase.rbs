@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -12,3 +12,5 @@ class Battle
   def pbAttackPhaseMoves: -> void
   def pbAttackPhase: -> void
 end
+
+

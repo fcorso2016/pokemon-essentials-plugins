@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 interface _CharacterDependentSprite
@@ -21,3 +21,5 @@ class Sprite_Reflection
   attr_reader visible: bool
   def initialize: (Sprite_Character parent_sprite, ?Viewport? viewport) -> void
 end
+
+

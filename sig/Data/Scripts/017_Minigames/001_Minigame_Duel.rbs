@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # "Duel" mini-game
 # Based on the Duel minigame by Alael
 # ==============================================================================
@@ -55,3 +55,5 @@ class Object
   # speeches - Array of 12 speeches
   def pbDuel: (untyped trainer_id, untyped trainer_name, untyped event, untyped speeches) -> untyped
 end
+
+

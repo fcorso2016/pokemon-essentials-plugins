@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module Kernel
@@ -35,3 +35,5 @@ module Console
   def self?.markup_breakdown: (String string, ?Hash[String, Hash[Symbol, String]] options) -> [String, Hash[String, Hash[Symbol, String]]]
   def self?.markup: (String string) -> String
 end
+
+

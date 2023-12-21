@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -75,3 +75,5 @@ module GameData
     def get_property_for_PBS: [T] (String key) -> T?
   end
 end
+
+

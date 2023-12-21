@@ -1,4 +1,4 @@
-﻿class Battle::Scene
+class Battle::Scene
   @battle: Battle?
   @animations: Array[Animation]
   @lastCmd: Array[Integer]
@@ -22,3 +22,5 @@
 
   def pbCreatePokemonSprite: (Integer idxBattler) -> void
 end
+
+

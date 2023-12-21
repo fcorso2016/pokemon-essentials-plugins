@@ -1,4 +1,4 @@
-﻿class Battle::Move
+class Battle::Move
   attr_reader battle: Battle
 
   attr_reader realMove: Pokemon::Move
@@ -146,7 +146,7 @@
 
   def preventsBattlerConsumingHealingBerry?: (Battle::Battler battler, Array[Integer] targets) -> boolish
 
-  # user is the Pokémon using this move.
+  # user is the PokÃ©mon using this move.
   def ignoresSubstitute?: (Battle::Battler? user) -> bool
 
   def display_type: (Battle::Battler battler) -> Symbol
@@ -157,3 +157,5 @@
 
   def display_accuracy: (Battle::Battler battler) -> Integer
 end
+
+

@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Get move's user
   # ============================================================================
@@ -27,3 +27,5 @@
 
   def pbAddTargetRandomFoe: (Array[Battle::Battler] targets, Battle::Battler user, Battle::Move move, ?bool nearOnly) -> void
 end
+
+

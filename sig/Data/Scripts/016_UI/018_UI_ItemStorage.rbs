@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Window_PokemonItemStorage < Window_DrawableCommand
@@ -91,3 +91,5 @@ module UIHelper
 
   def self.pbShowCommands: (Window_AdvancedTextPokemon helpwindow, String helptext, Array[String] commands, ?Integer initcmd) { () -> void } -> Integer
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -15,3 +15,5 @@ class Battle
   def pbCalculatePriority: (?bool fullCalc, ?Array[Integer] indexArray) -> void
   def pbPriority: (?bool onlySpeedSort) -> Array[Battler]
 end
+
+

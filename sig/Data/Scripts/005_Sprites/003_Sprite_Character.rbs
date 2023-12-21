@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class BushBitmap
@@ -35,3 +35,5 @@ class Sprite_Character < RPG::Sprite
   def groundY: -> Numeric
   def refresh_graphic: -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Rect
@@ -13,3 +13,5 @@ class Rect
   attr_accessor width: Integer
   attr_accessor height: Integer
 end
+
+

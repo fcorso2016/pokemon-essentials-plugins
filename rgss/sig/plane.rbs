@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Plane
@@ -21,3 +21,5 @@ class Plane
   attr_accessor color: Color
   attr_accessor tone: Tone
 end
+
+

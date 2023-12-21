@@ -1,4 +1,4 @@
-﻿class Battle::Move
+class Battle::Move
   # ============================================================================
   # Move's type calculation
   # ============================================================================
@@ -61,3 +61,5 @@
   #       not here.
   def pbFlinchChance: (Battle::Battler user, Battle::Battler target) -> Integer
 end
+
+

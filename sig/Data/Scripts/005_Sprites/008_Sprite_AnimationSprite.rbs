@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class SpriteAnimation
@@ -66,3 +66,5 @@ class Spriteset_Map
   def addUserAnimation: (Integer animID, Integer x, Integer y, ?bool tinting, ?Integer height) -> AnimationContainerSprite
   def addUserSprite: (AnimationContainerSprite new_sprite) -> void
 end
+
+

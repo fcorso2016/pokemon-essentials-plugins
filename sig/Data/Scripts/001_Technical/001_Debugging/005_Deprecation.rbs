@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Module
@@ -9,3 +9,5 @@ end
 module Deprecation
   def self?.warn_method: (String method_name, ?String? removal_version, ?String? alternative) -> void
 end
+
+

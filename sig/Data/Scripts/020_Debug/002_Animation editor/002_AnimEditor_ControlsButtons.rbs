@@ -1,4 +1,4 @@
-﻿module BattleAnimationEditor
+module BattleAnimationEditor
   # ============================================================================
   #
   # ============================================================================
@@ -324,3 +324,5 @@
     def value: (untyped i) -> (false | untyped)
   end
 end
+
+

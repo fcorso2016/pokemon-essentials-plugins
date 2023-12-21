@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Character
@@ -154,3 +154,5 @@ class Game_Character
   def update_stop: -> void
   def update_pattern: -> void
 end
+
+

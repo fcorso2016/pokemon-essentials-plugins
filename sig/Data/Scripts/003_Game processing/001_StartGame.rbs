@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 interface _Scene
 
@@ -19,3 +19,5 @@ module Game
   def self.load_map: -> void
   def self.save: (?String save_file, ?bool safe) -> bool
 end
+
+

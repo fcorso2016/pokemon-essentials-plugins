@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -23,3 +23,5 @@ class Battle
   def pbEffectsOnBattlerEnteringPosition: (Battler battler) -> void
   def pbEntryHazards: (Battler battler) -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Success state
 # ==============================================================================
 class Battle::SuccessState
@@ -60,3 +60,5 @@ class Battle::Scene
 
   def pbBattleArenaJudgment: (Battle::Battler battler1, Battle::Battler battler2, [Integer, Integer, Integer] ratings1, [Integer, Integer, Integer] ratings2) -> void
 end
+
+

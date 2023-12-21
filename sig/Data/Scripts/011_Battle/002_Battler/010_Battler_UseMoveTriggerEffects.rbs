@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Effect per hit
   # ============================================================================
@@ -15,3 +15,5 @@
   # Everything in this method is negated by Sheer Force.
   def pbEffectsAfterMove3: (Battle::Battler user, Array[Integer] targets, Battle::Move move, Integer numHits, Array[Integer] switched_battlers) -> void
 end
+
+

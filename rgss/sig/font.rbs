@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Font
@@ -23,3 +23,5 @@ class Font
   attr_accessor out_color: Color
 
 end
+
+

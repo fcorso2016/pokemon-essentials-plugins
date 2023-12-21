@@ -1,4 +1,4 @@
-﻿module BattleAnimationEditor
+module BattleAnimationEditor
   # ============================================================================
   # Controls
   # ============================================================================
@@ -231,3 +231,5 @@
     def disposed: () -> untyped
   end
 end
+
+

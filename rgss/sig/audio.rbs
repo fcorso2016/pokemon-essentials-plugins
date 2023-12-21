@@ -1,4 +1,4 @@
-﻿module Audio
+module Audio
   def setup_midi: -> void
 
   def bgm_play: (String filename,  Integer ?volume, Integer ?pitch, Integer ?pos, Integer? track) -> void
@@ -19,4 +19,6 @@
   def se_play: (String filename, Integer ?volume, Integer ?pitch) -> void
   def se_stop: -> void
 end
+
+
 

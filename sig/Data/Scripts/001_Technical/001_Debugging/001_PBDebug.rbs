@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module PBDebug
@@ -13,3 +13,5 @@ module PBDebug
   def self.log_score_change: (Integer amt, String msg) -> void
   def self.dump: (String msg) -> void
 end
+
+

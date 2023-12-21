@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Table
@@ -10,3 +10,5 @@ class Table
   def []: (Integer x, ?Integer y, ?Integer z) -> Integer
   def []=: (Integer x, ?Integer y, ?Integer z, ?Integer value) -> Integer
 end
+
+

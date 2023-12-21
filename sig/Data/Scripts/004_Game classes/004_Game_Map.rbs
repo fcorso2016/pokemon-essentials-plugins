@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -97,3 +97,5 @@ class Game_Map
   def refresh: -> void
   def update: -> void
 end
+
+

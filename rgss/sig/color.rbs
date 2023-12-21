@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Color
@@ -12,3 +12,5 @@ class Color
   attr_accessor blue: Numeric
   attr_accessor alpha: Numeric
 end
+
+

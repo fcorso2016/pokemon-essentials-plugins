@@ -1,4 +1,4 @@
-﻿class Game_Temp
+class Game_Temp
   attr_accessor warned_low_battery: bool
 
   attr_accessor cue_bgm: RPG::AudioFile
@@ -106,8 +106,8 @@ module PBMoveRoute
 end
 
 class Object
-  # Returns whether the Poké Center should explain Pokérus to the player, if a
-  # healed Pokémon has it.
+  # Returns whether the PokÃ© Center should explain PokÃ©rus to the player, if a
+  # healed PokÃ©mon has it.
   def pbPokerus?: () -> bool
 
   def pbBatteryLow?: () -> bool
@@ -196,3 +196,5 @@ class Object
   # ==============================================================================
   def pbBuyPrize: (Symbol | String | GameData::Item item, ?Integer quantity) -> bool
 end
+
+

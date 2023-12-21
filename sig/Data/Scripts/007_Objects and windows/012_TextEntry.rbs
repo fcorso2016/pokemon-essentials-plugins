@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class CharacterEntryHelper
@@ -75,3 +75,5 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   def updateCursorPos: (bool doRefresh) -> void
   def moveCursor: (Integer lineOffset, Integer columnOffset) -> void
 end
+
+

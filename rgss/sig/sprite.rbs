@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Sprite
@@ -45,3 +45,5 @@ class Sprite
   attr_accessor pattern_zoom_y: Float
   attr_accessor invert: bool
 end
+
+

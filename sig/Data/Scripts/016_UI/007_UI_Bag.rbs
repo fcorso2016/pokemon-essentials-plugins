@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Window_PokemonBag < Window_DrawableCommand
@@ -113,3 +113,5 @@ class PokemonBagScreen
   # UI logic for tossing an item in the item storage screen.
   def pbTossItemScreen: () -> void
 end
+
+

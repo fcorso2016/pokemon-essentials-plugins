@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class FollowerData
@@ -79,3 +79,5 @@ module Followers
   def self?.hide_followers: -> void
   def self?.put_followers_on_player: -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Global variables
 # Classes
@@ -17,3 +17,5 @@ class Game_Temp
   attr_accessor move_to_battle_animation_data: [Hash[Symbol, Integer], Hash[Symbol, Integer]]?
   attr_accessor map_infos: Hash[Integer, RPG::MapInfo]?
 end
+
+

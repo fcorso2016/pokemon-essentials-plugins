@@ -1,5 +1,5 @@
-﻿class Player < Trainer
-  # Represents the player's Pokédex.
+class Player < Trainer
+  # Represents the player's PokÃ©dex.
   class Pokedex
     include _Inspectable
 
@@ -17,13 +17,13 @@
     # @see #refresh_accessible_dexes
     attr_reader accessible_dexes: Array[Integer]
 
-    # Creates an empty Pokédex.
+    # Creates an empty PokÃ©dex.
     def initialize: () -> void
 
-    # Clears the Pokédex.
+    # Clears the PokÃ©dex.
     def clear: () -> void
 
-    # Sets the given species as seen in the Pokédex.
+    # Sets the given species as seen in the PokÃ©dex.
     # @param species [Symbol, GameData::Species] species to set as seen
     # @param should_refresh_dexes [Boolean] whether Dex accessibility should be recalculated
     def set_seen: (Symbol | GameData::Species species, ?bool should_refresh_dexes) -> void
@@ -47,39 +47,39 @@
     # @return [Boolean] whether the egg for the given species is seen
     def seen_egg?: (Symbol | GameData::Species species) -> bool
 
-    # Returns the amount of seen Pokémon.
-    # If a region ID is given, returns the amount of seen Pokémon
+    # Returns the amount of seen PokÃ©mon.
+    # If a region ID is given, returns the amount of seen PokÃ©mon
     # in that region.
     # @param dex [Integer] region ID
     def seen_count: (?Integer dex) -> Integer
 
-    # Returns whether there are any seen Pokémon.
-    # If a region is given, returns whether there are seen Pokémon
+    # Returns whether there are any seen PokÃ©mon.
+    # If a region is given, returns whether there are seen PokÃ©mon
     # in that region.
     # @param dex [Integer] region ID
-    # @return [Boolean] whether there are any seen Pokémon
+    # @return [Boolean] whether there are any seen PokÃ©mon
     def seen_any?: (?Integer dex) -> bool
 
     # Returns the amount of seen forms for the given species.
-    # @param species [Symbol, GameData::Species] Pokémon species
+    # @param species [Symbol, GameData::Species] PokÃ©mon species
     # @return [Integer] amount of seen forms
     def seen_forms_count: (Symbol | GameData::Species species) -> Integer
 
-    # @param species [Symbol, GameData::Species] Pokémon species
+    # @param species [Symbol, GameData::Species] PokÃ©mon species
     def last_form_seen: (Symbol | GameData::Species species) -> Integer
 
-    # @param species [Symbol, GameData::Species] Pokémon species
+    # @param species [Symbol, GameData::Species] PokÃ©mon species
     # @param gender [Integer] gender (0=male, 1=female, 2=genderless)
     # @param form [Integer] form number
     # @param shiny [Boolean] shininess
     def set_last_form_seen: (Symbol | GameData::Species species, ?Integer gender, ?Integer form, ?bool shiny) -> void
 
-    # Sets the given species as owned in the Pokédex.
+    # Sets the given species as owned in the PokÃ©dex.
     # @param species [Symbol, GameData::Species] species to set as owned
     # @param should_refresh_dexes [Boolean] whether Dex accessibility should be recalculated
     def set_owned: (Symbol | GameData::Species species, ?bool should_refresh_dexes) -> void
 
-    # Sets the given species as owned in the Pokédex.
+    # Sets the given species as owned in the PokÃ©dex.
     # @param species [Symbol, GameData::Species] species to set as owned
     def set_shadow_pokemon_owned: (Symbol | GameData::Species species) -> void
 
@@ -88,11 +88,11 @@
     def owned?: (Symbol | GameData::Species species) -> bool
 
     # @param species [Symbol, GameData::Species] species to check
-    # @return [Boolean] whether a Shadow Pokémon of the species is owned
+    # @return [Boolean] whether a Shadow PokÃ©mon of the species is owned
     def owned_shadow_pokemon?: (Symbol | GameData::Species species) -> bool
 
-    # Returns the amount of owned Pokémon.
-    # If a region ID is given, returns the amount of owned Pokémon
+    # Returns the amount of owned PokÃ©mon.
+    # If a region ID is given, returns the amount of owned PokÃ©mon
     # in that region.
     # @param dex [Integer] region ID
     def owned_count: (?Integer dex) -> Integer
@@ -108,17 +108,17 @@
     def register_last_seen: (Pokemon pkmn) -> void
 
     # @param species [Symbol, GameData::Species] species to check
-    # @return [Integer] the number of Pokémon of the given species that have
+    # @return [Integer] the number of PokÃ©mon of the given species that have
     #   been caught by the player
     def caught_count: (Symbol | GameData::Species species) -> Integer
 
     # @param species [Symbol, GameData::Species] species to check
-    # @return [Integer] the number of Pokémon of the given species that have
+    # @return [Integer] the number of PokÃ©mon of the given species that have
     #   been defeated by the player
     def defeated_count: (Symbol | GameData::Species species) -> Integer
 
     # @param species [Symbol, GameData::Species] species to check
-    # @return [Integer] the number of Pokémon of the given species that have
+    # @return [Integer] the number of PokÃ©mon of the given species that have
     #   been defeated or caught by the player
     def battled_count: (Symbol | GameData::Species species) -> Integer
 
@@ -162,3 +162,5 @@
     def count_species: (Hash[Symbol, bool] hash, ?Integer region) -> Integer
   end
 end
+
+

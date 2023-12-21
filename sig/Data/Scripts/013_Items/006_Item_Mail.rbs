@@ -1,5 +1,5 @@
-﻿# ==============================================================================
-# Data structure representing mail that the Pokémon can hold
+# ==============================================================================
+# Data structure representing mail that the PokÃ©mon can hold
 # ==============================================================================
 class Mail
   type pokemon_info = [Symbol, Integer, bool, Integer, bool, bool]
@@ -31,3 +31,5 @@ class Object
 
   def pbWriteMail: (Symbol item, Pokemon pkmn, Integer pkmnid, _Scene scene) -> bool
 end
+
+

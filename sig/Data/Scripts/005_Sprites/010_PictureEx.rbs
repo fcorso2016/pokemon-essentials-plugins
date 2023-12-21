@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -250,3 +250,5 @@ class PictureEx
     (Numeric delay, Numeric y, Method cb) -> void |
     (Numeric delay, Numeric y, [Object, String, Array[untyped]]) -> void
 end
+
+

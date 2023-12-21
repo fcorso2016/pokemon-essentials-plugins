@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module Graphics
@@ -442,3 +442,5 @@ module Transitions
     def update_anim: -> void
   end
 end
+
+

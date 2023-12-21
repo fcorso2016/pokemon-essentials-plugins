@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Bug-Catching Contest battle scene (the visuals of the battle)
 # ==============================================================================
 class Battle::Scene
@@ -18,3 +18,5 @@ class BugContestBattle < Battle
   attr_accessor ballCount: Integer
 
 end
+
+

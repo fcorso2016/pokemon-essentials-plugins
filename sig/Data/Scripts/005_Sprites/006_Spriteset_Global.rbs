@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Spriteset_Global
@@ -15,3 +15,5 @@ class Spriteset_Global
   attr_reader playersprite: Sprite_Character
   def initialize: -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Base class for all hardcoded battle animations.
 # ==============================================================================
 class Battle::Scene::Animation
@@ -26,13 +26,13 @@ class Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Mixin module for certain hardcoded battle animations that involve Poké Balls.
+# Mixin module for certain hardcoded battle animations that involve PokÃ© Balls.
 # ==============================================================================
 module Battle::Scene::Animation::BallAnimationMixin
   @ballSprite: PictureEx
 
-  # Returns the color that the Pokémon turns when it goes into or out of its
-  # Poké Ball.
+  # Returns the color that the PokÃ©mon turns when it goes into or out of its
+  # PokÃ© Ball.
   def getBattlerColorFromPokeBall: (Symbol poke_ball) -> Color
 
   def addBallSprite: (Integer ballX, Integer ballY, Symbol poke_ball) -> PictureEx
@@ -55,32 +55,34 @@ module Battle::Scene::Animation::BallAnimationMixin
 
   def battlerAbsorb: (PictureEx battler, Numeric delay, Integer battlerX, Integer battlerY, Color color) -> void
 
-  # NOTE: This array makes the Ball Burst animation differ between types of Poké
+  # NOTE: This array makes the Ball Burst animation differ between types of PokÃ©
   #       Ball in certain simple ways. The HGSS animations occasionally have
   #       additional differences, which haven't been coded yet in Essentials as
   #       they're more complex and I couldn't be bothered.
   BALL_BURST_VARIANCES: Hash[Symbol, Array[Tone | String]]
 
-  # The regular Poké Ball burst animation, for when a Pokémon appears from a
-  # Poké Ball.
+  # The regular PokÃ© Ball burst animation, for when a PokÃ©mon appears from a
+  # PokÃ© Ball.
   def ballBurst: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 
   # NOTE: This array makes the Ball Burst capture animation differ between types
-  #       of Poké Ball in certain simple ways. The HGSS animations occasionally
+  #       of PokÃ© Ball in certain simple ways. The HGSS animations occasionally
   #       have additional differences, which haven't been coded yet in
   #       Essentials as they're more complex and I couldn't be bothered.
   BALL_BURST_CAPTURE_VARIANCES: Hash[Symbol, Array[Tone | String]]
 
-  # The Poké Ball burst animation used when absorbing a wild Pokémon during a
+  # The PokÃ© Ball burst animation used when absorbing a wild PokÃ©mon during a
   # capture attempt.
   def ballBurstCapture: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 
-  # The animation shown over a thrown Poké Ball when it has successfully caught
-  # a Pokémon.
+  # The animation shown over a thrown PokÃ© Ball when it has successfully caught
+  # a PokÃ©mon.
   def ballCaptureSuccess: (PictureEx ball, Numeric delay, Integer ballX, Integer ballY) -> void
 
-  # The Poké Ball burst animation used when recalling a Pokémon. In HGSS, this
-  # is the same for all types of Poké Ball except for the color that the battler
+  # The PokÃ© Ball burst animation used when recalling a PokÃ©mon. In HGSS, this
+  # is the same for all types of PokÃ© Ball except for the color that the battler
   # turns - see def getBattlerColorFromPokeBall.
   def ballBurstRecall: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 end
+
+

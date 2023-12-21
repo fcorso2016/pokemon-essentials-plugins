@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # The Bag object, which actually contains all the items.
 # ==============================================================================
 class PokemonBag
@@ -119,3 +119,5 @@ module ItemStorageHelper
   # Deletes an item (items array, max. size per slot, item, no. of items to delete)
   def self.remove: (Array[[Symbol, Integer]]  items, Symbol item, Integer qty) -> bool
 end
+
+

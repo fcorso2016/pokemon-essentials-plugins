@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Variables
@@ -8,3 +8,5 @@ class Game_Variables
   def []: (Integer variable_id) -> Integer
   def []=: (Integer variable_id, Integer value) -> void
 end
+
+

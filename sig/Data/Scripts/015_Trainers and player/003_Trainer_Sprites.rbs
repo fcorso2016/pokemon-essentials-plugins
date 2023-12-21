@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Walking charset, for use in text entry screens and load game screen
 # ==============================================================================
 class TrainerWalkingCharSprite < Sprite
@@ -22,3 +22,5 @@ class TrainerWalkingCharSprite < Sprite
 
   def update_frame: () -> void
 end
+
+

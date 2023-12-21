@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Global metadata not specific to a map.  This class holds field state data that
 # span multiple maps.
 # ==============================================================================
@@ -39,7 +39,7 @@ class PokemonGlobalMetadata
 
   attr_accessor creditsPlayed: bool
 
-  # Pokédex
+  # PokÃ©dex
   attr_accessor pokedexDex: Integer
 
   attr_accessor pokedexIndex: Array[Integer]
@@ -133,3 +133,5 @@ class PokemonMapMetadata
 
   def updateMap: () -> void
 end
+
+

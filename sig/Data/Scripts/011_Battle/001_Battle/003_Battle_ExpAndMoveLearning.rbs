@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -6,3 +6,5 @@ class Battle
   def pbGainExpOne: (Integer idxParty, Battler defeatedBattler, Integer numPartic, Array[Integer] expShare, bool expAll, ?bool showMessages) -> void
   def pbLearnMove: (Integer idxParty, Symbol newMove) -> void
 end
+
+

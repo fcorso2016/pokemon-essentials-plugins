@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_CommonEvent
@@ -14,3 +14,5 @@ class Game_CommonEvent
   def refresh: -> void
   def update: -> void
 end
+
+

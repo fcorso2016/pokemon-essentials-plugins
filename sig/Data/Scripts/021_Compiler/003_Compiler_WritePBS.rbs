@@ -1,4 +1,4 @@
-﻿module Compiler
+module Compiler
   def self?.get_all_PBS_file_paths: (Class game_data) -> Array[[String, untyped]]
 
   def self?.add_PBS_header_to_file: (File file) -> void
@@ -45,14 +45,14 @@
   def self?.write_berry_plants: () -> void
 
   # ============================================================================
-  # Save Pokémon data to PBS file
+  # Save PokÃ©mon data to PBS file
   # NOTE: Doesn't use write_PBS_file_generic because it needs to ignore defined
   #       species with a form that isn't 0.
   # ============================================================================
   def self?.write_pokemon: () -> void
 
   # ============================================================================
-  # Save Pokémon forms data to PBS file
+  # Save PokÃ©mon forms data to PBS file
   # NOTE: Doesn't use write_PBS_file_generic because it needs to ignore defined
   #       species with a form of 0, and needs its own schema.
   # ============================================================================
@@ -67,7 +67,7 @@
   def self?.write_pokemon_metrics: () -> void
 
   # ============================================================================
-  # Save Shadow Pokémon data to PBS file
+  # Save Shadow PokÃ©mon data to PBS file
   # ============================================================================
   def self?.write_shadow_pokemon: () -> void
 
@@ -107,7 +107,7 @@
   def self?.write_battle_tower_trainers: (untyped bttrainers, untyped filename) -> void
 
   # ============================================================================
-  # Save Battle Tower Pokémon data to PBS file
+  # Save Battle Tower PokÃ©mon data to PBS file
   # ============================================================================
   def self?.write_battle_tower_pokemon: (untyped btpokemon, untyped filename) -> void
 
@@ -147,3 +147,5 @@
   # ============================================================================
   def self?.write_all: () -> void
 end
+
+

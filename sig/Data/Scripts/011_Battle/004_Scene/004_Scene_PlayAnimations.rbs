@@ -1,4 +1,4 @@
-﻿class Battle::Scene
+class Battle::Scene
   # ============================================================================
   # Animates the battle intro
   # ============================================================================
@@ -18,14 +18,14 @@
 
   # ============================================================================
   # Animates a trainer's sprite and party lineup hiding (if they are visible).
-  # Animates a Pokémon being sent out into battle, then plays the shiny
+  # Animates a PokÃ©mon being sent out into battle, then plays the shiny
   # animation for it if relevant.
   # sendOuts is an array; each element is itself an array: [idxBattler,pkmn]
   # ============================================================================
   def pbSendOutBattlers: (Array[[Integer, Pokemon]] sendOuts, ?bool startBattle) -> void
 
   # ============================================================================
-  # Animates a Pokémon being recalled into its Poké Ball and its data box hiding
+  # Animates a PokÃ©mon being recalled into its PokÃ© Ball and its data box hiding
   # ============================================================================
   def pbRecall: (Integer idxBattler) -> void
 
@@ -58,17 +58,17 @@
   def pbEXPBar: (Battle::Battler battler, Integer startExp, Integer endExp, Integer tempExp1, Integer tempExp2) -> void
 
   # ============================================================================
-  # Shows stats windows upon a Pokémon levelling up
+  # Shows stats windows upon a PokÃ©mon levelling up
   # ============================================================================
   def pbLevelUp: (Pokemon pkmn, Battle::Battler _battler, Integer oldTotalHP, Integer oldAttack, Integer oldDefense, Integer oldSpAtk, Integer oldSpDef, Integer oldSpeed) -> void
 
   # ============================================================================
-  # Animates a Pokémon fainting
+  # Animates a PokÃ©mon fainting
   # ============================================================================
   def pbFaintBattler: (Battle::Battler battler) -> void
 
   # ============================================================================
-  # Animates throwing a Poké Ball at a Pokémon in an attempt to catch it
+  # Animates throwing a PokÃ© Ball at a PokÃ©mon in an attempt to catch it
   # ============================================================================
   def pbThrow: (Symbol ball, Integer shakes, bool critical, Battle::Battler targetBattler, ?bool showPlayer) -> void
 
@@ -112,3 +112,5 @@
   # of "Front".
   def pbBallBurstCommonAnimation: (PictureEx _picture_ex, String anim_name, Battle::Battler battler, Integer target_x, Integer target_y) -> void
 end
+
+

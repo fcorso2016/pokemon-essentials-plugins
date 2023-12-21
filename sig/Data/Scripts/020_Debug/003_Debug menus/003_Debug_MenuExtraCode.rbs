@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Debug Variables screen
 # ==============================================================================
 class SpriteWindow_DebugVariables < Window_DrawableCommand
@@ -16,7 +16,7 @@ class SpriteWindow_DebugVariables < Window_DrawableCommand
 end
 
 # ==============================================================================
-# Debug roaming Pokémon screen
+# Debug roaming PokÃ©mon screen
 # ==============================================================================
 class SpriteWindow_DebugRoamers < Window_DrawableCommand
   def initialize: (untyped viewport) -> void
@@ -31,7 +31,7 @@ class SpriteWindow_DebugRoamers < Window_DrawableCommand
 end
 
 # ==============================================================================
-# Pseudo-party screen for editing Pokémon being set up for a wild battle
+# Pseudo-party screen for editing PokÃ©mon being set up for a wild battle
 # ==============================================================================
 class PokemonDebugPartyScreen
   include _Updatable
@@ -94,3 +94,5 @@ class Object
 
   def pbCheckTileValidity: (untyped tile_id, untyped map, untyped tilesets, untyped passages) -> bool
 end
+
+

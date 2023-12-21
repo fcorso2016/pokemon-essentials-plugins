@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Switches
@@ -8,3 +8,5 @@ class Game_Switches
   def []: (Integer switch_id) -> bool
   def []=: (Integer switch_id, bool value) -> void
 end
+
+

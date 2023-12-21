@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Follower
@@ -30,3 +30,5 @@ class Game_Follower
   private
   def location_passable?: (Integer x, Integer y,Integer direction) -> bool
 end
+
+

@@ -1,4 +1,4 @@
-﻿class Bitmap
+class Bitmap
   attr_accessor text_offset_y: Integer
 
   alias mkxp_draw_text draw_text
@@ -9,3 +9,5 @@ class Object
 
   def pbSetResizeFactor: (String factor) -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   def pbBaseStatTotal: (untyped species) -> untyped
 
   def baseStatTotal: (untyped species) -> untyped
@@ -24,7 +24,9 @@
   def hasMorePowerfulMove: (untyped moves, untyped thismove) -> bool
 
   # ==============================================================================
-  # Generate a random Pokémon that adheres to the given rules.
+  # Generate a random PokÃ©mon that adheres to the given rules.
   # ==============================================================================
   def pbRandomPokemonFromRule: (untyped rules, untyped trainer) -> untyped
 end
+
+

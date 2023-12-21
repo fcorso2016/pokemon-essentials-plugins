@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -46,3 +46,5 @@ module GameData
     def call_after_evolution: [T] (Pokemon pkmn, Species new_species, T param, Species evo_species) -> bool?
   end
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class IconWindow < SpriteWindow_Base
@@ -20,3 +20,5 @@ class PictureWindow < SpriteWindow_Base
   def setBitmap: (String pat, ?Integer hue) -> void |
     (Bitmap | AnimatedBitmap bitmap, ?Integer hue) -> void
 end
+
+

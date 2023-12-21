@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   # ==============================================================================
   #
   # ==============================================================================
@@ -17,3 +17,5 @@
 
   def pbMissingTrainer: (Symbol | String | GameData::TrainerType tr_type, String tr_name, Integer tr_version) -> Integer
 end
+
+

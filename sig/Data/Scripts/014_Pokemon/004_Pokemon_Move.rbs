@@ -1,5 +1,5 @@
-﻿# ==============================================================================
-# Move objects known by Pokémon.
+# ==============================================================================
+# Move objects known by PokÃ©mon.
 # ==============================================================================
 class Pokemon
   class Move
@@ -77,3 +77,5 @@ class Pokemon
     def display_accuracy: (Pokemon pkmn) -> Integer
   end
 end
+
+

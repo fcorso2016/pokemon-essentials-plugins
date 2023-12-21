@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   # ==============================================================================
   # Given an array of trainers and the number of wins the player already has,
   # returns a random trainer index. The more wins, the later in the list the
@@ -12,7 +12,9 @@
   def pbGenerateBattleTrainer: (untyped idxTrainer, untyped rules) -> untyped
 
   # ==============================================================================
-  # Generate a full team's worth of Pokémon which obey the given rules.
+  # Generate a full team's worth of PokÃ©mon which obey the given rules.
   # ==============================================================================
   def pbBattleFactoryPokemon: (untyped rules, untyped win_count, untyped swap_count, untyped rentals) -> untyped
 end
+
+

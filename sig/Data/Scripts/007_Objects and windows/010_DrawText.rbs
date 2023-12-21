@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 FORMATREGEXP: Regexp
@@ -52,3 +52,5 @@ class Object
   def pbCopyBitmap: (Bitmap dstbm, Bitmap srcbm, Integer x, Integer y, ?Numeric opacity) -> void
   def pbDrawImagePositions: (Bitmap bitmap, Array[text_position] textpos) -> void
 end
+
+

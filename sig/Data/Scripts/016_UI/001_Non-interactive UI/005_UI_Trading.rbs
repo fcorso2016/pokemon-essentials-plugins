@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class PokemonTrade_Scene
@@ -32,3 +32,5 @@ class Object
   # ==============================================================================
   def pbStartTrade: (Integer pokemonIndex, Pokemon | Symbol | String | GameData::Species newpoke, String nickname, String trainerName, ?Integer trainerGender) -> void
 end
+
+

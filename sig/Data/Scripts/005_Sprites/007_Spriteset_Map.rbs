@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class ClippableSprite
@@ -32,3 +32,5 @@ class Spriteset_Map
   def getAnimations: -> AnimationContainerSprite?
   def restoreAnimations: (Array[AnimationContainerSprite] anims) -> void
 end
+
+

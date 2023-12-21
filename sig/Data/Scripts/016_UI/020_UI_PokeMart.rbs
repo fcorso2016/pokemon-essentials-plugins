@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Abstraction layer for Pokemon Essentials
 # ==============================================================================
 interface _StoreAdapter
@@ -86,7 +86,7 @@ class SellAdapter
 end
 
 # ==============================================================================
-# Pokémon Mart
+# PokÃ©mon Mart
 # ==============================================================================
 class Window_PokemonMart < Window_DrawableCommand
   @adapter: _Adapter
@@ -181,3 +181,5 @@ class Object
   # ==============================================================================
   def pbPokemonMart: (Array[Symbol | String | GameData::Item] stock, ?String? speech, ?bool cantsell) -> void
 end
+
+

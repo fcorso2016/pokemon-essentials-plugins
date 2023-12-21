@@ -1,4 +1,4 @@
-﻿module BattleAnimationEditor
+module BattleAnimationEditor
   # ============================================================================
   # Paths and interpolation
   # ============================================================================
@@ -68,3 +68,5 @@
 
   def self?.pbDefinePath: (untyped canvas) -> nil
 end
+
+

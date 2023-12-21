@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # No additional effect.
 # ==============================================================================
 class Battle::Move::None < Battle::Move
@@ -65,7 +65,7 @@ class Battle::Move::FailsIfTargetHasNoItem < Battle::Move
 end
 
 # ==============================================================================
-# Only damages Pokémon that share a type with the user. (Synchronoise)
+# Only damages PokÃ©mon that share a type with the user. (Synchronoise)
 # ==============================================================================
 class Battle::Move::FailsUnlessTargetSharesTypeWithUser < Battle::Move
 end
@@ -117,7 +117,7 @@ end
 
 # ==============================================================================
 # For 5 rounds, creates an electric terrain which boosts Electric-type moves and
-# prevents Pokémon from falling asleep. Affects non-airborne Pokémon only.
+# prevents PokÃ©mon from falling asleep. Affects non-airborne PokÃ©mon only.
 # (Electric Terrain)
 # ==============================================================================
 class Battle::Move::StartElectricTerrain < Battle::Move
@@ -125,7 +125,7 @@ end
 
 # ==============================================================================
 # For 5 rounds, creates a grassy terrain which boosts Grass-type moves and heals
-# Pokémon at the end of each round. Affects non-airborne Pokémon only.
+# PokÃ©mon at the end of each round. Affects non-airborne PokÃ©mon only.
 # (Grassy Terrain)
 # ==============================================================================
 class Battle::Move::StartGrassyTerrain < Battle::Move
@@ -133,7 +133,7 @@ end
 
 # ==============================================================================
 # For 5 rounds, creates a misty terrain which weakens Dragon-type moves and
-# protects Pokémon from status problems. Affects non-airborne Pokémon only.
+# protects PokÃ©mon from status problems. Affects non-airborne PokÃ©mon only.
 # (Misty Terrain)
 # ==============================================================================
 class Battle::Move::StartMistyTerrain < Battle::Move
@@ -141,8 +141,8 @@ end
 
 # ==============================================================================
 # For 5 rounds, creates a psychic terrain which boosts Psychic-type moves and
-# prevents Pokémon from being hit by >0 priority moves. Affects non-airborne
-# Pokémon only. (Psychic Terrain)
+# prevents PokÃ©mon from being hit by >0 priority moves. Affects non-airborne
+# PokÃ©mon only. (Psychic Terrain)
 # ==============================================================================
 class Battle::Move::StartPsychicTerrain < Battle::Move
 end
@@ -215,8 +215,10 @@ class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
 end
 
 # ==============================================================================
-# If a Pokémon makes contact with the user before it uses this move, the
+# If a PokÃ©mon makes contact with the user before it uses this move, the
 # attacker is burned. (Beak Blast)
 # ==============================================================================
 class Battle::Move::BurnAttackerBeforeUserActs < Battle::Move
 end
+
+

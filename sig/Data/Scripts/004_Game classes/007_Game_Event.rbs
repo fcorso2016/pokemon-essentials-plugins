@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Event
@@ -77,3 +77,5 @@ class Game_Event
   def update: -> void
   def update_move: -> void
 end
+
+

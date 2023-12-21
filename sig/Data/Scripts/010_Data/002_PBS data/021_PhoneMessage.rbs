@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -50,3 +50,5 @@ module GameData
     alias __orig__get_property_for_PBS get_property_for_PBS
   end
 end
+
+

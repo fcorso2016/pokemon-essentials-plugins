@@ -1,3 +1,5 @@
-﻿class Object
+class Object
   def pbRepel: (Symbol item, Integer steps) -> bool
 end
+
+

@@ -1,4 +1,4 @@
-﻿interface _BattlerBase
+interface _BattlerBase
   def battle: -> _BattleBase
   def index: -> Integer
   def pokemon: ->  Pokemon
@@ -59,7 +59,7 @@ class Battle::Battler
 
   attr_accessor index: Integer
 
-  # The Pokémon and its properties
+  # The PokÃ©mon and its properties
   attr_reader pokemon: Pokemon?
 
   attr_accessor pokemonIndex: Integer
@@ -192,7 +192,7 @@ class Battle::Battler
   def statusCount=: (Integer value) -> void
 
   # ============================================================================
-  # Properties from Pokémon
+  # Properties from PokÃ©mon
   # ============================================================================
   def happiness: () -> Integer
 
@@ -205,7 +205,7 @@ class Battle::Battler
   def pokerusStage: () -> Integer
 
   # ============================================================================
-  # Mega Evolution, Primal Reversion, Shadow Pokémon
+  # Mega Evolution, Primal Reversion, Shadow PokÃ©mon
   # ============================================================================
   def inHyperMode?: () -> bool
 
@@ -246,7 +246,7 @@ class Battle::Battler
   # ============================================================================
   def plainStats: () -> Hash[Symbol, Integer]
 
-  # Returns the active types of this Pokémon. The array should not include the
+  # Returns the active types of this PokÃ©mon. The array should not include the
   # same type more than once, and should not include any invalid types.
   def pbTypes: (?bool withExtraType) -> Array[Symbol]
 
@@ -254,10 +254,10 @@ class Battle::Battler
 
   def pbHasOtherType?: (Symbol `type`) -> bool
 
-  # NOTE: Do not create any held item which affects whether a Pokémon's ability
-  #       is active. The ability Klutz affects whether a Pokémon's item is
+  # NOTE: Do not create any held item which affects whether a PokÃ©mon's ability
+  #       is active. The ability Klutz affects whether a PokÃ©mon's item is
   #       active, and the code for the two combined would cause an infinite loop
-  #       (regardless of whether any Pokémon actually has either the ability or
+  #       (regardless of whether any PokÃ©mon actually has either the ability or
   #       the item - the code existing is enough to cause the loop).
   def abilityActive?: (?bool ignore_fainted, ?Symbol? check_ability) -> bool
 
@@ -278,7 +278,7 @@ class Battle::Battler
 
   alias hasWorkingItem hasActiveItem?
 
-  # Returns whether the specified item will be unlosable for this Pokémon.
+  # Returns whether the specified item will be unlosable for this PokÃ©mon.
   def unlosableItem?: (Symbol | String | GameData::Item check_item) -> bool
 
   def eachMove: () { (Battle::Move) -> void } -> void
@@ -363,24 +363,26 @@ class Battle::Battler
   # Returns the data structure for this battler's side.
   def pbOwnSide: () -> Battle::ActiveSide
 
-  # Returns the data structure for the opposing Pokémon's side.
+  # Returns the data structure for the opposing PokÃ©mon's side.
   def pbOpposingSide: () -> Battle::ActiveSide
 
-  # Yields each unfainted ally Pokémon.
+  # Yields each unfainted ally PokÃ©mon.
   # Unused
   def eachAlly: () { (Battle::Battler) -> void } -> void
 
-  # Returns an array containing all unfainted ally Pokémon.
+  # Returns an array containing all unfainted ally PokÃ©mon.
   def allAllies: () -> Array[Battle::Battler]
 
-  # Yields each unfainted opposing Pokémon.
+  # Yields each unfainted opposing PokÃ©mon.
   # Unused
   def eachOpposing: () { (Battle::Battler) -> void } -> void
 
-  # Returns an array containing all unfainted opposing Pokémon.
+  # Returns an array containing all unfainted opposing PokÃ©mon.
   def allOpposing: () -> Array[Battle::Battler]
 
   # Returns the battler that is most directly opposite to self. unfaintedOnly is
   # whether it should prefer to return a non-fainted battler.
   def pbDirectOpposing: (?bool unfaintedOnly) -> Battle::Battler
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Interpreter
@@ -69,3 +69,5 @@ class Interpreter
   def setPrice: (Symbol item, ?Integer buy_price, ?Integer sell_price) -> void
   def setSellPrice: (Symbol item, Integer sell_price) -> void
 end
+
+

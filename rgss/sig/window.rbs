@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Window
@@ -28,3 +28,5 @@ class Window
   attr_accessor back_opacity: Numeric
   attr_accessor contents_opacity: Numeric
 end
+
+

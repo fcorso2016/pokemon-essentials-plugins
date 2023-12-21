@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Superclass that handles moves using a non-existent function code.
 # Damaging moves just do damage with no additional effect.
 # Status moves always fail.
@@ -142,3 +142,5 @@ class Battle::Move::PledgeMove < Battle::Move
   def pbEffectAfterAllHits: (Battle::Battler user, Battle::Battler target) -> void
 
 end
+
+

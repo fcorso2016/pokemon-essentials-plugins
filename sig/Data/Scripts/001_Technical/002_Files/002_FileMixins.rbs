@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class File < IO
@@ -35,3 +35,5 @@ end
 class StringOutput
   include FileOutputMixin
 end
+
+

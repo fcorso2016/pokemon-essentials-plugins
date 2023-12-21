@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Bitmap
@@ -50,3 +50,5 @@ class Bitmap
   attr_accessor looping: bool
   attr_accessor frame_rate: Integer
 end
+
+

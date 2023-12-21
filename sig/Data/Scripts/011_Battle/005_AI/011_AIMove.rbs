@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Battle::AI::AIMove
@@ -59,3 +59,5 @@ class Battle::AI::AIMove
   #   Other: Amount to add to a move's score
   def get_score_change_for_additional_effect: (Battle::AI::AIBattler user, ?Battle::AI::AIBattler? target) -> Integer
 end
+
+

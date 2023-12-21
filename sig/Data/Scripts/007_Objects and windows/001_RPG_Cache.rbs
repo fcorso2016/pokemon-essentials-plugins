@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Hangup < Exception
@@ -26,3 +26,5 @@ class BitmapWrapper < Bitmap
   def copy: -> BitmapWrapper
   def addRef: -> void
 end
+
+

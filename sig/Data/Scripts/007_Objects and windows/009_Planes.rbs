@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Plane
@@ -22,3 +22,5 @@ class AnimatedPlane < Plane
   private
   def clear_bitmap: -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class BitmapSprite < Sprite
@@ -53,3 +53,5 @@ class ChangelingSprite < Sprite
   def addBitmap: (String key, String path) -> void
   def changeBitmap: (String key) -> void
 end
+
+

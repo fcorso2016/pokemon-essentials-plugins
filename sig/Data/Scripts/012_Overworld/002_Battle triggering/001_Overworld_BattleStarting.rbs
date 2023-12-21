@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Battle preparation
 # ==============================================================================
 class PokemonGlobalMetadata
@@ -38,7 +38,7 @@ end
 # Helper methods for setting up and closing down battles
 # ==============================================================================
 module BattleCreationHelperMethods
-  # Skip battle if the player has no able Pokémon, or if holding Ctrl in Debug mode
+  # Skip battle if the player has no able PokÃ©mon, or if holding Ctrl in Debug mode
   def self?.skip_battle?: () -> bool
 
   def self?.skip_battle: (Integer outcome_variable, ?bool trainer_battle) -> Integer
@@ -59,8 +59,8 @@ module BattleCreationHelperMethods
   #    0 - Undecided or aborted
   #    1 - Player won
   #    2 - Player lost
-  #    3 - Player or wild Pokémon ran from battle, or player forfeited the match
-  #    4 - Wild Pokémon was caught
+  #    3 - Player or wild PokÃ©mon ran from battle, or player forfeited the match
+  #    4 - Wild PokÃ©mon was caught
   #    5 - Draw
   def self?.set_outcome: (Integer outcome, ?Integer outcome_variable, ?bool trainer_battle) -> void
 end
@@ -96,7 +96,7 @@ class TrainerBattle
 end
 
 # Common items to find via Pickup. Items from this list are added to the pool in
-# order, starting from a point dependng on the Pokémon's level. The number of
+# order, starting from a point dependng on the PokÃ©mon's level. The number of
 # items added is how many probabilities are in the PICKUP_COMMON_ITEM_CHANCES
 # array below.
 # There must be 9 + PICKUP_COMMON_ITEM_CHANCES.length number of items in this
@@ -108,7 +108,7 @@ PICKUP_COMMON_ITEMS: Array[Symbol]
 PICKUP_COMMON_ITEM_CHANCES: Array[Integer]
 
 # Rare items to find via Pickup. Items from this list are added to the pool in
-# order, starting from a point dependng on the Pokémon's level. The number of
+# order, starting from a point dependng on the PokÃ©mon's level. The number of
 # items added is how many probabilities are in the PICKUP_RARE_ITEM_CHANCES
 # array below.
 # There must be 9 + PICKUP_RARE_ITEM_CHANCES.length number of items in this
@@ -143,3 +143,5 @@ class Object
   # Try to gain a Honey item after a battle if a Pokemon has the ability Honey Gather.
   def pbHoneyGather: (Pokemon pkmn) -> void
 end
+
+

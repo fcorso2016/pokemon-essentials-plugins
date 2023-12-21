@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 type http_response = {
     :status => Integer,
@@ -17,3 +17,5 @@ module HTTPLite
     def self.parse: (String str) -> untyped
   end
 end
+
+

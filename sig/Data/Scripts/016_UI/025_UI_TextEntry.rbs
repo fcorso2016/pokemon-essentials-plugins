@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Window_CharacterEntry < Window_DrawableCommand
@@ -156,3 +156,5 @@ class Object
 
   def pbEnterBoxName: (String helptext, Integer minlength, Integer maxlength, ?String initialText, ?bool nofadeout) -> String
 end
+
+

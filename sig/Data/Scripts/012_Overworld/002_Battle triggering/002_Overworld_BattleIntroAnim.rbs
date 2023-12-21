@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Registers special battle transition animations which may be used instead of
 # the default ones. There are examples below of how to register them.
 #
@@ -42,3 +42,5 @@ class Object
 
   def pbBattleAnimationCore: (String anim, Viewport viewport, Integer location, ?Integer num_flashes) -> void
 end
+
+

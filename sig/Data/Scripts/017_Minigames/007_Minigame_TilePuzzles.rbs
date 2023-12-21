@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # "Tile Puzzle" mini-games
 # By Maruno
 # Graphics by the__end
@@ -83,3 +83,5 @@ class Object
   # ==============================================================================
   def pbTilePuzzle: (untyped game, untyped board, ?::Integer width, ?::Integer height) -> untyped
 end
+
+

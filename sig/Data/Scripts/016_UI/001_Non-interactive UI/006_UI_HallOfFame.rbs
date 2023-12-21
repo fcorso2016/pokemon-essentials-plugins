@@ -1,8 +1,8 @@
-﻿# ==============================================================================
+# ==============================================================================
 # * Hall of Fame - by FL (Credits will be apreciated)
 # ==============================================================================
 #
-# This script is for Pokémon Essentials. It makes a recordable Hall of Fame
+# This script is for PokÃ©mon Essentials. It makes a recordable Hall of Fame
 # like the Gen 3 games.
 #
 # ==============================================================================
@@ -18,17 +18,17 @@ class HallOfFame_Scene
   include _PokeScene
   include _PokeUpdatable
 
-  # When true, all Pokémon will be in one line.
-  # When false, all Pokémon will be in two lines.
+  # When true, all PokÃ©mon will be in one line.
+  # When false, all PokÃ©mon will be in two lines.
   SINGLE_ROW_OF_POKEMON: bool
 
-  # Make the Pokémon movement ON in hall entry.
+  # Make the PokÃ©mon movement ON in hall entry.
   ANIMATION: bool
 
-  # Time in seconds for a Pokémon to slide to its position from off-screen.
+  # Time in seconds for a PokÃ©mon to slide to its position from off-screen.
   APPEAR_SPEED: Numeric
 
-  # Entry wait time (in seconds) between showing each Pokémon (and trainer).
+  # Entry wait time (in seconds) between showing each PokÃ©mon (and trainer).
   ENTRY_WAIT_TIME: Numeric
 
   # Wait time (in seconds) when showing "Welcome to the Hall of Fame!".
@@ -82,7 +82,7 @@ class HallOfFame_Scene
   # Dispose the sprite if the sprite exists and make it null
   def restartSpritePosition: (Hash[String, _Visualizable] sprites, String spritename) -> void
 
-  # Change the Pokémon sprites opacity except the index one
+  # Change the PokÃ©mon sprites opacity except the index one
   def setPokemonSpritesOpacity: (Integer index, ?Numeric opacity) -> void
 
   def saveHallEntry: () -> void
@@ -155,3 +155,5 @@ class Object
 
   def pbHallOfFamePC: () -> void
 end
+
+

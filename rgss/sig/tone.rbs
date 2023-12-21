@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Tone
@@ -12,3 +12,5 @@ class Tone
   attr_accessor blue: Numeric
   attr_accessor gray: Numeric
 end
+
+

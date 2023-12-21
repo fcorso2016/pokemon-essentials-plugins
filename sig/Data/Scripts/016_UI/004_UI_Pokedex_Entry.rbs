@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class PokemonPokedexInfo_Scene
@@ -64,9 +64,11 @@ class PokemonPokedexInfoScreen
 
   def pbStartScreen: (Array[PokemonPokedex_Scene::dex_option] dexlist, Integer index, Integer region) -> void
 
-  # For use from a Pokémon's summary screen.
+  # For use from a PokÃ©mon's summary screen.
   def pbStartSceneSingle: (Symbol species) -> void
 
   # For use when capturing or otherwise obtaining a new species.
   def pbDexEntry: (Symbol | String | GameData::Species species) -> void
 end
+
+

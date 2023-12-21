@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   # ==============================================================================
   #
   # ==============================================================================
@@ -6,8 +6,10 @@
 
   # ==============================================================================
   # If no trainers are defined for the current challenge, generate a set of random
-  # ones for it. If pokemonlist is given, assign Pokémon from it to all trainers.
+  # ones for it. If pokemonlist is given, assign PokÃ©mon from it to all trainers.
   # Save the results in the appropriate PBS files.
   # ==============================================================================
   def pbTrainerInfo: (untyped pokemonlist, untyped trfile, untyped rules) { (untyped) -> untyped } -> untyped
 end
+
+

@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Used when generating new trainers for battle challenges
 # ==============================================================================
 class Battle::DebugSceneNoVisuals
@@ -98,3 +98,5 @@ class Battle::DebugSceneNoVisuals
 
   def pbPartyScreen: (Integer | Battle::Battler idxBattler, ?bool canCancel) { (Integer, Battle::DebugSceneNoVisuals) -> boolish } -> void
 end
+
+

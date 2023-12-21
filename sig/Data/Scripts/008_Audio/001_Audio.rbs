@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -8,3 +8,5 @@ class Object
   def getPlayTime: (String filename) -> (Numeric?)
   def getPlayTime2: (String filename) -> Numeric
 end
+
+

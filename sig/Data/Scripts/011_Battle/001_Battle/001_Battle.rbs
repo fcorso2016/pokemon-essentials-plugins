@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 interface _BattleBase
@@ -162,3 +162,5 @@ class Battle
   def pbHideAbilitySplash: (Battler battler) -> void
   def pbReplaceAbilitySplash: (Battler battler) -> void
 end
+
+

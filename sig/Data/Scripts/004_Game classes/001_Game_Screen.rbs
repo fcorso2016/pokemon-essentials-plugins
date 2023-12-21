@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -37,3 +37,5 @@ class Game_Screen
   def weather: (Symbol `type`, Numeric power, Numeric duration) -> void
   def update: -> void
 end
+
+

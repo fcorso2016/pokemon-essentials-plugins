@@ -1,6 +1,6 @@
-﻿# ==============================================================================
-# Instances of this class are individual Pokémon.
-# The player's party Pokémon are stored in the array $player.party.
+# ==============================================================================
+# Instances of this class are individual PokÃ©mon.
+# The player's party PokÃ©mon are stored in the array $player.party.
 # ==============================================================================
 class Pokemon
   include _Inspectable
@@ -20,45 +20,45 @@ class Pokemon
   @timeEggHatched: Integer?
   @timeReceived: Integer?
 
-  # @return [Symbol] this Pokémon's species
+  # @return [Symbol] this PokÃ©mon's species
   attr_reader species: Symbol
 
-  # If defined, this Pokémon's form will be this value even if a MultipleForms
+  # If defined, this PokÃ©mon's form will be this value even if a MultipleForms
   # handler tries to say otherwise.
-  # @return [Integer, nil] this Pokémon's form
+  # @return [Integer, nil] this PokÃ©mon's form
   attr_accessor forced_form: Integer?
 
-  # If defined, is the time (in Integer form) when this Pokémon's form was set.
-  # @return [Integer, nil] the time this Pokémon's form was set
+  # If defined, is the time (in Integer form) when this PokÃ©mon's form was set.
+  # @return [Integer, nil] the time this PokÃ©mon's form was set
   attr_accessor time_form_set: Integer?
 
   # @return [Integer] the current experience points
   attr_reader exp: Integer
 
-  # @return [Integer] the number of steps until this Pokémon hatches, 0 if this Pokémon is not an egg
+  # @return [Integer] the number of steps until this PokÃ©mon hatches, 0 if this PokÃ©mon is not an egg
   attr_accessor steps_to_hatch: Integer
 
   # @return [Integer] the current HP
   attr_reader hp: Integer
 
-  # @return [Symbol] this Pokémon's current status (see GameData::Status)
+  # @return [Symbol] this PokÃ©mon's current status (see GameData::Status)
   attr_reader status: Symbol
 
   # @return [Integer] sleep count / toxic flag / 0:
   #   sleep (number of rounds before waking up), toxic (0 = regular poison, 1 = toxic)
   attr_accessor statusCount: Integer
 
-  # This Pokémon's shininess (true, false, nil). Is recalculated if made nil.
-  # @param value [Boolean, nil] whether this Pokémon is shiny
+  # This PokÃ©mon's shininess (true, false, nil). Is recalculated if made nil.
+  # @param value [Boolean, nil] whether this PokÃ©mon is shiny
   attr_writer shiny: bool?
 
-  # @return [Array<Pokemon::Move>] the moves known by this Pokémon
+  # @return [Array<Pokemon::Move>] the moves known by this PokÃ©mon
   attr_accessor moves: Array[Move]
 
-  # @return [Array<Symbol>] the IDs of moves known by this Pokémon when it was obtained
+  # @return [Array<Symbol>] the IDs of moves known by this PokÃ©mon when it was obtained
   attr_accessor first_moves: Array[Symbol]
 
-  # @return [Array<Symbol>] an array of ribbons owned by this Pokémon
+  # @return [Array<Symbol>] an array of ribbons owned by this PokÃ©mon
   attr_accessor ribbons: Array[Symbol]
 
   # @return [Integer] contest stats
@@ -79,16 +79,16 @@ class Pokemon
   # @return [Integer] contest stats
   attr_accessor sheen: Integer
 
-  # @return [Integer] the Pokérus strain and infection time
+  # @return [Integer] the PokÃ©rus strain and infection time
   attr_accessor pokerus: Integer
 
-  # @return [Integer] this Pokémon's current happiness (an integer between 0 and 255)
+  # @return [Integer] this PokÃ©mon's current happiness (an integer between 0 and 255)
   attr_accessor happiness: Integer
 
-  # @return [Symbol] the item ID of the Poké Ball this Pokémon is in
+  # @return [Symbol] the item ID of the PokÃ© Ball this PokÃ©mon is in
   attr_accessor poke_ball: Symbol
 
-  # @return [Array<Integer>] this Pokémon's markings, one value per mark
+  # @return [Array<Integer>] this PokÃ©mon's markings, one value per mark
   attr_accessor markings: Array[Integer]
 
   # @return [Hash<Integer>] a hash of IV values for HP, Atk, Def, Speed, Sp. Atk and Sp. Def
@@ -99,7 +99,7 @@ class Pokemon
   # @return [Hash<Boolean>] a hash of booleans that max each IV value
   attr_accessor ivMaxed: Hash[Symbol, bool]
 
-  # @return [Hash<Integer>] this Pokémon's effort values
+  # @return [Hash<Integer>] this PokÃ©mon's effort values
   attr_accessor ev: Hash[Symbol, Integer]
 
   # @return [Integer] calculated stats
@@ -120,48 +120,48 @@ class Pokemon
   # @return [Integer] calculated stats
   attr_reader speed: Integer
 
-  # @return [Owner] this Pokémon's owner
+  # @return [Owner] this PokÃ©mon's owner
   attr_reader owner: Owner
 
-  # @return [Integer] the manner this Pokémon was obtained:
+  # @return [Integer] the manner this PokÃ©mon was obtained:
   #   0 (met), 1 (as egg), 2 (traded), 4 (fateful encounter)
   attr_accessor obtain_method: Integer
 
-  # @return [Integer] the ID of the map this Pokémon was obtained in
+  # @return [Integer] the ID of the map this PokÃ©mon was obtained in
   attr_accessor obtain_map: Integer
 
-  # Describes the manner this Pokémon was obtained. If left undefined,
+  # Describes the manner this PokÃ©mon was obtained. If left undefined,
   # the obtain map's name is used.
   # @return [String] the obtain text
   attr_accessor obtain_text: String
 
-  # @return [Integer] the level of this Pokémon when it was obtained
+  # @return [Integer] the level of this PokÃ©mon when it was obtained
   attr_accessor obtain_level: Integer
 
-  # If this Pokémon hatched from an egg, returns the map ID where the hatching happened.
+  # If this PokÃ©mon hatched from an egg, returns the map ID where the hatching happened.
   # Otherwise returns 0.
   # @return [Integer] the map ID where egg was hatched (0 by default)
   attr_accessor hatched_map: Integer
 
-  # Another Pokémon which has been fused with this Pokémon (or nil if there is none).
+  # Another PokÃ©mon which has been fused with this PokÃ©mon (or nil if there is none).
   # Currently only used by Kyurem, to record a fused Reshiram or Zekrom.
-  # @return [Pokemon, nil] the Pokémon fused into this one (nil if there is none)
+  # @return [Pokemon, nil] the PokÃ©mon fused into this one (nil if there is none)
   attr_accessor fused: Pokemon?
 
-  # @return [Integer] this Pokémon's personal ID
+  # @return [Integer] this PokÃ©mon's personal ID
   attr_accessor personalID: Integer
 
   # Used by Galarian Yamask to remember that it took sufficient damage from a
   # battle and can evolve.
   attr_accessor ready_to_evolve: bool
 
-  # Whether this Pokémon can be deposited in storage/Day Care
+  # Whether this PokÃ©mon can be deposited in storage/Day Care
   attr_accessor cannot_store: bool
 
-  # Whether this Pokémon can be released
+  # Whether this PokÃ©mon can be released
   attr_accessor cannot_release: bool
 
-  # Whether this Pokémon can be traded
+  # Whether this PokÃ©mon can be traded
   attr_accessor cannot_trade: bool
 
   # Max total IVs
@@ -173,10 +173,10 @@ class Pokemon
   # Max EVs that a single stat can have
   EV_STAT_LIMIT: Integer
 
-  # Maximum length a Pokémon's nickname can be
+  # Maximum length a PokÃ©mon's nickname can be
   MAX_NAME_SIZE: Integer
 
-  # Maximum number of moves a Pokémon can know at once
+  # Maximum number of moves a PokÃ©mon can know at once
   MAX_MOVES: Integer
 
   def self.play_cry: (Symbol species, ?Integer form, ?Integer volume, ?Integer pitch) -> void
@@ -185,12 +185,12 @@ class Pokemon
 
   def species_data: () -> GameData::Species
 
-  # Changes the Pokémon's species and re-calculates its statistics.
-  # @param species_id [Symbol, String, GameData::Species] ID of the species to change this Pokémon to
+  # Changes the PokÃ©mon's species and re-calculates its statistics.
+  # @param species_id [Symbol, String, GameData::Species] ID of the species to change this PokÃ©mon to
   def species=: (Symbol | String | GameData::Species species_id) -> void
 
   # @param check_species [Symbol, String, GameData::Species] ID of the species to check for
-  # @return [Boolean] whether this Pokémon is of the specified species
+  # @return [Boolean] whether this PokÃ©mon is of the specified species
   def isSpecies?: (Symbol | String | GameData::Species check_species) -> bool
 
   def form: () -> Integer
@@ -206,61 +206,61 @@ class Pokemon
 
   def form_simple=: (Integer value) -> void
 
-  # @return [Integer] this Pokémon's level
+  # @return [Integer] this PokÃ©mon's level
   def level: () -> Integer
 
-  # Sets this Pokémon's level. The given level must be between 1 and the
+  # Sets this PokÃ©mon's level. The given level must be between 1 and the
   # maximum level (defined in {GameData::GrowthRate}).
   # @param value [Integer] new level (between 1 and the maximum level)
   def level=: (Integer value) -> void
 
-  # Sets this Pokémon's Exp. Points.
+  # Sets this PokÃ©mon's Exp. Points.
   # @param value [Integer] new experience points
   def exp=: (Integer value) -> void
 
-  # @return [Boolean] whether this Pokémon is an egg
+  # @return [Boolean] whether this PokÃ©mon is an egg
   def egg?: () -> bool
 
-  # @return [GameData::GrowthRate] this Pokémon's growth rate
+  # @return [GameData::GrowthRate] this PokÃ©mon's growth rate
   def growth_rate: () -> GameData::GrowthRate
 
-  # @return [Integer] this Pokémon's base Experience value
+  # @return [Integer] this PokÃ©mon's base Experience value
   def base_exp: () -> Integer
 
   # @return [Float] a number between 0 and 1 indicating how much of the current level's
-  #   Exp this Pokémon has
+  #   Exp this PokÃ©mon has
   def exp_fraction: () -> Float
 
-  # Sets the Pokémon's health.
+  # Sets the PokÃ©mon's health.
   # @param value [Integer] new HP value
   def hp=: (Integer value) -> void
 
-  # Sets this Pokémon's status. See {GameData::Status} for all possible status effects.
+  # Sets this PokÃ©mon's status. See {GameData::Status} for all possible status effects.
   # @param value [Symbol, String, GameData::Status] status to set
   def status=: (Symbol | String | GameData::Status value) -> void
 
-  # @return [Boolean] whether the Pokémon is not fainted and not an egg
+  # @return [Boolean] whether the PokÃ©mon is not fainted and not an egg
   def able?: () -> bool
 
-  # @return [Boolean] whether the Pokémon is fainted
+  # @return [Boolean] whether the PokÃ©mon is fainted
   def fainted?: () -> bool
 
-  # Heals all HP of this Pokémon.
+  # Heals all HP of this PokÃ©mon.
   def heal_HP: () -> void
 
-  # Heals the status problem of this Pokémon.
+  # Heals the status problem of this PokÃ©mon.
   def heal_status: () -> void
 
-  # Restores all PP of this Pokémon. If a move index is given, restores the PP
+  # Restores all PP of this PokÃ©mon. If a move index is given, restores the PP
   # of the move in that index.
   # @param move_index [Integer] index of the move to heal (-1 if all moves
   #   should be healed)
   def heal_PP: (?Integer move_index) -> void
 
-  # Heals all HP, PP, and status problems of this Pokémon.
+  # Heals all HP, PP, and status problems of this PokÃ©mon.
   def heal: () -> void
 
-  # @return [Array<Symbol>] an array of this Pokémon's types
+  # @return [Array<Symbol>] an array of this PokÃ©mon's types
   def types: () -> Array[Symbol]
 
   # @deprecated This method is slated to be removed in v22.
@@ -270,189 +270,189 @@ class Pokemon
   def type2: () -> Symbol
 
   # @param type [Symbol, String, GameData::Type] type to check
-  # @return [Boolean] whether this Pokémon has the specified type
+  # @return [Boolean] whether this PokÃ©mon has the specified type
   def hasType?: (Symbol | String | GameData::Type `type`) -> bool
 
-  # @return [0, 1, 2] this Pokémon's gender (0 = male, 1 = female, 2 = genderless)
+  # @return [0, 1, 2] this PokÃ©mon's gender (0 = male, 1 = female, 2 = genderless)
   def gender: () -> Integer
 
-  # Sets this Pokémon's gender to a particular gender (if possible).
+  # Sets this PokÃ©mon's gender to a particular gender (if possible).
   # @param value [0, 1] new gender (0 = male, 1 = female)
   def gender=: (Integer value) -> void
 
-  # Makes this Pokémon male.
+  # Makes this PokÃ©mon male.
   def makeMale: () -> void
 
-  # Makes this Pokémon female.
+  # Makes this PokÃ©mon female.
   def makeFemale: () -> void
 
-  # @return [Boolean] whether this Pokémon is male
+  # @return [Boolean] whether this PokÃ©mon is male
   def male?: () -> bool
 
-  # @return [Boolean] whether this Pokémon is female
+  # @return [Boolean] whether this PokÃ©mon is female
   def female?: () -> bool
 
-  # @return [Boolean] whether this Pokémon is genderless
+  # @return [Boolean] whether this PokÃ©mon is genderless
   def genderless?: () -> bool
 
-  # @return [Boolean] whether this Pokémon species is restricted to only ever being one
+  # @return [Boolean] whether this PokÃ©mon species is restricted to only ever being one
   #   gender (or genderless)
   def singleGendered?: () -> bool
 
-  # @return [Boolean] whether this Pokémon is shiny (differently colored)
+  # @return [Boolean] whether this PokÃ©mon is shiny (differently colored)
   def shiny?: () -> bool
 
-  # @return [Boolean] whether this Pokémon is super shiny (differently colored,
+  # @return [Boolean] whether this PokÃ©mon is super shiny (differently colored,
   #   square sparkles)
   def super_shiny?: () -> bool
 
-  # @param value [Boolean] whether this Pokémon is super shiny
+  # @param value [Boolean] whether this PokÃ©mon is super shiny
   def super_shiny=: (bool value) -> void
 
-  # The index of this Pokémon's ability (0, 1 are natural abilities, 2+ are
+  # The index of this PokÃ©mon's ability (0, 1 are natural abilities, 2+ are
   # hidden abilities) as defined for its species/form. An ability may not be
   # defined at this index. Is recalculated (as 0 or 1) if made nil.
-  # @return [Integer] the index of this Pokémon's ability
+  # @return [Integer] the index of this PokÃ©mon's ability
   def ability_index: () -> Integer
 
   # @param value [Integer, nil] forced ability index (nil if none is set)
   def ability_index=: (Integer? value) -> void
 
-  # @return [GameData::Ability, nil] an Ability object corresponding to this Pokémon's ability
+  # @return [GameData::Ability, nil] an Ability object corresponding to this PokÃ©mon's ability
   def ability: () -> GameData::Ability?
 
-  # @return [Symbol, nil] the ability symbol of this Pokémon's ability
+  # @return [Symbol, nil] the ability symbol of this PokÃ©mon's ability
   def ability_id: () -> Symbol?
 
   # @param value [Symbol, String, GameData::Ability, nil] ability to set
   def ability=: ((Symbol | String | GameData::Ability)? value) -> void
 
-  # Returns whether this Pokémon has a particular ability. If no value
-  # is given, returns whether this Pokémon has an ability set.
+  # Returns whether this PokÃ©mon has a particular ability. If no value
+  # is given, returns whether this PokÃ©mon has an ability set.
   # @param check_ability [Symbol, String, GameData::Ability, nil] ability ID to check
-  # @return [Boolean] whether this Pokémon has a particular ability or
+  # @return [Boolean] whether this PokÃ©mon has a particular ability or
   #   an ability at all
   def hasAbility?: (?(Symbol | String | GameData::Ability)? check_ability) -> bool
 
-  # @return [Boolean] whether this Pokémon has a hidden ability
+  # @return [Boolean] whether this PokÃ©mon has a hidden ability
   def hasHiddenAbility?: () -> bool
 
-  # @return [Array<Array<Symbol,Integer>>] the abilities this Pokémon can have,
+  # @return [Array<Array<Symbol,Integer>>] the abilities this PokÃ©mon can have,
   #   where every element is [ability ID, ability index]
   def getAbilityList: () -> Array[[Symbol, Integer]]
 
-  # @return [GameData::Nature, nil] a Nature object corresponding to this Pokémon's nature
+  # @return [GameData::Nature, nil] a Nature object corresponding to this PokÃ©mon's nature
   def nature: () -> GameData::Nature?
 
   def nature_id: () -> Symbol
 
-  # Sets this Pokémon's nature to a particular nature.
+  # Sets this PokÃ©mon's nature to a particular nature.
   # @param value [Symbol, String, GameData::Nature, nil] nature to change to
   def nature=: ((Symbol | String | GameData::Nature)? value) -> void
 
   # Returns the calculated nature, taking into account things that change its
   # stat-altering effect (i.e. Gen 8 mints). Only used for calculating stats.
-  # @return [GameData::Nature, nil] this Pokémon's calculated nature
+  # @return [GameData::Nature, nil] this PokÃ©mon's calculated nature
   def nature_for_stats: () -> GameData::Nature?
 
   def nature_for_stats_id: () -> Symbol
 
-  # If defined, this Pokémon's nature is considered to be this when calculating stats.
+  # If defined, this PokÃ©mon's nature is considered to be this when calculating stats.
   # @param value [Symbol, String, GameData::Nature, nil] ID of the nature to use for calculating stats
   def nature_for_stats=: ((Symbol | String | GameData::Nature)? value) -> void
 
-  # Returns whether this Pokémon has a particular nature. If no value is given,
-  # returns whether this Pokémon has a nature set.
+  # Returns whether this PokÃ©mon has a particular nature. If no value is given,
+  # returns whether this PokÃ©mon has a nature set.
   # @param check_nature [Symbol, String, GameData::Nature, nil] nature ID to check
-  # @return [Boolean] whether this Pokémon has a particular nature or a nature
+  # @return [Boolean] whether this PokÃ©mon has a particular nature or a nature
   #   at all
   def hasNature?: (?(Symbol | String | GameData::Nature)? check_nature) -> bool
 
-  # @return [GameData::Item, nil] an Item object corresponding to this Pokémon's item
+  # @return [GameData::Item, nil] an Item object corresponding to this PokÃ©mon's item
   def item: () -> GameData::Item?
 
   def item_id: () -> Symbol
 
-  # Gives an item to this Pokémon to hold.
+  # Gives an item to this PokÃ©mon to hold.
   # @param value [Symbol, String, GameData::Item, nil] ID of the item to give
-  #   to this Pokémon
+  #   to this PokÃ©mon
   def item=: ((Symbol | String | GameData::Item)? value) -> void
 
-  # Returns whether this Pokémon is holding an item. If an item id is passed,
-  # returns whether the Pokémon is holding that item.
+  # Returns whether this PokÃ©mon is holding an item. If an item id is passed,
+  # returns whether the PokÃ©mon is holding that item.
   # @param check_item [Symbol, String, GameData::Item, nil] item ID to check
-  # @return [Boolean] whether the Pokémon is holding the specified item or
+  # @return [Boolean] whether the PokÃ©mon is holding the specified item or
   #   an item at all
   def hasItem?: (?(Symbol | String | GameData::Item)? check_item) -> bool
 
   # @return [Array<Array<Symbol>>] the items this species can be found holding in the wild
   def wildHoldItems: () -> ::Array[[Symbol, Symbol, Symbol]]
 
-  # @return [Mail, nil] mail held by this Pokémon (nil if there is none)
+  # @return [Mail, nil] mail held by this PokÃ©mon (nil if there is none)
   def mail: () -> Mail?
 
-  # If mail is a Mail object, gives that mail to this Pokémon. If nil is given,
+  # If mail is a Mail object, gives that mail to this PokÃ©mon. If nil is given,
   # removes the held mail.
-  # @param mail [Mail, nil] mail to be held by this Pokémon
+  # @param mail [Mail, nil] mail to be held by this PokÃ©mon
   def mail=: (Mail? mail) -> void
 
-  # @return [Integer] the number of moves known by the Pokémon
+  # @return [Integer] the number of moves known by the PokÃ©mon
   def numMoves: () -> Integer
 
   # @param move_id [Symbol, String, GameData::Move] ID of the move to check
-  # @return [Boolean] whether the Pokémon knows the given move
+  # @return [Boolean] whether the PokÃ©mon knows the given move
   def hasMove?: (Symbol | String | GameData::Move move_id) -> bool
 
-  # Returns the list of moves this Pokémon can learn by levelling up.
-  # @return [Array<Array<Integer,Symbol>>] this Pokémon's move list, where every element is [level, move ID]
+  # Returns the list of moves this PokÃ©mon can learn by levelling up.
+  # @return [Array<Array<Integer,Symbol>>] this PokÃ©mon's move list, where every element is [level, move ID]
   def getMoveList: () -> Array[[Integer, Symbol]]
 
-  # Sets this Pokémon's movelist to the default movelist it originally had.
+  # Sets this PokÃ©mon's movelist to the default movelist it originally had.
   def reset_moves: () -> void
 
   # Silently learns the given move. Will erase the first known move if it has to.
   # @param move_id [Symbol, String, GameData::Move] ID of the move to learn
   def learn_move: (Symbol | String | GameData::Move move_id) -> void
 
-  # Deletes the given move from the Pokémon.
+  # Deletes the given move from the PokÃ©mon.
   # @param move_id [Symbol, String, GameData::Move] ID of the move to delete
   def forget_move: (Symbol | String | GameData::Move move_id) -> void
 
-  # Deletes the move at the given index from the Pokémon.
+  # Deletes the move at the given index from the PokÃ©mon.
   # @param index [Integer] index of the move to be deleted
   def forget_move_at_index: (Integer index) -> void
 
-  # Deletes all moves from the Pokémon.
+  # Deletes all moves from the PokÃ©mon.
   def forget_all_moves: () -> void
 
   # Copies currently known moves into a separate array, for Move Relearner.
   def record_first_moves: () -> void
 
-  # Adds a move to this Pokémon's first moves.
+  # Adds a move to this PokÃ©mon's first moves.
   # @param move_id [Symbol, String, GameData::Move] ID of the move to add
   def add_first_move: (Symbol | String | GameData::Move move_id) -> void
 
-  # Removes a move from this Pokémon's first moves.
+  # Removes a move from this PokÃ©mon's first moves.
   # @param move_id [Symbol, String, GameData::Move] ID of the move to remove
   def remove_first_move: (Symbol | String | GameData::Move move_id) -> void
 
-  # Clears this Pokémon's first moves.
+  # Clears this PokÃ©mon's first moves.
   def clear_first_moves: () -> void
 
   # @param move_id [Symbol, String, GameData::Move] ID of the move to check
-  # @return [Boolean] whether the Pokémon is compatible with the given move
+  # @return [Boolean] whether the PokÃ©mon is compatible with the given move
   def compatible_with_move?: (Symbol | String | GameData::Move move_id) -> bool
 
   def can_relearn_move?: () -> bool
 
-  # @return [Integer] the number of ribbons this Pokémon has
+  # @return [Integer] the number of ribbons this PokÃ©mon has
   def numRibbons: () -> Integer
 
   # @param ribbon [Symbol, String, GameData::Ribbon] ribbon ID to check for
-  # @return [Boolean] whether this Pokémon has the specified ribbon
+  # @return [Boolean] whether this PokÃ©mon has the specified ribbon
   def hasRibbon?: (Symbol | String | GameData::Ribbon ribbon) -> bool
 
-  # Gives a ribbon to this Pokémon.
+  # Gives a ribbon to this PokÃ©mon.
   # @param ribbon [Symbol, String, GameData::Ribbon] ID of the ribbon to give
   def giveRibbon: (Symbol | String | GameData::Ribbon ribbon) -> void
 
@@ -461,80 +461,80 @@ class Pokemon
   # @return [Symbol, String, GameData::Ribbon] ID of the ribbon that was gained
   def upgradeRibbon: (*(Symbol | String | GameData::Ribbon) args) -> (Symbol | String | GameData::Ribbon)?
 
-  # Removes the specified ribbon from this Pokémon.
+  # Removes the specified ribbon from this PokÃ©mon.
   # @param ribbon [Symbol, String, GameData::Ribbon] ID of the ribbon to remove
   def takeRibbon: (Symbol | String | GameData::Ribbon ribbon) -> void
 
-  # Removes all ribbons from this Pokémon.
+  # Removes all ribbons from this PokÃ©mon.
   def clearAllRibbons: () -> void
 
-  # @return [Integer] the Pokérus infection stage for this Pokémon
+  # @return [Integer] the PokÃ©rus infection stage for this PokÃ©mon
   def pokerusStrain: () -> Integer
 
-  # Returns the Pokérus infection stage for this Pokémon. The possible stages are
+  # Returns the PokÃ©rus infection stage for this PokÃ©mon. The possible stages are
   # 0 (not infected), 1 (infected) and 2 (cured).
-  # @return [0, 1, 2] current Pokérus infection stage
+  # @return [0, 1, 2] current PokÃ©rus infection stage
   def pokerusStage: () -> Integer
 
-  # Gives this Pokémon Pokérus (either the specified strain or a random one).
-  # @param strain [Integer] Pokérus strain to give (1-15 inclusive, or 0 for random)
+  # Gives this PokÃ©mon PokÃ©rus (either the specified strain or a random one).
+  # @param strain [Integer] PokÃ©rus strain to give (1-15 inclusive, or 0 for random)
   def givePokerus: (?Integer strain) -> void
 
-  # Resets the infection time for this Pokémon's Pokérus (even if cured).
+  # Resets the infection time for this PokÃ©mon's PokÃ©rus (even if cured).
   def resetPokerusTime: () -> void
 
-  # Reduces the time remaining for this Pokémon's Pokérus (if infected).
+  # Reduces the time remaining for this PokÃ©mon's PokÃ©rus (if infected).
   def lowerPokerusCount: () -> void
 
-  # Cures this Pokémon's Pokérus (if infected).
+  # Cures this PokÃ©mon's PokÃ©rus (if infected).
   def curePokerus: () -> void
 
-  # Changes this Pokémon's owner.
+  # Changes this PokÃ©mon's owner.
   # @param new_owner [Owner] the owner to change to
   def owner=: (Owner new_owner) -> void
 
   # @param trainer [Player, NPCTrainer, nil] the trainer to compare to the original trainer
-  # @return [Boolean] whether the given trainer is not this Pokémon's original trainer
+  # @return [Boolean] whether the given trainer is not this PokÃ©mon's original trainer
   def foreign?: (?Trainer? trainer) -> bool
 
-  # @return [Time] the time when this Pokémon was obtained
+  # @return [Time] the time when this PokÃ©mon was obtained
   def timeReceived: () -> Time
 
-  # Sets the time when this Pokémon was obtained.
+  # Sets the time when this PokÃ©mon was obtained.
   # @param value [Integer, Time, #to_i] time in seconds since Unix epoch
   def timeReceived=: (Integer | Time | _ToI value) -> void
 
-  # @return [Time] the time when this Pokémon hatched
+  # @return [Time] the time when this PokÃ©mon hatched
   def timeEggHatched: () -> Time
 
-  # Sets the time when this Pokémon hatched.
+  # Sets the time when this PokÃ©mon hatched.
   # @param value [Integer, Time, #to_i] time in seconds since Unix epoch
   def timeEggHatched=: (Integer | Time | _ToI value) -> void
 
-  # @return [String] the name of this Pokémon
+  # @return [String] the name of this PokÃ©mon
   def name: () -> String
 
-  # @param value [String] the nickname of this Pokémon
+  # @param value [String] the nickname of this PokÃ©mon
   def name=: (String value) -> void
 
-  # @return [Boolean] whether this Pokémon has been nicknamed
+  # @return [Boolean] whether this PokÃ©mon has been nicknamed
   def nicknamed?: () -> bool
 
-  # @return [String] the species name of this Pokémon
+  # @return [String] the species name of this PokÃ©mon
   def speciesName: () -> String
 
-  # @return [Integer] the height of this Pokémon in decimetres (0.1 metres)
+  # @return [Integer] the height of this PokÃ©mon in decimetres (0.1 metres)
   def height: () -> Integer
 
-  # @return [Integer] the weight of this Pokémon in hectograms (0.1 kilograms)
+  # @return [Integer] the weight of this PokÃ©mon in hectograms (0.1 kilograms)
   def weight: () -> Integer
 
-  # @return [Hash<Integer>] the EV yield of this Pokémon (a hash with six key/value pairs)
+  # @return [Hash<Integer>] the EV yield of this PokÃ©mon (a hash with six key/value pairs)
   def evYield: () -> Hash[Symbol, Integer]
 
   def affection_level: () -> Integer
 
-  # Changes the happiness of this Pokémon depending on what happened to change it.
+  # Changes the happiness of this PokÃ©mon depending on what happened to change it.
   # @param method [String] the happiness changing method (e.g. 'walking')
   def changeHappiness: (String method) -> void
 
@@ -551,7 +551,7 @@ class Pokemon
   def check_evolution_on_use_item: ((Symbol | GameData::Item)? item_used) -> Symbol?
 
   # Checks whether this Pokemon can evolve because of being traded.
-  # @param other_pkmn [Pokemon] the other Pokémon involved in the trade
+  # @param other_pkmn [Pokemon] the other PokÃ©mon involved in the trade
   # @return [Symbol, nil] the ID of the species to evolve into
   def check_evolution_on_trade: (Pokemon other_pkmn) -> Symbol?
 
@@ -564,9 +564,9 @@ class Pokemon
   # @return [Symbol, nil] the ID of the species to evolve into
   def check_evolution_by_event: (?Integer value) -> Symbol?
 
-  # Called after this Pokémon evolves, to remove its held item (if the evolution
-  # required it to have a held item) or duplicate this Pokémon (Shedinja only).
-  # @param new_species [Symbol] the species that this Pokémon evolved into
+  # Called after this PokÃ©mon evolves, to remove its held item (if the evolution
+  # required it to have a held item) or duplicate this PokÃ©mon (Shedinja only).
+  # @param new_species [Symbol] the species that this PokÃ©mon evolved into
   def action_after_evolution: (Symbol new_species) -> void
 
   # The core method that performs evolution checks. Needs a block given to it,
@@ -577,32 +577,34 @@ class Pokemon
 
   def trigger_event_evolution: (Integer number) -> bool
 
-  # @return [Hash<Integer>] this Pokémon's base stats, a hash with six key/value pairs
+  # @return [Hash<Integer>] this PokÃ©mon's base stats, a hash with six key/value pairs
   def baseStats: () -> Hash[Symbol, Integer]
 
-  # Returns this Pokémon's effective IVs, taking into account Hyper Training.
+  # Returns this PokÃ©mon's effective IVs, taking into account Hyper Training.
   # Only used for calculating stats.
-  # @return [Hash<Integer>] hash containing this Pokémon's effective IVs
+  # @return [Hash<Integer>] hash containing this PokÃ©mon's effective IVs
   def calcIV: () -> Hash[Symbol, Integer]
 
-  # @return [Integer] the maximum HP of this Pokémon
+  # @return [Integer] the maximum HP of this PokÃ©mon
   def calcHP: (Integer base, Integer level, Integer iv, Integer ev) -> Integer
 
-  # @return [Integer] the specified stat of this Pokémon (not used for total HP)
+  # @return [Integer] the specified stat of this PokÃ©mon (not used for total HP)
   def calcStat: (Integer base, Integer level, Integer iv, Integer ev, Numeric nat) -> untyped
 
-  # Recalculates this Pokémon's stats.
+  # Recalculates this PokÃ©mon's stats.
   def calc_stats: () -> void
 
-  # Creates a copy of this Pokémon and returns it.
-  # @return [Pokemon] a copy of this Pokémon
+  # Creates a copy of this PokÃ©mon and returns it.
+  # @return [Pokemon] a copy of this PokÃ©mon
   def clone: () -> Pokemon
 
-  # Creates a new Pokémon object.
-  # @param species [Symbol, String, GameData::Species] Pokémon species
-  # @param level [Integer] Pokémon level
-  # @param owner [Owner, Player, NPCTrainer] Pokémon owner (the player by default)
-  # @param withMoves [Boolean] whether the Pokémon should have moves
+  # Creates a new PokÃ©mon object.
+  # @param species [Symbol, String, GameData::Species] PokÃ©mon species
+  # @param level [Integer] PokÃ©mon level
+  # @param owner [Owner, Player, NPCTrainer] PokÃ©mon owner (the player by default)
+  # @param withMoves [Boolean] whether the PokÃ©mon should have moves
   # @param recheck_form [Boolean] whether to auto-check the form
   def initialize: (Symbol | String | GameData::Species species, Integer level, ?(Owner | Trainer) owner, ?bool withMoves, ?bool recheck_form) -> void
 end
+
+

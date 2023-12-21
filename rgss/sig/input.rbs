@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 type button_enum = :LEFT | :UP | :RIGHT | :DOWN | :A | :B | :X | :Y | :L | :R | :SHIFT | :CTRL |
   :ALT | :F5 | :F6 | :F7 | :F8 | :F9
@@ -67,3 +67,5 @@ module Input
   end
 
 end
+
+

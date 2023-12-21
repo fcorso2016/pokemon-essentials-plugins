@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Relic Stone scene.
 # ==============================================================================
 class RelicStoneScene
@@ -41,7 +41,7 @@ class RelicStoneScreen
 end
 
 # ==============================================================================
-# Shadow Pokémon in battle.
+# Shadow PokÃ©mon in battle.
 # ==============================================================================
 class Battle
   alias __shadow__pbCanUseItemOnPokemon? pbCanUseItemOnPokemon?
@@ -57,7 +57,7 @@ class Battle::Battler
 end
 
 # ==============================================================================
-# Two turn attack. On first turn, halves the HP of all active Pokémon.
+# Two turn attack. On first turn, halves the HP of all active PokÃ©mon.
 # Skips second turn (if successful). (Shadow Half)
 # ==============================================================================
 class Battle::Move::AllBattlersLoseHalfHPUserSkipsNextTurn < Battle::Move
@@ -92,7 +92,7 @@ end
 
 class Object
   # ==============================================================================
-  # Purify a Shadow Pokémon.
+  # Purify a Shadow PokÃ©mon.
   # ==============================================================================
   def pbPurify: (Pokemon pkmn, _Screen scene) -> void
 
@@ -111,3 +111,5 @@ class Object
   # ==============================================================================
   def pbRaiseHappinessAndReduceHeart: (Pokemon pkmn, _Screen scene, Integer multiplier, ?bool show_fail_message) -> bool
 end
+
+

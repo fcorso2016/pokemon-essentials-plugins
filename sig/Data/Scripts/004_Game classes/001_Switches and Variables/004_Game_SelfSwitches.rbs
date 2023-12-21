@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_SelfSwitches
@@ -9,3 +9,5 @@ class Game_SelfSwitches
   def []: (key_type key) -> bool
   def []=: (key_type key, bool value) -> void
 end
+
+

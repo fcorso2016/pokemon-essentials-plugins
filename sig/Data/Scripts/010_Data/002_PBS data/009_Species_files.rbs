@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -34,3 +34,5 @@ module GameData
     def self.cry_length: (Symbol | String | Species, ?Integer form, ?Integer pitch, ?String suffix) -> Numeric
   end
 end
+
+

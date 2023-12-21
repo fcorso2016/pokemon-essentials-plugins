@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Event
@@ -79,3 +79,5 @@ end
 
 class MoveHandlerHash < HandlerHashSymbol
 end
+
+

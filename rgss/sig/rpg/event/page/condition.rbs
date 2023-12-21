@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 module RPG
@@ -19,3 +19,5 @@ module RPG
     end
   end
 end
+
+

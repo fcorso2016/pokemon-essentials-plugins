@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -91,3 +91,5 @@ module MessageConfig
   def self.pbSetNarrowFontName: (String value) -> String
   def self.pbTryFonts: (*String args) -> String
 end
+
+

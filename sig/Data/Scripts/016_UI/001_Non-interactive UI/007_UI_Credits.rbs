@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # * Scene_Credits
 # -----------------------------------------------------------------------------
 # Scrolls the credits you make below. Original Author unknown.
@@ -76,3 +76,5 @@ class Scene_Credits
   # Checks if credits bitmap has reached its ending point
   def last?: () -> bool
 end
+
+

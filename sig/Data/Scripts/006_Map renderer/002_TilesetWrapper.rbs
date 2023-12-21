@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class TilemapRenderer
@@ -15,3 +15,5 @@ class TilemapRenderer
     def stretchBlitWrappedPixels: (Rect destrect, Bitmap dest, Bitmap src, Rect srcrect) -> nil
   end
 end
+
+

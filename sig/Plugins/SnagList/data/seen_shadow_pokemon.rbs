@@ -1,4 +1,4 @@
-﻿class SeenShadowPokemon
+class SeenShadowPokemon
   attr_reader level: Integer
 
   attr_reader gender: Integer
@@ -31,3 +31,5 @@
 
   def register_purified: () -> void
 end
+
+

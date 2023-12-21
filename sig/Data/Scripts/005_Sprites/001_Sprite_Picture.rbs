@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Sprite_Picture
@@ -10,3 +10,5 @@ class Sprite_Picture
 
   def initialize: (Viewport viewport, PictureEx picture) -> void
 end
+
+

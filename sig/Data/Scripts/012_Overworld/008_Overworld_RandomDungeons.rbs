@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Code that generates a random dungeon layout, and implements it in a given map.
 # ==============================================================================
 module RandomDungeon
@@ -250,3 +250,5 @@ class PokemonGlobalMetadata
 
   def dungeon_version: () -> Integer
 end
+
+

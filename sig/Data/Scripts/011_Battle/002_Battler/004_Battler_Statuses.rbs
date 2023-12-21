@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Generalised checks for whether a status problem can be inflicted
   # ============================================================================
@@ -112,3 +112,5 @@
   # ============================================================================
   def pbFlinch: (?Battle::Battler? _user) -> void
 end
+
+

@@ -1,7 +1,9 @@
-﻿class PokemonSnagList
+class PokemonSnagList
   @scene: PokemonSnagListScene
 
   def initialize: (PokemonSnagListScene scene) -> void
 
   def start_screen: () -> void
 end
+
+

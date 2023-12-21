@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Game_Player < Game_Character
@@ -34,8 +34,8 @@ class PBPokemon
 
   attr_accessor ev: untyped
 
-  # This method is how each Pokémon is compiled from the PBS files listing
-  # Battle Tower/Cup Pokémon.
+  # This method is how each PokÃ©mon is compiled from the PBS files listing
+  # Battle Tower/Cup PokÃ©mon.
   def self.fromInspected: (untyped str) -> untyped
 
   def self.fromPokemon: (untyped pkmn) -> untyped
@@ -80,3 +80,5 @@ class Object
 
   def pbBattleChallengeBeginSpeech: () -> ("..." | untyped)
 end
+
+

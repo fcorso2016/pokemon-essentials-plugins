@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -77,3 +77,5 @@ module Effectiveness
   def calculate: (untyped attack_type, *untyped defend_types) -> (Complex | Float)
   def self.calculate: (untyped attack_type, *untyped defend_types) -> (Complex | Float)
 end
+
+

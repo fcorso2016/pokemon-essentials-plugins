@@ -1,4 +1,4 @@
-﻿class Pokemon
+class Pokemon
   # ============================================================================
   # Mega Evolution
   # NOTE: These are treated as form changes in Essentials.
@@ -32,3 +32,5 @@
 
   def makeUnprimal: () -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 type power_state = {
     :discharging => bool,
@@ -31,3 +31,5 @@ module System
   def self?.unmount: (String path, ?bool reload) -> void
   def self.user_name: -> String
 end
+
+

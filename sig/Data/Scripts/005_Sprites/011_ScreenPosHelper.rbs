@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module ScreenPosHelper
@@ -11,3 +11,5 @@ module ScreenPosHelper
   def self.bmHeight: (String bm) -> Numeric
   def self.pbScreenZ: (Sprite_Character ch, ?Numeric? height) -> Numeric
 end
+
+

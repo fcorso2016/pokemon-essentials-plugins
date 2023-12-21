@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Game_Picture
@@ -40,3 +40,5 @@ class Game_Picture
   def erase: -> void
   def update: -> void
 end
+
+

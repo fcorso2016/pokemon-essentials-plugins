@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Battle::AI::AIBattler
@@ -137,3 +137,5 @@ class Battle::AI::AIBattler
 
   def effectiveness_of_type_against_single_battler_type: (Symbol `type`, Symbol defend_type, ?Battle::AI::AIBattler? user) -> Numeric
 end
+
+

@@ -1,4 +1,4 @@
-﻿$show_window: bool
+$show_window: bool
 $RGSS_SCRIPTS: Array[[String, String]]
 
 $data_animations: Array[RPG::Animation?]
@@ -29,3 +29,5 @@ $bag: PokemonBag
 $save_engine_version: String
 $save_game_version: String
 $stats: GameStats
+
+

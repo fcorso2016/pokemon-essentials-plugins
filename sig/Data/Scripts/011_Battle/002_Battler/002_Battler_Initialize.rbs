@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Creating a battler
   # ============================================================================
@@ -20,9 +20,11 @@
   # ============================================================================
   def pbUpdate: (?bool fullChange) -> void
 
-  # Used to erase the battler of a Pokémon that has been caught.
+  # Used to erase the battler of a PokÃ©mon that has been caught.
   def pbReset: () -> void
 
-  # Update which Pokémon will gain Exp if this battler is defeated.
+  # Update which PokÃ©mon will gain Exp if this battler is defeated.
   def pbUpdateParticipants: () -> void
 end
+
+

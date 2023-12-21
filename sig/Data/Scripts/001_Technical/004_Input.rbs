@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module Input
@@ -18,3 +18,5 @@ module Mouse
   def getMousePos: (?bool catch_anywhere) -> [Integer, Integer]?
   def self.getMousePos: (?bool catch_anywhere) -> [Integer, Integer]?
 end
+
+

@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # This script modifies the battle system to implement battle rules
 # ==============================================================================
 class Battle
@@ -114,3 +114,5 @@ class Battle::Move::AttackerFaintsIfUserFaints
 
   def pbFailsAgainstTarget?: (untyped user, untyped target, untyped show_message) -> (true | untyped)
 end
+
+

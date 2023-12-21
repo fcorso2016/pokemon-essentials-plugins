@@ -1,9 +1,9 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
-  # Decide whether the trainer is allowed to tell the Pokémon to use the given
+  # Decide whether the trainer is allowed to tell the PokÃ©mon to use the given
   # move. Called when choosing a command for the round.
-  # Also called when processing the Pokémon's action, because these effects also
-  # prevent Pokémon action. Relevant because these effects can become active
+  # Also called when processing the PokÃ©mon's action, because these effects also
+  # prevent PokÃ©mon action. Relevant because these effects can become active
   # earlier in the same round (after choosing the command but before using the
   # move) or an unusable move may be called by another move such as Metronome.
   # ============================================================================
@@ -12,7 +12,7 @@
   # ============================================================================
   # Obedience check
   # ============================================================================
-  # Return true if Pokémon continues attacking (although it may have chosen to
+  # Return true if PokÃ©mon continues attacking (although it may have chosen to
   # use a different move in disobedience), or false if attack stops.
   def pbObedienceCheck?: ([Symbol, Integer, Battle::Move?, Integer] choice) -> bool
 
@@ -42,3 +42,5 @@
   # ============================================================================
   def pbMissMessage: (Battle::Move move, Battle::Battler user, Battle::Battler target) -> void
 end
+
+

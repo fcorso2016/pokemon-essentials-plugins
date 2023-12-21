@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Turn processing
   # ============================================================================
@@ -36,3 +36,5 @@
   # ============================================================================
   def pbProcessMoveHit: (Battle::Move move, Battle::Battler user, Array[Integer] targets, Integer hitNum, bool skipAccuracyCheck) -> bool
 end
+
+

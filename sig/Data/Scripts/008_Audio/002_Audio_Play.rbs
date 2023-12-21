@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -28,3 +28,5 @@ class Object
   def pbPlayBuzzerSE: -> void
   def pbPlayCloseMenuSE: -> void
 end
+
+

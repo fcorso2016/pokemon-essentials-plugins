@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -13,3 +13,5 @@ class Battle
   def pbUsePokeBallInBattle: (Symbol item, Integer idxBattler, Battler userBattler) -> void
   def pbUseItemInBattle: (Symbol item, Integer idxBattler, Battler userBattler) -> void
 end
+
+

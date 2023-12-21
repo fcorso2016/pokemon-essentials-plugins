@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Window_UnformattedTextPokemon < SpriteWindow_Base
@@ -219,3 +219,5 @@ end
 
 class Window_AdvancedCommandPokemonEx < Window_AdvancedCommandPokemon
 end
+
+

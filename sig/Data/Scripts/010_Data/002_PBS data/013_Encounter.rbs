@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -31,3 +31,5 @@ module GameData
     def initialize: (schema hash) -> void
   end
 end
+
+

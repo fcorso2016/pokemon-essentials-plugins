@@ -1,4 +1,4 @@
-﻿module Compiler
+module Compiler
   def self?.compile_PBS_file_generic: (Class game_data, *String paths) { (untyped, untyped) -> void } -> (nil | untyped)
 
   # ============================================================================
@@ -61,7 +61,7 @@
   def self?.validate_all_compiled_berry_plants: () -> void
 
   # ============================================================================
-  # Compile Pokémon data
+  # Compile PokÃ©mon data
   # ============================================================================
   def self?.compile_pokemon: (*String paths) -> void
 
@@ -73,7 +73,7 @@
   def self?.validate_all_compiled_pokemon: () -> void
 
   # ============================================================================
-  # Compile Pokémon forms data
+  # Compile PokÃ©mon forms data
   # NOTE: Doesn't use compile_PBS_file_generic because it needs its own schema
   #       and shouldn't clear GameData::Species at the start.
   # ============================================================================
@@ -84,7 +84,7 @@
   def self?.validate_all_compiled_pokemon_forms: () -> void
 
   # ============================================================================
-  # Compile Pokémon metrics data
+  # Compile PokÃ©mon metrics data
   # ============================================================================
   def self?.compile_pokemon_metrics: (*String paths) -> void
 
@@ -93,7 +93,7 @@
   def self?.validate_all_compiled_pokemon_metrics: () -> void
 
   # ============================================================================
-  # Compile Shadow Pokémon data
+  # Compile Shadow PokÃ©mon data
   # ============================================================================
   def self?.compile_shadow_pokemon: (*String paths) -> void
 
@@ -139,7 +139,7 @@
   def self?.validate_all_compiled_trainers: () -> void
 
   # ============================================================================
-  # Compile Battle Tower and other Cups trainers/Pokémon
+  # Compile Battle Tower and other Cups trainers/PokÃ©mon
   # ============================================================================
   def self?.compile_trainer_lists: (?::String path) -> void
 
@@ -200,3 +200,5 @@
   # ============================================================================
   def self?.compile_animations: () -> void
 end
+
+

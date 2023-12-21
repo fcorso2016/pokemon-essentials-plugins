@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module SaveData
@@ -50,3 +50,5 @@ module SaveData
     def from_old_format: -> void
   end
 end
+
+

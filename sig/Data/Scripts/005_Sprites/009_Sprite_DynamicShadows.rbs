@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Revealed types
 #  .\005_Sprites\009_Sprite_DynamicShadows.rb:190 #=> String
@@ -55,3 +55,5 @@ class Spriteset_Map
 
   alias shadow_initialize initialize
 end
+
+

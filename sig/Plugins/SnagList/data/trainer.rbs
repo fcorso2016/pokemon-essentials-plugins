@@ -1,4 +1,4 @@
-﻿class Trainer
+class Trainer
   attr_writer shadow_seen: Hash[Symbol, SeenShadowPokemon]
 
   attr_writer snag_order: Array[Symbol]
@@ -13,3 +13,5 @@
 
   def register_purification: (Pokemon pokemon) -> void
 end
+
+

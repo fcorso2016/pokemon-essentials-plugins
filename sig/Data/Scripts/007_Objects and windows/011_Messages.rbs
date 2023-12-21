@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -73,3 +73,5 @@ class FaceWindowVX < SpriteWindow_Base
 
   def initialize: (String face) -> void
 end
+
+

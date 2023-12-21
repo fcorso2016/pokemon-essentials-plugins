@@ -1,3 +1,5 @@
-﻿class WindowSnagList < Window_Pokedex
+class WindowSnagList < Window_Pokedex
   def drawItem: (Integer index, Integer count, Rect rect) -> void
 end
+
+

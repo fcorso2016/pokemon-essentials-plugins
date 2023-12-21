@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module EventHandlers
@@ -20,3 +20,5 @@ module MenuHandlers
   def self.each_available: (Symbol menu, *untyped args) { (Symbol, HandlerHash[Symbol], String) -> void } -> void
   def self.call: (Symbol menu, Symbol option, String function, *untyped args) -> void
 end
+
+

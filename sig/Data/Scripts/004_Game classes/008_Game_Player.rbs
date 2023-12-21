@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -85,3 +85,5 @@ class Game_Player
   def update_screen_position: (Numeric last_real_x, Numeric last_real_y) -> void
   def update_event_triggering: -> void
 end
+
+

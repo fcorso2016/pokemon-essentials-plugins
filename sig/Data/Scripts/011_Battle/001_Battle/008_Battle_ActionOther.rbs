@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -16,3 +16,5 @@ class Battle
   def pbMegaEvolve: (Integer idxBattler) -> void
   def pbPrimalReversion: (Integer idxBattler) -> void
 end
+
+

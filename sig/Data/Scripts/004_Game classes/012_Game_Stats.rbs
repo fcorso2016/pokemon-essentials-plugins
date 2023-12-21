@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class GameStats
@@ -91,3 +91,5 @@ end
 class Game_Temp
   attr_accessor last_uptime_refreshed_play_time: Numeric
 end
+
+

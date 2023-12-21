@@ -1,4 +1,4 @@
-﻿module BattleAnimationEditor
+module BattleAnimationEditor
   # ============================================================================
   # Importing and exporting
   # ============================================================================
@@ -21,3 +21,5 @@
 
   def self?.pbConvertAnimsToNewFormat: () -> (nil | untyped)
 end
+
+

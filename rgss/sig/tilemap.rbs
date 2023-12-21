@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.8
+# TypeProf 0.21.8
 
 # Classes
 class Tilemap
@@ -18,3 +18,5 @@ class Tilemap
   attr_accessor ox: Integer
   attr_accessor oy: Integer
 end
+
+

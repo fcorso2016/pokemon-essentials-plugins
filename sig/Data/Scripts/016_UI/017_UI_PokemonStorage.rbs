@@ -1,5 +1,5 @@
-﻿# ==============================================================================
-# Pokémon icons
+# ==============================================================================
+# PokÃ©mon icons
 # ==============================================================================
 class PokemonBoxIcon < IconSprite
   include _Refreshable
@@ -16,7 +16,7 @@ class PokemonBoxIcon < IconSprite
 end
 
 # ==============================================================================
-# Pokémon sprite
+# PokÃ©mon sprite
 # ==============================================================================
 class MosaicPokemonSprite < PokemonSprite
   @inrefresh: bool
@@ -78,7 +78,7 @@ class PokemonBoxArrow < Sprite
   attr_accessor quickswap: bool
 
   # Time in seconds for the cursor to move down and back up to grab/drop a
-  # Pokémon.
+  # PokÃ©mon.
   GRAB_TIME: Float
 
   def initialize: (?Viewport? viewport) -> void
@@ -158,7 +158,7 @@ class PokemonBoxPartySprite < Sprite
 end
 
 # ==============================================================================
-# Pokémon storage visuals
+# PokÃ©mon storage visuals
 # ==============================================================================
 class PokemonStorageScene
   include _PokeScene
@@ -266,7 +266,7 @@ class PokemonStorageScene
 end
 
 # ==============================================================================
-# Pokémon storage mechanics
+# PokÃ©mon storage mechanics
 # ==============================================================================
 class PokemonStorageScreen
   include _PokeScreen[PokemonStorageScene]
@@ -326,3 +326,5 @@ class PokemonStorageScreen
 
   def pbChoosePokemon: (?Array[Pokemon]? _party) -> [Integer, Integer]
 end
+
+

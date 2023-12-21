@@ -1,4 +1,4 @@
-﻿class Scene_DebugIntro
+class Scene_DebugIntro
   def main: () -> void
 end
 
@@ -9,3 +9,5 @@ class Object
 
   def mainFunctionDebug: () -> void
 end
+
+

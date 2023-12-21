@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class TilemapRenderer
@@ -8,3 +8,5 @@ class TilemapRenderer
     def self?.expand: (Bitmap bitmap) -> Bitmap
   end
 end
+
+

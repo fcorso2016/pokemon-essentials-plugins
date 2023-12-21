@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module RPG
@@ -33,3 +33,5 @@ class FloatSprite
   def x=: (Float value) -> Float
   def y=: (Float value) -> Float
 end
+
+

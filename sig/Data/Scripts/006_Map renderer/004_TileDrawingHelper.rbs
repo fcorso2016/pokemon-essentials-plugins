@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -29,4 +29,6 @@ class TileDrawingHelper
   def bltRegularTile: (Bitmap bitmap, Integer x, Integer y, Integer id) -> void
   def bltTile: (Bitmap bitmap, Integer x, Integer y, Integer id, ?Integer frame) -> void
 end
+
+
 

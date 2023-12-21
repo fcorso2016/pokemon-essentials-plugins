@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -10,3 +10,5 @@ class Object
   def pbPostToString: (String url, Hash[Object, Object] postdata) -> String
   def pbPostToFile: (String url, Hash[Object, Object] postdata, String file) -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -20,3 +20,5 @@ class Battle
   class BattleAbortedException < Exception
   end
 end
+
+

@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class Battle::AI
@@ -54,3 +54,5 @@ class Battle::AI
   # scores for each move. Moves with higher scores are more likely to be chosen.
   def pbChooseMove: (Array[Array[Integer]] choices) -> void
 end
+
+

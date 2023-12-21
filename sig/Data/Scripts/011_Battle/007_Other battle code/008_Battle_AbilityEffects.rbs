@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 module Battle::AbilityEffects
@@ -209,3 +209,5 @@ module Battle::AbilityEffects
 
   def self.triggerCertainEscapeFromBattle: (Symbol ability, Battle::Battler battler) -> void
 end
+
+

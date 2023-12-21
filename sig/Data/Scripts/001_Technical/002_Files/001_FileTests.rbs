@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Object
@@ -78,3 +78,5 @@ class StringInput
   alias read_all read
   alias sysread read
 end
+
+

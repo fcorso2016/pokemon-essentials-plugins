@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Individual trainer editor
 # ==============================================================================
 module TrainerBattleProperty
@@ -10,7 +10,7 @@ module TrainerBattleProperty
 end
 
 # ==============================================================================
-# Trainer Pokémon editor
+# Trainer PokÃ©mon editor
 # ==============================================================================
 module TrainerPokemonProperty
   def self.set: (untyped settingname, untyped initsetting) -> (nil | untyped)
@@ -70,7 +70,7 @@ class Object
   def pbItemEditorNew: (untyped default_name) -> (nil | untyped)
 
   # ==============================================================================
-  # Pokémon species editor
+  # PokÃ©mon species editor
   # ==============================================================================
   def pbPokemonEditor: () -> untyped
 
@@ -92,3 +92,5 @@ class Object
   # ==============================================================================
   def pbAnimationsOrganiser: () -> (nil | untyped)
 end
+
+

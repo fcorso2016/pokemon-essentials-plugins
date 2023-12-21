@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # This class is designed to favor different values more than a uniform
 # random generator does.
 # ==============================================================================
@@ -83,13 +83,13 @@ class Object
   def getRandomName: (?Integer maxLength) -> String
 
   # ==============================================================================
-  # Regional and National Pokédexes utilities
+  # Regional and National PokÃ©dexes utilities
   # ==============================================================================
   # Returns the ID number of the region containing the player's current location,
   # as determined by the current map's metadata.
   def pbGetCurrentRegion: (?Integer default) -> Integer
 
-  # Returns the Regional Pokédex number of the given species in the given Regional
+  # Returns the Regional PokÃ©dex number of the given species in the given Regional
   # Dex. The parameter "region" is zero-based. For example, if two regions are
   # defined, they would each be specified as 0 and 1.
   def pbGetRegionalNumber: (Integer region, Symbol species) -> Integer
@@ -135,3 +135,5 @@ class Object
 
   def pbScreenCapture: () -> void
 end
+
+

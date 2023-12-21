@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Mystery Gift system
 # By Maruno
 # ==============================================================================
@@ -13,8 +13,8 @@ class Object
   # ==============================================================================
   # Creating a new Mystery Gift for the Master file, and editing an existing one.
   # ==============================================================================
-  # type: 0=Pokémon; 1 or higher=item (is the item's quantity).
-  # item: The thing being turned into a Mystery Gift (Pokémon object or item ID).
+  # type: 0=PokÃ©mon; 1 or higher=item (is the item's quantity).
+  # item: The thing being turned into a Mystery Gift (PokÃ©mon object or item ID).
   def pbEditMysteryGift: (Integer `type`, Pokemon | Symbol item, ?Integer id, ?String giftname) -> [Integer, Integer, Pokemon | Symbol, String]?
 
   def pbCreateMysteryGift: (Integer `type`, Pokemon | Symbol item) -> void
@@ -47,3 +47,5 @@ class Object
 
   def pbReceiveMysteryGift: (Integer id) -> bool
 end
+
+

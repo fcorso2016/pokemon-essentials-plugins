@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 module RecordedBattleModule
@@ -144,3 +144,5 @@ module RecordedBattle::PlaybackHelper
 
   def self.pbCreateTrainerInfo: (Array[[Symbol, String, Integer, Array[bool]] | [Symbol, String, Integer, String, String]] trainer) -> Array[Trainer]
 end
+
+

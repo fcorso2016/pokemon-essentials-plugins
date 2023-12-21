@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Base class for all three menu classes below
 # ==============================================================================
 class Battle::Scene::MenuBase
@@ -51,7 +51,7 @@ class Battle::Scene::MenuBase
 end
 
 # ==============================================================================
-# Command menu (Fight/Pokémon/Bag/Run)
+# Command menu (Fight/PokÃ©mon/Bag/Run)
 # ==============================================================================
 class Battle::Scene::CommandMenu < Battle::Scene::MenuBase
   # If true, displays graphics from Graphics/UI/Battle/overlay_command.png
@@ -164,3 +164,5 @@ class Battle::Scene::TargetMenu < Battle::Scene::MenuBase
 
   def refreshButtons: () -> void
 end
+
+

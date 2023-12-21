@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module SaveData
@@ -12,3 +12,5 @@ module SaveData
   def self.delete_file: -> void
   def self.to_hash_format: ([Hash[untyped, untyped], Array[untyped]]? old_format) -> Hash[untyped, untyped]
 end
+
+

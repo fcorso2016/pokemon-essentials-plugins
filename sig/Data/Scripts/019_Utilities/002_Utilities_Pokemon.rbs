@@ -1,6 +1,6 @@
-﻿class Object
+class Object
   # ==============================================================================
-  # Nicknaming and storing Pokémon
+  # Nicknaming and storing PokÃ©mon
   # ==============================================================================
   def pbBoxesFull?: () -> bool
 
@@ -11,14 +11,14 @@
   def pbNicknameAndStore: (Pokemon pkmn) -> void
 
   # ==============================================================================
-  # Giving Pokémon to the player (will send to storage if party is full)
+  # Giving PokÃ©mon to the player (will send to storage if party is full)
   # ==============================================================================
   def pbAddPokemon: (Pokemon | Symbol pkmn, ?Integer level, ?bool see_form) -> bool
 
   def pbAddPokemonSilent: (Pokemon | Symbol pkmn, ?Integer level, ?bool see_form) -> bool
 
   # ==============================================================================
-  # Giving Pokémon/eggs to the player (can only add to party)
+  # Giving PokÃ©mon/eggs to the player (can only add to party)
   # ==============================================================================
   def pbAddToParty: (Pokemon pkmn, ?::Integer level, ?bool see_form) -> bool
 
@@ -33,18 +33,18 @@
   alias pbGenEgg pbGenerateEgg
 
   # ==============================================================================
-  # Analyse Pokémon in the party
+  # Analyse PokÃ©mon in the party
   # ==============================================================================
-  # Returns the first unfainted, non-egg Pokémon in the player's party.
+  # Returns the first unfainted, non-egg PokÃ©mon in the player's party.
   def pbFirstAblePokemon: (Integer variable_ID) -> Pokemon
 
   # ==============================================================================
-  # Return a level value based on Pokémon in a party
+  # Return a level value based on PokÃ©mon in a party
   # ==============================================================================
   def pbBalancedLevel: (Array[Pokemon] party) -> Integer
 
   # ==============================================================================
-  # Calculates a Pokémon's size (in millimeters)
+  # Calculates a PokÃ©mon's size (in millimeters)
   # ==============================================================================
   def pbSize: (Pokemon pkmn) -> Integer
 
@@ -53,3 +53,5 @@
   # ==============================================================================
   def pbHasEgg?: (Symbol species) -> bool
 end
+
+

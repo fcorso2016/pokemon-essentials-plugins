@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class SpriteWindow < Window
@@ -100,3 +100,5 @@ class SpriteWindow_Base < SpriteWindow
   def setSkin: (String skin) -> void
   def setSystemFrame: -> void
 end
+
+

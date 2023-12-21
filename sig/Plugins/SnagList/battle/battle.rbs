@@ -1,5 +1,7 @@
-﻿class Battle
+class Battle
   alias on_enter_battle_alias_snag_list pbMessagesOnBattlerEnteringBattle
 
   alias record_and_store_alias_snag_list pbRecordAndStoreCaughtPokemon
 end
+
+

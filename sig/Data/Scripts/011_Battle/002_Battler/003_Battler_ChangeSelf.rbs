@@ -1,4 +1,4 @@
-﻿class Battle::Battler
+class Battle::Battler
   # ============================================================================
   # Change HP
   # ============================================================================
@@ -40,8 +40,8 @@
 
   def pbCheckFormOnWeatherChange: (?bool ability_changed) -> void
 
-  # Checks the Pokémon's form and updates it if necessary. Used for when a
-  # Pokémon enters battle (endOfRound=false) and at the end of each round
+  # Checks the PokÃ©mon's form and updates it if necessary. Used for when a
+  # PokÃ©mon enters battle (endOfRound=false) and at the end of each round
   # (endOfRound=true).
   def pbCheckForm: (?bool endOfRound) -> void
 
@@ -49,3 +49,5 @@
 
   def pbHyperMode: () -> void
 end
+
+

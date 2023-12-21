@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   # ==============================================================================
   #
   # ==============================================================================
@@ -15,7 +15,7 @@
   # ==============================================================================
   def pbChooseFromGameDataList: (untyped game_data, ?untyped? default) { (untyped) -> untyped } -> untyped
 
-  # Displays a list of all Pokémon species, and returns the ID of the species
+  # Displays a list of all PokÃ©mon species, and returns the ID of the species
   # selected (or nil if the selection was canceled). "default", if specified, is
   # the ID of the species to initially select. Pressing Input::ACTION will toggle
   # the list sorting between numerical and alphabetical.
@@ -62,3 +62,5 @@
 
   def pbCommandsSortable: (untyped cmdwindow, untyped commands, untyped cmdIfCancel, ?::Integer defaultindex, ?bool sortable) -> untyped
 end
+
+

@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # * Scene_Controls
 # -----------------------------------------------------------------------------
 # Shows a help screen listing the keyboard controls.
@@ -23,3 +23,5 @@ class ButtonEventScene < EventScene
 
   def pbOnScreenEnd: (EventScene scene, *untyped args) -> void
 end
+
+

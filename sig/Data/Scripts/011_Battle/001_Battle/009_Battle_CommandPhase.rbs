@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Battle
@@ -18,3 +18,5 @@ class Battle
   def pbCommandPhase: -> void
   def pbCommandPhaseLoop: (bool isPlayer) -> void
 end
+
+

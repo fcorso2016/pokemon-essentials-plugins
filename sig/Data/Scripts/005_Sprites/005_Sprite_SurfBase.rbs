@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Sprite_SurfBase
@@ -21,3 +21,5 @@ class Sprite_SurfBase
   attr_reader visible: bool
   def initialize: (untyped parent_sprite, ?nil viewport) -> void
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 class Scene_Map
@@ -23,3 +23,5 @@ class Scene_Map
   def updateSpritesets: (?bool refresh) -> void
   def main: -> void
 end
+
+

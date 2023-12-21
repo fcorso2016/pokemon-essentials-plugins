@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 #
 # ==============================================================================
 class PokemonEncounters
@@ -21,7 +21,7 @@ class PokemonEncounters
 
   # Returns whether encounters for the given encounter type have been defined
   # for the given map. Only called by Bug-Catching Contest to see if it can use
-  # the map's BugContest encounter type to generate caught Pokémon for the other
+  # the map's BugContest encounter type to generate caught PokÃ©mon for the other
   # contestants.
   def map_has_encounter_type?: (untyped map_ID, untyped enc_type) -> (false | untyped)
 
@@ -50,7 +50,7 @@ class PokemonEncounters
   # chance. Called when taking a step and by Rock Smash.
   def encounter_triggered?: (untyped enc_type, ?bool repel_active, ?bool triggered_by_step) -> bool
 
-  # Returns whether an encounter with the given Pokémon should be allowed after
+  # Returns whether an encounter with the given PokÃ©mon should be allowed after
   # taking into account Repels and ability effects.
   def allow_encounter?: (untyped enc_data, ?bool repel_active) -> bool
 
@@ -83,12 +83,14 @@ class Object
   # ==============================================================================
   #
   # ==============================================================================
-  # Creates and returns a Pokémon based on the given species and level.
-  # Applies wild Pokémon modifiers (wild held item, shiny chance modifiers,
-  # Pokérus, gender/nature forcing because of player's lead Pokémon).
+  # Creates and returns a PokÃ©mon based on the given species and level.
+  # Applies wild PokÃ©mon modifiers (wild held item, shiny chance modifiers,
+  # PokÃ©rus, gender/nature forcing because of player's lead PokÃ©mon).
   def pbGenerateWildPokemon: (Symbol | String | GameData::Species species, Integer level, ?bool isRoamer) -> Pokemon
 
   # Used by fishing rods and Headbutt/Rock Smash/Sweet Scent to generate a wild
-  # Pokémon (or two if it's Sweet Scent) for a triggered wild encounter.
+  # PokÃ©mon (or two if it's Sweet Scent) for a triggered wild encounter.
   def pbEncounter: (Symbol enc_type, ?bool only_single) -> bool
 end
+
+

@@ -1,4 +1,4 @@
-﻿# TypeProf 0.21.3
+# TypeProf 0.21.3
 
 # Classes
 module GameData
@@ -32,3 +32,5 @@ module GameData
     def maximum_yield: -> Integer
   end
 end
+
+

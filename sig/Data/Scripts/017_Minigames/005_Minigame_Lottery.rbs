@@ -1,4 +1,4 @@
-﻿class Object
+class Object
   # ==============================================================================
   # "Lottery" mini-game
   # By Maruno
@@ -7,3 +7,5 @@
 
   def pbLottery: (untyped winnum, ?::Integer nameVar, ?::Integer positionVar, ?::Integer matchedVar) -> untyped
 end
+
+
