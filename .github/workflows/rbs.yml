@@ -1,4 +1,4 @@
-name: Scan Essentials
+name: Check Type Signatures
 on:
   push:
     branches:
