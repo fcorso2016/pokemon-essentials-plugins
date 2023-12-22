@@ -1,0 +1,6 @@
+$issues: Array[String]
+$script_files: Hash[String, Array[String]]
+
+class Object
+  def process_steep_report: (String report_contents) { (String) -> void } -> void
+end
