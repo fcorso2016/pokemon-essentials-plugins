@@ -1,6 +1,19 @@
-$issues: Array[String]
+type found_error = {
+    "description" => String,
+    "check_name" => String,
+    "fingerprint" => String,
+    "severity" => String,
+    "location" => {
+      "path"=> String,
+      "lines" => {
+        "begin" => Integer
+        }
+    }
+  }
+
+$issues: Array[found_error]
 $script_files: Hash[String, Array[String]]
 
 class Object
-  def process_steep_report: (String report_contents) { (String) -> void } -> void
+  def process_steep_report: (String report_contents) { (found_error) -> void } -> void
 end

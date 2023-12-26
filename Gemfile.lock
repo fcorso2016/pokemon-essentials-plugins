@@ -18,6 +18,7 @@ GEM
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     csv (3.2.8)
+    digest (3.1.1)
     docile (1.4.0)
     drb (2.2.0)
       ruby2_keywords
@@ -79,6 +80,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  digest (~> 3.1)
   json (~> 2.7)
   rake (~> 13.1)
   simplecov (~> 0.22.0)

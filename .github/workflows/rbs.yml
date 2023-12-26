@@ -18,8 +18,17 @@ jobs:
         with:
           ruby-version: '3.1'
 
-      - name: Install Steep
-        run: gem install steep
+      - name: Install Gem Deps
+        run: bundle install
 
       - name: Get type info
-        run: steep check
+        run: steep check--log-output=steep_log.txt > rbs_report.txt
+
+      - name: Generate Report
+        run: ruby ./type_reporter.rb'
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: rbs-signature-report
+          path: rbs_issues.json
