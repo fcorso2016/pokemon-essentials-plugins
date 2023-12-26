@@ -14,8 +14,6 @@ class Battle::FakeBattler
 
   def initialize: (Battle battle, Integer index) -> void
 
-  def pbThis: (?bool lowerCase) -> Battle::FakeBattler
-
   def pbReset: () -> void
 end
 

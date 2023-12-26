@@ -21,8 +21,6 @@ interface _EditorProperty[T]
 
   def set: (String setting_name, T old_setting) -> T
 
-  def defaultValue: () -> T
-
   def format: (T value) -> String
 
 end

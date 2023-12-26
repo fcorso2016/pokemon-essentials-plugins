@@ -46,7 +46,7 @@ interface _BattlerBase
 
   def owned?: () -> bool
 
-  def pbThis: (?bool lowerCase) -> _BattlerBase
+  def pbThis: (?bool lowerCase) -> String
 
   def opposes?: (Integer i) -> bool
 end
@@ -227,8 +227,6 @@ class Battle::Battler
   def abilityName: () -> String
 
   def itemName: () -> String
-
-  def pbThis: (?bool lowerCase) -> String
 
   def pbTeam: (?bool lowerCase) -> String
 
