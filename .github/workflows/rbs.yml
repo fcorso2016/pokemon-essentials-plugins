@@ -23,7 +23,7 @@ jobs:
 
       - name: Get type info
         continue-on-error: true
-        run: steep check--log-output=steep_log.txt > rbs_report.txt
+        run: steep check --log-output=steep_log.txt > rbs_report.txt
 
       - name: Generate Report
         run: ruby ./type_reporter.rb'
