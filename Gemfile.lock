@@ -79,6 +79,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  json (~> 2.7)
   rake (~> 13.1)
   simplecov (~> 0.22.0)
   spy (~> 1.0)

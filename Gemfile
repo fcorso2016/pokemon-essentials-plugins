@@ -11,3 +11,5 @@ gem "spy", "~> 1.0"
 gem "rake", "~> 13.1"
 
 gem "steep", "~> 1.6"
+
+gem "json", "~> 2.7"
