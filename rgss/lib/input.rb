@@ -40,7 +40,7 @@ module Input
 
   F9 = :F9
 
-  class << self
+  module_function
 
     def update
       fail NotImplementedError
@@ -110,6 +110,11 @@ module Input
       fail NotImplementedError
     end
 
+    def time?(i)
+      fail NotImplementedError
+    end
+
+
     attr_accessor :text_input
     attr_accessor :clipboard
     attr_accessor :show_cursor
@@ -166,5 +171,4 @@ module Input
 
     end
 
-  end
 end
