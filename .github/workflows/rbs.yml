@@ -26,7 +26,7 @@ jobs:
         run: steep check --log-output=steep_log.txt > rbs_report.txt
 
       - name: Generate Report
-        run: ruby ./type_reporter.rb'
+        run: ruby ./type_reporter.rb
 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
