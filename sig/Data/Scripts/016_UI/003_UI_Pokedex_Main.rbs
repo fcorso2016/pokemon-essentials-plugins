@@ -47,7 +47,7 @@ class PokedexSearchSelectionSprite < Sprite
 end
 
 # ==============================================================================
-# PokÃ©dex main screen
+# PokÃƒÂ©dex main screen
 # ==============================================================================
 class PokemonPokedex_Scene
   type dex_option = {
@@ -91,7 +91,7 @@ class PokemonPokedex_Scene
 
   def pbStartScene: () -> void
 
-  # Gets the region used for displaying PokÃ©dex entries. Species will be listed
+  # Gets the region used for displaying PokÃƒÂ©dex entries. Species will be listed
   # according to the given region's numbering and the returned region can have
   # any value defined in the town map data file. It is currently set to the
   # return value of pbGetCurrentRegion, and thus will change according to the
@@ -138,5 +138,6 @@ class PokemonPokedexScreen
 
   def pbStartScreen: () -> void
 end
+
 
 

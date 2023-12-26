@@ -61,7 +61,7 @@ module ItemHandlers
   # Returns whether item was used
   def self.triggerUseOnPokemon: (Symbol item, Integer qty, Pokemon pkmn, _Scene scene) -> bool
 
-  # Returns the maximum number of the item that can be used on the PokÃ©mon at once.
+  # Returns the maximum number of the item that can be used on the PokÃƒÂ©mon at once.
   def self.triggerUseOnPokemonMaximum: (Symbol item, Pokemon pkmn) -> Integer
 
   def self.triggerCanUseInBattle: (Symbol item, Pokemon pkmn, Battle::Battler battler, Integer move, bool firstAction, Battle battle, _Scene scene, ?bool showMessages) -> bool
@@ -84,7 +84,7 @@ class Object
   def pbCanUseOnPokemon?: (Symbol item) -> bool
 
   # ==============================================================================
-  # Change a PokÃ©mon's level
+  # Change a PokÃƒÂ©mon's level
   # ==============================================================================
   def pbChangeLevel: (Pokemon pkmn, Integer new_level, _Scene scene) -> void
 
@@ -155,13 +155,13 @@ class Object
   def pbForgetMove: (Pokemon pkmn, Symbol moveToLearn) -> Integer
 
   # ==============================================================================
-  # Use an item from the Bag and/or on a PokÃ©mon
+  # Use an item from the Bag and/or on a PokÃƒÂ©mon
   # ==============================================================================
   # @return [Integer] 0 = item wasn't used; 1 = item used; 2 = close Bag to use in field
   def pbUseItem: (PokemonBag bag, Symbol item, ?PokemonBag_Scene? bagscene) -> Integer
 
   # Only called when in the party screen and having chosen an item to be used on
-  # the selected PokÃ©mon
+  # the selected PokÃƒÂ©mon
   def pbUseItemOnPokemon: (Symbol item, Pokemon pkmn, _Scene scene) -> bool
 
   def pbUseKeyItemInField: (Symbol item) -> bool
@@ -171,7 +171,7 @@ class Object
   def pbCheckUseOnPokemon: (Symbol item, Pokemon pkmn, _Screen _screen) -> bool
 
   # ==============================================================================
-  # Give an item to a PokÃ©mon to hold, and take a held item from a PokÃ©mon
+  # Give an item to a PokÃƒÂ©mon to hold, and take a held item from a PokÃƒÂ©mon
   # ==============================================================================
   def pbGiveItemToPokemon: (Symbol item, Pokemon pkmn, _Scene scene, ?Integer pkmnid) -> bool
 
@@ -190,5 +190,6 @@ class Object
   # in the given Game Variable. Only items which the player has are listed.
   def pbChooseItemFromList: (String message, Integer variable, *Symbol args) -> Symbol?
 end
+
 
 

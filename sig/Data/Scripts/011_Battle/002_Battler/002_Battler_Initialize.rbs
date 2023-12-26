@@ -20,11 +20,12 @@ class Battle::Battler
   # ============================================================================
   def pbUpdate: (?bool fullChange) -> void
 
-  # Used to erase the battler of a PokÃ©mon that has been caught.
+  # Used to erase the battler of a PokÃƒÂ©mon that has been caught.
   def pbReset: () -> void
 
-  # Update which PokÃ©mon will gain Exp if this battler is defeated.
+  # Update which PokÃƒÂ©mon will gain Exp if this battler is defeated.
   def pbUpdateParticipants: () -> void
 end
+
 
 

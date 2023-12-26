@@ -102,3 +102,4 @@ class SpriteWindow_Base < SpriteWindow
 end
 
 
+

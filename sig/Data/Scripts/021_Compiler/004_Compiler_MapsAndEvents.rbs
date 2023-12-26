@@ -172,7 +172,7 @@ module Compiler
 
   # Checks if the event has just 1 page, which has no conditions and whose
   # movement type is "Fixed". Then checks if there are no commands, or it looks
-  # like a simple Mart or a PokÃ© Center nurse event.
+  # like a simple Mart or a PokÃƒÂ© Center nurse event.
   def self?.plain_event_or_mart?: (RPG::Event event) -> bool
 
   # Given two events that are next to each other, decides whether otherEvent is
@@ -196,5 +196,6 @@ module Compiler
   # ============================================================================
   def self?.compile_trainer_events: (bool _mustcompile) -> void
 end
+
 
 

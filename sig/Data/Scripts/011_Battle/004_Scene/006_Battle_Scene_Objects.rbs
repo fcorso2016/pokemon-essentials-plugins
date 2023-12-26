@@ -147,7 +147,7 @@ class Battle::Scene::AbilitySplashBar < Sprite
 end
 
 # ==============================================================================
-# PokÃ©mon sprite (used in battle)
+# PokÃƒÂ©mon sprite (used in battle)
 # ==============================================================================
 class Battle::Scene::BattlerSprite < RPG::Sprite
   @_iconBitmap: AnimatedBitmap?
@@ -185,15 +185,15 @@ class Battle::Scene::BattlerSprite < RPG::Sprite
 
   def setPokemonBitmap: (Pokemon pkmn, ?bool back) -> void
 
-  # This method plays the battle entrance animation of a PokÃ©mon. By default
-  # this is just playing the PokÃ©mon's cry, but you can expand on it. The
+  # This method plays the battle entrance animation of a PokÃƒÂ©mon. By default
+  # this is just playing the PokÃƒÂ©mon's cry, but you can expand on it. The
   # recommendation is to create a PictureEx animation and push it into
   # the @battleAnimations array.
   def pbPlayIntroAnimation: (?PictureEx? pictureEx) -> void
 end
 
 # ==============================================================================
-# Shadow sprite for PokÃ©mon (used in battle)
+# Shadow sprite for PokÃƒÂ©mon (used in battle)
 # ==============================================================================
 class Battle::Scene::BattlerShadowSprite < RPG::Sprite
   @_iconBitmap: AnimatedBitmap?
@@ -214,5 +214,6 @@ class Battle::Scene::BattlerShadowSprite < RPG::Sprite
 
   def setPokemonBitmap: (Pokemon? pkmn) -> void
 end
+
 
 

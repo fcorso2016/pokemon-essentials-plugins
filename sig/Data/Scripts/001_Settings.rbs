@@ -49,7 +49,7 @@ module Settings
   # mechanics (false).
   NEW_BERRY_PLANTS: bool
 
-  # Whether fishing automatically hooks the PokÃ©mon (true), or whether there is
+  # Whether fishing automatically hooks the PokÃƒÂ©mon (true), or whether there is
   # a reaction test first (false).
   FISHING_AUTO_HOOK: bool
 
@@ -75,10 +75,10 @@ module Settings
   # location signpost anyway, so you don't need to list those maps here.
   NO_SIGNPOSTS: Array[Integer]
 
-  # Whether poisoned PokÃ©mon will lose HP while walking around in the field.
+  # Whether poisoned PokÃƒÂ©mon will lose HP while walking around in the field.
   POISON_IN_FIELD: bool
 
-  # Whether poisoned PokÃ©mon will faint while walking around in the field
+  # Whether poisoned PokÃƒÂ©mon will faint while walking around in the field
   # (true), or survive the poisoning with 1 HP (false).
   POISON_FAINT_IN_FIELD: bool
 
@@ -112,59 +112,59 @@ module Settings
 
   BADGE_FOR_WATERFALL: Integer
 
-  # The maximum level PokÃ©mon can reach.
+  # The maximum level PokÃƒÂ©mon can reach.
   MAXIMUM_LEVEL: Integer
 
-  # The level of newly hatched PokÃ©mon.
+  # The level of newly hatched PokÃƒÂ©mon.
   EGG_LEVEL: Integer
 
-  # The odds of a newly generated PokÃ©mon being shiny (out of 65536).
+  # The odds of a newly generated PokÃƒÂ©mon being shiny (out of 65536).
   SHINY_POKEMON_CHANCE: Integer
 
   # Whether super shininess is enabled (uses a different shiny animation).
   SUPER_SHINY: bool
 
-  # The odds of a wild PokÃ©mon/bred egg having PokÃ©rus (out of 65536).
+  # The odds of a wild PokÃƒÂ©mon/bred egg having PokÃƒÂ©rus (out of 65536).
   POKERUS_CHANCE: Integer
 
-  # Whether IVs and EVs are treated as 0 when calculating a PokÃ©mon's stats.
+  # Whether IVs and EVs are treated as 0 when calculating a PokÃƒÂ©mon's stats.
   # IVs and EVs still exist, and are used by Hidden Power and some cosmetic
   # things as normal.
   DISABLE_IVS_AND_EVS: bool
 
-  # Whether the Move Relearner can also teach egg moves that the PokÃ©mon knew
-  # when it hatched and moves that the PokÃ©mon was once taught by a TR. Moves
-  # from the PokÃ©mon's level-up moveset of the same or a lower level than the
-  # PokÃ©mon can always be relearned.
+  # Whether the Move Relearner can also teach egg moves that the PokÃƒÂ©mon knew
+  # when it hatched and moves that the PokÃƒÂ©mon was once taught by a TR. Moves
+  # from the PokÃƒÂ©mon's level-up moveset of the same or a lower level than the
+  # PokÃƒÂ©mon can always be relearned.
   MOVE_RELEARNER_CAN_TEACH_MORE_MOVES: bool
 
-  # Whether PokÃ©mon in the Day Care gain Exp for each step the player takes.
-  # This should be true for the Day Care and false for the PokÃ©mon Nursery, both
+  # Whether PokÃƒÂ©mon in the Day Care gain Exp for each step the player takes.
+  # This should be true for the Day Care and false for the PokÃƒÂ©mon Nursery, both
   # of which use the same code in Essentials.
   DAY_CARE_POKEMON_GAIN_EXP_FROM_WALKING: bool
 
-  # Whether two PokÃ©mon in the Day Care can learn egg moves from each other if
+  # Whether two PokÃƒÂ©mon in the Day Care can learn egg moves from each other if
   # they are the same species.
   DAY_CARE_POKEMON_CAN_SHARE_EGG_MOVES: bool
 
-  # Whether a bred baby PokÃ©mon can inherit any TM/TR/HM moves from its father.
+  # Whether a bred baby PokÃƒÂ©mon can inherit any TM/TR/HM moves from its father.
   # It can never inherit TM/TR/HM moves from its mother.
   BREEDING_CAN_INHERIT_MACHINE_MOVES: bool
 
-  # Whether a bred baby PokÃ©mon can inherit egg moves from its mother. It can
+  # Whether a bred baby PokÃƒÂ©mon can inherit egg moves from its mother. It can
   # always inherit egg moves from its father.
   BREEDING_CAN_INHERIT_EGG_MOVES_FROM_MOTHER: bool
 
-  # A list of maps used by roaming PokÃ©mon. Each map has an array of other maps
+  # A list of maps used by roaming PokÃƒÂ©mon. Each map has an array of other maps
   # it can lead to.
   ROAMING_AREAS: Hash[Integer, Array[Integer]]
 
   type roaming_pokemon = [Symbol, Integer, Integer, Integer, String?, Hash[Integer, Array[Integer]]?]
-  # A set of arrays, each containing the details of a roaming PokÃ©mon. The
+  # A set of arrays, each containing the details of a roaming PokÃƒÂ©mon. The
   # information within each array is as follows:
   #   * Species.
   #   * Level.
-  #   * Game Switch; the PokÃ©mon roams while this is ON.
+  #   * Game Switch; the PokÃƒÂ©mon roams while this is ON.
   #   * Encounter type (see def pbRoamingMethodAllowed for their use):
   #       0 = grass, walking in cave, surfing
   #       1 = grass, walking in cave
@@ -172,18 +172,18 @@ module Settings
   #       3 = fishing
   #       4 = surfing, fishing
   #   * Name of BGM to play for that encounter (optional).
-  #   * Roaming areas specifically for this PokÃ©mon (optional; used instead of
+  #   * Roaming areas specifically for this PokÃƒÂ©mon (optional; used instead of
   #     ROAMING_AREAS).
   ROAMING_SPECIES: Array[roaming_pokemon]
 
-  # The maximum number of PokÃ©mon that can be in the party.
+  # The maximum number of PokÃƒÂ©mon that can be in the party.
   MAX_PARTY_SIZE: Integer
 
-  # The number of boxes in PokÃ©mon storage.
+  # The number of boxes in PokÃƒÂ©mon storage.
   NUM_STORAGE_BOXES: Integer
 
-  # Whether putting a PokÃ©mon into PokÃ©mon storage will heal it. If false, they
-  # are healed by the Recover All: Entire Party event command (at PokÃ© Centers).
+  # Whether putting a PokÃƒÂ©mon into PokÃƒÂ©mon storage will heal it. If false, they
+  # are healed by the Recover All: Entire Party event command (at PokÃƒÂ© Centers).
   HEAL_STORED_POKEMON: bool
 
   # Whether various HP-healing items heal the amounts they do in Gen 7+ (true)
@@ -197,17 +197,17 @@ module Settings
   # Whether Rage Candy Bar acts as a Full Heal (true) or a Potion (false).
   RAGE_CANDY_BAR_CURES_STATUS_PROBLEMS: bool
 
-  # Whether the Black/White Flutes will raise/lower the levels of wild PokÃ©mon
+  # Whether the Black/White Flutes will raise/lower the levels of wild PokÃƒÂ©mon
   # respectively (true), or will lower/raise the wild encounter rate
   # respectively (false).
   FLUTES_CHANGE_WILD_ENCOUNTER_LEVELS: bool
 
-  # Whether Rare Candy can be used on a PokÃ©mon that is already at its maximum
+  # Whether Rare Candy can be used on a PokÃƒÂ©mon that is already at its maximum
   # level if it is able to evolve by level-up (if so, triggers that evolution).
   RARE_CANDY_USABLE_AT_MAX_LEVEL: bool
 
   # Whether the player can choose how many of an item to use at once on a
-  # PokÃ©mon. This applies to Exp-changing items (Rare Candy, Exp Candies) and
+  # PokÃƒÂ©mon. This applies to Exp-changing items (Rare Candy, Exp Candies) and
   # EV-changing items (vitamins, feathers, EV-lowering berries).
   USE_MULTIPLE_STAT_ITEMS_AT_ONCE: bool
 
@@ -216,8 +216,8 @@ module Settings
   # the machine's move has full PP (false).
   TAUGHT_MACHINES_KEEP_OLD_PP: bool
 
-  # Whether you get 1 Premier Ball for every 10 of any kind of PokÃ© Ball bought
-  # from a Mart at once (true), or 1 Premier Ball for buying 10+ regular PokÃ©
+  # Whether you get 1 Premier Ball for every 10 of any kind of PokÃƒÂ© Ball bought
+  # from a Mart at once (true), or 1 Premier Ball for buying 10+ regular PokÃƒÂ©
   # Balls (false).
   MORE_BONUS_PREMIER_BALLS: bool
 
@@ -235,25 +235,25 @@ module Settings
   BAG_MAX_PER_SLOT: Integer
 
   type pokedex_region = [String, Integer]
-  # The names of the PokÃ©dex lists, in the order they are defined in the PBS
+  # The names of the PokÃƒÂ©dex lists, in the order they are defined in the PBS
   # file "regional_dexes.txt". The last name is for the National Dex and is
   # added onto the end of this array.
   # Each entry is either just a name, or is an array containing a name and a
   # number. If there is a number, it is a region number as defined in
   # town_map.txt. If there is no number, the number of the region the player is
   # currently in will be used. The region number determines which Town Map is
-  # shown in the Area page when viewing that PokÃ©dex list.
+  # shown in the Area page when viewing that PokÃƒÂ©dex list.
   def self.pokedex_names: () -> Array[String | pokedex_region]
 
-  # Whether the PokÃ©dex list shown is the one for the player's current region
+  # Whether the PokÃƒÂ©dex list shown is the one for the player's current region
   # (true), or whether a menu pops up for the player to manually choose which
   # Dex list to view if more than one is available (false).
   USE_CURRENT_REGION_DEX: bool
 
   # Whether all forms of a given species will be immediately available to view
-  # in the PokÃ©dex so long as that species has been seen at all (true), or
+  # in the PokÃƒÂ©dex so long as that species has been seen at all (true), or
   # whether each form needs to be seen specifically before that form appears in
-  # the PokÃ©dex (false).
+  # the PokÃƒÂ©dex (false).
   DEX_SHOWS_ALL_FORMS: bool
 
   # An array of numbers, where each number is that of a Dex list (in the same
@@ -261,7 +261,7 @@ module Settings
   # will begin their numbering at 0 rather than 1 (e.g. Victini in Unova's Dex).
   DEXES_WITH_OFFSETS: Array[Integer]
 
-  # Whether the PokÃ©dex entry of a newly owned species will be shown after it
+  # Whether the PokÃƒÂ©dex entry of a newly owned species will be shown after it
   # hatches from an egg, after it evolves and after obtaining it from a trade,
   # in addition to after catching it in battle.
   SHOW_NEW_SPECIES_POKEDEX_ENTRY_MORE_OFTEN: bool
@@ -292,16 +292,16 @@ module Settings
   # manually in their Common Events.
   COLOR_PHONE_CALL_MESSAGES_BY_CONTACT_GENDER: bool
 
-  # Whether Repel uses the level of the first PokÃ©mon in the party regardless of
-  # its HP (true), or it uses the level of the first unfainted PokÃ©mon (false).
+  # Whether Repel uses the level of the first PokÃƒÂ©mon in the party regardless of
+  # its HP (true), or it uses the level of the first unfainted PokÃƒÂ©mon (false).
   REPEL_COUNTS_FAINTED_POKEMON: bool
 
-  # Whether more abilities affect whether wild PokÃ©mon appear, which PokÃ©mon
+  # Whether more abilities affect whether wild PokÃƒÂ©mon appear, which PokÃƒÂ©mon
   # they are, etc.
   MORE_ABILITIES_AFFECT_WILD_ENCOUNTERS: bool
 
-  # Whether shiny wild PokÃ©mon are more likely to appear if the player has
-  # previously defeated/caught lots of other PokÃ©mon of the same species.
+  # Whether shiny wild PokÃƒÂ©mon are more likely to appear if the player has
+  # previously defeated/caught lots of other PokÃƒÂ©mon of the same species.
   HIGHER_SHINY_CHANCES_WITH_NUMBER_BATTLED: bool
 
   # Whether overworld weather can set the default terrain effect in battle.
@@ -311,19 +311,19 @@ module Settings
   # The Game Switch that is set to ON when the player blacks out.
   STARTING_OVER_SWITCH: Integer
 
-  # The Game Switch that is set to ON when the player has seen PokÃ©rus in the
-  # PokÃ© Center (and doesn't need to be told about it again).
+  # The Game Switch that is set to ON when the player has seen PokÃƒÂ©rus in the
+  # PokÃƒÂ© Center (and doesn't need to be told about it again).
   SEEN_POKERUS_SWITCH: Integer
 
-  # The Game Switch which, while ON, makes all wild PokÃ©mon created be shiny.
+  # The Game Switch which, while ON, makes all wild PokÃƒÂ©mon created be shiny.
   SHINY_WILD_POKEMON_SWITCH: Integer
 
-  # The Game Switch which, while ON, makes all PokÃ©mon created considered to be
+  # The Game Switch which, while ON, makes all PokÃƒÂ©mon created considered to be
   # met via a fateful encounter.
   FATEFUL_ENCOUNTER_SWITCH: Integer
 
-  # The Game Switch which, while ON, disables the effect of the PokÃ©mon Box Link
-  # and prevents the player from accessing PokÃ©mon storage via the party screen
+  # The Game Switch which, while ON, disables the effect of the PokÃƒÂ©mon Box Link
+  # and prevents the player from accessing PokÃƒÂ©mon storage via the party screen
   # with it.
   DISABLE_BOX_LINK_SWITCH: Integer
 
@@ -339,15 +339,15 @@ module Settings
   EXCLAMATION_ANIMATION_ID: Integer
 
   # ID of the animation played when a patch of grass rustles due to using the
-  # PokÃ© Radar.
+  # PokÃƒÂ© Radar.
   RUSTLE_NORMAL_ANIMATION_ID: Integer
 
   # ID of the animation played when a patch of grass rustles vigorously due to
-  # using the PokÃ© Radar. (Rarer species)
+  # using the PokÃƒÂ© Radar. (Rarer species)
   RUSTLE_VIGOROUS_ANIMATION_ID: Integer
 
   # ID of the animation played when a patch of grass rustles and shines due to
-  # using the PokÃ© Radar. (Shiny encounter)
+  # using the PokÃƒÂ© Radar. (Shiny encounter)
   RUSTLE_SHINY_ANIMATION_ID: Integer
 
   # ID of the animation played when a berry tree grows a stage while the player
@@ -400,5 +400,6 @@ module Essentials
 
   MKXPZ_VERSION: String
 end
+
 
 

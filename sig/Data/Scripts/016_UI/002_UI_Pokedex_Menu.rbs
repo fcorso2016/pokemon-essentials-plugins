@@ -1,5 +1,5 @@
 # ==============================================================================
-# PokÃ©dex Regional Dexes list menu screen
+# PokÃƒÂ©dex Regional Dexes list menu screen
 # * For choosing which region list to view. Only appears when there is more
 #   than one accessible region list to choose from, and if
 #   Settings::USE_CURRENT_REGION_DEX is false.
@@ -47,5 +47,6 @@ class PokemonPokedexMenuScreen
 
   def pbStartScreen: () -> void
 end
+
 
 

@@ -37,7 +37,7 @@ end
 
 # ==============================================================================
 # User is Ghost: User loses 1/2 of max HP, and curses the target.
-# Cursed PokÃ©mon lose 1/4 of their max HP at the end of each round.
+# Cursed PokÃƒÂ©mon lose 1/4 of their max HP at the end of each round.
 # User is not Ghost: Decreases the user's Speed by 1 stage, and increases the
 # user's Attack and Defense by 1 stage each. (Curse)
 # ==============================================================================
@@ -56,7 +56,7 @@ end
 # ==============================================================================
 # If Psychic Terrain applies and the user is grounded, power is multiplied by
 # 1.5 (in addition to Psychic Terrain's multiplier) and it targets all opposing
-# PokÃ©mon. (Expanding Force)
+# PokÃƒÂ©mon. (Expanding Force)
 # ==============================================================================
 class Battle::Move::HitsAllFoesAndPowersUpInPsychicTerrain < Battle::Move
 end
@@ -181,7 +181,7 @@ end
 # Uses a different move depending on the environment. (Nature Power)
 # NOTE: This code does not support the Gen 5 and older definition of the move
 #       where it targets the user. It makes more sense for it to target another
-#       PokÃ©mon.
+#       PokÃƒÂ©mon.
 # ==============================================================================
 class Battle::Move::UseMoveDependingOnEnvironment < Battle::Move
   attr_reader npMove: Symbol
@@ -197,7 +197,7 @@ class Battle::Move::UseRandomMove < Battle::Move
 end
 
 # ==============================================================================
-# Uses a random move known by any non-user PokÃ©mon in the user's party. (Assist)
+# Uses a random move known by any non-user PokÃƒÂ©mon in the user's party. (Assist)
 # ==============================================================================
 class Battle::Move::UseRandomMoveFromUserParty < Battle::Move
   @assistMoves: Array[Symbol]
@@ -241,5 +241,6 @@ end
 class Battle::Move::ReplaceMoveWithTargetLastMoveUsed < Battle::Move
   attr_reader moveBlacklist: Array[String]
 end
+
 
 

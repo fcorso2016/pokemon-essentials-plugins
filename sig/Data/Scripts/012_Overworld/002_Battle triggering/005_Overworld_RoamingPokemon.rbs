@@ -16,7 +16,7 @@ class PokemonGlobalMetadata
 end
 
 # ==============================================================================
-# Encountering a roaming PokÃ©mon in a wild battle.
+# Encountering a roaming PokÃƒÂ©mon in a wild battle.
 # ==============================================================================
 class Game_Temp
   attr_accessor roamer_index_for_encounter: Integer?
@@ -24,21 +24,21 @@ end
 
 class Object
   # ==============================================================================
-  # Making roaming PokÃ©mon roam around.
+  # Making roaming PokÃƒÂ©mon roam around.
   # ==============================================================================
   # Resets all roaming Pokemon that were defeated without having been caught.
   def pbResetAllRoamers: () -> void
 
-  # Gets the roaming areas for a particular PokÃ©mon.
+  # Gets the roaming areas for a particular PokÃƒÂ©mon.
   def pbRoamingAreas: (Integer idxRoamer) -> Hash[Integer, Array[Integer]]?
 
   # Puts a roamer in a completely random map available to it.
   def pbRandomRoam: (Integer index) -> void
 
-  # Makes all roaming PokÃ©mon roam to another map.
+  # Makes all roaming PokÃƒÂ©mon roam to another map.
   def pbRoamPokemon: () -> void
 
-  # Makes a single roaming PokÃ©mon roam to another map. Doesn't roam if it isn't
+  # Makes a single roaming PokÃƒÂ©mon roam to another map. Doesn't roam if it isn't
   # currently possible to encounter it (i.e. its Game Switch is off).
   def pbRoamPokemonOne: (Integer idxRoamer) -> void
 
@@ -51,5 +51,6 @@ class Object
 
   def pbRoamingPokemonBattle: (Pokemon | Symbol | String | GameData::Species pkmn, ?Integer level) -> untyped
 end
+
 
 

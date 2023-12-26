@@ -20,14 +20,14 @@ class Battle::AI
 
   def create_ai_objects: () -> void
 
-  # Set some class variables for the PokÃ©mon whose action is being chosen
+  # Set some class variables for the PokÃƒÂ©mon whose action is being chosen
   def set_up: (Integer idxBattler) -> void
 
   # Choose an action.
   def pbDefaultChooseEnemyCommand: (Integer idxBattler) -> void
 
-  # Choose a replacement PokÃ©mon (called directly from @battle, not part of
-  # action choosing). Must return the party index of a replacement PokÃ©mon if
+  # Choose a replacement PokÃƒÂ©mon (called directly from @battle, not part of
+  # action choosing). Must return the party index of a replacement PokÃƒÂ©mon if
   # possible.
   def pbDefaultChooseNewEnemy: (Integer idxBattler) -> Integer
 end
@@ -80,5 +80,6 @@ module Battle::AI::Handlers
 
   def self.modify_item_ranking: (Symbol item, Integer score, *untyped args) -> Integer
 end
+
 
 

@@ -16,7 +16,7 @@ class Battle::AI
 
   REVIVE_ITEMS: Hash[Symbol, Integer]
 
-  # Decide whether the opponent should use an item on the PokÃ©mon.
+  # Decide whether the opponent should use an item on the PokÃƒÂ©mon.
   def pbChooseToUseItem: () -> bool
 
   # Return values are:
@@ -28,5 +28,6 @@ class Battle::AI
 
   def get_usability_of_item_on_pkmn: (Symbol item, Integer party_index, Integer side) -> untyped
 end
+
 
 

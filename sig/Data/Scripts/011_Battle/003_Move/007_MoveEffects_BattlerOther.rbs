@@ -131,11 +131,11 @@ class Battle::Move::CureUserBurnPoisonParalysis < Battle::Move
 end
 
 # ==============================================================================
-# Cures all party PokÃ©mon of permanent status problems. (Aromatherapy, Heal Bell)
+# Cures all party PokÃƒÂ©mon of permanent status problems. (Aromatherapy, Heal Bell)
 # ==============================================================================
 # NOTE: In Gen 5, this move should have a target of UserSide, while in Gen 6+ it
 #       should have a target of UserAndAllies. This is because, in Gen 5, this
-#       move shouldn't call def pbSuccessCheckAgainstTarget for each PokÃ©mon
+#       move shouldn't call def pbSuccessCheckAgainstTarget for each PokÃƒÂ©mon
 #       currently in battle that will be affected by this move (i.e. allies
 #       aren't protected by their substitute/ability/etc., but they are in Gen
 #       6+). We achieve this by not targeting any battlers in Gen 5, since
@@ -342,7 +342,7 @@ class Battle::Move::HitsTargetInSkyGroundsTarget < Battle::Move
 end
 
 # ==============================================================================
-# For 5 rounds, increases gravity on the field. PokÃ©mon cannot become airborne.
+# For 5 rounds, increases gravity on the field. PokÃƒÂ©mon cannot become airborne.
 # (Gravity)
 # ==============================================================================
 class Battle::Move::StartGravity < Battle::Move
@@ -353,5 +353,6 @@ end
 # ==============================================================================
 class Battle::Move::TransformUserIntoTarget < Battle::Move
 end
+
 
 

@@ -150,7 +150,7 @@ class Battle::Scene
   # ============================================================================
   #
   # ============================================================================
-  # This method is called when the player wins a wild PokÃ©mon battle.
+  # This method is called when the player wins a wild PokÃƒÂ©mon battle.
   # This method can change the battle's music for example.
   def pbWildBattleSuccess: () -> void
 
@@ -158,5 +158,6 @@ class Battle::Scene
   # This method can change the battle's music for example.
   def pbTrainerBattleSuccess: () -> void
 end
+
 
 

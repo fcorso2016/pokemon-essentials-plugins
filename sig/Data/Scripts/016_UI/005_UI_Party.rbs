@@ -1,5 +1,5 @@
 # ==============================================================================
-# PokÃ©mon party buttons and menu
+# PokÃƒÂ©mon party buttons and menu
 # ==============================================================================
 class PokemonPartyConfirmCancelSprite < Sprite
   include _Refreshable
@@ -83,7 +83,7 @@ class PokemonPartyBlankPanel < Sprite
 end
 
 # ==============================================================================
-# PokÃ©mon party panel
+# PokÃƒÂ©mon party panel
 # ==============================================================================
 class PokemonPartyPanel < Sprite
   include _PokemonPartyPanel
@@ -158,7 +158,7 @@ class PokemonPartyPanel < Sprite
 end
 
 # ==============================================================================
-# PokÃ©mon party visuals
+# PokÃƒÂ©mon party visuals
 # ==============================================================================
 class PokemonParty_Scene
   include _PokeScene
@@ -215,7 +215,7 @@ class PokemonParty_Scene
 end
 
 # ==============================================================================
-# PokÃ©mon party mechanics
+# PokÃƒÂ©mon party mechanics
 # ==============================================================================
 class PokemonPartyScreen
   include _PokeScreen
@@ -282,21 +282,22 @@ class Object
   def pbPokemonScreen: () -> void
 
   # ==============================================================================
-  # Choose a PokÃ©mon in the party
+  # Choose a PokÃƒÂ©mon in the party
   # ==============================================================================
-  # Choose a PokÃ©mon/egg from the party.
-  # Stores result in variable _variableNumber_ and the chosen PokÃ©mon's name in
-  # variable _nameVarNumber_; result is -1 if no PokÃ©mon was chosen
+  # Choose a PokÃƒÂ©mon/egg from the party.
+  # Stores result in variable _variableNumber_ and the chosen PokÃƒÂ©mon's name in
+  # variable _nameVarNumber_; result is -1 if no PokÃƒÂ©mon was chosen
   def pbChoosePokemon: (Integer variableNumber, Integer nameVarNumber, ?(^(Pokemon) -> boolish)? ableProc, ?bool allowIneligible) -> void
 
   def pbChooseNonEggPokemon: (Integer variableNumber, Integer nameVarNumber) -> void
 
   def pbChooseAblePokemon: (Integer variableNumber, Integer nameVarNumber) -> void
 
-  # Same as pbChoosePokemon, but prevents choosing an egg or a Shadow PokÃ©mon.
+  # Same as pbChoosePokemon, but prevents choosing an egg or a Shadow PokÃƒÂ©mon.
   def pbChooseTradablePokemon: (Integer variableNumber, Integer nameVarNumber, ?(^(Pokemon) -> boolish)? ableProc, ?bool allowIneligible) -> void
 
   def pbChoosePokemonForTrade: (Integer variableNumber, Integer nameVarNumber, Symbol | String | GameData::Species wanted) -> void
 end
+
 
 

@@ -1,5 +1,5 @@
 # ==============================================================================
-# PokÃ©mon sprite (used out of battle).
+# PokÃƒÂ©mon sprite (used out of battle).
 # ==============================================================================
 class PokemonSprite < Sprite
   @_iconbitmap: AnimatedBitmap?
@@ -22,7 +22,7 @@ class PokemonSprite < Sprite
 end
 
 # ==============================================================================
-# PokÃ©mon icon (for defined PokÃ©mon).
+# PokÃƒÂ©mon icon (for defined PokÃƒÂ©mon).
 # ==============================================================================
 class PokemonIconSprite < Sprite
   @animBitmap: AnimatedBitmap?
@@ -40,9 +40,9 @@ class PokemonIconSprite < Sprite
 
   attr_reader pokemon: Pokemon?
 
-  # Time in seconds for one animation cycle of this PokÃ©mon icon. It is doubled
-  # if the PokÃ©mon is at 50% HP or lower, and doubled again if it is at 25% HP
-  # or lower. The icon doesn't animate at all if the PokÃ©mon is fainted.
+  # Time in seconds for one animation cycle of this PokÃƒÂ©mon icon. It is doubled
+  # if the PokÃƒÂ©mon is at 50% HP or lower, and doubled again if it is at 25% HP
+  # or lower. The icon doesn't animate at all if the PokÃƒÂ©mon is fainted.
   ANIMATION_DURATION: Float
 
   def initialize: (Pokemon pokemon, ?Viewport? viewport) -> void
@@ -65,7 +65,7 @@ class PokemonIconSprite < Sprite
 end
 
 # ==============================================================================
-# PokÃ©mon icon (for species).
+# PokÃƒÂ©mon icon (for species).
 # ==============================================================================
 class PokemonSpeciesIconSprite < Sprite
   include _Refreshable
@@ -82,7 +82,7 @@ class PokemonSpeciesIconSprite < Sprite
 
   attr_reader shiny: boolish
 
-  # Time in seconds for one animation cycle of this PokÃ©mon icon.
+  # Time in seconds for one animation cycle of this PokÃƒÂ©mon icon.
   ANIMATION_DURATION: Float
 
   def initialize: (Symbol species, ?untyped? viewport) -> void
@@ -103,5 +103,6 @@ class PokemonSpeciesIconSprite < Sprite
 
   def update_frame: () -> void
 end
+
 
 

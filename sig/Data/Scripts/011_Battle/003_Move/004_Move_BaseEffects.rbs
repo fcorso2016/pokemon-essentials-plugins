@@ -144,3 +144,4 @@ class Battle::Move::PledgeMove < Battle::Move
 end
 
 
+

@@ -3,27 +3,27 @@ class Battle::Scene
   @bagLastPocket: Integer
 
   # ============================================================================
-  # The player chooses a main command for a PokÃ©mon
-  # Return values: -1=Cancel, 0=Fight, 1=Bag, 2=PokÃ©mon, 3=Run, 4=Call
+  # The player chooses a main command for a PokÃƒÂ©mon
+  # Return values: -1=Cancel, 0=Fight, 1=Bag, 2=PokÃƒÂ©mon, 3=Run, 4=Call
   # ============================================================================
   def pbCommandMenu: (Integer idxBattler, bool firstAction) -> Integer
 
   # Mode: 0 = regular battle with "Run" (first choosable action in the round only)
   #       1 = regular battle with "Cancel"
-  #       2 = regular battle with "Call" (for Shadow PokÃ©mon battles)
+  #       2 = regular battle with "Call" (for Shadow PokÃƒÂ©mon battles)
   #       3 = Safari Zone
   #       4 = Bug-Catching Contest
   def pbCommandMenuEx: (Integer idxBattler, Array[String] texts, ?Integer mode) -> Integer
 
   # ============================================================================
-  # The player chooses a move for a PokÃ©mon to use
+  # The player chooses a move for a PokÃƒÂ©mon to use
   # ============================================================================
   def pbFightMenu: (Integer idxBattler, ?bool megaEvoPossible) { (Integer) -> void } -> void
 
   # ============================================================================
-  # Opens the party screen to choose a PokÃ©mon to switch in (or just view its
+  # Opens the party screen to choose a PokÃƒÂ©mon to switch in (or just view its
   # summary screens)
-  # mode: 0=PokÃ©mon command, 1=choose a PokÃ©mon to send to the Boxes, 2=view
+  # mode: 0=PokÃƒÂ©mon command, 1=choose a PokÃƒÂ©mon to send to the Boxes, 2=view
   #       summaries only
   # ============================================================================
   def pbPartyScreen: (Integer idxBattler, ?bool canCancel, ?Integer mode) { (Integer, PokemonPartyScreen) -> void } -> void
@@ -49,22 +49,23 @@ class Battle::Scene
   def pbChooseTarget: (Integer idxBattler, GameData::Target target_data, ?Hash[String, _Visualizable]? visibleSprites) -> Integer
 
   # ============================================================================
-  # Opens a PokÃ©mon's summary screen to try to learn a new move
+  # Opens a PokÃƒÂ©mon's summary screen to try to learn a new move
   # ============================================================================
-  # Called whenever a PokÃ©mon should forget a move. It should return -1 if the
+  # Called whenever a PokÃƒÂ©mon should forget a move. It should return -1 if the
   # selection is canceled, or 0 to 3 to indicate the move to forget. It should
   # not allow HM moves to be forgotten.
   def pbForgetMove: (Pokemon pkmn, Symbol moveToLearn) -> Integer
 
   # ============================================================================
-  # Opens the nicknaming screen for a newly caught PokÃ©mon
+  # Opens the nicknaming screen for a newly caught PokÃƒÂ©mon
   # ============================================================================
   def pbNameEntry: (String helpText, Pokemon pkmn) -> String
 
   # ============================================================================
-  # Shows the PokÃ©dex entry screen for a newly caught PokÃ©mon
+  # Shows the PokÃƒÂ©dex entry screen for a newly caught PokÃƒÂ©mon
   # ============================================================================
   def pbShowPokedex: (Symbol | String | GameData::Species species) -> void
 end
+
 
 

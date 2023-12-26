@@ -16,7 +16,7 @@ class Battle::Battler
 
   def pbAbilitiesOnNeutralizingGasEnding: () -> void
 
-  # Called when a PokÃ©mon (self) enters battle, at the end of each move used,
+  # Called when a PokÃƒÂ©mon (self) enters battle, at the end of each move used,
   # and at the end of each round.
   def pbContinualAbilityChecks: (?bool onSwitchIn) -> void
 
@@ -66,8 +66,8 @@ class Battle::Battler
   # ============================================================================
   # Held item trigger checks
   # ============================================================================
-  # NOTE: A PokÃ©mon using Bug Bite/Pluck, and a PokÃ©mon having an item thrown at
-  #       it via Fling, will gain the effect of the item even if the PokÃ©mon is
+  # NOTE: A PokÃƒÂ©mon using Bug Bite/Pluck, and a PokÃƒÂ©mon having an item thrown at
+  #       it via Fling, will gain the effect of the item even if the PokÃƒÂ©mon is
   #       affected by item-negating effects.
   # item_to_use is an item ID for Stuff Cheeks, Teatime, Bug Bite/Pluck and
   # Fling, and nil otherwise.
@@ -96,11 +96,11 @@ class Battle::Battler
   # fling is for Fling only.
   def pbItemStatRestoreCheck: (?Symbol? item_to_use, ?bool fling) -> void
 
-  # Called when the battle terrain changes and when a PokÃ©mon loses HP.
+  # Called when the battle terrain changes and when a PokÃƒÂ©mon loses HP.
   def pbItemTerrainStatBoostCheck: () -> void
 
   # Used for Adrenaline Orb. Called when Intimidate is triggered (even if
-  # Intimidate has no effect on the PokÃ©mon).
+  # Intimidate has no effect on the PokÃƒÂ©mon).
   def pbItemOnIntimidatedCheck: () -> void
 
   # Used for Eject Pack. Returns whether self has switched out.
@@ -119,5 +119,6 @@ class Battle::Battler
 
   def pbMoveTypePoweringUpGem: (Symbol gem_type, Battle::Move move, Symbol move_type, Hash[Symbol, Numeric] mults) -> void
 end
+
 
 

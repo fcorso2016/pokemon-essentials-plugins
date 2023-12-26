@@ -42,8 +42,8 @@ end
 
 # ==============================================================================
 # OHKO. Accuracy increases by difference between levels of user and target.
-# Lower accuracy when used by a non-Ice-type PokÃ©mon. Doesn't affect Ice-type
-# PokÃ©mon. (Sheer Cold (Gen 7+))
+# Lower accuracy when used by a non-Ice-type PokÃƒÂ©mon. Doesn't affect Ice-type
+# PokÃƒÂ©mon. (Sheer Cold (Gen 7+))
 # ==============================================================================
 class Battle::Move::OHKOIce < Battle::Move::OHKO
 end
@@ -143,7 +143,7 @@ end
 
 # ==============================================================================
 # Power is multiplied by the number of consecutive rounds in which this move was
-# used by any PokÃ©mon on the user's side. (Echoed Voice)
+# used by any PokÃƒÂ©mon on the user's side. (Echoed Voice)
 # ==============================================================================
 class Battle::Move::PowerHigherWithConsecutiveUseOnUserSide < Battle::Move
 end
@@ -350,8 +350,8 @@ class Battle::Move::ProtectUser < Battle::Move::ProtectMove
 end
 
 # ==============================================================================
-# User is protected against moves with the "B" flag this round. If a PokÃ©mon
-# makes contact with the user while this effect applies, that PokÃ©mon is
+# User is protected against moves with the "B" flag this round. If a PokÃƒÂ©mon
+# makes contact with the user while this effect applies, that PokÃƒÂ©mon is
 # poisoned. (Baneful Bunker)
 # ==============================================================================
 class Battle::Move::ProtectUserBanefulBunker < Battle::Move::ProtectMove
@@ -367,7 +367,7 @@ end
 # ==============================================================================
 # For the rest of this round, the user avoids all damaging moves that would hit
 # it. If a move that makes contact is stopped by this effect, decreases the
-# Defense of the PokÃ©mon using that move by 2 stages. Contributes to Protect's
+# Defense of the PokÃƒÂ©mon using that move by 2 stages. Contributes to Protect's
 # counter. (Obstruct)
 # ==============================================================================
 class Battle::Move::ProtectUserFromDamagingMovesObstruct < Battle::Move::ProtectMove
@@ -614,5 +614,6 @@ class Object
   #       game). I don't care that the official games don't work like that.
   def pbHiddenPower: (untyped pkmn) -> ::Array[untyped]
 end
+
 
 

@@ -2,7 +2,7 @@ class Object
   # ==============================================================================
   # Load various wild battle music
   # ==============================================================================
-  # wildParty is an array of PokÃ©mon objects.
+  # wildParty is an array of PokÃƒÂ©mon objects.
   def pbGetWildBattleBGM: (Array[Pokemon] _wildParty) -> RPG::AudioFile
 
   def pbGetWildVictoryBGM: () -> RPG::AudioFile?
@@ -22,5 +22,6 @@ class Object
   # Can be a Player, NPCTrainer or an array of them.
   def pbGetTrainerVictoryBGM: (Trainer | Array[Trainer] trainer) -> RPG::AudioFile
 end
+
 
 

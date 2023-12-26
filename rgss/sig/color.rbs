@@ -2,8 +2,6 @@
 
 # Classes
 class Color
-  def initialize: (Numeric red, Numeric green, Numeric blue, ?Numeric alpha) -> void
-                | () -> void
   def set: (Numeric red, ?Numeric green, ?Numeric blue, ?Numeric alpha) -> void
          | (Color color) -> void
 
@@ -12,5 +10,6 @@ class Color
   attr_accessor blue: Numeric
   attr_accessor alpha: Numeric
 end
+
 
 

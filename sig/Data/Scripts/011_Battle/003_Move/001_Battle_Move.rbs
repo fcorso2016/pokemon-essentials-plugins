@@ -146,7 +146,7 @@ class Battle::Move
 
   def preventsBattlerConsumingHealingBerry?: (Battle::Battler battler, Array[Integer] targets) -> boolish
 
-  # user is the PokÃ©mon using this move.
+  # user is the PokÃƒÂ©mon using this move.
   def ignoresSubstitute?: (Battle::Battler? user) -> bool
 
   def display_type: (Battle::Battler battler) -> Symbol
@@ -157,5 +157,6 @@ class Battle::Move
 
   def display_accuracy: (Battle::Battler battler) -> Integer
 end
+
 
 

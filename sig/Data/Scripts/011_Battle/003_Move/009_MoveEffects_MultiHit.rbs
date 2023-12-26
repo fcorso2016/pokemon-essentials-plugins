@@ -67,7 +67,7 @@ class Battle::Move::HitTwoToFiveTimesRaiseUserSpd1LowerUserDef1 < Battle::Move::
 end
 
 # ==============================================================================
-# Hits X times, where X is the number of non-user unfainted status-free PokÃ©mon
+# Hits X times, where X is the number of non-user unfainted status-free PokÃƒÂ©mon
 # in the user's party (not including partner trainers). Fails if X is 0.
 # Base power of each hit depends on the base Attack stat for the species of that
 # hit's participant. (Beat Up)
@@ -173,7 +173,7 @@ end
 # Two turn attack. Skips first turn, attacks second turn. (Sky Drop)
 # (Handled in Battler's pbSuccessCheckPerHit): Is semi-invulnerable during use.
 # Target is also semi-invulnerable during use, and can't take any action.
-# Doesn't damage airborne PokÃ©mon (but still makes them unable to move during).
+# Doesn't damage airborne PokÃƒÂ©mon (but still makes them unable to move during).
 # ==============================================================================
 class Battle::Move::TwoTurnAttackInvulnerableInSkyTargetCannotAct < Battle::Move::TwoTurnMove
 end
@@ -187,9 +187,9 @@ end
 
 # ==============================================================================
 # User must use this move for 2 more rounds. No battlers can sleep. (Uproar)
-# NOTE: Bulbapedia claims that an uproar will wake up PokÃ©mon even if they have
-#       Soundproof, and will not allow PokÃ©mon to fall asleep even if they have
-#       Soundproof. I think this is an oversight, so I've let Soundproof PokÃ©mon
+# NOTE: Bulbapedia claims that an uproar will wake up PokÃƒÂ©mon even if they have
+#       Soundproof, and will not allow PokÃƒÂ©mon to fall asleep even if they have
+#       Soundproof. I think this is an oversight, so I've let Soundproof PokÃƒÂ©mon
 #       be unaffected by Uproar waking/non-sleeping effects.
 # ==============================================================================
 class Battle::Move::MultiTurnAttackPreventSleeping < Battle::Move
@@ -217,5 +217,6 @@ end
 class Battle::Move::MultiTurnAttackBideThenReturnDoubleDamage < Battle::Move::FixedDamageMove
   @damagingTurn: bool
 end
+
 
 

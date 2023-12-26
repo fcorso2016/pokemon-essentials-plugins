@@ -61,7 +61,7 @@ module Compiler
   def self?.validate_all_compiled_berry_plants: () -> void
 
   # ============================================================================
-  # Compile PokÃ©mon data
+  # Compile PokÃƒÂ©mon data
   # ============================================================================
   def self?.compile_pokemon: (*String paths) -> void
 
@@ -73,7 +73,7 @@ module Compiler
   def self?.validate_all_compiled_pokemon: () -> void
 
   # ============================================================================
-  # Compile PokÃ©mon forms data
+  # Compile PokÃƒÂ©mon forms data
   # NOTE: Doesn't use compile_PBS_file_generic because it needs its own schema
   #       and shouldn't clear GameData::Species at the start.
   # ============================================================================
@@ -84,7 +84,7 @@ module Compiler
   def self?.validate_all_compiled_pokemon_forms: () -> void
 
   # ============================================================================
-  # Compile PokÃ©mon metrics data
+  # Compile PokÃƒÂ©mon metrics data
   # ============================================================================
   def self?.compile_pokemon_metrics: (*String paths) -> void
 
@@ -93,7 +93,7 @@ module Compiler
   def self?.validate_all_compiled_pokemon_metrics: () -> void
 
   # ============================================================================
-  # Compile Shadow PokÃ©mon data
+  # Compile Shadow PokÃƒÂ©mon data
   # ============================================================================
   def self?.compile_shadow_pokemon: (*String paths) -> void
 
@@ -139,7 +139,7 @@ module Compiler
   def self?.validate_all_compiled_trainers: () -> void
 
   # ============================================================================
-  # Compile Battle Tower and other Cups trainers/PokÃ©mon
+  # Compile Battle Tower and other Cups trainers/PokÃƒÂ©mon
   # ============================================================================
   def self?.compile_trainer_lists: (?::String path) -> void
 
@@ -200,5 +200,6 @@ module Compiler
   # ============================================================================
   def self?.compile_animations: () -> void
 end
+
 
 

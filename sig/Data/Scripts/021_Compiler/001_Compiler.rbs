@@ -54,7 +54,7 @@ module Compiler
   # Unused
   def self?.pbEachCommentedLine: (File f) { (String, Integer) -> void } -> void
 
-  # Used for town_map.txt and Battle Tower PokÃ©mon PBS files
+  # Used for town_map.txt and Battle Tower PokÃƒÂ©mon PBS files
   def self?.pbCompilerEachCommentedLine: (String filename) { (String, Integer) -> void } -> void
 
   # Unused
@@ -165,5 +165,6 @@ module Compiler
 
   def self?.main: () -> void
 end
+
 
 

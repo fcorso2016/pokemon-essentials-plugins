@@ -2,22 +2,22 @@
 #
 # ==============================================================================
 module Settings
-  # Whether turn order is recalculated after a PokÃ©mon Mega Evolves.
+  # Whether turn order is recalculated after a PokÃƒÂ©mon Mega Evolves.
   RECALCULATE_TURN_ORDER_AFTER_MEGA_EVOLUTION: bool
 
-  # Whether turn order is recalculated after a PokÃ©mon's Speed stat changes.
+  # Whether turn order is recalculated after a PokÃƒÂ©mon's Speed stat changes.
   RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES: bool
 
-  # Whether any PokÃ©mon (originally owned by the player or foreign) can disobey
-  # the player's commands if the PokÃ©mon is too high a level compared to the
+  # Whether any PokÃƒÂ©mon (originally owned by the player or foreign) can disobey
+  # the player's commands if the PokÃƒÂ©mon is too high a level compared to the
   # number of Gym Badges the player has.
   ANY_HIGH_LEVEL_POKEMON_CAN_DISOBEY: bool
 
-  # Whether foreign PokÃ©mon can disobey the player's commands if the PokÃ©mon is
+  # Whether foreign PokÃƒÂ©mon can disobey the player's commands if the PokÃƒÂ©mon is
   # too high a level compared to the number of Gym Badges the player has.
   FOREIGN_HIGH_LEVEL_POKEMON_CAN_DISOBEY: bool
 
-  # The Game Switch which, while ON, prevents all PokÃ©mon in battle from Mega
+  # The Game Switch which, while ON, prevents all PokÃƒÂ©mon in battle from Mega
   # Evolving even if they otherwise could.
   NO_MEGA_EVOLUTION: Integer
 
@@ -30,15 +30,15 @@ module Settings
   # critical hit rate can be copied by Transform/Psych Up.
   NEW_CRITICAL_HIT_RATE_MECHANICS: bool
 
-  # Whether several effects apply relating to a PokÃ©mon's type:
+  # Whether several effects apply relating to a PokÃƒÂ©mon's type:
   #   * Electric-type immunity to paralysis
   #   * Ghost-type immunity to being trapped
   #   * Grass-type immunity to powder moves and Effect Spore
-  #   * Poison-type PokÃ©mon can't miss when using Toxic
+  #   * Poison-type PokÃƒÂ©mon can't miss when using Toxic
   MORE_TYPE_EFFECTS: bool
 
   # The minimum number of Gym Badges required to boost each stat of a player's
-  # PokÃ©mon by 1.1x, in battle only.
+  # PokÃƒÂ©mon by 1.1x, in battle only.
   NUM_BADGES_BOOST_ATTACK: Integer
 
   NUM_BADGES_BOOST_DEFENSE: Integer
@@ -56,7 +56,7 @@ module Settings
   # (false).
   X_STAT_ITEMS_RAISE_BY_TWO_STAGES: bool
 
-  # Whether some PokÃ© Balls have catch rate multipliers from Gen 7 (true) or
+  # Whether some PokÃƒÂ© Balls have catch rate multipliers from Gen 7 (true) or
   # from earlier generations (false).
   NEW_POKE_BALL_CATCH_RATES: bool
 
@@ -64,12 +64,12 @@ module Settings
   # raises the holder's Special Attack and Special Defense by 50% (false).
   SOUL_DEW_POWERS_UP_TYPES: bool
 
-  # Whether PokÃ©mon with high happiness will gain more Exp from battles, have a
+  # Whether PokÃƒÂ©mon with high happiness will gain more Exp from battles, have a
   # chance of avoiding/curing negative effects by themselves, resisting
   # fainting, etc.
   AFFECTION_EFFECTS: bool
 
-  # Whether a PokÃ©mon's happiness is limited to 179, and can only be increased
+  # Whether a PokÃƒÂ©mon's happiness is limited to 179, and can only be increased
   # further with friendship-raising berries. Related to AFFECTION_EFFECTS by
   # default because affection effects only start applying above a happiness of
   # 179. Also lowers the happiness evolution threshold to 160.
@@ -81,47 +81,48 @@ module Settings
   # fewer species in your game.
   ENABLE_CRITICAL_CAPTURES: bool
 
-  # Whether the player is asked what to do with a newly caught PokÃ©mon if their
+  # Whether the player is asked what to do with a newly caught PokÃƒÂ©mon if their
   # party is full. If true, the player can toggle whether they are asked this in
   # the Options screen.
   NEW_CAPTURE_CAN_REPLACE_PARTY_MEMBER: bool
 
-  # Whether the Exp gained from beating a PokÃ©mon should be scaled depending on
+  # Whether the Exp gained from beating a PokÃƒÂ©mon should be scaled depending on
   # the gainer's level.
   SCALED_EXP_FORMULA: bool
 
-  # Whether the Exp gained from beating a PokÃ©mon should be divided equally
+  # Whether the Exp gained from beating a PokÃƒÂ©mon should be divided equally
   # between each participant (true), or whether each participant should gain
   # that much Exp (false). This also applies to Exp gained via the Exp Share
   # (held item version) being distributed to all Exp Share holders.
   SPLIT_EXP_BETWEEN_GAINERS: bool
 
-  # Whether the Exp gained from beating a PokÃ©mon is multiplied by 1.5 if that
-  # PokÃ©mon is owned by another trainer.
+  # Whether the Exp gained from beating a PokÃƒÂ©mon is multiplied by 1.5 if that
+  # PokÃƒÂ©mon is owned by another trainer.
   MORE_EXP_FROM_TRAINER_POKEMON: bool
 
-  # Whether a PokÃ©mon holding a Power item gains 8 (true) or 4 (false) EVs in
+  # Whether a PokÃƒÂ©mon holding a Power item gains 8 (true) or 4 (false) EVs in
   # the relevant stat.
   MORE_EVS_FROM_POWER_ITEMS: bool
 
-  # Whether PokÃ©mon gain Exp for capturing a PokÃ©mon.
+  # Whether PokÃƒÂ©mon gain Exp for capturing a PokÃƒÂ©mon.
   GAIN_EXP_FOR_CAPTURE: bool
 
   # The Game Switch which, whie ON, prevents the player from losing money if
   # they lose a battle (they can still gain money from trainers for winning).
   NO_MONEY_LOSS: Integer
 
-  # Whether party PokÃ©mon check whether they can evolve after all battles
+  # Whether party PokÃƒÂ©mon check whether they can evolve after all battles
   # regardless of the outcome (true), or only after battles the player won (false).
   CHECK_EVOLUTION_AFTER_ALL_BATTLES: bool
 
-  # Whether fainted PokÃ©mon can try to evolve after a battle.
+  # Whether fainted PokÃƒÂ©mon can try to evolve after a battle.
   CHECK_EVOLUTION_FOR_FAINTED_POKEMON: bool
 
-  # Whether wild PokÃ©mon with the "Legendary", "Mythical" or "UltraBeast" flag
+  # Whether wild PokÃƒÂ©mon with the "Legendary", "Mythical" or "UltraBeast" flag
   # (as defined in pokemon.txt) have a smarter AI. Their skill level is set to
   # 32, which is a medium skill level.
   SMARTER_WILD_LEGENDARY_POKEMON: bool
 end
+
 
 

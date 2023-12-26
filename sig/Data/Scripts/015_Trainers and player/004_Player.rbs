@@ -23,22 +23,22 @@ class Player < Trainer
   # @return [Integer] the player's soot
   attr_reader soot: Integer
 
-  # @return [Pokedex] the player's PokÃ©dex
+  # @return [Pokedex] the player's PokÃƒÂ©dex
   attr_reader pokedex: Pokedex
 
-  # @return [Boolean] whether the PokÃ©dex has been obtained
+  # @return [Boolean] whether the PokÃƒÂ©dex has been obtained
   attr_accessor has_pokedex: bool
 
-  # @return [Boolean] whether the PokÃ©gear has been obtained
+  # @return [Boolean] whether the PokÃƒÂ©gear has been obtained
   attr_accessor has_pokegear: bool
 
   # @return [Boolean] whether the player has running shoes (i.e. can run)
   attr_accessor has_running_shoes: bool
 
-  # @return [Boolean] whether the player has an innate ability to access PokÃ©mon storage
+  # @return [Boolean] whether the player has an innate ability to access PokÃƒÂ©mon storage
   attr_accessor has_box_link: bool
 
-  # @return [Boolean] whether the creator of the PokÃ©mon Storage System has been seen
+  # @return [Boolean] whether the creator of the PokÃƒÂ©mon Storage System has been seen
   attr_accessor seen_storage_creator: bool
 
   # @return [Boolean] whether the effect of Exp All applies innately
@@ -86,5 +86,6 @@ class Player < Trainer
   # Shorthand for +self.pokedex.owned?+.
   def owned?: (Symbol | String | GameData::Species species) -> bool
 end
+
 
 

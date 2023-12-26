@@ -1,5 +1,5 @@
 # ==============================================================================
-# PokÃ©mon class.
+# PokÃƒÂ©mon class.
 # ==============================================================================
 class Pokemon
   attr_accessor shadow: bool
@@ -52,5 +52,6 @@ class Pokemon
 
   alias __shadow_clone clone
 end
+
 
 

@@ -8,11 +8,12 @@ class Object
 
   def pbFishing: (bool hasEncounter, ?Integer rodType) -> bool
 
-  # Show waiting dots before a PokÃ©mon bites
+  # Show waiting dots before a PokÃƒÂ©mon bites
   def pbWaitMessage: (Window_AdvancedTextPokemon msgWindow, Integer time) -> bool
 
-  # A PokÃ©mon is biting, reflex test to reel it in
+  # A PokÃƒÂ©mon is biting, reflex test to reel it in
   def pbWaitForInput: (Window_AdvancedTextPokemon msgWindow, String message, Numeric duration) -> bool
 end
+
 
 

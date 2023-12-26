@@ -2,7 +2,7 @@
 # * Egg Hatch Animation - by FL (Credits will be apreciated)
 #                         Tweaked by Maruno
 # ==============================================================================
-# This script is for PokÃ©mon Essentials. It's an egg hatch animation that
+# This script is for PokÃƒÂ©mon Essentials. It's an egg hatch animation that
 # works even with special eggs like Manaphy egg.
 # ==============================================================================
 # To this script works, put it above Main and put a picture (a 5 frames
@@ -53,5 +53,6 @@ class Object
 
   def pbHatch: (Pokemon pokemon) -> void
 end
+
 
 

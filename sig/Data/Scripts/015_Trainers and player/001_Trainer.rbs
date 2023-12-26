@@ -53,7 +53,7 @@ class Trainer
 
   def party_full?: () -> bool
 
-  # Returns true if there are no usable PokÃ©mon in the player's party.
+  # Returns true if there are no usable PokÃƒÂ©mon in the player's party.
   def all_fainted?: () -> bool
 
   def first_party: () -> Pokemon
@@ -70,27 +70,27 @@ class Trainer
 
   def remove_pokemon_at_index: (Integer index) -> bool
 
-  # Checks whether the trainer would still have an unfainted PokÃ©mon if the
-  # PokÃ©mon given by _index_ were removed from the party.
+  # Checks whether the trainer would still have an unfainted PokÃƒÂ©mon if the
+  # PokÃƒÂ©mon given by _index_ were removed from the party.
   def has_other_able_pokemon?: (Integer index) -> bool
 
-  # Returns true if there is a PokÃ©mon of the given species in the trainer's
+  # Returns true if there is a PokÃƒÂ©mon of the given species in the trainer's
   # party. You may also specify a particular form it should be.
   def has_species?: (Symbol | String | GameData::Species species, ?Integer form) -> bool
 
-  # Returns whether there is a fatefully met PokÃ©mon of the given species in the
+  # Returns whether there is a fatefully met PokÃƒÂ©mon of the given species in the
   # trainer's party.
   def has_fateful_species?: (Symbol | String | GameData::Species species) -> bool
 
-  # Returns whether there is a PokÃ©mon with the given type in the trainer's
+  # Returns whether there is a PokÃƒÂ©mon with the given type in the trainer's
   # party.
   def has_pokemon_of_type?: (Symbol | String | GameData::Type `type`) -> bool
 
-  # Checks whether any PokÃ©mon in the party knows the given move, and returns
-  # the first PokÃ©mon it finds with that move, or nil if no PokÃ©mon has that move.
+  # Checks whether any PokÃƒÂ©mon in the party knows the given move, and returns
+  # the first PokÃƒÂ©mon it finds with that move, or nil if no PokÃƒÂ©mon has that move.
   def get_pokemon_with_move: (Symbol | String | GameData::Move move) -> bool
 
-  # Fully heal all PokÃ©mon in the party.
+  # Fully heal all PokÃƒÂ©mon in the party.
   def heal_party: () -> void
 
   def initialize: (String name, Symbol | String | GameData::TrainerType trainer_type) -> void
@@ -110,5 +110,6 @@ class NPCTrainer < Trainer
 
   def initialize: (String name, Symbol trainer_type, ?Integer version) -> void
 end
+
 
 

@@ -21,5 +21,8 @@ jobs:
       - name: Install Steep
         run: gem install steep
 
+      - name: Validate Type Schema
+        run: steep validate
+
       - name: Get type info
         run: steep check

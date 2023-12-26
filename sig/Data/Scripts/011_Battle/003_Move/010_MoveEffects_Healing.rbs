@@ -100,14 +100,14 @@ class Battle::Move::HealUserPositionNextTurn < Battle::Move
 end
 
 # ==============================================================================
-# Rings the user. Ringed PokÃ©mon gain 1/16 of max HP at the end of each round.
+# Rings the user. Ringed PokÃƒÂ©mon gain 1/16 of max HP at the end of each round.
 # (Aqua Ring)
 # ==============================================================================
 class Battle::Move::StartHealUserEachTurn < Battle::Move
 end
 
 # ==============================================================================
-# Ingrains the user. Ingrained PokÃ©mon gain 1/16 of max HP at the end of each
+# Ingrains the user. Ingrained PokÃƒÂ©mon gain 1/16 of max HP at the end of each
 # round, and cannot flee or switch out. (Ingrain)
 # ==============================================================================
 class Battle::Move::StartHealUserEachTurnTrapUserInBattle < Battle::Move
@@ -120,8 +120,8 @@ class Battle::Move::StartDamageTargetEachTurnIfTargetAsleep < Battle::Move
 end
 
 # ==============================================================================
-# Seeds the target. Seeded PokÃ©mon lose 1/8 of max HP at the end of each round,
-# and the PokÃ©mon in the user's position gains the same amount. (Leech Seed)
+# Seeds the target. Seeded PokÃƒÂ©mon lose 1/8 of max HP at the end of each round,
+# and the PokÃƒÂ©mon in the user's position gains the same amount. (Leech Seed)
 # ==============================================================================
 class Battle::Move::StartLeechSeedTarget < Battle::Move
 end
@@ -168,14 +168,14 @@ class Battle::Move::UserFaintsLowerTargetAtkSpAtk2 < Battle::Move::TargetMultiSt
 end
 
 # ==============================================================================
-# User faints. The PokÃ©mon that replaces the user is fully healed (HP and
+# User faints. The PokÃƒÂ©mon that replaces the user is fully healed (HP and
 # status). Fails if user won't be replaced. (Healing Wish)
 # ==============================================================================
 class Battle::Move::UserFaintsHealAndCureReplacement < Battle::Move
 end
 
 # ==============================================================================
-# User faints. The PokÃ©mon that replaces the user is fully healed (HP, PP and
+# User faints. The PokÃƒÂ©mon that replaces the user is fully healed (HP, PP and
 # status). Fails if user won't be replaced. (Lunar Dance)
 # ==============================================================================
 class Battle::Move::UserFaintsHealAndCureReplacementRestorePP < Battle::Move
@@ -200,5 +200,6 @@ end
 # ==============================================================================
 class Battle::Move::SetAttackerMovePPTo0IfUserFaints < Battle::Move
 end
+
 
 

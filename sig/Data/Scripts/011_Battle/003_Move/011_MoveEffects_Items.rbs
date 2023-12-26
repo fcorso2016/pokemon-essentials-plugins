@@ -1,6 +1,6 @@
 # ==============================================================================
 # User steals the target's item, if the user has none itself. (Covet, Thief)
-# Items stolen from wild PokÃ©mon are kept after the battle.
+# Items stolen from wild PokÃƒÂ©mon are kept after the battle.
 # ==============================================================================
 class Battle::Move::UserTakesTargetItem < Battle::Move
 end
@@ -71,9 +71,9 @@ class Battle::Move::UserConsumeBerryRaiseDefense2 < Battle::Move::StatUpMove
 end
 
 # ==============================================================================
-# All PokÃ©mon (except semi-invulnerable ones) consume their held berries and
+# All PokÃƒÂ©mon (except semi-invulnerable ones) consume their held berries and
 # gain their effects. Berries can be consumed even if Unnerve/Magic Room apply.
-# Fails if no PokÃ©mon have a held berry. If this move would trigger an ability
+# Fails if no PokÃƒÂ©mon have a held berry. If this move would trigger an ability
 # that negates the move, e.g. Lightning Rod, the bearer of that ability will
 # have their ability triggered regardless of whether they are holding a berry,
 # and they will not consume their berry. (Teatime)
@@ -96,5 +96,6 @@ class Battle::Move::ThrowUserItemAtTarget < Battle::Move
 
   def pbCheckFlingSuccess: (Battle::Battler user) -> void
 end
+
 
 

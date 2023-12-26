@@ -1,19 +1,19 @@
 # ==============================================================================
-# NOTE: In Gen 7+, the Day Care is replaced by the PokÃ©mon Nursery, which works
-#       in much the same way except deposited PokÃ©mon no longer gain Exp because
-#       of the player walking around and, in Gen 8+, deposited PokÃ©mon are able
+# NOTE: In Gen 7+, the Day Care is replaced by the PokÃƒÂ©mon Nursery, which works
+#       in much the same way except deposited PokÃƒÂ©mon no longer gain Exp because
+#       of the player walking around and, in Gen 8+, deposited PokÃƒÂ©mon are able
 #       to learn egg moves from each other if they are the same species. In
 #       Essentials, this code can be used for both facilities, and these
 #       mechanics differences are set by some Settings.
-# NOTE: The Day Care has a different price than the PokÃ©mon Nursery. For the Day
-#       Care, you are charged when you withdraw a deposited PokÃ©mon and you pay
+# NOTE: The Day Care has a different price than the PokÃƒÂ©mon Nursery. For the Day
+#       Care, you are charged when you withdraw a deposited PokÃƒÂ©mon and you pay
 #       an amount based on how many levels it gained. For the Nursery, you pay
-#       $500 up-front when you deposit a PokÃ©mon. This difference will appear in
+#       $500 up-front when you deposit a PokÃƒÂ©mon. This difference will appear in
 #       the Day Care Lady's event, not in these scripts.
 # ==============================================================================
 class DayCare
   # ============================================================================
-  # Code that generates an egg based on two given PokÃ©mon.
+  # Code that generates an egg based on two given PokÃƒÂ©mon.
   # ============================================================================
   module EggGenerator
     def self?.generate: (Pokemon mother, Pokemon father) -> Pokemon
@@ -41,15 +41,15 @@ class DayCare
 
     def self?.inherit_IVs: (Pokemon egg, Pokemon mother, Pokemon father) -> void
 
-    # PokÃ© Balls can only be inherited from parents that are related to the
+    # PokÃƒÂ© Balls can only be inherited from parents that are related to the
     # egg's species.
-    # NOTE: This is how PokÃ© Ball inheritance works in Gen 7+. Gens 5 and lower
-    #       don't have PokÃ© Ball inheritance at all. In Gen 6, only a female
-    #       parent can pass down its PokÃ© Ball. I don't think it's worth adding
+    # NOTE: This is how PokÃƒÂ© Ball inheritance works in Gen 7+. Gens 5 and lower
+    #       don't have PokÃƒÂ© Ball inheritance at all. In Gen 6, only a female
+    #       parent can pass down its PokÃƒÂ© Ball. I don't think it's worth adding
     #       in these variations on the mechanic.
     # NOTE: The official games treat Nidoran M/F and Volbeat/Illumise as
     #       unrelated for the purpose of this mechanic. Essentials treats them
-    #       as related and allows them to pass down their PokÃ© Balls.
+    #       as related and allows them to pass down their PokÃƒÂ© Balls.
     def self?.inherit_poke_ball: (Pokemon egg, Pokemon mother, Pokemon father) -> void
 
     # NOTE: There is a bug in Gen 8 that skips the original generation of an
@@ -62,7 +62,7 @@ class DayCare
   end
 
   # ============================================================================
-  # A slot in the Day Care, which can contain a PokÃ©mon.
+  # A slot in the Day Care, which can contain a PokÃƒÂ©mon.
   # ============================================================================
   class DayCareSlot
     @initial_level: Integer
@@ -146,5 +146,6 @@ class DayCare
 
   def compatibility: () -> Integer
 end
+
 
 

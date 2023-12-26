@@ -12,7 +12,7 @@ class Battle::Scene::Animation::Intro < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows wild PokÃ©mon fading back to their normal color, and triggers their intro
+# Shows wild PokÃƒÂ©mon fading back to their normal color, and triggers their intro
 # animations
 # ==============================================================================
 class Battle::Scene::Animation::Intro2 < Battle::Scene::Animation
@@ -46,7 +46,7 @@ class Battle::Scene::Animation::LineupAppear < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Makes a PokÃ©mon's data box appear
+# Makes a PokÃƒÂ©mon's data box appear
 # ==============================================================================
 class Battle::Scene::Animation::DataBoxAppear < Battle::Scene::Animation
   @idxBox: Integer
@@ -57,7 +57,7 @@ class Battle::Scene::Animation::DataBoxAppear < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Makes a PokÃ©mon's data box disappear
+# Makes a PokÃƒÂ©mon's data box disappear
 # ==============================================================================
 class Battle::Scene::Animation::DataBoxDisappear < Battle::Scene::Animation
   @idxBox: Integer
@@ -68,7 +68,7 @@ class Battle::Scene::Animation::DataBoxDisappear < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Makes a PokÃ©mon's ability bar appear
+# Makes a PokÃƒÂ©mon's ability bar appear
 # ==============================================================================
 class Battle::Scene::Animation::AbilitySplashAppear < Battle::Scene::Animation
   @side: Integer
@@ -79,7 +79,7 @@ class Battle::Scene::Animation::AbilitySplashAppear < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Makes a PokÃ©mon's ability bar disappear
+# Makes a PokÃƒÂ©mon's ability bar disappear
 # ==============================================================================
 class Battle::Scene::Animation::AbilitySplashDisappear < Battle::Scene::Animation
   @side: Integer
@@ -105,7 +105,7 @@ end
 # ==============================================================================
 # Shows the player (and partner) and the player party lineup sliding off screen.
 # Shows the player's/partner's throwing animation (if they have one).
-# Doesn't show the ball thrown or the PokÃ©mon.
+# Doesn't show the ball thrown or the PokÃƒÂ©mon.
 # ==============================================================================
 class Battle::Scene::Animation::PlayerFade < Battle::Scene::Animation
   @fullAnim: bool
@@ -117,7 +117,7 @@ end
 
 # ==============================================================================
 # Shows the enemy trainer(s) and the enemy party lineup sliding off screen.
-# Doesn't show the ball thrown or the PokÃ©mon.
+# Doesn't show the ball thrown or the PokÃƒÂ©mon.
 # ==============================================================================
 class Battle::Scene::Animation::TrainerFade < Battle::Scene::Animation
   @fullAnim: bool
@@ -128,8 +128,8 @@ class Battle::Scene::Animation::TrainerFade < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows a PokÃ©mon being sent out on the player's side (including by a partner).
-# Includes the PokÃ© Ball being thrown.
+# Shows a PokÃƒÂ©mon being sent out on the player's side (including by a partner).
+# Includes the PokÃƒÂ© Ball being thrown.
 # ==============================================================================
 class Battle::Scene::Animation::PokeballPlayerSendOut < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -149,8 +149,8 @@ class Battle::Scene::Animation::PokeballPlayerSendOut < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows a PokÃ©mon being sent out on the opposing side.
-# Includes the PokÃ© Ball being "thrown" (although here the PokÃ© Ball just
+# Shows a PokÃƒÂ©mon being sent out on the opposing side.
+# Includes the PokÃƒÂ© Ball being "thrown" (although here the PokÃƒÂ© Ball just
 # appears in the spot where it opens up rather than being thrown to there).
 # ==============================================================================
 class Battle::Scene::Animation::PokeballTrainerSendOut < Battle::Scene::Animation
@@ -171,7 +171,7 @@ class Battle::Scene::Animation::PokeballTrainerSendOut < Battle::Scene::Animatio
 end
 
 # ==============================================================================
-# Shows a PokÃ©mon being recalled into its PokÃ© Ball
+# Shows a PokÃƒÂ©mon being recalled into its PokÃƒÂ© Ball
 # ==============================================================================
 class Battle::Scene::Animation::BattlerRecall < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -186,7 +186,7 @@ class Battle::Scene::Animation::BattlerRecall < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows a PokÃ©mon flashing after taking damage
+# Shows a PokÃƒÂ©mon flashing after taking damage
 # ==============================================================================
 class Battle::Scene::Animation::BattlerDamage < Battle::Scene::Animation
   @effectiveness: Integer
@@ -198,7 +198,7 @@ class Battle::Scene::Animation::BattlerDamage < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows a PokÃ©mon fainting
+# Shows a PokÃƒÂ©mon fainting
 # ==============================================================================
 class Battle::Scene::Animation::BattlerFaint < Battle::Scene::Animation
   @battle: Battle
@@ -210,7 +210,7 @@ class Battle::Scene::Animation::BattlerFaint < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows the player's PokÃ© Ball being thrown to capture a PokÃ©mon
+# Shows the player's PokÃƒÂ© Ball being thrown to capture a PokÃƒÂ©mon
 # ==============================================================================
 class Battle::Scene::Animation::PokeballThrowCapture < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -233,7 +233,7 @@ class Battle::Scene::Animation::PokeballThrowCapture < Battle::Scene::Animation
 end
 
 # ==============================================================================
-# Shows the player throwing a PokÃ© Ball and it being deflected
+# Shows the player throwing a PokÃƒÂ© Ball and it being deflected
 # ==============================================================================
 class Battle::Scene::Animation::PokeballThrowDeflect < Battle::Scene::Animation
   include Battle::Scene::Animation::BallAnimationMixin
@@ -245,5 +245,6 @@ class Battle::Scene::Animation::PokeballThrowDeflect < Battle::Scene::Animation
 
   def createProcesses: () -> void
 end
+
 
 

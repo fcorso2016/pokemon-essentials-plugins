@@ -1,6 +1,6 @@
 # ==============================================================================
 # AI skill levels:
-#     0:     Wild PokÃ©mon
+#     0:     Wild PokÃƒÂ©mon
 #     1-31:  Basic trainer (young/inexperienced)
 #     32-47: Medium skill
 #     48-99: High skill
@@ -14,9 +14,9 @@
 #   ScoreMoves
 #   PreferMultiTargetMoves
 #   HPAware (considers HP values of user/target for "worth it?" score changes)
-#   ConsiderSwitching (can choose to switch out PokÃ©mon)
+#   ConsiderSwitching (can choose to switch out PokÃƒÂ©mon)
 #   ReserveLastPokemon (don't switch it in if possible)
-#   UsePokemonInOrder (uses earliest-listed PokÃ©mon possible)
+#   UsePokemonInOrder (uses earliest-listed PokÃƒÂ©mon possible)
 #
 # Anti-skill flags are skill flags with "Anti" at the beginning. An "AntiXYZ"
 # flag will negate the corresponding "XYZ" flag.
@@ -49,5 +49,6 @@ class Battle::AI::AITrainer
 
   def best_skill?: () -> bool
 end
+
 
 

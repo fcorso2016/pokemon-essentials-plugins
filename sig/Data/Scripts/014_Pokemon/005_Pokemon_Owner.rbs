@@ -1,5 +1,5 @@
 # ==============================================================================
-# Stores information about a PokÃ©mon's owner.
+# Stores information about a PokÃƒÂ©mon's owner.
 # ==============================================================================
 class Pokemon
   class Owner
@@ -49,5 +49,6 @@ class Pokemon
     def public_id: () -> Integer
   end
 end
+
 
 

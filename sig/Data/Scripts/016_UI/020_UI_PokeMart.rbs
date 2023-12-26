@@ -86,7 +86,7 @@ class SellAdapter
 end
 
 # ==============================================================================
-# PokÃ©mon Mart
+# PokÃƒÂ©mon Mart
 # ==============================================================================
 class Window_PokemonMart < Window_DrawableCommand
   @adapter: _Adapter
@@ -181,5 +181,6 @@ class Object
   # ==============================================================================
   def pbPokemonMart: (Array[Symbol | String | GameData::Item] stock, ?String? speech, ?bool cantsell) -> void
 end
+
 
 

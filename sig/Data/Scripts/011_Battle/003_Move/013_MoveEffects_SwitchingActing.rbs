@@ -5,7 +5,7 @@ class Battle::Move::FleeFromBattle < Battle::Move
 end
 
 # ==============================================================================
-# User switches out. If user is a wild PokÃ©mon, ends the battle instead.
+# User switches out. If user is a wild PokÃƒÂ©mon, ends the battle instead.
 # (Teleport (Gen 8+))
 # ==============================================================================
 class Battle::Move::SwitchOutUserStatusMove < Battle::Move
@@ -33,32 +33,32 @@ class Battle::Move::SwitchOutUserPassOnEffects < Battle::Move
 end
 
 # ==============================================================================
-# When used against a sole wild PokÃ©mon, makes target flee and ends the battle;
+# When used against a sole wild PokÃƒÂ©mon, makes target flee and ends the battle;
 # fails if target is a higher level than the user.
-# When used against a trainer's PokÃ©mon, target switches out.
+# When used against a trainer's PokÃƒÂ©mon, target switches out.
 # For status moves. (Roar, Whirlwind)
 # ==============================================================================
 class Battle::Move::SwitchOutTargetStatusMove < Battle::Move
 end
 
 # ==============================================================================
-# When used against a sole wild PokÃ©mon, makes target flee and ends the battle;
+# When used against a sole wild PokÃƒÂ©mon, makes target flee and ends the battle;
 # fails if target is a higher level than the user.
-# When used against a trainer's PokÃ©mon, target switches out.
+# When used against a trainer's PokÃƒÂ©mon, target switches out.
 # For damaging moves. (Circle Throw, Dragon Tail)
 # ==============================================================================
 class Battle::Move::SwitchOutTargetDamagingMove < Battle::Move
 end
 
 # ==============================================================================
-# Trapping move. Traps for 5 or 6 rounds. Trapped PokÃ©mon lose 1/16 of max HP
+# Trapping move. Traps for 5 or 6 rounds. Trapped PokÃƒÂ©mon lose 1/16 of max HP
 # at end of each round.
 # ==============================================================================
 class Battle::Move::BindTarget < Battle::Move
 end
 
 # ==============================================================================
-# Trapping move. Traps for 5 or 6 rounds. Trapped PokÃ©mon lose 1/16 of max HP
+# Trapping move. Traps for 5 or 6 rounds. Trapped PokÃƒÂ©mon lose 1/16 of max HP
 # at end of each round. (Whirlpool)
 # Power is doubled if target is using Dive. Hits some semi-invulnerable targets.
 # ==============================================================================
@@ -90,14 +90,14 @@ end
 
 # ==============================================================================
 # Prevents the user and the target from switching out or fleeing. This effect
-# isn't applied if either PokÃ©mon is already prevented from switching out or
+# isn't applied if either PokÃƒÂ©mon is already prevented from switching out or
 # fleeing. (Jaw Lock)
 # ==============================================================================
 class Battle::Move::TrapUserAndTargetInBattle < Battle::Move
 end
 
 # ==============================================================================
-# No PokÃ©mon can switch out or flee until the end of the next round. (Fairy Lock)
+# No PokÃƒÂ©mon can switch out or flee until the end of the next round. (Fairy Lock)
 # ==============================================================================
 class Battle::Move::TrapAllBattlersInBattleForOneTurn < Battle::Move
 end
@@ -144,7 +144,7 @@ class Battle::Move::TargetUsesItsLastUsedMoveAgain < Battle::Move
 end
 
 # ==============================================================================
-# For 5 rounds, for each priority bracket, slow PokÃ©mon move before fast ones.
+# For 5 rounds, for each priority bracket, slow PokÃƒÂ©mon move before fast ones.
 # (Trick Room)
 # ==============================================================================
 class Battle::Move::StartSlowerBattlersActFirst < Battle::Move
@@ -213,5 +213,6 @@ end
 # ==============================================================================
 class Battle::Move::DisableTargetMovesKnownByUser < Battle::Move
 end
+
 
 
