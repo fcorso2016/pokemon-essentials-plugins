@@ -22,6 +22,7 @@ jobs:
         run: bundle install
 
       - name: Get type info
+        continue-on-error: true
         run: steep check--log-output=steep_log.txt > rbs_report.txt
 
       - name: Generate Report
