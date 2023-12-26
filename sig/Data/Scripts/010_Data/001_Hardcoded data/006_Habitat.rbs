@@ -6,7 +6,7 @@ module GameData
     type schema = {:id => Symbol, :name => String}
     DATA: Hash[Symbol, Habitat]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, Habitat]
     include InstanceMethods
 
     attr_reader id: Symbol

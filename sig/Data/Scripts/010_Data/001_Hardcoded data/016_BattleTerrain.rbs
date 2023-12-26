@@ -10,7 +10,7 @@ module GameData
       }
     DATA: Hash[Symbol, BattleTerrain]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, BattleTerrain]
     include InstanceMethods
 
     attr_reader id: Symbol

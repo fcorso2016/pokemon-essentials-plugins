@@ -14,7 +14,7 @@ module GameData
       }
     DATA: Hash[Symbol, Target]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, Target]
     include InstanceMethods
 
     attr_reader id: Symbol

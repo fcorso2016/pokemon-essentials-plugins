@@ -6,67 +6,67 @@ module GameData
   def self.get_all_data_filenames: -> (Array[[String, bool]])
   def self.get_all_pbs_base_filenames: -> Hash[Symbol, String]
 
-  module ClassMethods[HashSchema < Hash[Symbol, untyped]]
+  module ClassMethods[HashSchema < Hash[Symbol, untyped], T]
     def schema: -> Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Symbol) -> bool |
                  (String) -> bool |
                  (Integer other) -> bool |
-                 (instance other) -> bool
-    def get: (Symbol) -> instance |
-             (String) -> instance |
-             (Integer other) -> instance |
-             (instance other) -> instance
-    def try_get: (Symbol) -> (instance | nil) |
-                 (String) -> (instance | nil) |
-                 (Integer other) -> (instance | nil) |
-                 (instance other) -> (instance | nil)
+                 (T other) -> bool
+    def get: (Symbol) -> T |
+             (String) -> T |
+             (Integer other) -> T |
+             (T other) -> T
+    def try_get: (Symbol) -> (T | nil) |
+                 (String) -> (T | nil) |
+                 (Integer other) -> (T | nil) |
+                 (T other) -> (T | nil)
     def keys: -> Array[Symbol | Integer]
-    def each: {(instance) -> void} -> void
+    def each: {(T) -> void} -> void
     def count: -> Integer
     def load: -> void
     def save: -> void
   end
 
-  module ClassMethodsSymbols[HashSchema < Hash[Symbol, untyped]]
+  module ClassMethodsSymbols[HashSchema < Hash[Symbol, untyped], T]
     def schema: -> Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Symbol other) -> bool |
                  (String other) -> bool |
-                 (instance other) -> bool
-    def get: (Symbol other) -> instance |
-             (String other) -> instance |
-             (instance other) -> instance
-    def try_get: (Symbol other) -> (instance | nil) |
-                 (String other) -> (instance | nil) |
-                 (instance other) -> (instance | nil)
+                 (T other) -> bool
+    def get: (Symbol other) -> T |
+             (String other) -> T |
+             (T other) -> T
+    def try_get: (Symbol other) -> (T | nil) |
+                 (String other) -> (T | nil) |
+                 (T other) -> (T | nil)
     def keys: -> Array[Symbol]
-    def each: { (instance) -> void } -> void
+    def each: { (T) -> void } -> void
     def each_alphabetically: { (Symbol) -> void }  -> void
     def count: -> Integer
     def load: -> void
     def save: -> void
   end
 
-  module ClassMethodsIDNumbers[HashSchema < Hash[Symbol, untyped]]
+  module ClassMethodsIDNumbers[HashSchema < Hash[Symbol, untyped], T]
     def schema: ->  Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Integer other) -> bool |
-                 (instance other) -> bool
-    def get: (Integer other) -> instance |
-             (instance other) -> instance
-    def try_get: (Integer other) -> (instance | nil) |
-                 (instance other) -> (instance | nil)
+                 (T other) -> bool
+    def get: (Integer other) -> T |
+             (T other) -> T
+    def try_get: (Integer other) -> (T | nil) |
+                 (T other) -> (T | nil)
     def keys: -> Array[Integer]
-    def each: {(instance) -> void} -> void
+    def each: {(T) -> void} -> void
     def count: -> Integer
     def load: -> void
     def save: -> void
   end
 
   module InstanceMethods
-    @id: bot
-    @id_number: bot
+    @id: Symbol
+    @id_number: Integer
 
     def ==: (Symbol other) -> bool |
             (String other) -> bool |

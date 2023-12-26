@@ -16,18 +16,26 @@ def process_steep_report(report_contents)
 end
 
 Dir.each_child("Data/Scripts") do |item|
-  if item =~ /(.*)\.rb/i
-    $script_files["."].push(item)
-  else
-    $script_files[item] ||= []
-    $script_files[item].push(Dir.glob("Data/Scripts/#{item}/**/*.rb"))
-  end
+    if item =~ /(.*)\.rb/i
+      $script_files["."].push(item)
+    else
+      $script_files[item] ||= []
+      $script_files[item].push(Dir.glob("Data/Scripts/#{item}/**/*.rb"))
+    end
+
 end
+
+start = 7
+index = 0
 $script_files.each do |scripts|
-  print "Processing: #{scripts[0]}\n"
-  process_steep_report(`steep check #{scripts[1].join(" ")}`) do |issue|
-    $issues.push(issue)
+  if index >= start
+    print "Processing: #{scripts[0]}\n"
+    process_steep_report(`steep check #{scripts[1].join(" ")}`) do |issue|
+      $issues.push(issue)
+    end
   end
+
+  index += 1
 end
 
 $issues.each do |issue|

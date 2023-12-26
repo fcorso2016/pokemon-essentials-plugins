@@ -19,7 +19,7 @@ module GameData
     SCHEMA: Hash[String, [Symbol, String, Symbol]]
     HEART_GAUGE_SIZE: Integer
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, ShadowPokemon]
     include InstanceMethods
 
     attr_reader id: Symbol

@@ -15,7 +15,7 @@ module GameData
     DATA_FILENAME: String
     PBS_BASE_FILENAME: String
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, Encounter]
     include InstanceMethods
 
     attr_accessor id: Symbol

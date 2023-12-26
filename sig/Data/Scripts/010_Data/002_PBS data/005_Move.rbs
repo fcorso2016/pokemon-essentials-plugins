@@ -24,7 +24,7 @@ module GameData
     PBS_BASE_FILENAME: String
     SCHEMA: Hash[String, [Symbol, String, (Symbol | Array[String])]]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, Move]
     include InstanceMethods
 
     attr_reader id: Symbol

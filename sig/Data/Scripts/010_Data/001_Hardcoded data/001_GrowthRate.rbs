@@ -6,7 +6,7 @@ module GameData
     type schema = {:id => Symbol, :name => String, :exp_values => Array[Integer], :exp_formula => ^(Integer) -> Integer }
     DATA: Hash[Symbol, GrowthRate]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, GrowthRate]
     include InstanceMethods
 
     attr_reader id: Symbol

@@ -50,7 +50,7 @@ module GameData
     DATA_FILENAME: String
     PBS_BASE_FILENAME: [String, String]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, Species]
     include InstanceMethods
 
     attr_reader id: Symbol

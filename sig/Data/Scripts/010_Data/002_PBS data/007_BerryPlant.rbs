@@ -19,7 +19,7 @@ module GameData
     NUMBER_OF_FULLY_GROWN_STAGES: Integer
     WATERING_CANS: Array[Symbol]
 
-    extend ClassMethodsSymbols[schema]
+    extend ClassMethodsSymbols[schema, BerryPlant]
     include InstanceMethods
 
     attr_reader id: Symbol

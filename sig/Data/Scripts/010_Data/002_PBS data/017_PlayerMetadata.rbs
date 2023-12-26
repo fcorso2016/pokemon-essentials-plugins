@@ -26,7 +26,7 @@ module GameData
     @fish_charset: String
     @surf_fish_charset: String
 
-    extend ClassMethodsIDNumbers[schema]
+    extend ClassMethodsIDNumbers[schema, PlayerMetadata]
     include InstanceMethods
 
     attr_reader id: Integer

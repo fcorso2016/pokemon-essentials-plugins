@@ -23,7 +23,7 @@ module GameData
     PBS_BASE_FILENAME: String
     SCHEMA: Hash[String, [Symbol, String, Symbol]]
 
-    extend ClassMethodsIDNumbers[schema]
+    extend ClassMethodsIDNumbers[schema, Metadata]
     include InstanceMethods
 
     attr_reader id: Integer
