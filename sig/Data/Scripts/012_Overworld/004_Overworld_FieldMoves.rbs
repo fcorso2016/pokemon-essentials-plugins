@@ -2,11 +2,11 @@
 # Hidden move handlers
 # ==============================================================================
 module HiddenMoveHandlers
-  CanUseMove: MoveHandlerHash
+  CanUseMove: MoveHandlerHash[^(Symbol, Pokemon, bool) -> bool]
 
-  ConfirmUseMove: MoveHandlerHash
+  ConfirmUseMove: MoveHandlerHash[^(Symbol, Pokemon) -> bool]
 
-  UseMove: MoveHandlerHash
+  UseMove: MoveHandlerHash[^(Symbol, Pokemon) -> bool]
 
   def self.addCanUseMove: (Symbol item, ^(Symbol, Pokemon, bool) -> bool proc) -> void
 

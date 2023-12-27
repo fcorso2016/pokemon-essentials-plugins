@@ -135,7 +135,7 @@ class PokemonOption_Scene
   include _PokeScene
   include _PokeUpdatable
 
-  @hashes: Array[HandlerHash[Symbol]]
+  @hashes: Array[HandlerHash[Symbol, MenuHandlers::hash_schema]]
   @options: Array[_Option]
 
   @viewport: Viewport

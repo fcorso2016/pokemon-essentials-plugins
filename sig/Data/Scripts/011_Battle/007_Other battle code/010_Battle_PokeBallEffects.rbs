@@ -2,13 +2,13 @@
 #
 # ==============================================================================
 module Battle::PokeBallEffects
-  IsUnconditional: ItemHandlerHash
+  IsUnconditional: ItemHandlerHash[^(Symbol, Battle, Battle::Battler) -> bool]
 
-  ModifyCatchRate: ItemHandlerHash
+  ModifyCatchRate: ItemHandlerHash[^(Symbol, Integer, Battle, Battle::Battler) -> Integer]
 
-  OnCatch: ItemHandlerHash
+  OnCatch: ItemHandlerHash[^(Symbol, Integer, Battle, Battle::Battler) -> void]
 
-  OnFailCatch: ItemHandlerHash
+  OnFailCatch: ItemHandlerHash[^(Symbol, Battle, Battle::Battler) -> void]
 
   def self.isUnconditional?: (Symbol ball, Battle battle, Battle::Battler battler) -> bool
 
