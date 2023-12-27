@@ -34,7 +34,7 @@ interface _ImageAnimatedBitmap
 
   def []: (Integer index) -> Bitmap
   def bitmap: -> Bitmap?
-  def copy: -> instance
+  def copy: -> self
   def deanimate: -> void
   def currentIndex: -> Integer
   def length: -> Integer
