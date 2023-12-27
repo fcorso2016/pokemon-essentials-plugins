@@ -35,7 +35,8 @@ class PokemonEvolutionScene
 
   def pbEvolutionMethodAfterEvolution: () -> void
 
-  def pbUpdate: (?bool animating) -> void
+  def pbUpdate: () -> void |
+    (bool animating) -> void
 
   # Closes the evolution screen.
   def pbEndScreen: (?bool need_fade_out) -> void

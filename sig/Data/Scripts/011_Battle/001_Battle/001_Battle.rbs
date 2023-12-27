@@ -68,7 +68,6 @@ class Battle
   attr_reader turnCount: Integer
   attr_accessor decision: Integer
   attr_reader player: Array[Trainer]?
-  attr_reader opponent: Array[Trainer]?
   attr_accessor items: Array[Symbol]?
   attr_accessor ally_items: Array[Symbol]?
   attr_accessor party1starts: Array[Integer]

@@ -3,14 +3,14 @@
 # Classes
 class Plane
   include _Visualizable
+  include _CheckedDisposable
 
   def initialize: (?Viewport? viewport) -> void
-  def dispose: -> void
-  def disposed?: -> bool
+
+  @visible: bool
 
   attr_accessor bitmap: Bitmap?
   attr_accessor viewport: Viewport
-  attr_accessor visible: bool
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer

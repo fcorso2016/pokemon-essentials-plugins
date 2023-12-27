@@ -11,10 +11,11 @@ class Sprite
   def width: -> Integer
   def height: -> Integer
 
+  @visible: bool
+
   attr_accessor bitmap: Bitmap?
   attr_accessor src_rect: Rect
   attr_accessor viewport: Viewport
-  attr_accessor visible: bool
   attr_accessor x: Integer
   attr_accessor y: Integer
   attr_accessor z: Integer

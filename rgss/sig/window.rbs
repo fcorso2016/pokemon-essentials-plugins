@@ -9,13 +9,14 @@ class Window
   def initialize: (Viewport? viewport) -> void |
     () -> void
 
+  @visible: bool
+
   attr_accessor windowskin: Bitmap?
   attr_accessor contents: Bitmap?
   attr_accessor stretch: bool
   attr_accessor cursor_rect: Rect
   attr_accessor viewport: Viewport?
   attr_accessor active: bool
-  attr_accessor visible: bool
   attr_accessor pause: bool
   attr_accessor x: Integer
   attr_accessor y: Integer

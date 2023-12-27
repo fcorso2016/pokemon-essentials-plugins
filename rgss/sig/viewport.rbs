@@ -11,8 +11,9 @@ class Viewport
                 | () -> void
   def flash: (Color color, Integer duration) -> void
 
+  @visible: bool
+
   attr_accessor rect: Rect
-  attr_accessor visible: bool
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer

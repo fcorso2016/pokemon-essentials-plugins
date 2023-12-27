@@ -155,7 +155,7 @@ end
 class GameDataProperty
   include _DefaultEditorProperty[Integer]
   
-  @module: GameData::ClassMethodsSymbols[untyped]
+  @module: GameData::ClassMethodsSymbols[untyped, untyped]
 
   def initialize: (_ToSym value) -> void
 end
@@ -449,7 +449,7 @@ class GameDataPoolProperty
   @auto_sort: bool
   @game_data: _ToSym
 
-  @game_data_module: GameData::ClassMethodsSymbols[untyped]
+  @game_data_module: GameData::ClassMethodsSymbols[untyped, untyped]
 
   def initialize: (_ToSym game_data, ?bool allow_multiple, ?bool auto_sort) -> void
 end
