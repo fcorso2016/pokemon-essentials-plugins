@@ -28,8 +28,11 @@ jobs:
       - name: Generate Report
         run: ruby ./type_reporter.rb
 
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
         with:
-          name: rbs-signature-report
-          path: rbs_issues.json
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: rbs_issues.json
+          # Optional category for the results
+          # Used to differentiate multiple results for one commit
+          category: steep-type-checker
