@@ -19,7 +19,7 @@ def process_steep_report(report_contents)
         "locations" => [{
                           "physicalLocation" => {
                             "artifactLocation" => {
-                              "uri" => "\"#{$1.to_s}\"",
+                              "uri" => $1.to_s,
                               "uriBaseId" => "%SRCROOT%"
                             },
                             "region" => {
