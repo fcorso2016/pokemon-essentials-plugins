@@ -12,7 +12,7 @@ class ColoredPlane < Plane
 end
 
 class AnimatedPlane < Plane
-  @bitmap: AnimatedBitmap?
+  @animated_bitmap: AnimatedBitmap?
 
   def initialize: (Viewport? viewport) -> void
   def setBitmap: (String? file, ?Integer hue) -> void
