@@ -45,7 +45,7 @@ def process_steep_report(report_contents)
       $rules[current_issue["ruleId"]] ||= {
         "id" => current_issue["ruleId"],
         "shortDescription" => {
-          "text" => "RBS Type Scan Issue"
+          "text" => current_issue["ruleId"]
         },
         "properties" => {
           "tags" => %w[ruby type-error]
