@@ -10,24 +10,31 @@ def process_steep_report(report_contents)
       unless current_issue.empty? && !$issues.any? { |issue| issue == current_issue }
         yield current_issue
       end
+
+      path = $1.to_s
+      level = $4.to_s
+      description = $5.to_s
+      line = $2.to_i
+      column = $3.to_i
+
       current_issue = {
         "ruleId" => "RBS Type Error",
-        "level" => $4.to_s,
+        "level" => level,
         "message" => {
-          "text" => $5.to_s
+          "text" => description
         },
         "locations" => [
           {
             "physicalLocation" => {
               "artifactLocation" => {
-                "uri" => $1.to_s.gsub(" ", "%20"),
+                "uri" => path.gsub(" ", "%20"),
                 "uriBaseId" => "%SRCROOT%"
               },
               "region" => {
-                "startLine" => $2.to_i,
-                "startColumn" => $3.to_i,
-                "endLine" => $2.to_i,
-                "endColumn" => $3.to_i
+                "startLine" => line,
+                "startColumn" => column,
+                "endLine" => line,
+                "endColumn" => column
               }
             }
           }
