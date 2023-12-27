@@ -6,6 +6,7 @@ FORMATREGEXP: Regexp
 type alignment = (:left | false | 0) | (:center | 2) | (:right | true | 1)
 type has_outline = (:outline | true | 1) | (:none | false | 0)
 type text_position = [String, Integer, Integer, alignment, Color, Color, has_outline]
+type line_broken_text = [String, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer]
 
 class Object
 
@@ -34,7 +35,7 @@ class Object
   def getLastParam: [T] (Array[T] array, T default) -> T
   def getLastColors: (Array[Color] colorstack, Array[Numeric] opacitystack, Color defaultcolors) -> (Integer | String | [untyped, nil])
   def getFormattedText: (Bitmap bitmap, Integer xDst, Integer yDst, Integer widthDst, Integer heightDst, String text, ?Integer lineheight, ?bool newlineBreaks, ?bool explicitBreaksOnly, ?bool collapseAlignments) -> Array[String]
-  def getLineBrokenText: (Bitmap bitmap, String value, Integer width, [Integer, Integer]? dims) -> Array[String]
+  def getLineBrokenText: (Bitmap bitmap, String value, Integer width, [Integer, Integer]? dims) -> Array[::line_broken_text]
   def getLineBrokenChunks: (Bitmap bitmap, String value, Integer width, [Integer, Integer] dims, ?bool plain) -> Array[Array[Integer]]
   def renderLineBrokenChunks: (Bitmap bitmap, Integer xDst, Integer yDst, String normtext, ?Integer maxheight) -> untyped
   def renderLineBrokenChunksWithShadow: (Bitmap bitmap, Integer xDst, Integer yDst, String normtext, Integer maxheight, Color baseColor, Color shadowColor) -> Array[Array[Integer]]

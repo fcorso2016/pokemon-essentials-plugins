@@ -2,7 +2,7 @@
 #
 # ==============================================================================
 class Battle::ActiveField
-  attr_accessor effects: Array[untyped]
+  attr_accessor effects: Array[Integer | bool]
 
   attr_accessor defaultWeather: Symbol
 
