@@ -71,7 +71,7 @@ class Game_Character
   attr_reader move_route_forcing: bool
   attr_accessor through: bool
   attr_accessor animation_id: Integer
-  attr_accessor transparent: false
+  attr_accessor transparent: bool
   attr_reader move_speed: Numeric
   attr_reader jump_speed: Numeric
   attr_accessor walk_anime: bool

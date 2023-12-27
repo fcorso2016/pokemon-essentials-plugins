@@ -45,7 +45,7 @@ class TilemapRenderer
   attr_reader viewport: Viewport?
   attr_accessor ox: Integer
   attr_accessor oy: Integer
-  attr_accessor visible: bool
+  @visible: bool
   def initialize: (Viewport viewport) -> void
   def add_tileset: (String filename) -> void
   def remove_tileset: (String filename) -> void

@@ -4,7 +4,6 @@
 class SpriteWindow < Window
 
   @trim: [Integer, Integer, Integer, Integer]
-  @stretch: true
   @flash_duration: Numeric
   @pauseopacity: Numeric?
   @flash_timer_start: Numeric?
@@ -16,7 +15,7 @@ class SpriteWindow < Window
   attr_reader zoom_y: Numeric
   attr_reader offset_x: Integer
   attr_reader offset_y: Integer
-  attr_reader cursor_rect: Window
+  attr_reader cursor_rect: Rect
   attr_reader contents_blend_type: Integer
   attr_reader blend_type: Integer
   attr_reader openness: Numeric

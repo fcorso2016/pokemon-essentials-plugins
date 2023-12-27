@@ -18,7 +18,7 @@ class Sprite_Reflection
   @viewport: Viewport?
   @disposed: bool
 
-  attr_reader visible: bool
+  @visible: bool
   def initialize: (Sprite_Character parent_sprite, ?Viewport? viewport) -> void
 end
 

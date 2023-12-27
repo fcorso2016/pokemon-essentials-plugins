@@ -21,7 +21,7 @@ class Interpreter
   @follower_move_route_id: Integer?
   @follower_animation: bool
   @follower_animation_id: Integer?
-  @list: Array[RPG::EventCommand]
+  @list: Array[RPG::EventCommand]?
   @index: Integer
   @loop_count: Integer
 
