@@ -16,20 +16,22 @@ def process_steep_report(report_contents)
         "message" => {
           "text" => $5.to_s
         },
-        "locations" => [{
-                          "physicalLocation" => {
-                            "artifactLocation" => {
-                              "uri" => $1.to_s,
-                              "uriBaseId" => "%SRCROOT%"
-                            },
-                            "region" => {
-                              "startLine" => $2.to_i,
-                              "startColumn" => $3.to_i,
-                              "endLine" => $2.to_i,
-                              "endColumn" => $3.to_i
-                            }
-                          }
-                        }]
+        "locations" => [
+          {
+            "physicalLocation" => {
+              "artifactLocation" => {
+                "uri" => $1.to_s.gsub(" ", "%20"),
+                "uriBaseId" => "%SRCROOT%"
+              },
+              "region" => {
+                "startLine" => $2.to_i,
+                "startColumn" => $3.to_i,
+                "endLine" => $2.to_i,
+                "endColumn" => $3.to_i
+              }
+            }
+          }
+        ]
       }
     elsif !current_issue.empty? && line =~ /Diagnostic ID: (.*)/i
       current_issue["ruleId"] = $1.to_s
