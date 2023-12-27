@@ -2,8 +2,6 @@
 
 # Classes
 class Battle
-  @priorityTrickRoom: Array[[Battler, Integer, Integer, Integer, Integer, Integer, Integer]]
-
   def pbCanChooseMove?: (Integer idxBattler, Integer idxMove, bool showMessages, ?bool sleepTalk) -> bool
   def pbCanChooseAnyMove?: (Integer idxBattler, ?bool sleepTalk) -> bool
   def pbAutoChooseMove: (Integer idxBattler, ?bool showMessages) -> bool

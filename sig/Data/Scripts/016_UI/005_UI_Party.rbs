@@ -76,7 +76,7 @@ class PokemonPartyBlankPanel < Sprite
 
   @panelbgsprite: AnimatedBitmap
 
-  attr_accessor text: String?
+  @text: String?
 
   def initialize: (Pokemon _pokemon, Integer index, ?Viewport? viewport) -> void
 
@@ -104,13 +104,13 @@ class PokemonPartyPanel < Sprite
 
   attr_reader active: bool
 
-  attr_reader selected: bool
+  @selected: bool
 
-  attr_reader preselected: bool
+  @preselected: bool
 
-  attr_reader switching: bool
+  @switching: bool
 
-  attr_reader text: String?
+  @text: String?
 
   TEXT_BASE_COLOR: Color
 
@@ -125,8 +125,6 @@ class PokemonPartyPanel < Sprite
   def initialize: (Pokemon pokemon, Integer index, ?Viewport? viewport) -> void
 
   def pokemon=: (Pokemon value) -> void
-
-  def preselected=: (bool value) -> void
 
   def hp: () -> Integer
 
