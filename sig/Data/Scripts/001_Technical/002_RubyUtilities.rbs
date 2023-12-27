@@ -18,9 +18,9 @@ end
 class String
   def starts_with_vowel?: () -> bool
 
-  def first: (Integer? n) -> String
+  def first: (?Integer? n) -> String
 
-  def last: (Integer? n) -> String
+  def last: (?Integer n) -> String
 
   def blank?: () -> bool
 
