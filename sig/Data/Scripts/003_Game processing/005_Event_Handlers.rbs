@@ -27,13 +27,13 @@ class HandlerHash[K]
   @hash: Hash[K, Proc]
 
   def initialize: -> void
-  def []: (K id) -> Proc
+  def []: (K id) -> Proc?
   def add: (K id, ?Proc handler) -> void
   def copy: (K src, *K dests) -> void
   def remove: (K key) -> void
   def clear: -> void
   def each: -> void
-  def keys: (0) { (K, Proc) -> void } -> void
+  def keys: () -> Array[K]
   def trigger: (K id, *untyped args) -> untyped
 end
 

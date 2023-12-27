@@ -30,7 +30,7 @@ class Object
   def pbShowCommands: (Window_AdvancedTextPokemon msgwindow, ?Array[String]? commands, ?Integer cmdIfCancel, ?Integer defaultCmd) -> Integer
   def pbShowCommandsWithHelp: (Window_AdvancedTextPokemon msgwindow, Array[String] commands, Array[String] help, ?Integer cmdIfCancel, ?Integer defaultCmd) -> Integer
   def pbMessageWaitForInput: (Window_AdvancedTextPokemon msgwindow, Integer frames, ?bool showPause) -> void
-  def pbFreeText: (Window_AdvancedTextPokemon msgwindow, String currenttext, Window_TextEntry | false passwordbox, Integer maxlength, ?Integer width) { (Window_AdvancedTextPokemon) -> String } -> String
+  def pbFreeText: (Window_AdvancedTextPokemon msgwindow, String currenttext, Window_TextEntry | false passwordbox, Integer maxlength, ?Integer width) { () -> String } -> String
   def pbMessageFreeText: (String message, String currenttext, Window_TextEntry | false passwordbox, Integer maxlength, ?Integer width) { (Window_AdvancedTextPokemon) -> String} -> String
 end
 

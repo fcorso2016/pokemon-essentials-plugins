@@ -105,7 +105,7 @@ class Color
   def to_rgb24: () -> String
 
   # @return [String] this color in the format "RRGGBBAA" (or "RRGGBB" if this color's alpha is 255)
-  def to_rgb32: (bool? always_include_alpha) -> String
+  def to_rgb32: (?bool always_include_alpha) -> String
 
   # @return [String] this color in the format "#RRGGBB", ignoring its alpha
   def to_hex: () -> String

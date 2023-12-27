@@ -15,7 +15,7 @@ module Game
   def self.start_new: -> void
   def self.load: (Hash[Object, Object] save_data) -> void
   def self.load_map: -> void
-  def self.save: (?String save_file, ?bool safe) -> bool
+  def self.save: (?String save_file, safe: bool) -> bool
 end
 
 
