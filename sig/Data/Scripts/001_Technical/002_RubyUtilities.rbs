@@ -193,7 +193,7 @@ class Object
   #   - the time passed since the start of the change (delta), or
   #   - the start time of the change (delta) and the current time (now)
   # ==============================================================================
-  def lerp: (Numeric start_val, Numeric end_val, Numeric duration, Numeric delta, Numeric? now) -> Numeric
+  def lerp: (Numeric start_val, Numeric end_val, Numeric duration, Numeric delta, ?Numeric? now) -> Numeric
 end
 
 
