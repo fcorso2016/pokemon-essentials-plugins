@@ -5,5 +5,5 @@ target :lib do
 
   check "Data/Scripts"
 
-  configure_code_diagnostics(D::Ruby.lenient)
+  configure_code_diagnostics(D::Ruby.strict)
 end
