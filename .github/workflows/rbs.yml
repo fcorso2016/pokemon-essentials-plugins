@@ -21,9 +21,13 @@ jobs:
       - name: Install Gem Deps
         run: bundle install
 
-      - name: Get type info
+      - name: Validate Types
         continue-on-error: true
-        run: steep check --log-output=steep_log.txt > rbs_report.txt
+        run: steep validate --log-output=steep_log.txt > rbs_report.txt
+
+      - name: Check Type Usages
+        continue-on-error: true
+        run: steep check --log-output=steep_log.txt >> rbs_report.txt
 
       - name: Generate Report
         run: ruby ./type_reporter.rb
