@@ -61,7 +61,7 @@ class Sprite_Shadow < RPG::Sprite
     end
     self.visible = !@character.transparent
     if @tile_id == 0
-      sx = @character.anim_pattern * @cw
+      sx = @character.pattern * @cw
       sy = (@character.direction - 2) / 2 * @ch
       if self.angle > 90 || angle < -90
         case @character.direction
