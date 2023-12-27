@@ -58,8 +58,8 @@ end
 if File.exist?("rbs_report.txt")
   docs = File.open("rbs_report.txt", "r")
   process_steep_report(docs.read) do |issue|
-    next if issue["message"]["text"] =~ /Type \(.* \| nil\) does not have method .*/
-    next if issue["message"]["text"] =~ /Cannot pass a value of type \((.*) \| nil\) as an argument of type \1/
+    next if issue["message"]["text"] =~ /Type `\(.* \| nil\)` does not have method `.*`/
+    next if issue["message"]["text"] =~ /Cannot pass a value of type `\((.*) \| nil\)` as an argument of type `\1`/
     $issues.push(issue)
   end
 
