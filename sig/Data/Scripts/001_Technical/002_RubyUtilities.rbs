@@ -18,9 +18,9 @@ end
 class String
   def starts_with_vowel?: () -> bool
 
-  def first: (Integer? n) -> String
+  def first: (?Integer? n) -> String
 
-  def last: (Integer? n) -> String
+  def last: (?Integer n) -> String
 
   def blank?: () -> bool
 
@@ -105,7 +105,7 @@ class Color
   def to_rgb24: () -> String
 
   # @return [String] this color in the format "RRGGBBAA" (or "RRGGBB" if this color's alpha is 255)
-  def to_rgb32: (bool? always_include_alpha) -> String
+  def to_rgb32: (?bool always_include_alpha) -> String
 
   # @return [String] this color in the format "#RRGGBB", ignoring its alpha
   def to_hex: () -> String
@@ -193,7 +193,7 @@ class Object
   #   - the time passed since the start of the change (delta), or
   #   - the start time of the change (delta) and the current time (now)
   # ==============================================================================
-  def lerp: (Numeric start_val, Numeric end_val, Numeric duration, Numeric delta, Numeric? now) -> Numeric
+  def lerp: (Numeric start_val, Numeric end_val, Numeric duration, Numeric delta, ?Numeric? now) -> Numeric
 end
 
 

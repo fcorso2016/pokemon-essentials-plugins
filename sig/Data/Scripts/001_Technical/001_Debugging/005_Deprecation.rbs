@@ -3,7 +3,7 @@
 # Classes
 class Module
   private
-  def deprecated_method_alias: (Symbol name, Symbol aliased_method, ?String? removal_in, ?bool class_method) -> void
+  def deprecated_method_alias: (Symbol name, Symbol aliased_method, removal_in: String?, class_method: bool) -> void
 end
 
 module Deprecation

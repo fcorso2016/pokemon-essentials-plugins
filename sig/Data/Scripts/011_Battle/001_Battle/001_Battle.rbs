@@ -82,7 +82,7 @@ class Battle
   attr_accessor controlPlayer: bool
   attr_accessor expGain: bool
   attr_accessor moneyGain: bool
-  attr_accessor disablePokeBalls: bool
+  attr_reader disablePokeBalls: bool
   attr_accessor sendToBoxes: Integer
   attr_accessor rules: Hash[String, bool]
   attr_accessor choices: Array[[Symbol, Integer, Move?, Integer]]
