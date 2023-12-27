@@ -158,7 +158,7 @@ module BattleAnimationEditor
 
     attr_reader animbitmap: AnimatedBitmap?
 
-    attr_accessor pattern: Integer
+    attr_accessor anim_pattern: Integer
 
     BORDERSIZE: Integer
 

@@ -55,7 +55,7 @@ class Battle::Battler
   include _BattlerBase
 
   # Fundamental to this object
-  attr_reader battle: Battle
+  @battle: Battle
 
   attr_accessor index: Integer
 
