@@ -1,0 +1,41 @@
+type sarif_rule = {
+    "id" => String,
+    "shortDescription" => {
+      "text" => String
+      },
+    "properties" => {
+      "tags" => Array[String]
+      }
+  }
+
+type issue_location = {
+    "physicalLocation" => {
+        "artifactLocation" => {
+            "uri" => String,
+            "uriBaseId" => String
+          },
+        "region" => {
+            "startLine" => Integer,
+            "startColumn" => Integer,
+            "endLine" => Integer,
+            "endColumn" => Integer
+          }
+      }
+  }
+
+type found_error = {
+    "ruleId" => String,
+    "level" => String,
+    "message" => {
+        "text" => String
+      },
+    "locations" => Array[issue_location]
+  }
+
+$rules: Hash[String, sarif_rule]
+$issues: Array[found_error]
+$script_files: Hash[String, Array[String]]
+
+class Object
+  def process_steep_report: (String report_contents) { (found_error) -> void } -> void
+end

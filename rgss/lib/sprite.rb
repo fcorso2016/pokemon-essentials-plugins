@@ -36,8 +36,6 @@ class Sprite
 
   attr_accessor :visible
 
-  attr_accessor :visible
-
   attr_accessor :x
 
   attr_accessor :y

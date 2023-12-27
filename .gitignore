@@ -29,3 +29,6 @@ Thumbs.db
 ~*
 /coverage/
 /MysteryGiftMaster.txt
+/rbs_issues.json
+/rbs_report.txt
+/steep_log.txt

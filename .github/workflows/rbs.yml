@@ -1,0 +1,38 @@
+name: Check Type Signatures
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  steep:
+    name: Steep
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Gem Deps
+        run: bundle install
+
+      - name: Get type info
+        continue-on-error: true
+        run: steep check --log-output=steep_log.txt > rbs_report.txt
+
+      - name: Generate Report
+        run: ruby ./type_reporter.rb
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: rbs_issues.json
+          # Optional category for the results
+          # Used to differentiate multiple results for one commit
+          category: steep-type-checker

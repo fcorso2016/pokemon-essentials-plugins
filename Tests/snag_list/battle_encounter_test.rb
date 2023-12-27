@@ -21,6 +21,9 @@ require_relative '../test_helper'
       def mock_poke2.item_id; return 0; end
 
       @battle = Battle.new(nil, [mock_poke1], [mock_poke2], nil, nil)
+      @battle.caughtPokemon.clear
+      $player.snag_order.clear
+      $player.shadow_seen.clear
     end
 
     def teardown
