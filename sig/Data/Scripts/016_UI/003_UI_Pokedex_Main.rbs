@@ -53,8 +53,8 @@ class PokemonPokedex_Scene
   type dex_option = {
       :species => Symbol,
       :name    => String,
-      :height  => Numeric,
-      :weight  => Numeric,
+      :height  => Math::double,
+      :weight  => Math::double,
       :number  => Integer,
       :shift   => bool,
       :types   => Array[Symbol],
@@ -66,7 +66,7 @@ class PokemonPokedex_Scene
   include _PokeUpdatable
   include _PokeRefreshable
 
-  MODENUMERICAL: Integer
+  MODEMath::doubleAL: Integer
 
   MODEATOZ: Integer
 

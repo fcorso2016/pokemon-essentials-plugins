@@ -21,17 +21,17 @@ class Sprite
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer
-  attr_accessor zoom_x: Numeric
-  attr_accessor zoom_y: Numeric
+  attr_accessor zoom_x: Math::double
+  attr_accessor zoom_y: Math::double
   attr_accessor angle: Integer
-  attr_accessor wave_amp: Numeric
-  attr_accessor wave_length: Numeric
-  attr_accessor wave_speed: Numeric
-  attr_accessor wave_phase: Numeric
+  attr_accessor wave_amp: Math::double
+  attr_accessor wave_length: Math::double
+  attr_accessor wave_speed: Math::double
+  attr_accessor wave_phase: Math::double
   attr_accessor mirror: bool
   attr_accessor bush_depth: Integer
   attr_accessor bush_opacity: Integer
-  attr_accessor opacity: Numeric
+  attr_accessor opacity: Math::double
   attr_accessor blend_type: Integer
   attr_accessor color: Color
   attr_accessor tone: Tone

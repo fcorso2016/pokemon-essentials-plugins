@@ -7,7 +7,7 @@ class TrainerWalkingCharSprite < Sprite
   @current_frame: Integer
   @updating: bool
 
-  attr_accessor anim_duration: Numeric
+  attr_accessor anim_duration: Math::double
 
   # Default time in seconds for one animation cycle of a charset. The icon for a
   # storage box is 0.4 instead (set manually).

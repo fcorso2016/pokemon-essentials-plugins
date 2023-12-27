@@ -30,7 +30,7 @@ class Game_Event
   @prelock_direction: Integer
   @original_pattern: Integer
   @pattern: Integer
-  @opacity: Numeric
+  @opacity: Math::double
   @blend_type: Integer
   @move_route: RPG::MoveRoute
   @move_route_index: Integer
@@ -62,7 +62,7 @@ class Game_Event
   def variable: -> untyped
   def setVariable: (untyped variable) -> void
   def varAsInt: -> Integer
-  def expired?: (?Numeric secs) -> bool
+  def expired?: (?Math::double secs) -> bool
   def expiredDays?: (?Integer days) -> bool
   def cooledDown?: (Integer seconds) -> bool
   def cooledDownDays?: (Integer days) -> bool

@@ -2,15 +2,15 @@
 
 # Classes
 class Tone
-  def initialize: (Numeric red, Numeric green, Numeric blue, Numeric gray) -> void
+  def initialize: (Math::double red, Math::double green, Math::double blue, Math::double gray) -> void
                 | () -> void
-  def set: (Numeric red, Numeric green, Numeric blue, Numeric gray) -> void
+  def set: (Math::double red, Math::double green, Math::double blue, Math::double gray) -> void
          | (Tone tone) -> void
 
-  attr_accessor red: Numeric
-  attr_accessor green: Numeric
-  attr_accessor blue: Numeric
-  attr_accessor gray: Numeric
+  attr_accessor red: Math::double
+  attr_accessor green: Math::double
+  attr_accessor blue: Math::double
+  attr_accessor gray: Math::double
 end
 
 

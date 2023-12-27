@@ -23,45 +23,45 @@ module BattleAnimationEditor
   #
   # ============================================================================
   class PointPath
-    include Enumerable[[Numeric, Numeric]]
+    include Enumerable[[Math::double, Math::double]]
     include _Inspectable
 
-    @distances: Array[Numeric]
-    @points: Array[[Numeric, Numeric]]
+    @distances: Array[Math::double]
+    @points: Array[[Math::double, Math::double]]
 
-    @totaldist: Numeric
+    @totaldist: Math::double
 
     def initialize: () -> void
 
-    def []: (Integer x) -> [Numeric, Numeric]
+    def []: (Integer x) -> [Math::double, Math::double]
 
-    def each: () { ([Numeric, Numeric]) -> void } -> void
+    def each: () { ([Math::double, Math::double]) -> void } -> void
 
     def size: () -> Integer
 
     def length: () -> Integer
 
-    def totalDistance: () -> Numeric
+    def totalDistance: () -> Math::double
 
-    def isEndPoint?: (Numeric x, Numeric y) -> bool
+    def isEndPoint?: (Math::double x, Math::double y) -> bool
 
-    def addPoint: (Numeric x, Numeric y) -> void
+    def addPoint: (Math::double x, Math::double y) -> void
 
     def clear: () -> void
 
     def smoothPointPath: (Integer frames, ?bool roundValues) -> PointPath
 
-    def pointOnPath: (Numeric t) -> [Integer, Integer]?
+    def pointOnPath: (Math::double t) -> [Integer, Integer]?
   end
 
   # ============================================================================
   #
   # ============================================================================
-  def self?.catmullRom: (Numeric p1, Numeric p2, Numeric p3, Numeric p4, Numeric t) -> Numeric
+  def self?.catmullRom: (Math::double p1, Math::double p2, Math::double p3, Math::double p4, Math::double t) -> Math::double
 
-  def self?.getCatmullRomPoint: (PointPath src, Numeric t) -> [Numeric, Numeric]
+  def self?.getCatmullRomPoint: (PointPath src, Math::double t) -> [Math::double, Math::double]
 
-  def self?.getCurvePoint: (PointPath src, Numeric t) -> [Numeric, Numeric]
+  def self?.getCurvePoint: (PointPath src, Math::double t) -> [Math::double, Math::double]
 
   def self?.curveToPointPath: (PointPath curve, Integer numpoints) -> void
 

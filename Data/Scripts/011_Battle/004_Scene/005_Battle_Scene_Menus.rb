@@ -332,7 +332,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
   end
 
   def refreshButtonNames
-    moves = (@battler) ? @battler.moves : []
+    moves = (!@battler.nil?) ? @battler.moves : []
     if !USE_GRAPHICS
       # Fill in command window
       commands = []
@@ -343,7 +343,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       return
     end
     # Draw move names onto overlay
-    @overlay.bitmap.clear
+    @overlay.bitmap&.clear
     textPos = []
     @buttons.each_with_index do |button, i|
       next if !@visibility["button_#{i}"]
@@ -356,7 +356,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
         #       The pixel is at coordinates 10,34 in the button box. If you
         #       change the graphic, you may want to change the below line of
         #       code to ensure the font is an appropriate color.
-        moveNameBase = button.bitmap.get_pixel(10, button.src_rect.y + 34)
+        moveNameBase = button.bitmap&.get_pixel(10, button.src_rect.y + 34)
       end
       textPos.push([moves[i].name, x, y, :center, moveNameBase, TEXT_SHADOW_COLOR])
     end
@@ -394,7 +394,7 @@ class Battle::Scene::FightMenu < Battle::Scene::MenuBase
       end
       return
     end
-    @infoOverlay.bitmap.clear
+    @infoOverlay.bitmap&.clear
     if !move
       @visibility["typeIcon"] = false
       return
@@ -534,7 +534,7 @@ class Battle::Scene::TargetMenu < Battle::Scene::MenuBase
       button.z          = self.z + ((sel) ? 3 : 2)
     end
     # Draw target names onto overlay
-    @overlay.bitmap.clear
+    @overlay.bitmap&.clear
     textpos = []
     @buttons.each_with_index do |button, i|
       next if !button || nil_or_empty?(@texts[i])

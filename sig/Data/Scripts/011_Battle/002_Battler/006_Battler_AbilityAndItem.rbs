@@ -115,9 +115,9 @@ class Battle::Battler
 
   def pbStatIncreasingBerry: (Symbol item_to_use, bool forced, Symbol stat, ?Integer increment) -> bool
 
-  def pbMoveTypeWeakeningBerry: (Symbol berry_type, Symbol move_type, Hash[Symbol, Numeric] mults) -> void
+  def pbMoveTypeWeakeningBerry: (Symbol berry_type, Symbol move_type, Hash[Symbol, Math::double] mults) -> void
 
-  def pbMoveTypePoweringUpGem: (Symbol gem_type, Battle::Move move, Symbol move_type, Hash[Symbol, Numeric] mults) -> void
+  def pbMoveTypePoweringUpGem: (Symbol gem_type, Battle::Move move, Symbol move_type, Hash[Symbol, Math::double] mults) -> void
 end
 
 

@@ -13,8 +13,8 @@ class Game_System
 
   attr_reader map_interpreter: Interpreter
   attr_reader battle_interpreter: Interpreter
-  attr_accessor timer_start: Numeric?
-  attr_accessor timer_duration: Numeric
+  attr_accessor timer_start: Math::double?
+  attr_accessor timer_duration: Math::double
   attr_accessor save_disabled: bool
   attr_accessor menu_disabled: false
   attr_accessor encounter_disabled: false
@@ -58,7 +58,7 @@ class Game_System
   attr_writer battle_end_me: RPG::AudioFile
   def windowskin_name: -> String
   attr_writer windowskin_name: String
-  def timer: -> Numeric
+  def timer: -> Math::double
   def update: -> void
 end
 

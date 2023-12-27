@@ -41,19 +41,19 @@ module Battle::Scene::Animation::BallAnimationMixin
 
   def trainerThrowingFrames: (PictureEx ball, Trainer trainer, Sprite traSprite) -> [Integer, Integer]
 
-  def createBallTrajectory: (PictureEx ball, Numeric delay, Numeric duration, Integer startX, Integer startY, Integer midX, Integer midY, Integer endX, Integer endY) -> void
+  def createBallTrajectory: (PictureEx ball, Math::double delay, Math::double duration, Integer startX, Integer startY, Integer midX, Integer midY, Integer endX, Integer endY) -> void
 
-  def createBallTumbling: (PictureEx ball, Numeric delay, Numeric duration) -> void
+  def createBallTumbling: (PictureEx ball, Math::double delay, Math::double duration) -> void
 
-  def ballSetOpen: (PictureEx ball, Numeric delay, Symbol poke_ball) -> void
+  def ballSetOpen: (PictureEx ball, Math::double delay, Symbol poke_ball) -> void
 
-  def ballSetClosed: (PictureEx ball, Numeric delay, Symbol poke_ball) -> void
+  def ballSetClosed: (PictureEx ball, Math::double delay, Symbol poke_ball) -> void
 
-  def ballOpenUp: (PictureEx ball, Numeric delay, Symbol poke_ball, ?bool showSquish, ?bool playSE) -> void
+  def ballOpenUp: (PictureEx ball, Math::double delay, Symbol poke_ball, ?bool showSquish, ?bool playSE) -> void
 
-  def battlerAppear: (PictureEx battler, Numeric delay, Integer battlerX, Integer battlerY, Sprite batSprite, Color color) -> void
+  def battlerAppear: (PictureEx battler, Math::double delay, Integer battlerX, Integer battlerY, Sprite batSprite, Color color) -> void
 
-  def battlerAbsorb: (PictureEx battler, Numeric delay, Integer battlerX, Integer battlerY, Color color) -> void
+  def battlerAbsorb: (PictureEx battler, Math::double delay, Integer battlerX, Integer battlerY, Color color) -> void
 
   # NOTE: This array makes the Ball Burst animation differ between types of PokÃƒÂ©
   #       Ball in certain simple ways. The HGSS animations occasionally have
@@ -63,7 +63,7 @@ module Battle::Scene::Animation::BallAnimationMixin
 
   # The regular PokÃƒÂ© Ball burst animation, for when a PokÃƒÂ©mon appears from a
   # PokÃƒÂ© Ball.
-  def ballBurst: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
+  def ballBurst: (Math::double delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 
   # NOTE: This array makes the Ball Burst capture animation differ between types
   #       of PokÃƒÂ© Ball in certain simple ways. The HGSS animations occasionally
@@ -73,16 +73,16 @@ module Battle::Scene::Animation::BallAnimationMixin
 
   # The PokÃƒÂ© Ball burst animation used when absorbing a wild PokÃƒÂ©mon during a
   # capture attempt.
-  def ballBurstCapture: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
+  def ballBurstCapture: (Math::double delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 
   # The animation shown over a thrown PokÃƒÂ© Ball when it has successfully caught
   # a PokÃƒÂ©mon.
-  def ballCaptureSuccess: (PictureEx ball, Numeric delay, Integer ballX, Integer ballY) -> void
+  def ballCaptureSuccess: (PictureEx ball, Math::double delay, Integer ballX, Integer ballY) -> void
 
   # The PokÃƒÂ© Ball burst animation used when recalling a PokÃƒÂ©mon. In HGSS, this
   # is the same for all types of PokÃƒÂ© Ball except for the color that the battler
   # turns - see def getBattlerColorFromPokeBall.
-  def ballBurstRecall: (Numeric delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
+  def ballBurstRecall: (Math::double delay, PictureEx ball, Integer ballX, Integer ballY, Symbol poke_ball) -> void
 end
 
 

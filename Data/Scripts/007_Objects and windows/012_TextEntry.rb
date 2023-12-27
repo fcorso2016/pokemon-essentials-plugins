@@ -73,7 +73,7 @@ class CharacterEntryHelper
     chars = self.text.scan(/./m)
     chars = chars[0, @maxlength] if chars.length > @maxlength && @maxlength >= 0
     @text = ""
-    chars.each do |ch|
+    chars&.each do |ch|
       @text += ch if ch
     end
   end
@@ -505,7 +505,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
     @textchars = nil if self.contents != newContents
     self.contents = newContents
     bitmap = self.contents
-    bitmap.clear
+    bitmap&.clear
     getTextChars
     height = self.height - self.borderY
     cursorcolor = Color.black
@@ -522,7 +522,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
       c = text[0]
       # Don't draw spaces
       next if c == " "
-      textwidth = text[3] + 4   # add 4 to prevent draw_text from stretching text
+      textwidth = text[3] &+ 4   # add 4 to prevent draw_text from stretching text
       textheight = text[4]
       # Draw text
       pbDrawShadowText(bitmap, text[1], textY, textwidth, textheight, c, @baseColor, @shadowColor)
@@ -543,14 +543,14 @@ class Window_MultilineTextEntry < SpriteWindow_Base
         textheight = text[4]
         posToCursor = @cursorColumn - thiscolumn
         if posToCursor >= 0
-          partialString = text[0].scan(/./m)[0, posToCursor].join
-          cursorX += bitmap.text_size(partialString).width
+          partialString = text[0]&.scan(/./m)[0, posToCursor].join
+          cursorX += bitmap&.text_size(partialString).width
         end
         break
       end
       cursorY += 4
-      cursorHeight = [4, textheight - 4, bitmap.text_size("X").height - 4].max
-      bitmap.fill_rect(cursorX, cursorY, 2, cursorHeight, cursorcolor)
+      cursorHeight = [4, textheight - 4, bitmap&.text_size("X").height - 4].max
+      bitmap&.fill_rect(cursorX, cursorY, 2, cursorHeight, cursorcolor)
     end
   end
 end

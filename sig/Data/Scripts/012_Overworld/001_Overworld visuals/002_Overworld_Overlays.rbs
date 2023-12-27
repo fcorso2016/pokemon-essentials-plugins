@@ -11,7 +11,7 @@ class LocationWindow
 
   @currentmap: Integer
   @delayed: bool
-  @timer_start: Numeric
+  @timer_start: Math::double
   @window: Window_AdvancedTextPokemon
 
   def initialize: (String name) -> void

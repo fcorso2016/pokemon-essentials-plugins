@@ -2,7 +2,7 @@
 # Success state
 # ==============================================================================
 class Battle::SuccessState
-  attr_accessor typeMod: Numeric
+  attr_accessor typeMod: Math::double
 
   attr_accessor useState: Integer
 

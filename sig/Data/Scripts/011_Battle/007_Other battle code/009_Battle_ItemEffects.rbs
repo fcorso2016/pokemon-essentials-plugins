@@ -2,9 +2,9 @@
 #
 # ==============================================================================
 module Battle::ItemEffects
-  SpeedCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Numeric) -> Numeric]
+  SpeedCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Math::double) -> Math::double]
 
-  WeightCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Numeric) -> Numeric]
+  WeightCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Math::double) -> Math::double]
 
   # Battler's HP/stat changed
   HPHeal: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> bool]
@@ -23,14 +23,14 @@ module Battle::ItemEffects
   OnMissingTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle::Move, Integer, Battle) -> void]
 
   # Accuracy calculation
-  AccuracyCalcFromUser: ItemHandlerHash[^(Symbol, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
+  AccuracyCalcFromUser: ItemHandlerHash[^(Symbol, Hash[Symbol, Math::double], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromTarget: ItemHandlerHash[^(Symbol, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
+  AccuracyCalcFromTarget: ItemHandlerHash[^(Symbol, Hash[Symbol, Math::double], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Damage calculation
-  DamageCalcFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
+  DamageCalcFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
 
-  DamageCalcFromTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
+  DamageCalcFromTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
 
   CriticalCalcFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
@@ -81,9 +81,9 @@ module Battle::ItemEffects
 
   def self.trigger: (ItemHandlerHash[Proc] hash, *untyped args, ?ret: bool) -> untyped
 
-  def self.triggerSpeedCalc: (Symbol item, Battle::Battler battler, Numeric mult) -> Numeric
+  def self.triggerSpeedCalc: (Symbol item, Battle::Battler battler, Math::double mult) -> Math::double
 
-  def self.triggerWeightCalc: (Symbol item, Battle::Battler battler, Numeric w) -> Numeric
+  def self.triggerWeightCalc: (Symbol item, Battle::Battler battler, Math::double w) -> Math::double
 
   def self.triggerHPHeal: (Symbol item, Battle::Battler battler, Battle battle, bool forced) -> bool
 
@@ -97,13 +97,13 @@ module Battle::ItemEffects
 
   def self.triggerOnMissingTarget: (Symbol item, Battle::Battler user, Battle::Battler target, Battle::Move move, Integer hit_num, Battle battle) -> void
 
-  def self.triggerAccuracyCalcFromUser: (Symbol item, Hash[Symbol, Numeric]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
+  def self.triggerAccuracyCalcFromUser: (Symbol item, Hash[Symbol, Math::double]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
 
-  def self.triggerAccuracyCalcFromTarget: (Symbol item, Hash[Symbol, Numeric]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
+  def self.triggerAccuracyCalcFromTarget: (Symbol item, Hash[Symbol, Math::double]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromUser: (Symbol item, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromUser: (Symbol item, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromTarget: (Symbol item, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromTarget: (Symbol item, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
 
   def self.triggerCriticalCalcFromUser: (Symbol item, Battle::Battler user, Battle::Battler target, Integer crit_stage) -> Integer
 

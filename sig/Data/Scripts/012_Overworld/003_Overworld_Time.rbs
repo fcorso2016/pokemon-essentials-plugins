@@ -8,8 +8,8 @@ module PBDayNight
 
   @cachedTone: Tone?
 
-  @dayNightToneLastUpdate: Numeric?
-  @oneOverSixty: Numeric
+  @dayNightToneLastUpdate: Math::double?
+  @oneOverSixty: Math::double
 
   # Returns true if it's day.
   def self.isDay?: (?Time? time) -> bool
@@ -27,7 +27,7 @@ module PBDayNight
   def self.isEvening?: (?Time? time) -> bool
 
   # Gets a number representing the amount of daylight (0=full night, 255=full day).
-  def self.getShade: () -> Numeric
+  def self.getShade: () -> Math::double
 
   # Gets a Tone object representing a suggested shading
   # tone for the current time of day.

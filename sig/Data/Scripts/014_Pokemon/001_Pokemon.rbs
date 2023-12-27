@@ -589,7 +589,7 @@ class Pokemon
   def calcHP: (Integer base, Integer level, Integer iv, Integer ev) -> Integer
 
   # @return [Integer] the specified stat of this PokÃƒÂ©mon (not used for total HP)
-  def calcStat: (Integer base, Integer level, Integer iv, Integer ev, Numeric nat) -> untyped
+  def calcStat: (Integer base, Integer level, Integer iv, Integer ev, Math::double nat) -> untyped
 
   # Recalculates this PokÃƒÂ©mon's stats.
   def calc_stats: () -> void

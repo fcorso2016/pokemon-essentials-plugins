@@ -9,9 +9,9 @@ class Battle::Move
   # ============================================================================
   # Type effectiveness calculation
   # ============================================================================
-  def pbCalcTypeModSingle: (Symbol moveType, Symbol defType, Battle::Battler user, Battle::Battler target) -> Numeric
+  def pbCalcTypeModSingle: (Symbol moveType, Symbol defType, Battle::Battler user, Battle::Battler target) -> Math::double
 
-  def pbCalcTypeMod: (Symbol moveType, Battle::Battler user, Battle::Battler target) -> Numeric
+  def pbCalcTypeMod: (Symbol moveType, Battle::Battler user, Battle::Battler target) -> Math::double
 
   # ============================================================================
   # Accuracy check
@@ -21,7 +21,7 @@ class Battle::Move
   # Accuracy calculations for one-hit KO moves are handled elsewhere.
   def pbAccuracyCheck: (Battle::Battler user, Battle::Battler target) -> bool
 
-  def pbCalcAccuracyModifiers: (Battle::Battler user, Battle::Battler target, Hash[Symbol, Numeric] modifiers) -> void
+  def pbCalcAccuracyModifiers: (Battle::Battler user, Battle::Battler target, Hash[Symbol, Math::double] modifiers) -> void
 
   # ============================================================================
   # Critical hit check
@@ -38,11 +38,11 @@ class Battle::Move
   # ============================================================================
   # Damage calculation
   # ============================================================================
-  def pbBaseDamage: (Integer baseDmg, Battle::Battler user, Battle::Battler target) -> Numeric
+  def pbBaseDamage: (Integer baseDmg, Battle::Battler user, Battle::Battler target) -> Math::double
 
-  def pbBaseDamageMultiplier: (Numeric damageMult, Battle::Battler user, Battle::Battler target) -> Numeric
+  def pbBaseDamageMultiplier: (Math::double damageMult, Battle::Battler user, Battle::Battler target) -> Math::double
 
-  def pbModifyDamage: (Numeric damageMult, Battle::Battler user, Battle::Battler target) -> Numeric
+  def pbModifyDamage: (Math::double damageMult, Battle::Battler user, Battle::Battler target) -> Math::double
 
   def pbGetAttackStats: (Battle::Battler user, Battle::Battler target) -> [Integer, Integer]
 
@@ -50,7 +50,7 @@ class Battle::Move
 
   def pbCalcDamage: (Battle::Battler user, Battle::Battler target, ?Integer numTargets) -> void
 
-  def pbCalcDamageMultipliers: (Battle::Battler user, Battle::Battler target, Integer numTargets, Symbol `type`, Numeric baseDmg, Hash[Symbol, Numeric] multipliers) -> void
+  def pbCalcDamageMultipliers: (Battle::Battler user, Battle::Battler target, Integer numTargets, Symbol `type`, Math::double baseDmg, Hash[Symbol, Math::double] multipliers) -> void
 
   # ============================================================================
   # Additional effect chance

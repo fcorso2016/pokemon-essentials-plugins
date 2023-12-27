@@ -224,9 +224,9 @@ class FlowDiagram
   DOT_SPEED: Integer
 
   @angles: Array[Integer]
-  @distance: Numeric
-  @endAngle: Numeric
-  @offset: Numeric
+  @distance: Math::double
+  @endAngle: Math::double
+  @offset: Math::double
   @points: Array[BitmapSprite]
 
   @startAngle: Integer
@@ -239,9 +239,9 @@ class FlowDiagram
 
   def initialize: (?Viewport? viewport) -> void
 
-  def setRange: (Numeric angle1, Numeric angle2) -> void
+  def setRange: (Math::double angle1, Math::double angle2) -> void
 
-  def withinRange: (Integer angle, Numeric startAngle, Numeric endAngle) -> bool
+  def withinRange: (Integer angle, Math::double startAngle, Math::double endAngle) -> bool
 end
 
 # ==============================================================================

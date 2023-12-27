@@ -233,7 +233,7 @@ class Battle::Battler
   # ============================================================================
   def pbSpeed: () -> Integer
 
-  def pbWeight: () -> Numeric
+  def pbWeight: () -> Math::double
 
   # ============================================================================
   # Queries about what the battler has

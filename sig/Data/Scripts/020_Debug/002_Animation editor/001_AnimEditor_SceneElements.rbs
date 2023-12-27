@@ -229,13 +229,13 @@ module BattleAnimationEditor
 
     attr_reader bitmapname: String
 
-    attr_reader hue: Numeric
+    attr_reader hue: Math::double
 
     def initialize: (Integer x, Integer y, Integer width, Integer height) -> void
 
     def bitmapname=: (String value) -> void
 
-    def hue=: (Numeric value) -> void
+    def hue=: (Math::double value) -> void
 
   end
 

@@ -8,9 +8,9 @@ class Phone
 
   attr_accessor rematches_enabled: bool
 
-  attr_accessor time_to_next_call: Numeric
+  attr_accessor time_to_next_call: Math::double
 
-  attr_accessor last_refresh_time: Numeric
+  attr_accessor last_refresh_time: Math::double
 
   def initialize: () -> void
 
@@ -90,7 +90,7 @@ class Phone
 
     attr_accessor version: Integer?
 
-    attr_accessor time_to_ready: Numeric?
+    attr_accessor time_to_ready: Math::double?
 
     attr_accessor rematch_flag: Integer?
 

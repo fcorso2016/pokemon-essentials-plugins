@@ -4,27 +4,27 @@
 class SpriteWindow < Window
 
   @trim: [Integer, Integer, Integer, Integer]
-  @flash_duration: Numeric
-  @pauseopacity: Numeric?
-  @flash_timer_start: Numeric?
+  @flash_duration: Math::double
+  @pauseopacity: Math::double?
+  @flash_timer_start: Math::double?
   @combat: bool
 
   attr_reader tone: Tone
   attr_reader color: Color
-  attr_reader zoom_x: Numeric
-  attr_reader zoom_y: Numeric
+  attr_reader zoom_x: Math::double
+  attr_reader zoom_y: Math::double
   attr_reader offset_x: Integer
   attr_reader offset_y: Integer
   attr_reader cursor_rect: Rect
   attr_reader contents_blend_type: Integer
   attr_reader blend_type: Integer
-  attr_reader openness: Numeric
+  attr_reader openness: Math::double
   def windowskin: -> Bitmap?
   attr_reader compat: Integer
   attr_reader skinformat: Integer
   attr_reader skinrect: Rect
   def compat=: (Integer value) -> void
-  def stretch=: (Numeric value) -> void
+  def stretch=: (Math::double value) -> void
   def visible=: (bool value) -> void
   def viewport=: (Viewport? value) -> void
   def z=: (Integer value) -> void
@@ -33,33 +33,33 @@ class SpriteWindow < Window
   def oy=: (Integer value) -> void
   def active=: (bool value) -> void
   def cursor_rect=: (WindowCursorRect value) -> untyped
-  def openness=: (Numeric value) -> void
+  def openness=: (Math::double value) -> void
   def width=: (Integer value) -> void
   def height=: (Integer value) -> void
   def pause=: (bool value) -> void
   def x=: (Integer value) -> void
   def y=: (Integer value) -> void
-  def zoom_x=: (Numeric value) -> void
-  def zoom_y=: (Numeric value) -> void
+  def zoom_x=: (Math::double value) -> void
+  def zoom_y=: (Math::double value) -> void
   def offset_x=: (Integer value) -> void
   def offset_y=: (Integer value) -> void
-  def opacity=: (Numeric value) -> void
-  def back_opacity=: (Numeric value) -> void
-  def contents_opacity=: (Numeric value) -> void
+  def opacity=: (Math::double value) -> void
+  def back_opacity=: (Math::double value) -> void
+  def contents_opacity=: (Math::double value) -> void
   def tone=: (Tone value) -> void
   def color=: (Color value) -> void
   def blend_type=: (Integer value) -> void
-  def flash: (Color color, Numeric duration) -> void
+  def flash: (Color color, Math::double duration) -> void
   def loadSkinFile: (String _file) -> void
   def windowskin=: (Bitmap? value) -> void
   def skinrect=: (Rect value) -> void
   def skinformat=: (Integer value) -> void
-  def borderX: -> Numeric
-  def borderY: -> Numeric
+  def borderX: -> Math::double
+  def borderY: -> Math::double
   def leftEdge: -> Integer
   def topEdge: -> Integer
-  def rightEdge: -> Numeric
-  def bottomEdge: -> Numeric
+  def rightEdge: -> Math::double
+  def bottomEdge: -> Math::double
   def startX: -> Integer
   def startY: -> Integer
   def endX: -> Integer

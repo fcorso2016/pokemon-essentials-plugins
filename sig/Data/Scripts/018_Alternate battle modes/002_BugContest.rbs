@@ -6,7 +6,7 @@ class BugContestState
   @contestants: Array[String]
   @ended: bool
   @inProgress: bool
-  @lastContest: Numeric?
+  @lastContest: Math::double?
 
   @otherparty: Array[Pokemon]
   @places: Array[Integer]
@@ -19,7 +19,7 @@ class BugContestState
 
   attr_accessor lastPokemon: Pokemon?
 
-  attr_accessor timer_start: Numeric
+  attr_accessor timer_start: Math::double
 
   CONTESTANT_NAMES: Array[String]
 

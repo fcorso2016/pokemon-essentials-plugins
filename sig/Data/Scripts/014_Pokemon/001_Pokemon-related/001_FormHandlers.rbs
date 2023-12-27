@@ -36,7 +36,7 @@ class Object
   # ==============================================================================
   #
   # ==============================================================================
-  def drawSpot: (Bitmap bitmap, Array[Array[Integer]] spotpattern, Integer x, Integer y, Numeric red, Numeric green, Numeric blue) -> void
+  def drawSpot: (Bitmap bitmap, Array[Array[Integer]] spotpattern, Integer x, Integer y, Math::double red, Math::double green, Math::double blue) -> void
 
   def pbSpindaSpots: (Pokemon pkmn, Bitmap bitmap) -> void
 end

@@ -3,7 +3,7 @@
 # Classes
 module RPG
   class Sprite < ::Sprite
-    @_animation_duration: Numeric
+    @_animation_duration: Math::double
     @_animation_frame: Integer
     @animations: Array[SpriteAnimation]
     @loopAnimations: Array[SpriteAnimation]

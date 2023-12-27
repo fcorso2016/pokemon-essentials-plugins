@@ -100,7 +100,7 @@ module BattleAnimationEditor
     @cursor: Integer
     @cursor_shown: bool
 
-    @cursor_timer_start: Numeric
+    @cursor_timer_start: Math::double
 
     attr_accessor label: String
 

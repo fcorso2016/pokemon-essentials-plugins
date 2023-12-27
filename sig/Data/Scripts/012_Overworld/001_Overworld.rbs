@@ -3,9 +3,9 @@ class Game_Temp
 
   attr_accessor cue_bgm: RPG::AudioFile
 
-  attr_accessor cue_bgm_timer_start: Numeric
+  attr_accessor cue_bgm_timer_start: Math::double
 
-  attr_accessor cue_bgm_delay: Numeric
+  attr_accessor cue_bgm_delay: Math::double
 end
 
 # ==============================================================================
@@ -147,10 +147,10 @@ class Object
 
   def pbAutoplayOnSave: () -> void
 
-  def pbMoveRoute: (Game_Character event, Array[Numeric | String] commands, ?bool waitComplete) -> RPG::MoveRoute
+  def pbMoveRoute: (Game_Character event, Array[Math::double | String] commands, ?bool waitComplete) -> RPG::MoveRoute
 
   # duration is in seconds
-  def pbWait: (Numeric duration) { (Numeric) -> void } -> void
+  def pbWait: (Math::double duration) { (Math::double) -> void } -> void
 
   # ==============================================================================
   # Player/event movement in the field

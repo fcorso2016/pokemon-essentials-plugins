@@ -4,7 +4,7 @@
 class Object
   private
 
-  def getCubicPoint2: [T < Numeric] (Array[T] src, Integer t) -> [T, T]
+  def getCubicPoint2: [T < Math::double] (Array[T] src, Integer t) -> [T, T]
 
   def setPictureSprite: (Sprite_Picture sprite, PictureEx picture, ?bool iconSprite) -> void
 
@@ -49,23 +49,23 @@ end
 class PictureEx
   include _Updatable
 
-  type process_data = [Integer?, Numeric, Numeric, bool, ^(PictureEx) -> void | Method | [Object, String, Array[untyped]]]
+  type process_data = [Integer?, Math::double, Math::double, bool, ^(PictureEx) -> void | Method | [Object, String, Array[untyped]]]
   @processes: Array[process_data]
   @rotate_speed: Integer
-  @auto_angle: Complex | Float | Integer | Numeric | Rational
+  @auto_angle: Complex | Float | Integer | Math::double | Rational
   @tone_duration: Integer
   @timer_start: nil
 
-  attr_accessor x: Numeric
-  attr_accessor y: Numeric
-  attr_accessor z: Numeric
-  attr_accessor zoom_x: Numeric
-  attr_accessor zoom_y: Numeric
-  attr_accessor angle: Numeric
+  attr_accessor x: Math::double
+  attr_accessor y: Math::double
+  attr_accessor z: Math::double
+  attr_accessor zoom_x: Math::double
+  attr_accessor zoom_y: Math::double
+  attr_accessor angle: Math::double
   attr_accessor tone: Tone
   attr_accessor color: Color
-  attr_accessor hue: Numeric
-  attr_accessor opacity: Numeric
+  attr_accessor hue: Math::double
+  attr_accessor opacity: Math::double
   attr_accessor visible: bool
   attr_accessor blend_type: Integer
   attr_accessor name: String
@@ -76,179 +76,179 @@ class PictureEx
 
   def move_processes: -> (Array[Array[Array[String] | String]])
 
-  def initialize: (Numeric z) -> void
+  def initialize: (Math::double z) -> void
 
   def callback: (^(PictureEx) -> void cb) -> void |
     (Method cb) -> void |
     ([Object, String, Array[untyped]]) -> void
 
-  def setCallback: (Numeric delay, ?nil cb) -> void |
-    (Numeric delay, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, ?Method cb) -> void |
-    (Numeric delay, ?[Object, String, Array[untyped]] cb) -> void
+  def setCallback: (Math::double delay, ?nil cb) -> void |
+    (Math::double delay, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, ?Method cb) -> void |
+    (Math::double delay, ?[Object, String, Array[untyped]] cb) -> void
 
   def running?: -> bool
 
-  def totalDuration: -> Numeric
+  def totalDuration: -> Math::double
 
-  def ensureDelayAndDuration: (Numeric delay, ?Numeric? duration) -> (Numeric | [Numeric, Numeric])
+  def ensureDelayAndDuration: (Math::double delay, ?Math::double? duration) -> (Math::double | [Math::double, Math::double])
 
-  def ensureDelay: (Numeric delay) -> (Numeric | [Numeric, Numeric])
+  def ensureDelay: (Math::double delay) -> (Math::double | [Math::double, Math::double])
 
-  def rotate: (Numeric speed) -> void
+  def rotate: (Math::double speed) -> void
 
   def erase: -> void
 
   def clearProcesses: -> void
 
-  def adjustPosition: (Numeric xOffset, Numeric yOffset) -> void
+  def adjustPosition: (Math::double xOffset, Math::double yOffset) -> void
 
-  def move: (Numeric delay, Numeric duration, Integer origin, Numeric x, Numeric y, ?Numeric zoom_x, ?Numeric zoom_y, ?Numeric opacity) -> void
+  def move: (Math::double delay, Math::double duration, Integer origin, Math::double x, Math::double y, ?Math::double zoom_x, ?Math::double zoom_y, ?Math::double opacity) -> void
 
-  def moveXY: (Numeric delay, Numeric duration, Numeric x, Numeric y, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, [Object, String, Array[untyped]] cb) -> void
+  def moveXY: (Math::double delay, Math::double duration, Math::double x, Math::double y, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, [Object, String, Array[untyped]] cb) -> void
 
-  def setXY: (Numeric delay, Numeric x, Numeric y, ?nil cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, Method cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, [Object, String, Array[untyped]] cb) -> void
+  def setXY: (Math::double delay, Math::double x, Math::double y, ?nil cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, Method cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, [Object, String, Array[untyped]] cb) -> void
 
-  def moveCurve: (Numeric delay, Numeric duration, Numeric x1, Numeric y1, Numeric x2, Numeric y2, Numeric x3, Numeric y3, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x1, Numeric y1, Numeric x2, Numeric y2, Numeric x3, Numeric y3, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x1, Numeric y1, Numeric x2, Numeric y2, Numeric x3, Numeric y3, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x1, Numeric y1, Numeric x2, Numeric y2, Numeric x3, Numeric y3, [Object, String, Array[untyped]] cb) -> void
+  def moveCurve: (Math::double delay, Math::double duration, Math::double x1, Math::double y1, Math::double x2, Math::double y2, Math::double x3, Math::double y3, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x1, Math::double y1, Math::double x2, Math::double y2, Math::double x3, Math::double y3, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x1, Math::double y1, Math::double x2, Math::double y2, Math::double x3, Math::double y3, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x1, Math::double y1, Math::double x2, Math::double y2, Math::double x3, Math::double y3, [Object, String, Array[untyped]] cb) -> void
 
-  def moveDelta: (Numeric delay, Numeric duration, Numeric x, Numeric y, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric x, Numeric y, [Object, String, Array[untyped]]) -> void
+  def moveDelta: (Math::double delay, Math::double duration, Math::double x, Math::double y, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double x, Math::double y, [Object, String, Array[untyped]]) -> void
 
-  def setDelta: (Numeric delay, Numeric x, Numeric y, ?nil cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, Method cb) -> void |
-    (Numeric delay, Numeric x, Numeric y, [Object, String, Array[untyped]]) -> void
+  def setDelta: (Math::double delay, Math::double x, Math::double y, ?nil cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, Method cb) -> void |
+    (Math::double delay, Math::double x, Math::double y, [Object, String, Array[untyped]]) -> void
 
-  def moveZ: (Numeric delay, Numeric duration, Numeric z, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric z, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric z, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric z, [Object, String, Array[untyped]]) -> void
+  def moveZ: (Math::double delay, Math::double duration, Math::double z, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double z, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double z, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double z, [Object, String, Array[untyped]]) -> void
 
-  def setZ: (Numeric delay, Numeric z, ?nil cb) -> void |
-    (Numeric delay, Numeric z, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric z, Method cb) -> void |
-    (Numeric delay, Numeric z, [Object, String, Array[untyped]]) -> void
+  def setZ: (Math::double delay, Math::double z, ?nil cb) -> void |
+    (Math::double delay, Math::double z, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double z, Method cb) -> void |
+    (Math::double delay, Math::double z, [Object, String, Array[untyped]]) -> void
 
-  def moveZoomXY: (Numeric delay, Numeric duration, Float zoom_x, Float zoom_y, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Float zoom_x, Float zoom_y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Float zoom_x, Float zoom_y, Method cb) -> void |
-    (Numeric delay, Numeric duration, Float zoom_x, Float zoom_y, [Object, String, Array[untyped]]) -> void
+  def moveZoomXY: (Math::double delay, Math::double duration, Float zoom_x, Float zoom_y, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Float zoom_x, Float zoom_y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Float zoom_x, Float zoom_y, Method cb) -> void |
+    (Math::double delay, Math::double duration, Float zoom_x, Float zoom_y, [Object, String, Array[untyped]]) -> void
 
-  def setZoomXY: (Numeric delay, Numeric zoom_x, Numeric zoom_y, ?nil cb) -> void |
-    (Numeric delay, Numeric zoom_x, Numeric zoom_y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric zoom_x, Numeric zoom_y, Method cb) -> void |
-    (Numeric delay, Numeric zoom_x, Numeric zoom_y, [Object, String, Array[untyped]]) -> void
+  def setZoomXY: (Math::double delay, Math::double zoom_x, Math::double zoom_y, ?nil cb) -> void |
+    (Math::double delay, Math::double zoom_x, Math::double zoom_y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double zoom_x, Math::double zoom_y, Method cb) -> void |
+    (Math::double delay, Math::double zoom_x, Math::double zoom_y, [Object, String, Array[untyped]]) -> void
 
-  def moveZoom: (Numeric delay, Numeric duration, Numeric zoom, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric zoom, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric zoom, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric zoom, [Object, String, Array[untyped]]) -> void
+  def moveZoom: (Math::double delay, Math::double duration, Math::double zoom, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double zoom, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double zoom, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double zoom, [Object, String, Array[untyped]]) -> void
 
-  def setZoom: (Numeric delay, Numeric zoom, ?nil cb) -> void |
-    (Numeric delay, Numeric zoom, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric zoom, Method cb) -> void |
-    (Numeric delay, Numeric zoom, [Object, String, Array[untyped]]) -> void
+  def setZoom: (Math::double delay, Math::double zoom, ?nil cb) -> void |
+    (Math::double delay, Math::double zoom, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double zoom, Method cb) -> void |
+    (Math::double delay, Math::double zoom, [Object, String, Array[untyped]]) -> void
 
-  def moveAngle: (Numeric delay, Numeric duration, Numeric angle, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric angle, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric angle, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric angle, [Object, String, Array[untyped]]) -> void
+  def moveAngle: (Math::double delay, Math::double duration, Math::double angle, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double angle, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double angle, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double angle, [Object, String, Array[untyped]]) -> void
 
-  def setAngle: (Numeric delay, Numeric angle, ?nil cb) -> void |
-    (Numeric delay, Numeric angle, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric angle, Method cb) -> void |
-    (Numeric delay, Numeric angle, [Object, String, Array[untyped]]) -> void
+  def setAngle: (Math::double delay, Math::double angle, ?nil cb) -> void |
+    (Math::double delay, Math::double angle, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double angle, Method cb) -> void |
+    (Math::double delay, Math::double angle, [Object, String, Array[untyped]]) -> void
 
-  def moveTone: (Numeric delay, Numeric duration, Tone tone, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Tone tone, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Tone tone, Method cb) -> void |
-    (Numeric delay, Numeric duration, Tone tone, [Object, String, Array[untyped]]) -> void
+  def moveTone: (Math::double delay, Math::double duration, Tone tone, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Tone tone, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Tone tone, Method cb) -> void |
+    (Math::double delay, Math::double duration, Tone tone, [Object, String, Array[untyped]]) -> void
 
-  def setTone: (Numeric delay, Tone tone, ?nil cb) -> void |
-    (Numeric delay, Tone tone, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Tone tone, Method cb) -> void |
-    (Numeric delay, Tone tone, [Object, String, Array[untyped]]) -> void
+  def setTone: (Math::double delay, Tone tone, ?nil cb) -> void |
+    (Math::double delay, Tone tone, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Tone tone, Method cb) -> void |
+    (Math::double delay, Tone tone, [Object, String, Array[untyped]]) -> void
 
-  def moveColor: (Numeric delay, Numeric duration, Color color, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Color color, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Color color, Method cb) -> void |
-    (Numeric delay, Numeric duration, Color color, [Object, String, Array[untyped]]) -> void
+  def moveColor: (Math::double delay, Math::double duration, Color color, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Color color, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Color color, Method cb) -> void |
+    (Math::double delay, Math::double duration, Color color, [Object, String, Array[untyped]]) -> void
 
-  def setColor: (Numeric delay, Color color, ?nil cb) -> void |
-    (Numeric delay, Color color, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Color color, Method cb) -> void |
-    (Numeric delay, Color color, [Object, String, Array[untyped]]) -> void
+  def setColor: (Math::double delay, Color color, ?nil cb) -> void |
+    (Math::double delay, Color color, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Color color, Method cb) -> void |
+    (Math::double delay, Color color, [Object, String, Array[untyped]]) -> void
 
-  def moveHue: (Numeric delay, Numeric duration, Numeric hue, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Numeric hue, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Numeric hue, Method cb) -> void |
-    (Numeric delay, Numeric duration, Numeric hue, [Object, String, Array[untyped]]) -> void
+  def moveHue: (Math::double delay, Math::double duration, Math::double hue, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Math::double hue, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Math::double hue, Method cb) -> void |
+    (Math::double delay, Math::double duration, Math::double hue, [Object, String, Array[untyped]]) -> void
 
-  def setHue: (Numeric delay, Numeric hue, ?nil cb) -> void |
-    (Numeric delay, Numeric hue, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric hue, Method cb) -> void |
-    (Numeric delay, Numeric hue, [Object, String, Array[untyped]]) -> void
+  def setHue: (Math::double delay, Math::double hue, ?nil cb) -> void |
+    (Math::double delay, Math::double hue, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double hue, Method cb) -> void |
+    (Math::double delay, Math::double hue, [Object, String, Array[untyped]]) -> void
 
-  def moveOpacity: (Numeric delay, Numeric duration, Integer opacity, ?nil cb) -> void |
-    (Numeric delay, Numeric duration, Integer opacity, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric duration, Integer opacity, Method cb) -> void |
-    (Numeric delay, Numeric duration, Integer opacity, [Object, String, Array[untyped]]) -> void
+  def moveOpacity: (Math::double delay, Math::double duration, Integer opacity, ?nil cb) -> void |
+    (Math::double delay, Math::double duration, Integer opacity, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double duration, Integer opacity, Method cb) -> void |
+    (Math::double delay, Math::double duration, Integer opacity, [Object, String, Array[untyped]]) -> void
 
-  def setOpacity: (Numeric delay, Numeric opacity, ?nil cb) -> void |
-    (Numeric delay, Numeric opacity, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric opacity, Method cb) -> void |
-    (Numeric delay, Numeric opacity, [Object, String, Array[untyped]]) -> void
+  def setOpacity: (Math::double delay, Math::double opacity, ?nil cb) -> void |
+    (Math::double delay, Math::double opacity, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double opacity, Method cb) -> void |
+    (Math::double delay, Math::double opacity, [Object, String, Array[untyped]]) -> void
 
-  def setVisible: (Numeric delay, bool visible, ?nil cb) -> void |
-    (Numeric delay, bool visible, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, bool visible, Method cb) -> void |
-    (Numeric delay, bool visible, [Object, String, Array[untyped]]) -> void
+  def setVisible: (Math::double delay, bool visible, ?nil cb) -> void |
+    (Math::double delay, bool visible, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, bool visible, Method cb) -> void |
+    (Math::double delay, bool visible, [Object, String, Array[untyped]]) -> void
 
-  def setBlendType: (Numeric delay, Numeric blend, ?nil cb) -> void |
-    (Numeric delay, Numeric blend, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric blend, Method cb) -> void |
-    (Numeric delay, Numeric blend, [Object, String, Array[untyped]]) -> void
+  def setBlendType: (Math::double delay, Math::double blend, ?nil cb) -> void |
+    (Math::double delay, Math::double blend, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double blend, Method cb) -> void |
+    (Math::double delay, Math::double blend, [Object, String, Array[untyped]]) -> void
 
-  def setSE: (Numeric delay, String seFile, ?Numeric? volume, ?Numeric? pitch, ?nil cb) -> void |
-    (Numeric delay, String seFile, ?Numeric? volume, ?Numeric? pitch, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, String seFile, ?Numeric? volume, ?Numeric? pitch, Method cb) -> void |
-    (Numeric delay, String seFile, ?Numeric? volume, ?Numeric? pitch, [Object, String, Array[untyped]]) -> void
+  def setSE: (Math::double delay, String seFile, ?Math::double? volume, ?Math::double? pitch, ?nil cb) -> void |
+    (Math::double delay, String seFile, ?Math::double? volume, ?Math::double? pitch, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, String seFile, ?Math::double? volume, ?Math::double? pitch, Method cb) -> void |
+    (Math::double delay, String seFile, ?Math::double? volume, ?Math::double? pitch, [Object, String, Array[untyped]]) -> void
 
-  def setName: (Numeric delay, String name, ?nil cb) -> void |
-    (Numeric delay, String name, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, String name, Method cb) -> void |
-    (Numeric delay, String name, [Object, String, Array[untyped]]) -> void
+  def setName: (Math::double delay, String name, ?nil cb) -> void |
+    (Math::double delay, String name, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, String name, Method cb) -> void |
+    (Math::double delay, String name, [Object, String, Array[untyped]]) -> void
 
-  def setOrigin: (Numeric delay, Integer origin, ?nil cb) -> void |
-    (Numeric delay, Integer origin, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Integer origin, Method cb) -> void |
-    (Numeric delay, Integer origin, [Object, String, Array[untyped]]) -> void
+  def setOrigin: (Math::double delay, Integer origin, ?nil cb) -> void |
+    (Math::double delay, Integer origin, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Integer origin, Method cb) -> void |
+    (Math::double delay, Integer origin, [Object, String, Array[untyped]]) -> void
 
-  def setSrc: (Numeric delay, Numeric srcX, Numeric srcY, ?nil cb) -> void |
-    (Numeric delay, Numeric srcX, Numeric srcY, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric srcX, Numeric srcY, Method cb) -> void |
-    (Numeric delay, Numeric srcX, Numeric srcY, [Object, String, Array[untyped]]) -> void
+  def setSrc: (Math::double delay, Math::double srcX, Math::double srcY, ?nil cb) -> void |
+    (Math::double delay, Math::double srcX, Math::double srcY, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double srcX, Math::double srcY, Method cb) -> void |
+    (Math::double delay, Math::double srcX, Math::double srcY, [Object, String, Array[untyped]]) -> void
 
-  def setSrcSize: (Numeric delay, Numeric srcWidth, Numeric srcHeight, ?nil cb) -> void |
-    (Numeric delay, Numeric srcWidth, Numeric srcHeight, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric srcWidth, Numeric srcHeight, Method cb) -> void |
-    (Numeric delay, Numeric srcWidth, Numeric srcHeight, [Object, String, Array[untyped]]) -> void
+  def setSrcSize: (Math::double delay, Math::double srcWidth, Math::double srcHeight, ?nil cb) -> void |
+    (Math::double delay, Math::double srcWidth, Math::double srcHeight, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double srcWidth, Math::double srcHeight, Method cb) -> void |
+    (Math::double delay, Math::double srcWidth, Math::double srcHeight, [Object, String, Array[untyped]]) -> void
 
-  def setCropBottom: (Numeric delay, Numeric y, ?nil cb) -> void |
-    (Numeric delay, Numeric y, ^(PictureEx) -> void cb) -> void |
-    (Numeric delay, Numeric y, Method cb) -> void |
-    (Numeric delay, Numeric y, [Object, String, Array[untyped]]) -> void
+  def setCropBottom: (Math::double delay, Math::double y, ?nil cb) -> void |
+    (Math::double delay, Math::double y, ^(PictureEx) -> void cb) -> void |
+    (Math::double delay, Math::double y, Method cb) -> void |
+    (Math::double delay, Math::double y, [Object, String, Array[untyped]]) -> void
 end
 
 

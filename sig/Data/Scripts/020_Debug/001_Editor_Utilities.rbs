@@ -18,7 +18,7 @@ class Object
   # Displays a list of all Pokémon species, and returns the ID of the species
   # selected (or nil if the selection was canceled). "default", if specified, is
   # the ID of the species to initially select. Pressing Input::ACTION will toggle
-  # the list sorting between numerical and alphabetical.
+  # the list sorting between Math::doubleal and alphabetical.
   def pbChooseSpeciesList: (?Symbol? default) -> Symbol
 
   def pbChooseSpeciesFormList: (?Symbol? default) -> Symbol
@@ -26,25 +26,25 @@ class Object
   # Displays a list of all types, and returns the ID of the type selected (or nil
   # if the selection was canceled). "default", if specified, is the ID of the type
   # to initially select. Pressing Input::ACTION will toggle the list sorting
-  # between numerical and alphabetical.
+  # between Math::doubleal and alphabetical.
   def pbChooseTypeList: (?Symbol? default) -> Symbol
 
   # Displays a list of all items, and returns the ID of the item selected (or nil
   # if the selection was canceled). "default", if specified, is the ID of the item
   # to initially select. Pressing Input::ACTION will toggle the list sorting
-  # between numerical and alphabetical.
+  # between Math::doubleal and alphabetical.
   def pbChooseItemList: (?Symbol? default) -> Symbol
 
   # Displays a list of all abilities, and returns the ID of the ability selected
   # (or nil if the selection was canceled). "default", if specified, is the ID of
   # the ability to initially select. Pressing Input::ACTION will toggle the list
-  # sorting between numerical and alphabetical.
+  # sorting between Math::doubleal and alphabetical.
   def pbChooseAbilityList: (?Symbol? default) -> Symbol
 
   # Displays a list of all moves, and returns the ID of the move selected (or nil
   # if the selection was canceled). "default", if specified, is the ID of the move
   # to initially select. Pressing Input::ACTION will toggle the list sorting
-  # between numerical and alphabetical.
+  # between Math::doubleal and alphabetical.
   def pbChooseMoveList: (?Symbol? default) -> Symbol
 
   def pbChooseMoveListForSpecies: (Symbol | String | GameData::Species species, ?Symbol? defaultMoveID) -> Symbol?

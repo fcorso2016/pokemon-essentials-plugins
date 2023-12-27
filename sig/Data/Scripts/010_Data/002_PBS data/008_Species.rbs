@@ -33,8 +33,8 @@ module GameData
       :incense => Symbol,
       :offspring => Array[Symbol],
       :evolutions => Array[[Symbol, Symbol, Integer | Symbol]],
-      :height => Numeric,
-      :weight => Numeric,
+      :height => Math::double,
+      :weight => Math::double,
       :color => Symbol,
       :shape => Symbol,
       :habitat => Symbol,
@@ -82,8 +82,8 @@ module GameData
     attr_reader incense: Symbol
     attr_reader offspring: Array[Symbol]
     attr_reader evolutions: Array[[Symbol, Symbol, Integer | Symbol]]
-    attr_reader height: Numeric
-    attr_reader weight: Numeric
+    attr_reader height: Math::double
+    attr_reader weight: Math::double
     attr_reader color: Symbol
     attr_reader shape: Symbol
     attr_reader habitat: Symbol

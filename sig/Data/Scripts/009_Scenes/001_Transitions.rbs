@@ -13,7 +13,7 @@ end
 
 module Transitions
   class Transition_Base
-    DURATION: nil
+    DURATION: Math::double?
     @disposed: bool
     @duration: Integer
     @parameters: Array[Integer]
@@ -24,7 +24,7 @@ module Transitions
     @overworld_sprite: Sprite
     @timings: Array[Float]
 
-    def initialize: (Integer duration, *Integer args) -> void
+    def initialize: (Math::double duration, *Integer args) -> void
     def new_sprite: (Integer x, Integer y, ?Bitmap? bitmap, ?Integer ox, ?Integer oy) -> Sprite
     def timer: -> Float
     def dispose: -> void
@@ -131,7 +131,7 @@ module Transitions
     NUM_SPRITES_X: Integer
     NUM_SPRITES_Y: Integer
     TOTAL_SPRITES: Integer
-    @bitmap: Bitmap
+    @bitmap: Bitmap?
     @zoom_x_target: Float
     @zoom_y_target: Float
 
@@ -397,9 +397,9 @@ module Transitions
     @black_4_bitmap: Bitmap
     @rocket_bitmap: Bitmap
     @rocket_sprites: Array[Sprite]
-    @rocket_appear_end: Float
-    @rocket_appear_delay: Float
-    @rocket_appear_time: Float
+    @rocket_appear_end: Math::double
+    @rocket_appear_delay: Math::double
+    @rocket_appear_time: Math::double
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void

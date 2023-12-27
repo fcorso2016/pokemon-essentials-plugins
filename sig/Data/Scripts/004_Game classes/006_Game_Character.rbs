@@ -6,9 +6,9 @@ class Game_Character
   @original_direction: Integer
   @original_pattern: Integer
   @move_type: Integer
-  @move_time: Numeric
+  @move_time: Math::double
   @move_frequency: Integer
-  @jump_time: Numeric
+  @jump_time: Math::double
   @move_route: RPG::MoveRoute?
   @move_route_index: Integer
   @original_move_route: RPG::MoveRoute?
@@ -21,27 +21,27 @@ class Game_Character
   @bumping: bool
   @jump_peak: Integer
   @jump_distance: Integer?
-  @jump_fraction: Numeric
+  @jump_fraction: Math::double
   @jumping_on_spot: bool
   @wait_count: Integer
-  @wait_start: Numeric
+  @wait_start: Math::double
   @moved_this_frame: bool
   @moveto_happened: bool
   @locked: bool
   @prelock_direction: Integer
-  @command_delay: Numeric
-  @jump_timer: Numeric?
+  @command_delay: Math::double
+  @jump_timer: Math::double?
   @bush_depth: Integer
-  @move_timer: Numeric?
+  @move_timer: Math::double?
   @oldX: Integer
   @oldY: Integer
   @oldMap: Game_Map
-  @move_initial_x: Numeric
-  @move_initial_y: Numeric
-  @jump_initial_x: Numeric
-  @jump_initial_y: Numeric
-  @last_update_time: Numeric
-  @delta_t: Numeric
+  @move_initial_x: Math::double
+  @move_initial_y: Math::double
+  @jump_initial_x: Math::double
+  @jump_initial_y: Math::double
+  @last_update_time: Math::double
+  @delta_t: Math::double
   @moved_last_frame: bool
   @stopped_this_frame: bool
   @stopped_last_frame: bool?
@@ -52,8 +52,8 @@ class Game_Character
   attr_reader original_y: Integer
   attr_reader x: Integer
   attr_reader y: Integer
-  attr_reader real_x: Numeric
-  attr_reader real_y: Numeric
+  attr_reader real_x: Math::double
+  attr_reader real_y: Math::double
   attr_writer x_offset: Integer
   attr_writer y_offset: Integer
   attr_accessor width: Integer
@@ -72,8 +72,8 @@ class Game_Character
   attr_accessor through: bool
   attr_accessor animation_id: Integer
   attr_accessor transparent: bool
-  attr_reader move_speed: Numeric
-  attr_reader jump_speed: Numeric
+  attr_reader move_speed: Math::double
+  attr_reader jump_speed: Math::double
   attr_accessor walk_anime: bool
   attr_writer bob_height: Integer
   def initialize: (?Game_Map? map) -> void
@@ -82,9 +82,9 @@ class Game_Character
   def at_coordinate?: (Integer check_x, Integer check_y) -> void
   def in_line_with_coordinate?: (Integer check_x, Integer check_y) -> void
   def each_occupied_tile: ?{ (Integer, Integer) -> void } -> void
-  def move_speed=: (Numeric val) -> void
-  def jump_speed=: (Numeric val) -> void
-  def pattern_update_speed: -> Numeric
+  def move_speed=: (Math::double val) -> void
+  def jump_speed=: (Math::double val) -> void
+  def pattern_update_speed: -> Math::double
   def move_frequency=: (Integer val) -> void
   def bob_height: -> Integer
   def lock: -> void

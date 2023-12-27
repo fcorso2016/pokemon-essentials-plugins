@@ -31,7 +31,7 @@ module GameData
     def self.play_cry_from_species: (Symbol | String | Species, ?Integer form, ?Integer volume, ?Integer pitch) -> void
     def self.play_cry_from_pokemon: (Pokemon pkmn, ?Integer volume, ?Integer pitch) -> void
     def self.play_cry: (Pokemon pkmn, ?Integer volume, ?Integer pitch) -> void
-    def self.cry_length: (Symbol | String | Species, ?Integer form, ?Integer pitch, ?String suffix) -> Numeric
+    def self.cry_length: (Symbol | String | Species, ?Integer form, ?Integer pitch, ?String suffix) -> Math::double
   end
 end
 

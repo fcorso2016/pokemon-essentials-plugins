@@ -52,17 +52,17 @@ module Effectiveness
   NORMAL_EFFECTIVE_MULTIPLIER: Float
   SUPER_EFFECTIVE_MULTIPLIER: Float
 
-  def self?.ineffective?: (Numeric value) -> bool
-  def self?.not_very_effective?: (Numeric value) -> bool
-  def self?.resistant?: (Numeric value) -> bool
-  def self?.normal?: (Numeric value) -> bool
-  def self?.super_effective?: (Numeric value) -> bool
+  def self?.ineffective?: (Math::double value) -> bool
+  def self?.not_very_effective?: (Math::double value) -> bool
+  def self?.resistant?: (Math::double value) -> bool
+  def self?.normal?: (Math::double value) -> bool
+  def self?.super_effective?: (Math::double value) -> bool
   def self?.ineffective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.not_very_effective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.resistant_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.normal_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.super_effective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.get_type_effectiveness: (Symbol attack_type, Symbol defend_type) -> Integer
-  def self?.calculate: (Symbol attack_type, *Symbol defend_types) -> Numeric
+  def self?.calculate: (Symbol attack_type, *Symbol defend_types) -> Math::double
 end
 
