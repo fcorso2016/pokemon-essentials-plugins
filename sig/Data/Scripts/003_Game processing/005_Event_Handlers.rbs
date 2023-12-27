@@ -28,7 +28,8 @@ class HandlerHash[K]
 
   def initialize: -> void
   def []: (K id) -> Proc?
-  def add: (K id, ?Proc handler) -> void
+  def add: (K id, ?Proc? handler) -> void |
+    (K id, ?Hash[String, untyped]? handler) -> void
   def copy: (K src, *K dests) -> void
   def remove: (K key) -> void
   def clear: -> void

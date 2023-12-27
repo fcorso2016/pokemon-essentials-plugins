@@ -4,8 +4,8 @@
 module EventHandlers
   @@events: Hash[Symbol, NamedEvent]
 
-  def self.add: (Symbol event, Symbol key, Proc proc) -> void
-  def self.remove: (Symbol event, Symbol key) -> void
+  def self.add: (Symbol event, String key, Proc proc) -> void
+  def self.remove: (Symbol event, String key) -> void
   def self.clear: (Symbol key) -> void
   def self.trigger: (Symbol event, *untyped args) -> void
 end
