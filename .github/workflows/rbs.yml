@@ -40,3 +40,8 @@ jobs:
           # Optional category for the results
           # Used to differentiate multiple results for one commit
           category: steep-type-checker
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: rbs.report.${{github.event_name == 'pull_request' && format('PR{0}', github.event.number) || github.ref_name}}-${{steps.short-sha.outputs.sha}}
+          path: rbs_report.txt
