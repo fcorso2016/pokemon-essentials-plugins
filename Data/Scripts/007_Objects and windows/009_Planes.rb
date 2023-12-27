@@ -33,7 +33,7 @@ end
 class AnimatedPlane < Plane
   def initialize(viewport)
     super(viewport)
-    @bitmap = nil
+    @animated_bitmap = nil
   end
 
   def dispose
@@ -44,8 +44,8 @@ class AnimatedPlane < Plane
   def setBitmap(file, hue = 0)
     clear_bitmap
     return if file.nil?
-    @bitmap = AnimatedBitmap.new(file, hue)
-    self.bitmap = @bitmap.bitmap if @bitmap
+    @animated_bitmap = AnimatedBitmap.new(file, hue)
+    self.bitmap = @animated_bitmap&.bitmap if @animated_bitmap
   end
 
   def set_panorama(file, hue = 0)

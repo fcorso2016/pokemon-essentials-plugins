@@ -3,7 +3,6 @@
 # ==============================================================================
 class PokemonEvolutionScene
   include _Scene
-  include _PokeUpdatable
 
   @bgviewport: Viewport
   @msgviewport: Viewport
@@ -35,8 +34,7 @@ class PokemonEvolutionScene
 
   def pbEvolutionMethodAfterEvolution: () -> void
 
-  def pbUpdate: () -> void |
-    (bool animating) -> void
+  def pbUpdate: (?bool animating) -> void
 
   # Closes the evolution screen.
   def pbEndScreen: (?bool need_fade_out) -> void

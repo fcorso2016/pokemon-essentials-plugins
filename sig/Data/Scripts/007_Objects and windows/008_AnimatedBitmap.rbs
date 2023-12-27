@@ -14,7 +14,7 @@ class AnimatedBitmap
   include _Updatable
   include _Drawable
 
-  @bitmap: GifBitmap | PngAnimatedBitmap
+  @bitmap: _ImageAnimatedBitmap
 
   def initialize: (String file, ?Numeric hue) -> void
   def []: (Integer index) -> nil
@@ -34,7 +34,7 @@ interface _ImageAnimatedBitmap
 
   def []: (Integer index) -> Bitmap
   def bitmap: -> Bitmap?
-  def copy: -> _ImageAnimatedBitmap
+  def copy: -> instance
   def deanimate: -> void
   def currentIndex: -> Integer
   def length: -> Integer
@@ -53,7 +53,6 @@ class PngAnimatedBitmap
 
   attr_accessor frames: Array[Bitmap]
   def initialize: (String dir, String filename, ?Integer hue) -> void
-  def copy: -> PngAnimatedBitmap
 end
 
 class GifBitmap
@@ -61,9 +60,8 @@ class GifBitmap
 
   @disposed: bool
 
-  attr_accessor bitmap: Bitmap?
+  attr_writer bitmap: Bitmap?
   def initialize: (String dir, String filename, ?Integer hue) -> void
-  def copy: -> GifBitmap
 end
 
 

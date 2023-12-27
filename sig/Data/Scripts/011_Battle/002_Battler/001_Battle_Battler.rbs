@@ -55,16 +55,16 @@ class Battle::Battler
   include _BattlerBase
 
   # Fundamental to this object
-  attr_reader battle: Battle
+  attr_writer battle: Battle
 
-  attr_accessor index: Integer
+  attr_writer index: Integer
 
   # The PokÃƒÂ©mon and its properties
-  attr_reader pokemon: Pokemon?
+  @pokemon: Pokemon?
 
-  attr_accessor pokemonIndex: Integer
+  @pokemonIndex: Integer
 
-  attr_accessor species: Symbol
+  attr_writer species: Symbol
 
   attr_accessor types: Array[Symbol]
 
@@ -82,11 +82,11 @@ class Battle::Battler
 
   attr_accessor stages: Hash[Symbol, Integer]
 
-  attr_reader totalhp: Integer
+  @totalhp: Integer
 
   attr_reader fainted: bool
 
-  attr_accessor captured: bool
+  @captured: bool
 
   attr_reader dummy: bool
 
@@ -155,7 +155,7 @@ class Battle::Battler
   # ============================================================================
   # Complex accessors
   # ============================================================================
-  attr_reader level: Integer
+  @level: Integer
 
   def level=: (Integer value) -> void
 
@@ -179,11 +179,11 @@ class Battle::Battler
 
   attr_writer spdef: Integer
 
-  attr_reader hp: Integer
+  @hp: Integer
 
   def hp=: (Integer value) -> void
 
-  attr_reader status: Symbol
+  @status: Symbol
 
   def status=: (Symbol value) -> void
 
@@ -198,8 +198,6 @@ class Battle::Battler
 
   def affection_level: () -> Integer
 
-  def gender: () -> Integer
-
   def nature: () -> GameData::Nature?
 
   def pokerusStage: () -> Integer
@@ -212,8 +210,6 @@ class Battle::Battler
   # ============================================================================
   # Display-only properties
   # ============================================================================
-  def name: () -> String
-
   attr_writer name: String
 
   def displayPokemon: () -> Pokemon

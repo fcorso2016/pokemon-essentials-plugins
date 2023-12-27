@@ -18,7 +18,7 @@ class Sprite_SurfBase
   @cwd: Integer
   @chd: Integer
 
-  attr_reader visible: bool
+  @visible: bool
   def initialize: (untyped parent_sprite, ?nil viewport) -> void
 end
 

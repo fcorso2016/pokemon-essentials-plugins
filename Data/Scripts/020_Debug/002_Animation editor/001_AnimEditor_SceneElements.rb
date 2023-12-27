@@ -362,7 +362,7 @@ module BattleAnimationEditor
     attr_reader :currentcel
     attr_reader :animation # Currently selected animation
     attr_reader :animbitmap # Currently selected animation bitmap
-    attr_accessor :pattern  # Currently selected pattern
+    attr_accessor :anim_pattern  # Currently selected pattern
 
     BORDERSIZE = 64
 
@@ -370,7 +370,7 @@ module BattleAnimationEditor
       super(viewport)
       @currentframe = 0
       @currentcel = -1
-      @pattern = 0
+      @anim_pattern = 0
       @sprites = {}
       @celsprites = []
       @framesprites = []
@@ -422,7 +422,7 @@ module BattleAnimationEditor
       @currentcel = -1
       self.currentframe = 0
       @selecting = false
-      @pattern = 0
+      @anim_pattern = 0
       self.invalidate
     end
 
@@ -718,7 +718,7 @@ module BattleAnimationEditor
       return false if @currentframe >= @animation.length
       PBAnimation::MAX_SPRITES.times do |i|
         next if @animation[@currentframe][i]
-        @animation[@currentframe][i] = pbCreateCel(x, y, @pattern, @animation.position)
+        @animation[@currentframe][i] = pbCreateCel(x, y, @anim_pattern, @animation.position)
         @dirty[i] = true
         @currentcel = i
         return true

@@ -15,7 +15,7 @@ module RPG
         attr_accessor :character_name
         attr_accessor :character_hue
         attr_accessor :direction
-        attr_accessor :pattern
+        attr_accessor :anim_pattern
         attr_accessor :opacity
         attr_accessor :blend_type
       end

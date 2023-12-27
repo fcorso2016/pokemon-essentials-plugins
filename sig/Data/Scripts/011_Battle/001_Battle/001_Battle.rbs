@@ -83,7 +83,7 @@ class Battle
   attr_accessor expGain: bool
   attr_accessor moneyGain: bool
   attr_reader disablePokeBalls: bool
-  attr_accessor sendToBoxes: Integer
+  attr_reader sendToBoxes: Integer
   attr_accessor rules: Hash[String, bool]
   attr_accessor choices: Array[[Symbol, Integer, Move?, Integer]]
   attr_accessor megaEvolution: Array[Array[Integer]]
@@ -147,12 +147,10 @@ class Battle
   def pbThisEx: (Integer | Battler idxBattler, Integer idxParty) -> String
   def pbSetDefeated: (Battler battler) -> void
   def nextPickupUse: -> Integer
-  def defaultWeather=: (Symbol value) -> void
   def pbWeather: -> Symbol
   def pbStartWeather: (Battler? user, Symbol newWeather, ?bool fixedDuration, ?bool showAnim) -> void
   def pbEndPrimordialWeather: -> void
   def pbStartWeatherAbility: (Symbol new_weather, Battler battler, ?bool ignore_primal) -> void
-  def defaultTerrain=: (Symbol value) -> void
   def pbStartTerrain: (Battler? user, Symbol newTerrain, ?bool fixedDuration) -> Array[untyped]?
   def pbShowCommands: (String msg, Array[String] commands, ?Integer defaultValue) -> Integer
   def pbAnimation: (Symbol move, Battler? user, Integer | Array[Integer] targets, ?Integer hitNum) -> void

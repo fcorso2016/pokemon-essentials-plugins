@@ -2,26 +2,9 @@
 
 # Classes
 class Interpreter
-  @index: Integer
-  @list: Array[RPG::EventCommand]?
   @parameters: Array[untyped]
-  @main: bot
-  @event_id: Integer
-  @branch: Integer
-  @message_waiting: bool
   @choice_branch_index: Integer
   @buttonInput: bool
-  @wait_count: Integer
-  @wait_start: Integer
-  @depth: bot
-  @child_interpreter: Interpreter
-  @renamed_choices: bot
-  @hidden_choices: bot
-  @follower_move_route: false
-  @follower_move_route_id: nil
-  @move_route_waiting: true
-  @follower_animation: false
-  @follower_animation_id: nil
 
   def execute_command: -> bool
   def command_dummy: -> bool

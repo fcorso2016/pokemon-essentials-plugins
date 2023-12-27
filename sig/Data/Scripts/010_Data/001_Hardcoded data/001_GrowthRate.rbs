@@ -7,7 +7,7 @@ module GameData
     DATA: Hash[Symbol, GrowthRate]
 
     extend ClassMethodsSymbols[schema, GrowthRate]
-    include InstanceMethods
+    include InstanceMethods[Symbol, GrowthRate]
 
     attr_reader id: Symbol
     attr_reader real_name: String

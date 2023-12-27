@@ -14,7 +14,7 @@ class Tilemap
   attr_accessor map_data: Table
   attr_accessor flash_data: Table
   attr_accessor priorities: Table
-  attr_accessor visible: bool
+  @visible: bool
   attr_accessor ox: Integer
   attr_accessor oy: Integer
 end

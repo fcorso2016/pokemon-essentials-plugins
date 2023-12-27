@@ -71,7 +71,7 @@ class StringInput
   def pos=: (Integer value) -> Integer
   def seek: (Integer offset, ?Integer whence) -> Integer
   def eof?: -> bool
-  def each: -> void
+  def each: { (String) -> void } -> void
   def gets: -> String
   def getc: -> String?
   def read: (?Integer? len) -> String?

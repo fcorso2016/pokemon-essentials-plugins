@@ -4,13 +4,13 @@
 class Battle::FakeBattler
   include _BattlerBase
 
-  attr_reader battle: Battle
+  @battle: Battle
 
-  attr_reader index: Integer
+  @index: Integer
 
-  attr_reader pokemon: Pokemon
+  @pokemon: Pokemon
 
-  attr_reader owned: bool
+  @owned: bool
 
   def initialize: (Battle battle, Integer index) -> void
 

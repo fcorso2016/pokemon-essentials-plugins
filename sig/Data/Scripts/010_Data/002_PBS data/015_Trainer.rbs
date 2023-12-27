@@ -38,7 +38,7 @@ module GameData
     SUB_SCHEMA: Hash[String, [Symbol, String, Symbol | Hash[Symbol, String]]]
 
     extend ClassMethodsSymbols[schema, Trainer]
-    include InstanceMethods
+    include InstanceMethods[Symbol, Trainer]
 
     attr_reader id: Symbol
     attr_reader trainer_type: Symbol

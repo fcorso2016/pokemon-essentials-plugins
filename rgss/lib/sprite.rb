@@ -74,7 +74,7 @@ class Sprite
 
   attr_accessor :tone
 
-  attr_accessor :pattern
+  attr_accessor :anim_pattern
 
   attr_accessor :pattern_blend_type
 

@@ -6,7 +6,7 @@ module GameData
   def self.get_all_data_filenames: -> (Array[[String, bool]])
   def self.get_all_pbs_base_filenames: -> Hash[Symbol, String]
 
-  module ClassMethods[HashSchema < Hash[Symbol, untyped], T]
+  module ClassMethods[HashSchema, T]
     def schema: -> Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Symbol) -> bool |
@@ -28,7 +28,7 @@ module GameData
     def save: -> void
   end
 
-  module ClassMethodsSymbols[HashSchema < Hash[Symbol, untyped], T]
+  module ClassMethodsSymbols[HashSchema, T]
     def schema: -> Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Symbol other) -> bool |
@@ -48,7 +48,7 @@ module GameData
     def save: -> void
   end
 
-  module ClassMethodsIDNumbers[HashSchema < Hash[Symbol, untyped], T]
+  module ClassMethodsIDNumbers[HashSchema, T]
     def schema: ->  Hash[String, [Symbol, String]]
     def register: (HashSchema hash) -> void
     def exists?: (Integer other) -> bool |
@@ -64,14 +64,14 @@ module GameData
     def save: -> void
   end
 
-  module InstanceMethods
-    @id: Symbol
+  module InstanceMethods[ID, S]
+    @id: ID
     @id_number: Integer
 
     def ==: (Symbol other) -> bool |
             (String other) -> bool |
             (Integer other) -> bool |
-            (self other) -> bool
+            (S other) -> bool
     def get_property_for_PBS: [T] (String key) -> T?
   end
 end

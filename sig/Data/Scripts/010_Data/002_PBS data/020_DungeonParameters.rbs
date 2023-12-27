@@ -38,7 +38,7 @@ module GameData
     SCHEMA: Hash[String, [Symbol, String]]
 
     extend ClassMethodsSymbols[schema, DungeonParameters]
-    include InstanceMethods
+    include InstanceMethods[Symbol, DungeonParameters]
 
     attr_reader id: Symbol
     attr_reader area: Symbol

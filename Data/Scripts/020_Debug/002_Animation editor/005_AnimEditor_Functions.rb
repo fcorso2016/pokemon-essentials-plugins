@@ -990,7 +990,7 @@ module BattleAnimationEditor
       sidewin.update
       animwin.update
       bottomwindow.update
-      canvas.pattern = animwin.selected if animwin.changed?
+      canvas.anim_pattern = animwin.selected if animwin.changed?
       if Input.trigger?(Input::BACK)
         if pbConfirmMessage(_INTL("Save changes?"))
           save_data(animation, "Data/PkmnAnimations.rxdata")
