@@ -51,7 +51,7 @@ module GameData
     PBS_BASE_FILENAME: [String, String]
 
     extend ClassMethodsSymbols[schema, Species]
-    include InstanceMethods
+    include InstanceMethods[Symbol, Species]
 
     attr_reader id: Symbol
     attr_reader species: Symbol

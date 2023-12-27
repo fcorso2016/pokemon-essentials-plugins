@@ -27,7 +27,7 @@ module GameData
     DATA: Hash[Symbol, TerrainTag]
 
     extend ClassMethods[schema, TerrainTag]
-    include InstanceMethods
+    include InstanceMethods[Symbol, TerrainTag]
 
     attr_reader id: Symbol
     attr_reader id_number: Integer

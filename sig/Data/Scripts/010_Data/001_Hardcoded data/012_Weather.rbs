@@ -19,7 +19,7 @@ module GameData
     DATA: Hash[Symbol, Weather]
 
     extend ClassMethods[schema, Weather]
-    include InstanceMethods
+    include InstanceMethods[Symbol, Weather]
 
     attr_reader id: Symbol
     attr_reader id_number: Integer

@@ -20,7 +20,7 @@ module GameData
     WATERING_CANS: Array[Symbol]
 
     extend ClassMethodsSymbols[schema, BerryPlant]
-    include InstanceMethods
+    include InstanceMethods[Symbol, BerryPlant]
 
     attr_reader id: Symbol
     attr_reader hours_per_stage: Integer

@@ -7,7 +7,7 @@ module GameData
     DATA: Hash[Symbol, GenderRatio]
 
     extend ClassMethodsSymbols[schema, GenderRatio]
-    include InstanceMethods
+    include InstanceMethods[Symbol, GenderRatio]
 
     attr_reader id: Symbol
     attr_reader real_name: String

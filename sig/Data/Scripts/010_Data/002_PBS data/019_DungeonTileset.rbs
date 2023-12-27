@@ -23,7 +23,7 @@ module GameData
     SCHEMA: Hash[String, [Symbol, String]]
 
     extend ClassMethodsIDNumbers[schema, DungeonTileset]
-    include InstanceMethods
+    include InstanceMethods[Integer, DungeonTileset]
     
     attr_reader id: Integer
     attr_reader tile_type_ids: Hash[tile_type_enum, Array[Integer]]

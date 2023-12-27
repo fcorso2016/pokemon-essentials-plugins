@@ -36,7 +36,7 @@ module GameData
     SCHEMA: Hash[String, [Symbol, String, Symbol]]
 
     extend ClassMethodsIDNumbers[schema, MapMetadata]
-    include InstanceMethods
+    include InstanceMethods[Integer, MapMetadata]
 
     attr_reader id: Integer
     attr_reader real_name: String

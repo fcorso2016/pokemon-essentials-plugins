@@ -12,7 +12,7 @@ module GameData
     DATA: Hash[Symbol, EncounterType]
 
     extend ClassMethodsSymbols[schema, EncounterType]
-    include InstanceMethods
+    include InstanceMethods[Symbol, EncounterType]
 
     attr_reader id: Symbol
     attr_reader real_name: String
