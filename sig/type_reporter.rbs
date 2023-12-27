@@ -1,16 +1,38 @@
-type found_error = {
-    "description" => String,
-    "check_name" => String,
-    "fingerprint" => String,
-    "severity" => String,
-    "location" => {
-      "path"=> String,
-      "lines" => {
-        "begin" => Integer
-        }
-    }
+type sarif_rule = {
+    "id" => String,
+    "shortDescription" => {
+      "text" => String
+      },
+    "properties" => {
+      "tags" => Array[String]
+      }
   }
 
+type issue_location = {
+    "physicalLocation" => {
+        "artifactLocation" => {
+            "uri" => String,
+            "uriBaseId" => String
+          },
+        "region" => {
+            "startLine" => Integer,
+            "startColumn" => Integer,
+            "endLine" => Integer,
+            "endColumn" => Integer
+          }
+      }
+  }
+
+type found_error = {
+    "ruleId" => String,
+    "level" => String,
+    "message" => {
+        "text" => String
+      },
+    "locations" => Array[issue_location]
+  }
+
+$rules: Hash[String, sarif_rule]
 $issues: Array[found_error]
 $script_files: Hash[String, Array[String]]
 
