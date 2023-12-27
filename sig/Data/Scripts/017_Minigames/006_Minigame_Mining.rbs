@@ -32,7 +32,7 @@ class MiningGameCursor < BitmapSprite
   @cursorbitmap: AnimatedBitmap
   @hit: Integer
 
-  @hit_timer_start: Math::double
+  @hit_timer_start: Numeric
   @hitsbitmap: AnimatedBitmap
   @toolbitmap: AnimatedBitmap
 

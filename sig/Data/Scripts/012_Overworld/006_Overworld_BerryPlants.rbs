@@ -10,9 +10,9 @@ class BerryPlantData
 
   attr_accessor mulch_id: Symbol?
 
-  attr_accessor time_alive: Math::double
+  attr_accessor time_alive: Numeric
 
-  attr_accessor time_last_updated: Math::double
+  attr_accessor time_last_updated: Numeric
 
   attr_accessor growth_stage: Integer
 

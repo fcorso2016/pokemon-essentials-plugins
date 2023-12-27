@@ -32,9 +32,9 @@ class Object
   def getFormattedTextFast: (Bitmap bitmap, Integer xDst, Integer yDst, Integer widthDst, Integer heightDst, String text, Integer lineheight, ?true newlineBreaks, ?false explicitBreaksOnly) -> Array[String]
   def isWaitChar: (String x) -> bool
   def getLastParam: [T] (Array[T] array, T default) -> T
-  def getLastColors: (Array[Color] colorstack, Array[Math::double] opacitystack, Color defaultcolors) -> (Integer | String | [untyped, nil])
+  def getLastColors: (Array[Color] colorstack, Array[Numeric] opacitystack, Color defaultcolors) -> (Integer | String | [untyped, nil])
   def getFormattedText: (Bitmap bitmap, Integer xDst, Integer yDst, Integer widthDst, Integer heightDst, String text, ?Integer lineheight, ?bool newlineBreaks, ?bool explicitBreaksOnly, ?bool collapseAlignments) -> Array[String]
-  def getLineBrokenText: (Bitmap bitmap, String value, Integer width, [Integer, Integer]? dims) -> Array[[String, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer]]
+  def getLineBrokenText: (Bitmap bitmap, String value, Integer width, [Integer, Integer]? dims) -> Array[String]
   def getLineBrokenChunks: (Bitmap bitmap, String value, Integer width, [Integer, Integer] dims, ?bool plain) -> Array[Array[Integer]]
   def renderLineBrokenChunks: (Bitmap bitmap, Integer xDst, Integer yDst, String normtext, ?Integer maxheight) -> untyped
   def renderLineBrokenChunksWithShadow: (Bitmap bitmap, Integer xDst, Integer yDst, String normtext, Integer maxheight, Color baseColor, Color shadowColor) -> Array[Array[Integer]]
@@ -49,7 +49,7 @@ class Object
   def pbDrawShadowText: (Bitmap bitmap, Integer x, Integer y, Integer width, Integer height, String string, Color? baseColor, ?Color? shadowColor, ?Integer align) -> void
   def pbDrawOutlineText: (Bitmap bitmap, Integer x, Integer y, Integer width, Integer height, String string, Color? baseColor, ?Color? shadowColor, ?Integer align) -> void
   def pbDrawTextPositions: (Bitmap bitmap, Array[text_position] textpos) -> void
-  def pbCopyBitmap: (Bitmap dstbm, Bitmap srcbm, Integer x, Integer y, ?Math::double opacity) -> void
+  def pbCopyBitmap: (Bitmap dstbm, Bitmap srcbm, Integer x, Integer y, ?Numeric opacity) -> void
   def pbDrawImagePositions: (Bitmap bitmap, Array[text_position] textpos) -> void
 end
 

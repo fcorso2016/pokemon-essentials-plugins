@@ -2,13 +2,13 @@
 
 # Classes
 class Color
-  def set: (Math::double red, ?Math::double green, ?Math::double blue, ?Math::double alpha) -> void
+  def set: (Numeric red, ?Numeric green, ?Numeric blue, ?Numeric alpha) -> void
          | (Color color) -> void
 
-  attr_accessor red: Math::double
-  attr_accessor green: Math::double
-  attr_accessor blue: Math::double
-  attr_accessor alpha: Math::double
+  attr_accessor red: Numeric
+  attr_accessor green: Numeric
+  attr_accessor blue: Numeric
+  attr_accessor alpha: Numeric
 end
 
 

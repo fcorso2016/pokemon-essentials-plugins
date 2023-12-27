@@ -2,9 +2,9 @@
 #
 # ==============================================================================
 module Battle::AbilityEffects
-  SpeedCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Math::double) -> Math::double]
+  SpeedCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Numeric) -> Numeric]
 
-  WeightCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Math::double) -> Math::double]
+  WeightCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Numeric) -> Numeric]
 
   # Battler's HP/stat changed
   OnHPDroppedBelowHalf: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle) -> boolish]
@@ -49,25 +49,25 @@ module Battle::AbilityEffects
 
 
   # Move usage
-  ModifyMoveBaseType: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Math::double], Battle::Battler, Battle::Move, Symbol) -> void]
+  ModifyMoveBaseType: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Accuracy calculation
-  AccuracyCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Math::double], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
+  AccuracyCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Math::double], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
+  AccuracyCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Math::double], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
+  AccuracyCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Damage calculation
-  DamageCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
+  DamageCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
+  DamageCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
+  DamageCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTargetNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
+  DamageCalcFromTargetNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTargetAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Math::double], Integer, Symbol) -> void]
+  DamageCalcFromTargetAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
   CriticalCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
@@ -114,9 +114,9 @@ module Battle::AbilityEffects
 
   def self.trigger: (AbilityHandlerHash[Proc] hash, *untyped args, ?ret: bool) -> untyped
 
-  def self.triggerSpeedCalc: (Symbol ability, Battle::Battler battler, Math::double mult) -> Math::double
+  def self.triggerSpeedCalc: (Symbol ability, Battle::Battler battler, Numeric mult) -> Numeric
 
-  def self.triggerWeightCalc: (Symbol ability, Battle::Battler battler, Math::double weight) -> Math::double
+  def self.triggerWeightCalc: (Symbol ability, Battle::Battler battler, Numeric weight) -> Numeric
 
   def self.triggerOnHPDroppedBelowHalf: (Symbol ability, Battle::Battler user, Battle::Battler move_user, Battle battle) -> bool
 
@@ -156,21 +156,21 @@ module Battle::AbilityEffects
 
   def self.triggerModifyMoveBaseType: (Symbol ability, Battle::Battler user, Battle::Move move, Symbol `type`) -> Symbol
 
-  def self.triggerAccuracyCalcFromUser: (Symbol ability, Hash[Symbol, Math::double] mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
+  def self.triggerAccuracyCalcFromUser: (Symbol ability, Hash[Symbol, Numeric] mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
 
-  def self.triggerAccuracyCalcFromAlly: (Symbol ability, Hash[Symbol, Math::double]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
+  def self.triggerAccuracyCalcFromAlly: (Symbol ability, Hash[Symbol, Numeric]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
 
-  def self.triggerAccuracyCalcFromTarget: (Symbol ability, Hash[Symbol, Math::double]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
+  def self.triggerAccuracyCalcFromTarget: (Symbol ability, Hash[Symbol, Numeric]  mods, Battle::Battler user, Battle::Battler target, Battle::Move move, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromUser: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromUser: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromAlly: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromAlly: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromTarget: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromTarget: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromTargetNonIgnorable: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromTargetNonIgnorable: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
 
-  def self.triggerDamageCalcFromTargetAlly: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Math::double] mults, Integer power, Symbol `type`) -> void
+  def self.triggerDamageCalcFromTargetAlly: (Symbol ability, Battle::Battler user, Battle::Battler target, Battle::Move move, Hash[Symbol, Numeric] mults, Integer power, Symbol `type`) -> void
 
   def self.triggerCriticalCalcFromUser: (Symbol ability, Battle::Battler user, Battle::Battler target, Integer crit_stage) -> Integer
 

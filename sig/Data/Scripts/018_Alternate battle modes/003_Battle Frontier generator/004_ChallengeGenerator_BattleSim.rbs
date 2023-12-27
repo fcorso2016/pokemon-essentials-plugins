@@ -14,17 +14,17 @@ class RuledTeam
 
   def length: () -> Integer
 
-  def rating: () -> Math::double
+  def rating: () -> Numeric
 
   def ratingData: () -> PlayerRating
 
-  def ratingRaw: () -> [Math::double, Math::double, Math::double, Math::double]
+  def ratingRaw: () -> [Numeric, Numeric, Numeric, Numeric]
 
   def compare: (RuledTeam other) -> bool
 
   def totalGames: () -> Integer
 
-  def addMatch: (RuledTeam other, Math::double score) -> void
+  def addMatch: (RuledTeam other, Numeric score) -> void
 
   def games: () -> Integer
 
@@ -39,15 +39,15 @@ end
 #
 # ==============================================================================
 class SingleMatch
-  attr_reader opponentRating: Math::double
+  attr_reader opponentRating: Numeric
 
-  attr_reader opponentDeviation: Math::double
+  attr_reader opponentDeviation: Numeric
 
   attr_reader score: Integer
 
   attr_reader kValue: Integer
 
-  def initialize: (Math::double opponentRating, Math::double opponentDev, Integer score, ?Integer kValue) -> void
+  def initialize: (Numeric opponentRating, Numeric opponentDev, Integer score, ?Integer kValue) -> void
 end
 
 # ==============================================================================
@@ -77,18 +77,18 @@ end
 #
 # ==============================================================================
 class PlayerRatingElo
-  @deviation: Math::double
+  @deviation: Numeric
 
-  @estimatedRating: Math::double?
-  @volatility: Math::double
+  @estimatedRating: Numeric?
+  @volatility: Numeric
 
-  attr_reader rating: Math::double
+  attr_reader rating: Numeric
 
   K_VALUE: Integer
 
   def initialize: () -> void
 
-  def winChancePercent: () -> Math::double
+  def winChancePercent: () -> Numeric
 
   def update: (MatchHistory matches) -> void
 end
@@ -97,41 +97,41 @@ end
 #
 # ==============================================================================
 class PlayerRating
-  @estimatedRating: Math::double?
+  @estimatedRating: Numeric?
 
-  attr_reader volatility: Math::double
+  attr_reader volatility: Numeric
 
-  attr_reader deviation: Math::double
+  attr_reader deviation: Numeric
 
-  attr_reader rating: Math::double
+  attr_reader rating: Numeric
 
   def initialize: () -> void
 
-  def winChancePercent: () -> Math::double
+  def winChancePercent: () -> Numeric
 
-  def update: (untyped matches, ?Math::double system) -> void
+  def update: (untyped matches, ?Numeric system) -> void
 
   private
 
-  attr_writer volatility: Math::double
+  attr_writer volatility: Numeric
 
   alias volatility2 volatility
 
-  def rating2: () -> Math::double
+  def rating2: () -> Numeric
 
-  def deviation2: () -> Math::double
+  def deviation2: () -> Numeric
 
-  def getGFactor: (Math::double deviation) -> Math::double
+  def getGFactor: (Numeric deviation) -> Numeric
 
-  def getEFactor: (Math::double rating, Math::double opponentRating, Math::double g) -> Math::double
+  def getEFactor: (Numeric rating, Numeric opponentRating, Numeric g) -> Numeric
 
-  def setVolatility2: (Math::double value) -> void
+  def setVolatility2: (Numeric value) -> void
 
-  def setRating2: (Math::double value) -> void
+  def setRating2: (Numeric value) -> void
 
-  def setDeviation2: (Math::double value) -> void
+  def setDeviation2: (Numeric value) -> void
 
-  def getUpdatedVolatility: (Math::double volatility, Math::double deviation, Math::double variance, Math::double improvementSum, Math::double system) -> Math::double
+  def getUpdatedVolatility: (Numeric volatility, Numeric deviation, Numeric variance, Numeric improvementSum, Numeric system) -> Numeric
 end
 
 class Object
@@ -140,9 +140,9 @@ class Object
   # ==============================================================================
   def pbDecideWinnerEffectiveness: (Symbol | String | GameData::Move move, Symbol otype1, Symbol otype2, Symbol ability, Array[Integer] scores) -> Integer
 
-  def pbDecideWinnerScore: (Array[Pokemon] party0, Array[Pokemon] party1, Math::double rating) -> Math::double
+  def pbDecideWinnerScore: (Array[Pokemon] party0, Array[Pokemon] party1, Numeric rating) -> Numeric
 
-  def pbDecideWinner: (Array[Pokemon] party0, Array[Pokemon] party1, Math::double rating0, Math::double rating1) -> Math::double
+  def pbDecideWinner: (Array[Pokemon] party0, Array[Pokemon] party1, Numeric rating0, Numeric rating1) -> Numeric
 
   # ==============================================================================
   #

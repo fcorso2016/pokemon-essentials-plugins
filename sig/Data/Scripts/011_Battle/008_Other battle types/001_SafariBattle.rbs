@@ -89,7 +89,7 @@ class SafariBattle
 
   attr_accessor backdropBase: String?
 
-  attr_accessor time: Math::double
+  attr_accessor time: Numeric
 
   attr_accessor environment: Symbol
 

@@ -26,13 +26,13 @@ class HallOfFame_Scene
   ANIMATION: bool
 
   # Time in seconds for a PokÃƒÂ©mon to slide to its position from off-screen.
-  APPEAR_SPEED: Math::double
+  APPEAR_SPEED: Numeric
 
   # Entry wait time (in seconds) between showing each PokÃƒÂ©mon (and trainer).
-  ENTRY_WAIT_TIME: Math::double
+  ENTRY_WAIT_TIME: Numeric
 
   # Wait time (in seconds) when showing "Welcome to the Hall of Fame!".
-  WELCOME_WAIT_TIME: Math::double
+  WELCOME_WAIT_TIME: Numeric
 
   # Maximum number limit of simultaneous hall entries saved.
   # 0 = Doesn't save any hall. -1 = no limit
@@ -50,7 +50,7 @@ class HallOfFame_Scene
   REMOVE_BARS_WHEN_SHOWING_TRAINER: bool
 
   # The final fade speed on entry.
-  FINAL_FADE_DURATION: Math::double
+  FINAL_FADE_DURATION: Numeric
 
   # Sprite's opacity value when it isn't selected.
   OPACITY: Integer
@@ -77,13 +77,13 @@ class HallOfFame_Scene
 
   def pbStartScenePC: () -> void
 
-  def slowFadeOut: (Math::double duration) -> void
+  def slowFadeOut: (Numeric duration) -> void
 
   # Dispose the sprite if the sprite exists and make it null
   def restartSpritePosition: (Hash[String, _Visualizable] sprites, String spritename) -> void
 
   # Change the PokÃƒÂ©mon sprites opacity except the index one
-  def setPokemonSpritesOpacity: (Integer index, ?Math::double opacity) -> void
+  def setPokemonSpritesOpacity: (Integer index, ?Numeric opacity) -> void
 
   def saveHallEntry: () -> void
 

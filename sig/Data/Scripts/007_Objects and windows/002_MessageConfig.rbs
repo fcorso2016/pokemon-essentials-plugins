@@ -61,10 +61,10 @@ module MessageConfig
   NARROW_FONT_Y_OFFSET: Integer
   CURSOR_POSITION: Integer
   WINDOW_OPACITY: Integer
-  TEXT_SPEED: Math::double?
+  TEXT_SPEED: Numeric?
   @@systemFrame: String?
   @@defaultTextSkin: String?
-  @@textSpeed: Math::double?
+  @@textSpeed: Numeric?
   @@systemFont: String?
   @@smallFont: String?
   @@narrowFont: String?
@@ -76,10 +76,10 @@ module MessageConfig
   def self.pbGetSpeechFrame: -> String
   def self.pbSetSystemFrame: (String value) -> String
   def self.pbSetSpeechFrame: (String value) -> String
-  def self.pbDefaultTextSpeed: -> Math::double
-  def self.pbGetTextSpeed: -> Math::double?
-  def self.pbSetTextSpeed: (Math::double value) -> Math::double
-  def self.pbSettingToTextSpeed: (Integer speed) -> Math::double
+  def self.pbDefaultTextSpeed: -> Numeric
+  def self.pbGetTextSpeed: -> Numeric?
+  def self.pbSetTextSpeed: (Numeric value) -> Numeric
+  def self.pbSettingToTextSpeed: (Integer speed) -> Numeric
   def self.pbDefaultSystemFontName: -> String
   def self.pbDefaultSmallFontName: -> String
   def self.pbDefaultNarrowFontName: -> String

@@ -92,7 +92,7 @@ module RecordedBattlePlaybackModule
 
   @switchindex: Integer
 
-  @time: Math::double
+  @time: Numeric
 
   def initialize: (Battle::Scene scene, [Integer, Hash[String, untyped], Array[Array[Array[untyped]]], Array[Integer], Array[bool]] battle) -> void
 

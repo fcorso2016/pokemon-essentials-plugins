@@ -2,14 +2,14 @@
 
 # Classes
 module ScreenPosHelper
-  self.@heightcache: Hash[String, Math::double]
+  self.@heightcache: Hash[String, Numeric]
 
-  def self.pbScreenZoomX: (Sprite_Character ch) -> Math::double
-  def self.pbScreenZoomY: (Sprite_Character ch) -> Math::double
-  def self.pbScreenX: (Sprite_Character ch) -> Math::double
-  def self.pbScreenY: (Sprite_Character ch) -> Math::double
-  def self.bmHeight: (String bm) -> Math::double
-  def self.pbScreenZ: (Sprite_Character ch, ?Math::double? height) -> Math::double
+  def self.pbScreenZoomX: (Sprite_Character ch) -> Numeric
+  def self.pbScreenZoomY: (Sprite_Character ch) -> Numeric
+  def self.pbScreenX: (Sprite_Character ch) -> Numeric
+  def self.pbScreenY: (Sprite_Character ch) -> Numeric
+  def self.bmHeight: (String bm) -> Numeric
+  def self.pbScreenZ: (Sprite_Character ch, ?Numeric? height) -> Numeric
 end
 
 

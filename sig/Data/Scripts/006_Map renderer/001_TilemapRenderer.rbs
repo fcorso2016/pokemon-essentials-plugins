@@ -81,7 +81,7 @@ class TilemapRenderer
   class AutotileBitmaps < TilesetBitmaps
     @frame_counts: Hash[String, Integer?]
     @frame_durations: Hash[String, Float]
-    @timer_start: Math::double
+    @timer_start: Numeric
 
     attr_reader current_frames: Hash[String, Integer]
     def initialize: -> void

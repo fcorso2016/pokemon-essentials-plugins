@@ -16,7 +16,7 @@ class AnimatedBitmap
 
   @bitmap: _ImageAnimatedBitmap
 
-  def initialize: (String file, ?Math::double hue) -> void
+  def initialize: (String file, ?Numeric hue) -> void
   def []: (Integer index) -> nil
   def length: -> Integer
   def each: { (Bitmap) -> void } -> void
@@ -47,8 +47,8 @@ class PngAnimatedBitmap
   include _ImageAnimatedBitmap
 
   @currentFrame: Integer
-  @timer_start: Math::double
-  @frame_duration: Math::double
+  @timer_start: Numeric
+  @frame_duration: Numeric
   @disposed: bool
 
   attr_accessor frames: Array[Bitmap]

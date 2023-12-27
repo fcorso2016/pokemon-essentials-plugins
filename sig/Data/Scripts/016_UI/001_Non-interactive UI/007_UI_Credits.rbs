@@ -58,8 +58,8 @@ class Scene_Credits
   @credit_sprites: Array[Sprite]
   @quit: bool
 
-  @realOY: Math::double
-  @timer_start: Math::double
+  @realOY: Numeric
+  @timer_start: Numeric
 
   @total_height: Integer
   @trim: Integer

@@ -3,38 +3,38 @@
 # Classes
 class Object
   private
-  def pbToneChangeAll: (Tone tone, Math::double duration) -> void
+  def pbToneChangeAll: (Tone tone, Numeric duration) -> void
   def pbFlash: (Color color, Integer frames) -> void
-  def pbShake: (Math::double power, Math::double speed, Integer frames) -> void
+  def pbShake: (Numeric power, Numeric speed, Integer frames) -> void
 end
 
 class Game_Screen
   @tone_target: untyped
-  @tone_duration: Math::double
-  @tone_timer_start: Math::double?
-  @flash_duration: Math::double
-  @flash_timer_start: Math::double?
-  @shake_power: Math::double
-  @shake_speed: Math::double
-  @shake_duration: Math::double
+  @tone_duration: Numeric
+  @tone_timer_start: Numeric?
+  @flash_duration: Numeric
+  @flash_timer_start: Numeric?
+  @shake_power: Numeric
+  @shake_speed: Numeric
+  @shake_duration: Numeric
   @tone_initial: Tone
-  @flash_initial_alpha: Math::double?
-  @shake_timer_start: Math::double
-  @shake_phase: Math::double
+  @flash_initial_alpha: Numeric?
+  @shake_timer_start: Numeric
+  @shake_phase: Numeric
 
-  attr_reader brightness: Math::double
+  attr_reader brightness: Numeric
   attr_reader tone: Tone
   attr_reader flash_color: Color
-  attr_reader shake: Math::double
+  attr_reader shake: Numeric
   attr_reader pictures: Array[PictureEx?]
   attr_reader weather_type: Symbol
-  attr_reader weather_max: Math::double
-  attr_accessor weather_duration: Math::double
+  attr_reader weather_max: Numeric
+  attr_accessor weather_duration: Numeric
   def initialize: -> void
-  def start_tone_change: (Tone tone, Math::double duration) -> void
-  def start_flash: (Color color, Math::double duration) -> void
-  def start_shake: (Math::double power, Math::double speed, Math::double duration) -> void
-  def weather: (Symbol `type`, Math::double power, Math::double duration) -> void
+  def start_tone_change: (Tone tone, Numeric duration) -> void
+  def start_flash: (Color color, Numeric duration) -> void
+  def start_shake: (Numeric power, Numeric speed, Numeric duration) -> void
+  def weather: (Symbol `type`, Numeric power, Numeric duration) -> void
   def update: -> void
 end
 

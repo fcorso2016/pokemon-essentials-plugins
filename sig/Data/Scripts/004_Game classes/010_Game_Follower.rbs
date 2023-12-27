@@ -3,16 +3,16 @@
 # Classes
 class Game_Follower
   @through: bool?
-  @jump_time: Math::double
+  @jump_time: Numeric
   @x: Integer
   @y: Integer
-  @real_x: Math::double
-  @real_y: Math::double
-  @move_timer: Math::double?
-  @jump_timer: Math::double?
-  @jump_peak: Math::double
-  @jump_distance: Math::double
-  @jump_fraction: Math::double
+  @real_x: Numeric
+  @real_y: Numeric
+  @move_timer: Numeric?
+  @jump_timer: Numeric?
+  @jump_peak: Numeric
+  @jump_distance: Numeric
+  @jump_fraction: Numeric
   @jumping_on_spot: bool
   @move_route_forcing: bool
 

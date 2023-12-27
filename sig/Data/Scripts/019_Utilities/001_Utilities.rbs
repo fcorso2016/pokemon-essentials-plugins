@@ -25,10 +25,10 @@ class Object
   def pbGetLanguage: () -> Integer
 
   # Converts a Celsius temperature to Fahrenheit.
-  def toFahrenheit: (Math::double celsius) -> Math::double
+  def toFahrenheit: (Numeric celsius) -> Numeric
 
   # Converts a Fahrenheit temperature to Celsius.
-  def toCelsius: (Math::double fahrenheit) -> Math::double
+  def toCelsius: (Numeric fahrenheit) -> Numeric
 
   # ==============================================================================
   # Constants utilities

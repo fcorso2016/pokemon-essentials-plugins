@@ -47,7 +47,7 @@ class Battle::AI::AIMove
   # Full accuracy calculation.
   def rough_accuracy: () -> Integer
 
-  def apply_rough_accuracy_modifiers: (Battle::AI::AIBattler user, Battle::AI::AIBattler target, Symbol calc_type, Hash[Symbol, Math::double] modifiers) -> void
+  def apply_rough_accuracy_modifiers: (Battle::AI::AIBattler user, Battle::AI::AIBattler target, Symbol calc_type, Hash[Symbol, Numeric] modifiers) -> void
 
   # Full critical hit chance calculation (returns the determined critical hit
   # stage).

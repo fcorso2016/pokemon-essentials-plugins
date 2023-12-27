@@ -27,7 +27,7 @@ class Window_TextEntry < SpriteWindow_Base
   @shadowColor: Color
   @helper: CharacterEntryHelper
   @heading: String?
-  @cursor_timer_start: Math::double
+  @cursor_timer_start: Numeric
   @cursor_shown: bool
 
   def initialize: (String text, Integer x, Integer y, Integer width, Integer height, ?String? heading, ?bool usedarkercolor) -> void
@@ -51,9 +51,9 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   @firstline: Integer
   @cursorLine: Integer
   @cursorColumn: Integer
-  @cursor_timer_start: Math::double
+  @cursor_timer_start: Numeric
   @cursor_shown: bool
-  @textchars: Array[[String, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer]]?
+  @textchars: Array[String]
 
   def initialize: (String text, Integer x, Integer y, Integer width, Integer height) -> void
   attr_reader baseColor: Color
@@ -66,7 +66,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   def maxlength=: (Integer value) -> void
   def insert: (String ch) -> bool
   def delete: -> bool
-  def getTextChars: -> Array[[String, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer]]
+  def getTextChars: -> Array[String]
   def getTotalLines: -> Integer
   def getLineY: (Integer line) -> Integer
   def getColumnsInLine: (Integer line) -> Integer

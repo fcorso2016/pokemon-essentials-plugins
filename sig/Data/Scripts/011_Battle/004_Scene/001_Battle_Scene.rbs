@@ -14,7 +14,7 @@ class Battle::Scene
 
   USE_ABILITY_SPLASH: bool
 
-  MESSAGE_PAUSE_TIME: Math::double
+  MESSAGE_PAUSE_TIME: Numeric
 
   # Text colors
   MESSAGE_BASE_COLOR: Color

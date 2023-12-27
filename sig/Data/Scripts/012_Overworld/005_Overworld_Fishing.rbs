@@ -12,7 +12,7 @@ class Object
   def pbWaitMessage: (Window_AdvancedTextPokemon msgWindow, Integer time) -> bool
 
   # A PokÃƒÂ©mon is biting, reflex test to reel it in
-  def pbWaitForInput: (Window_AdvancedTextPokemon msgWindow, String message, Math::double duration) -> bool
+  def pbWaitForInput: (Window_AdvancedTextPokemon msgWindow, String message, Numeric duration) -> bool
 end
 
 

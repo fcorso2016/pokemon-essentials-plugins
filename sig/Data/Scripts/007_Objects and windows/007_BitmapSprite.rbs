@@ -41,7 +41,7 @@ class IconSprite < Sprite
     (Integer x, Integer y) -> void |
     (Integer x, Integer y, Viewport? viewport) -> void
   def name=: (String value) -> void
-  def setBitmap: (String file, ?Math::double hue) -> void
+  def setBitmap: (String file, ?Numeric hue) -> void
   def clearBitmaps: -> void
 end
 

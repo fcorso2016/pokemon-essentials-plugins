@@ -75,7 +75,7 @@ class Battle::AI::AIBattler
 
   alias pbHasType? has_type?
 
-  def effectiveness_of_type_against_battler: (Symbol `type`, ?Battle::AI::AIBattler? user, ?Battle::AI::AIMove? move) -> Math::double
+  def effectiveness_of_type_against_battler: (Symbol `type`, ?Battle::AI::AIBattler? user, ?Battle::AI::AIMove? move) -> Numeric
 
   def ability_id: () -> Symbol
 
@@ -135,7 +135,7 @@ class Battle::AI::AIBattler
 
   private
 
-  def effectiveness_of_type_against_single_battler_type: (Symbol `type`, Symbol defend_type, ?Battle::AI::AIBattler? user) -> Math::double
+  def effectiveness_of_type_against_single_battler_type: (Symbol `type`, Symbol defend_type, ?Battle::AI::AIBattler? user) -> Numeric
 end
 
 

@@ -259,7 +259,7 @@ module Transitions
       @overworld_sprite.visible = false
       # Black background
       @black_sprite = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
-      @black_sprite.bitmap&.fill_rect(0, 0, Graphics.width, Graphics.height, Color.black)
+      @black_sprite.bitmap.fill_rect(0, 0, Graphics.width, Graphics.height, Color.black)
       # Overworld sprites
       sprite_width = @overworld_bitmap.width / NUM_SPRITES_X
       sprite_height = @overworld_bitmap.height / NUM_SPRITES_Y
@@ -423,7 +423,7 @@ module Transitions
       new_size_rect = Rect.new(0, 0, @overworld_bitmap.width * inv_proportion,
                                @overworld_bitmap.height * inv_proportion)
       # Take all of buffer_original, shrink it and put it into buffer_temp
-      @buffer_temp&.stretch_blt(new_size_rect,
+      @buffer_temp.stretch_blt(new_size_rect,
                                @buffer_original, Rect.new(0, 0, @overworld_bitmap.width, @overworld_bitmap.height))
       # Take shrunken area from buffer_temp and stretch it into buffer
       @overworld_bitmap.stretch_blt(Rect.new(0, 0, @overworld_bitmap.width, @overworld_bitmap.height),
@@ -468,8 +468,8 @@ module Transitions
         @disposed = true
         return
       end
-      @zoom_x_target = Graphics.width.to_f / (@black_bitmap&.width * NUM_SPRITES_X)
-      @zoom_y_target = Graphics.height.to_f / (@black_bitmap&.height * NUM_SPRITES_Y)
+      @zoom_x_target = Graphics.width.to_f / (@black_bitmap.width * NUM_SPRITES_X)
+      @zoom_y_target = Graphics.height.to_f / (@black_bitmap.height * NUM_SPRITES_Y)
     end
 
     def initialize_sprites
@@ -481,9 +481,9 @@ module Transitions
           else
             sprite_x = ((j.even?) ? i : (NUM_SPRITES_X - i - 1)) * @black_bitmap.width
           end
-          sprite_x += @black_bitmap&.width / 2
-          @sprites[idx_sprite] = new_sprite(sprite_x, j * @black_bitmap&.height * @zoom_y_target,
-                                            @black_bitmap, @black_bitmap&.width / 2)
+          sprite_x += @black_bitmap.width / 2
+          @sprites[idx_sprite] = new_sprite(sprite_x, j * @black_bitmap.height * @zoom_y_target,
+                                            @black_bitmap, @black_bitmap.width / 2)
           @sprites[idx_sprite].zoom_y  = @zoom_y_target
           @sprites[idx_sprite].visible = false
         end
@@ -532,7 +532,7 @@ module Transitions
 
     def initialize_bitmaps
       @bitmap = RPG::Cache.transition("black_square")
-      if @bitmap.nil?
+      if !@bitmap
         @disposed = true
         return
       end
@@ -1746,7 +1746,7 @@ module Transitions
           sprite.visible = false if sprite.zoom_x <= 0
         end
       else
-        @rocket_sprites.last&.visible = false
+        @rocket_sprites.last.visible = false
         # Black wedges expand to fill screen
         proportion = (timer - @rocket_appear_end) / (@duration - @rocket_appear_end)
         @sprites.each_with_index do |sprite, i|
@@ -1785,7 +1785,7 @@ module Transitions
       @flash_viewport.color = Color.new(255, 255, 255, 0)
       # Strobe sprites (need 2 of them to make them loop around)
       ((Graphics.width.to_f / @strobes_bitmap.width).ceil + 1).times do |i|
-        spr = new_sprite(@strobes_bitmap&.width * i, 0, @strobes_bitmap)
+        spr = new_sprite(@strobes_bitmap.width * i, 0, @strobes_bitmap)
         spr.z       = 1
         spr.opacity = 0
         @sprites.push(spr)
@@ -1800,7 +1800,7 @@ module Transitions
       @bg_2_sprite.opacity = 0
       # Foe sprite
       @foe_sprite = new_sprite(Graphics.width + @foe_bitmap.width, FOE_SPRITE_Y,
-                               @foe_bitmap, @foe_bitmap&.width / 2, @foe_bitmap&.height || 0)
+                               @foe_bitmap, @foe_bitmap.width / 2, @foe_bitmap.height)
       @foe_sprite.z = 7
       # Sprite with foe's name written in it
       @text_sprite = BitmapSprite.new(Graphics.width, Graphics.height - FOE_SPRITE_Y, @viewport)
@@ -1854,8 +1854,8 @@ module Transitions
       # Strobes scrolling
       if @sprites[0].visible
         @strobes_x = -timer * STROBE_SCROLL_SPEED
-        while @strobes_x <= -@strobes_bitmap&.width
-          @strobes_x += @strobes_bitmap&.width
+        while @strobes_x <= -@strobes_bitmap.width
+          @strobes_x += @strobes_bitmap.width
         end
         @sprites.each_with_index { |spr, i| spr.x = @strobes_x + (i * @strobes_bitmap.width) }
       end

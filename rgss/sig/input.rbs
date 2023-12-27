@@ -47,7 +47,7 @@ module Input
   def self?.mouse_x: -> Integer
   def self?.mouse_y: -> Integer
   def self?.mouse_in_window?: -> bool
-  def self?.time?: (button_enum i) -> Math::double
+  def self?.time?: (button_enum i) -> Numeric
 
   attr_accessor text_input: bool
   attr_accessor clipboard: String

@@ -81,33 +81,33 @@ class PBAnimTiming
 
   attr_accessor pitch: Integer
 
-  attr_accessor bgX: Math::double?
+  attr_accessor bgX: Numeric?
 
-  attr_accessor bgY: Math::double?
+  attr_accessor bgY: Numeric?
 
-  attr_accessor opacity: Math::double?
+  attr_accessor opacity: Numeric?
 
-  attr_accessor colorRed: Math::double?
+  attr_accessor colorRed: Numeric?
 
-  attr_accessor colorGreen: Math::double?
+  attr_accessor colorGreen: Numeric?
 
-  attr_accessor colorBlue: Math::double?
+  attr_accessor colorBlue: Numeric?
 
-  attr_accessor colorAlpha: Math::double?
+  attr_accessor colorAlpha: Numeric?
 
-  attr_writer duration: Math::double
+  attr_writer duration: Numeric
 
   attr_accessor flashScope: Integer
 
   attr_accessor flashColor: Color
 
-  attr_accessor flashDuration: Math::double
+  attr_accessor flashDuration: Numeric
 
   def initialize: (?Integer `type`) -> void
 
   def timingType: () -> Integer
 
-  def duration: () -> Math::double
+  def duration: () -> Numeric
 end
 
 # ==============================================================================
@@ -149,7 +149,7 @@ class PBAnimation < Array[[Array[Integer], Array[Integer]]]
 
   attr_accessor graphic: String
 
-  attr_accessor hue: Math::double
+  attr_accessor hue: Numeric
 
   attr_accessor position: Integer
 
@@ -175,7 +175,7 @@ class PBAnimation < Array[[Array[Integer], Array[Integer]]]
 
   def addFrame: () -> void
 
-  def playTiming: (Integer frame, String bgGraphic, Color bgColor, String foGraphic, Color foColor, ?Array[Math::double] oldbg, ?Array[Math::double] oldfo, ?Battle::Battler? user) -> untyped
+  def playTiming: (Integer frame, String bgGraphic, Color bgColor, String foGraphic, Color foColor, ?Array[Numeric] oldbg, ?Array[Numeric] oldfo, ?Battle::Battler? user) -> untyped
 end
 
 # ==============================================================================
@@ -197,14 +197,14 @@ class PBAnimationPlayerX
   @frame: Integer
   @inEditor: bool
   @old_frame: Integer
-  @oldbg: Array[Math::double]
-  @oldfo: Array[Math::double]
+  @oldbg: Array[Numeric]
+  @oldfo: Array[Numeric]
   @scene: Battle::Scene
   @srcLine: [Integer, Integer, Integer, Integer]?
   @targetOrig: [Integer, Integer]
   @targetbitmap: AnimatedBitmap?
   @targetsprite: AnimatedBitmap?
-  @timer_start: Math::double?
+  @timer_start: Numeric?
   @user: Battle::Battler
 
   @userOrig: [Integer, Integer]

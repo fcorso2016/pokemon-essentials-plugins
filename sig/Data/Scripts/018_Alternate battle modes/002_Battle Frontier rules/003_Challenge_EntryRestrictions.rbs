@@ -13,7 +13,7 @@ end
 #
 # ==============================================================================
 class HeightRestriction
-  def initialize: (Math::double maxHeightInMeters) -> void
+  def initialize: (Numeric maxHeightInMeters) -> void
 
   include _EntryRestriction
 end
@@ -22,7 +22,7 @@ end
 #
 # ==============================================================================
 class WeightRestriction
-  def initialize: (Math::double maxWeightInKg) -> void
+  def initialize: (Numeric maxWeightInKg) -> void
 
   include _EntryRestriction
 end

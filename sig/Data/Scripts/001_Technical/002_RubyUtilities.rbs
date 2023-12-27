@@ -26,13 +26,13 @@ class String
 
   def cut: (Bitmap bitmap, Integer width) -> String
 
-  def Math::double?: () -> bool
+  def numeric?: () -> bool
 end
 
 # ==============================================================================
-# class Math::double
+# class Numeric
 # ==============================================================================
-class Math::double
+class Numeric
   # Turns a number into a string formatted like 12,345,678.
   def to_s_formatted: () -> String
 
@@ -91,7 +91,7 @@ class Color
   alias init_original initialize
 
   # New constructor, accepts RGB values as well as a hex number or string value.
-  def initialize: (Math::double red, Math::double green, Math::double blue, ?Math::double alpha) -> void
+  def initialize: (Numeric red, Numeric green, Numeric blue, ?Numeric alpha) -> void
                   | () -> void
                   | (Integer rgb) -> void
                   | (String rgb) -> void
@@ -193,7 +193,7 @@ class Object
   #   - the time passed since the start of the change (delta), or
   #   - the start time of the change (delta) and the current time (now)
   # ==============================================================================
-  def lerp: (Math::double start_val, Math::double end_val, Math::double duration, Math::double delta, ?Math::double? now) -> Math::double
+  def lerp: (Numeric start_val, Numeric end_val, Numeric duration, Numeric delta, ?Numeric? now) -> Numeric
 end
 
 

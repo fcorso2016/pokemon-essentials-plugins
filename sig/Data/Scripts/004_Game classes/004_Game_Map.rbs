@@ -3,9 +3,9 @@
 # Classes
 class Object
   private
-  def pbScrollMap: (Integer direction, Integer distance, ?Math::double speed) -> void
-  def pbScrollMapTo: (Integer x, Integer y, ?Math::double speed) -> void
-  def pbScrollMapToPlayer: (?Math::double speed) -> void
+  def pbScrollMap: (Integer direction, Integer distance, ?Numeric speed) -> void
+  def pbScrollMapTo: (Integer x, Integer y, ?Numeric speed) -> void
+  def pbScrollMapToPlayer: (?Numeric speed) -> void
 end
 
 class Game_Map
@@ -18,20 +18,20 @@ class Game_Map
   @map: RPG::Map
   @fog_tone_target: Tone
   @fog_tone_duration: Integer
-  @fog_tone_timer_start: Math::double?
-  @fog_opacity_duration: Math::double
+  @fog_tone_timer_start: Numeric?
+  @fog_opacity_duration: Numeric
   @fog_opacity_target: Integer
-  @fog_opacity_timer_start: Math::double?
+  @fog_opacity_timer_start: Numeric?
   @common_events: Hash[Integer, Game_CommonEvent]
   @scroll_distance_x: Integer
   @scroll_distance_y: Integer
   @scroll_speed: Integer
-  @scroll_start_x: Math::double?
-  @scroll_start_y: Math::double?
-  @scroll_timer_start: Math::double
+  @scroll_start_x: Numeric?
+  @scroll_start_y: Numeric?
+  @scroll_timer_start: Numeric
   @fog_tone_initial: Tone?
-  @fog_opacity_initial: Math::double?
-  @fog_scroll_last_update_timer: Math::double
+  @fog_opacity_initial: Numeric?
+  @fog_scroll_last_update_timer: Numeric
 
   attr_accessor map_id: Integer
   attr_accessor tileset_name: String
@@ -41,20 +41,20 @@ class Game_Map
   attr_reader terrain_tags: Table
   attr_reader events: Hash[Integer, Game_Event]
   attr_accessor panorama_name: String
-  attr_accessor panorama_hue: Math::double
+  attr_accessor panorama_hue: Numeric
   attr_accessor fog_name: String
-  attr_accessor fog_hue: Math::double
-  attr_accessor fog_opacity: Math::double
+  attr_accessor fog_hue: Numeric
+  attr_accessor fog_opacity: Numeric
   attr_accessor fog_blend_type: Integer
-  attr_accessor fog_zoom: Math::double
-  attr_accessor fog_sx: Math::double
-  attr_accessor fog_sy: Math::double
-  attr_reader fog_ox: Math::double
-  attr_reader fog_oy: Math::double
+  attr_accessor fog_zoom: Numeric
+  attr_accessor fog_sx: Numeric
+  attr_accessor fog_sy: Numeric
+  attr_reader fog_ox: Numeric
+  attr_reader fog_oy: Numeric
   attr_reader fog_tone: Tone
   attr_accessor battleback_name: String
-  attr_reader display_x: Math::double?
-  attr_reader display_y: Math::double?
+  attr_reader display_x: Numeric?
+  attr_reader display_y: Numeric?
   attr_accessor need_refresh: bool
   def initialize: -> void
   def setup: (Integer map_id) -> void
@@ -90,8 +90,8 @@ class Game_Map
   def start_scroll: (Integer direction, Integer distance, ?Integer speed) -> void
   def start_scroll_custom: (Integer distance_x, Integer distance_y, ?Integer speed) -> void
   def scrolling?: -> bool
-  def start_fog_tone_change: (Tone tone, Math::double duration) -> void
-  def start_fog_opacity_change: (Math::double opacity, Math::double duration) -> void
+  def start_fog_tone_change: (Tone tone, Numeric duration) -> void
+  def start_fog_opacity_change: (Numeric opacity, Numeric duration) -> void
   def set_tile: (Integer x, Integer y, Integer layer, ?Integer id) -> void
   def erase_tile: (Integer x, Integer y, Integer layer) -> void
   def refresh: -> void

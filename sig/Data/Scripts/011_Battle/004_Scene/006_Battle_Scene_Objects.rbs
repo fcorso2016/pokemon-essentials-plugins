@@ -5,16 +5,16 @@ class Battle::Scene::PokemonDataBox < Sprite
   include _Refreshable
 
   @anim_exp_current: Integer?
-  @anim_exp_duration_mult: Math::double?
+  @anim_exp_duration_mult: Numeric?
   @anim_exp_end: Integer?
-  @anim_exp_flash_timer_start: Math::double?
+  @anim_exp_flash_timer_start: Numeric?
   @anim_exp_range: Integer?
   @anim_exp_start: Integer?
-  @anim_exp_timer_start: Math::double?
+  @anim_exp_timer_start: Numeric?
   @anim_hp_current: Integer?
   @anim_hp_end: Integer?
   @anim_hp_start: Integer?
-  @anim_hp_timer_start: Math::double?
+  @anim_hp_timer_start: Numeric?
   @contents: Bitmap
   @databoxBitmap: AnimatedBitmap
   @expBar: Sprite
@@ -35,18 +35,18 @@ class Battle::Scene::PokemonDataBox < Sprite
   attr_accessor selected: Integer
 
   # Time in seconds to fully fill the Exp bar (from empty).
-  EXP_BAR_FILL_TIME: Math::double
+  EXP_BAR_FILL_TIME: Numeric
 
   # Time in seconds for this data box to flash when the Exp fully fills.
-  EXP_FULL_FLASH_DURATION: Math::double
+  EXP_FULL_FLASH_DURATION: Numeric
 
   # Maximum time in seconds to make a change to the HP bar.
-  HP_BAR_CHANGE_TIME: Math::double
+  HP_BAR_CHANGE_TIME: Numeric
 
   # Time (in seconds) for one complete sprite bob cycle (up and down) while
   # choosing a command for this battler or when this battler is being chosen as
   # a target. Set to nil to prevent bobbing.
-  BOBBING_DURATION: Math::double
+  BOBBING_DURATION: Numeric
 
   # Height in pixels of a status icon
   STATUS_ICON_HEIGHT: Integer
@@ -70,7 +70,7 @@ class Battle::Scene::PokemonDataBox < Sprite
 
   def initializeOtherGraphics: (Viewport? viewport) -> void
 
-  def opacity=: (Math::double value) -> void
+  def opacity=: (Numeric value) -> void
 
   def color=: (Color value) -> void
 
@@ -170,11 +170,11 @@ class Battle::Scene::BattlerSprite < RPG::Sprite
 
   # Time (in seconds) for one complete sprite bob cycle (up and down) while
   # choosing a command for this battler. Set to nil to prevent bobbing.
-  COMMAND_BOBBING_DURATION: Math::double
+  COMMAND_BOBBING_DURATION: Numeric
 
   # Time (in seconds) for one complete blinking cycle while this battler is
   # being chosen as a target. Set to nil to prevent blinking.
-  TARGET_BLINKING_DURATION: Math::double
+  TARGET_BLINKING_DURATION: Numeric
 
   def initialize: (Viewport? viewport, Integer sideSize, Integer index, Array[Battle::Scene::Animation] battleAnimations) -> void
 

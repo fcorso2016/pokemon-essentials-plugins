@@ -3,40 +3,40 @@
 # Classes
 class Game_Picture
   @duration: Integer
-  @move_timer_start: Math::double?
-  @target_x: Math::double
-  @target_y: Math::double
-  @target_zoom_x: Math::double
-  @target_zoom_y: Math::double
-  @target_opacity: Math::double
+  @move_timer_start: Numeric?
+  @target_x: Numeric
+  @target_y: Numeric
+  @target_zoom_x: Numeric
+  @target_zoom_y: Numeric
+  @target_opacity: Numeric
   @tone_target: Tone
-  @tone_duration: Math::double
-  @tone_timer_start: Math::double?
-  @rotate_speed: Math::double
-  @initial_x: Math::double?
-  @initial_y: Math::double?
-  @initial_zoom_x: Math::double?
-  @initial_zoom_y: Math::double?
-  @initial_opacity: Math::double?
-  @rotate_timer: Math::double?
+  @tone_duration: Numeric
+  @tone_timer_start: Numeric?
+  @rotate_speed: Numeric
+  @initial_x: Numeric?
+  @initial_y: Numeric?
+  @initial_zoom_x: Numeric?
+  @initial_zoom_y: Numeric?
+  @initial_opacity: Numeric?
+  @rotate_timer: Numeric?
   @tone_initial: Tone?
 
   attr_reader number: Integer
   attr_reader name: String
   attr_reader origin: Integer
-  attr_reader x: Math::double
-  attr_reader y: Math::double
-  attr_reader zoom_x: Math::double
-  attr_reader zoom_y: Math::double
-  attr_reader opacity: Math::double
-  attr_reader blend_type: Math::double
+  attr_reader x: Numeric
+  attr_reader y: Numeric
+  attr_reader zoom_x: Numeric
+  attr_reader zoom_y: Numeric
+  attr_reader opacity: Numeric
+  attr_reader blend_type: Numeric
   attr_reader tone: Tone
-  attr_reader angle: Math::double
+  attr_reader angle: Numeric
   def initialize: (Integer number) -> void
-  def show: (String name, Integer origin, Math::double x, Math::double y, Math::double zoom_x, Math::double zoom_y, Math::double opacity, Integer blend_type) -> void
-  def move: (Math::double duration, Integer origin, Math::double x, Math::double y, Math::double zoom_x, Math::double zoom_y, Math::double opacity, Integer blend_type) -> void
-  def rotate: (Math::double speed) -> void
-  def start_tone_change: (Tone tone, Math::double duration) -> void
+  def show: (String name, Integer origin, Numeric x, Numeric y, Numeric zoom_x, Numeric zoom_y, Numeric opacity, Integer blend_type) -> void
+  def move: (Numeric duration, Integer origin, Numeric x, Numeric y, Numeric zoom_x, Numeric zoom_y, Numeric opacity, Integer blend_type) -> void
+  def rotate: (Numeric speed) -> void
+  def start_tone_change: (Tone tone, Numeric duration) -> void
   def erase: -> void
   def update: -> void
 end

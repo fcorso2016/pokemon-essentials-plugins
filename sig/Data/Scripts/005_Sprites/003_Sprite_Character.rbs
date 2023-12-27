@@ -23,7 +23,7 @@ class Sprite_Character < RPG::Sprite
   @surfbase: Sprite_SurfBase?
   @tile_id: Integer
   @character_name: String
-  @character_hue: Math::double
+  @character_hue: Numeric
   @charbitmap: _Drawable?
   @bushbitmap: BushBitmap?
   @charbitmapAnimated: bool
@@ -32,7 +32,7 @@ class Sprite_Character < RPG::Sprite
 
   attr_accessor character: Game_Character?
   def initialize: (Viewport viewport, ?Game_Character? character) -> void
-  def groundY: -> Math::double
+  def groundY: -> Numeric
   def refresh_graphic: -> void
 end
 

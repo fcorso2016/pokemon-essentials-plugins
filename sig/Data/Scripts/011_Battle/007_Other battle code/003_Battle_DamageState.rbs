@@ -2,7 +2,7 @@
 #
 # ==============================================================================
 class Battle::DamageState
-  attr_accessor typeMod: Math::double
+  attr_accessor typeMod: Numeric
 
   attr_accessor unaffected: bool
 
