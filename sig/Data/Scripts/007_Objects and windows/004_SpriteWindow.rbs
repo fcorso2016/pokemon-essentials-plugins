@@ -3,7 +3,6 @@
 # Classes
 class SpriteWindow < Window
 
-  @sprites: Hash[String, Sprite]
   @trim: [Integer, Integer, Integer, Integer]
   @flash_duration: Numeric
   @pauseopacity: Numeric?
