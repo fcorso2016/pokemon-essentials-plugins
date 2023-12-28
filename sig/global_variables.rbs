@@ -1,4 +1,5 @@
 $show_window: bool
+$game_state: GameState
 $RGSS_SCRIPTS: Array[[String, String]]
 
 $data_animations: Array[RPG::Animation?]
