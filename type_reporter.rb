@@ -67,6 +67,10 @@ if File.exist?("rbs_report.txt")
       issue["level"] = "warning"
     end
 
+    if issue["level"] == "hint" || issue["level"] == "information"
+      issue["level"] = "note"
+    end
+
     $issues.push(issue)
   end
 

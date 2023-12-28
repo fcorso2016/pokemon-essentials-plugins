@@ -85,7 +85,7 @@ class Battle
   attr_reader disablePokeBalls: bool
   attr_reader sendToBoxes: Integer
   attr_accessor rules: Hash[String, bool]
-  attr_accessor choices: Array[[Symbol, Integer, Move?, Integer]]
+  attr_accessor choices: Array[[Symbol, Integer | Symbol, Move?, Integer]]
   attr_accessor megaEvolution: Array[Array[Integer]]
   attr_reader initialItems: Array[Array[Symbol?]]
   attr_reader recycleItems: Array[Array[Symbol?]]
