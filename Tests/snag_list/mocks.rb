@@ -50,7 +50,7 @@ class MockPokemon
   end
 
   def convert_moves(moves)
-    return moves.map {|id| return Pokemon::Move.new(id) }
+    return moves.map {|id| next Pokemon::Move.new(id) }
   end
 
 end

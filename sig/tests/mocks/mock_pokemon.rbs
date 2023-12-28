@@ -8,10 +8,10 @@ class MockPokemon
   attr_reader level: Integer
   attr_reader moves: Array[Pokemon::Move]
   attr_reader nature: Symbol
-  attr_reader owner: String
+  attr_reader owner: Trainer | MockTrainer
   attr_reader species: Symbol
 
-  def initialize: (Symbol species, Integer level, Integer gender, Integer form, Array[Integer] ivs, Symbol nature, Integer ability, Array[Symbol] moves, String owner, ?bool shadow) -> void
+  def initialize: (Symbol species, Integer level, Integer gender, Integer form, Array[Integer] ivs, Symbol nature, Integer ability, Array[Symbol] moves, Trainer | MockTrainer owner, ?bool shadow) -> void
 
   def shadowPokemon?: -> bool
 
