@@ -1,0 +1,5 @@
+class Battle
+
+  attr_accessor caughtPokemon: Array[Pokemon]
+
+end

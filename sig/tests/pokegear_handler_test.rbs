@@ -1,9 +1,5 @@
-class PokegearHandlerTest
+class PokegearHandlerTest < Minitest::Test
   @sample_pokemon: Pokemon
-
-  def before_setup: -> void
-
-  def setup: -> void
 
   def test_effect_code: -> void
 

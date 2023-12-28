@@ -2,7 +2,7 @@ require_relative '../test_helper'
 
 TEST_MAP1 = "Intro"
 
-class ClassExtensionsTest < Minitest::Test
+class ShadowPokemonDataTest < Minitest::Test
   def before_setup
     $show_window = false
     require_relative '../../game_core'
@@ -109,4 +109,5 @@ class ClassExtensionsTest < Minitest::Test
     assert_equal(true, trainer.shadow_seen[:PIKACHU].purified)
     assert_equal(mock_pokemon, trainer.shadow_seen[:PIKACHU].party_poke)
   end
+
 end
