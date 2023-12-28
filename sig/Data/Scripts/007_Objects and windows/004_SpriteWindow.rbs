@@ -3,6 +3,7 @@
 # Classes
 class SpriteWindow < Window
 
+  @sprites: Hash[String, Sprite]
   @trim: [Integer, Integer, Integer, Integer]
   @flash_duration: Numeric
   @pauseopacity: Numeric?
@@ -86,6 +87,8 @@ class SpriteWindow < Window
 end
 
 class SpriteWindow_Base < SpriteWindow
+  include _Refreshable
+
   TEXT_PADDING: Integer
   @curframe: String
   @curfont: String
