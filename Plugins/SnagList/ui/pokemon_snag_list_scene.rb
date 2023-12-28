@@ -190,7 +190,6 @@ class PokemonSnagListScene
 
   def snag_entry_on_index(index)
     old_sprites = pbFadeOutAndHide(@sprites)
-    echoln @snag_order
     change_to_snag_entry(@snag_order[index][:species])
     pbFadeInAndShow(@sprites)
     current_index = index
@@ -219,10 +218,10 @@ class PokemonSnagListScene
           icon_species = @sprites["snagList"].species
           set_icon_bitmap(icon_species)
         end
-        if Input.trigger?(Input::B)
+        if Input.trigger?(Input::BACK)
           pbPlayCancelSE
           break
-        elsif Input.trigger?(Input::A)
+        elsif Input.trigger?(Input::USE)
           pbPlayDecisionSE
           snag_entry_on_index(@sprites["snagList"].index)
         end
@@ -277,14 +276,14 @@ class PokemonSnagListScene
       Graphics.update if page == 1
       Input.update
       update
-      if Input.trigger?(Input::B) || ret == 1
+      if Input.trigger?(Input::BACK) || ret == 1
         on_window_cancel(page)
         break
       elsif Input.trigger?(Input::UP) || ret == 8
         current_index, new_page = cursor_up(current_index, new_page, page)
       elsif Input.trigger?(Input::DOWN) || ret == 2
         current_index, new_page = cursor_down(current_index, new_page, page)
-      elsif Input.trigger?(Input::A)
+      elsif Input.trigger?(Input::USE)
         GameData::Species.play_cry_from_species(@snag_order[current_index][:species])
       end
       ret = 0
@@ -335,7 +334,9 @@ class PokemonSnagListScene
     if page == 1
       pbPlayCancelSE
       pbFadeOutAndHide(@sprites)
+      @sprites["entryicon"].dispose
+      @sprites["snagEntry"].visible = false
+      refresh
     end
-    @sprites["entryicon"].dispose
   end
 end
