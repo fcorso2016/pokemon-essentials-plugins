@@ -96,7 +96,7 @@ class SpriteWindow_Base < SpriteWindow
   @resolvedFrame: AnimatedBitmap?
 
   def initialize: (Integer x, Integer y, Integer width, Integer height) -> void
-  def __setWindowskin: (Bitmap skin) -> void
+  def __setWindowskin: (Bitmap? skin) -> void
   def __resolveSystemFrame: -> void
   def setSkin: (String skin) -> void
   def setSystemFrame: -> void
