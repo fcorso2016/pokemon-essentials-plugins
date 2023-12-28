@@ -6,8 +6,8 @@ class Window_Pokedex < Window_DrawableCommand
     @commands = []
     super(x, y, width, height, viewport)
     @selarrow     = AnimatedBitmap.new("Graphics/UI/Pokedex/cursor_list")
-    @pokeballOwn  = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_own")
-    @pokeballSeen = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_seen")
+    @pokeball_snagged  = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_own")
+    @pokeball_seen = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_seen")
     self.baseColor   = Color.new(88, 88, 80)
     self.shadowColor = Color.new(168, 184, 184)
     self.windowskin  = nil
@@ -19,8 +19,8 @@ class Window_Pokedex < Window_DrawableCommand
   end
 
   def dispose
-    @pokeballOwn.dispose
-    @pokeballSeen.dispose
+    @pokeball_snagged.dispose
+    @pokeball_seen.dispose
     super
   end
 
@@ -40,9 +40,9 @@ class Window_Pokedex < Window_DrawableCommand
     indexNumber -= 1 if @commands[index][:shift]
     if $player.seen?(species)
       if $player.owned?(species)
-        pbCopyBitmap(self.contents, @pokeballOwn.bitmap, rect.x - 6, rect.y + 10)
+        pbCopyBitmap(self.contents, @pokeball_snagged.bitmap, rect.x - 6, rect.y + 10)
       else
-        pbCopyBitmap(self.contents, @pokeballSeen.bitmap, rect.x - 6, rect.y + 10)
+        pbCopyBitmap(self.contents, @pokeball_seen.bitmap, rect.x - 6, rect.y + 10)
       end
       num_text = sprintf("%03d", indexNumber)
       name_text = @commands[index][:name]

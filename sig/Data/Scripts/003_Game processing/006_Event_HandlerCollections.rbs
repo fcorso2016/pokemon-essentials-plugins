@@ -13,6 +13,7 @@ end
 module MenuHandlers
   type hash_schema = {
       "name" => _ToS | ^() -> _ToS,
+      "icon_name" => String,
       "order" => Integer,
       "condition" => ^() -> boolish,
       "effect" => ^(?untyped) -> boolish

@@ -5,7 +5,13 @@ FORMATREGEXP: Regexp
 
 type alignment = (:left | false | 0) | (:center | 2) | (:right | true | 1)
 type has_outline = (:outline | true | 1) | (:none | false | 0)
-type text_position = [String, Integer, Integer, alignment, Color, Color, has_outline]
+type image_position = [String, Integer, Integer] |
+  [String, Integer, Integer, Integer] |
+  [String, Integer, Integer, Integer, Integer] |
+  [String, Integer, Integer, Integer, Integer, Integer] |
+  [String, Integer, Integer, Integer, Integer, Integer, Integer]
+
+type text_position = [String, Integer, Integer, alignment, Color, Color] | [String, Integer, Integer, alignment, Color, Color, has_outline]
 type line_broken_text = [String, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer]
 
 class Object
@@ -51,7 +57,7 @@ class Object
   def pbDrawOutlineText: (Bitmap bitmap, Integer x, Integer y, Integer width, Integer height, String string, Color? baseColor, ?Color? shadowColor, ?Integer align) -> void
   def pbDrawTextPositions: (Bitmap bitmap, Array[text_position] textpos) -> void
   def pbCopyBitmap: (Bitmap dstbm, Bitmap srcbm, Integer x, Integer y, ?Numeric opacity) -> void
-  def pbDrawImagePositions: (Bitmap bitmap, Array[text_position] textpos) -> void
+  def pbDrawImagePositions: (Bitmap bitmap, Array[image_position] textpos) -> void
 end
 
 

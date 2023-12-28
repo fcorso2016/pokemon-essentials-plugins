@@ -11,8 +11,12 @@ class Window
 
   @visible: bool
 
-  attr_accessor windowskin: Bitmap?
-  attr_accessor contents: Bitmap?
+  def windowskin: %a{implicitly-returns-nil} () -> Bitmap
+  def windowskin=: (Bitmap? value) -> void
+
+  def contents: %a{implicitly-returns-nil} () -> Bitmap
+  def contents=: (Bitmap? value) -> void
+
   attr_accessor stretch: bool
   attr_accessor cursor_rect: Rect
   attr_accessor viewport: Viewport?

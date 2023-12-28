@@ -2,7 +2,14 @@
 #
 # ==============================================================================
 class Window_Pokedex < Window_DrawableCommand
-  @commands: Array[String]
+  type pokedex_entry = {
+      :species => Symbol,
+      :number => Integer,
+      :shift => bool,
+      :name => String
+    }
+
+  @commands: Array[pokedex_entry]
 
   @pokeballOwn: AnimatedBitmap
 
@@ -10,13 +17,9 @@ class Window_Pokedex < Window_DrawableCommand
 
   def initialize: (Integer x, Integer y, Integer width, Integer height, Viewport? viewport) -> void
 
-  def commands=: (Array[String] value) -> void
+  def commands=: (Array[pokedex_entry] value) -> void
 
   def species: () -> (Integer | Symbol)
-
-  def itemCount: () -> Integer
-
-  def drawItem: (Integer index, Integer _count, Rect rect) -> void
 end
 
 # ==============================================================================

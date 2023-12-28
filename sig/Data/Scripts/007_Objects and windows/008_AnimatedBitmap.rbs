@@ -20,7 +20,7 @@ class AnimatedBitmap
   def []: (Integer index) -> nil
   def length: -> Integer
   def each: { (Bitmap) -> void } -> void
-  def bitmap: -> Bitmap?
+  def bitmap: %a{implicitly-returns-nil} -> Bitmap
   def currentIndex: -> Integer
   def totalFrames: -> Integer
   def deanimate: -> void

@@ -1,5 +1,15 @@
-class WindowSnagList < Window_Pokedex
-  def drawItem: (Integer index, Integer count, Rect rect) -> void
+type snag_entry = {:species => Symbol, :name => String}
+
+class WindowSnagList < Window_DrawableCommand
+  @commands: Array[snag_entry]
+
+  @pokeball_seen: AnimatedBitmap
+  @pokeball_snagged: AnimatedBitmap
+
+  def commands=: (Array[snag_entry]) -> void
+
+  def species: -> Symbol?
+
 end
 
 

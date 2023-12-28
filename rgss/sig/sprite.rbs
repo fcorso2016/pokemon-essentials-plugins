@@ -13,7 +13,9 @@ class Sprite
 
   @visible: bool
 
-  attr_accessor bitmap: Bitmap?
+  def bitmap: %a{implicitly-returns-nil} () -> Bitmap
+  def bitmap=: (Bitmap? bitmap) -> void
+
   attr_accessor src_rect: Rect
   attr_accessor viewport: Viewport
   attr_accessor x: Integer
