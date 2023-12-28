@@ -1,5 +1,4 @@
 class PokemonSnagListScene
-  SPECIES_NAME_REGEX: String
 
   type sprite_hash = {
       "background" => AnimatedPlane,
@@ -18,11 +17,18 @@ class PokemonSnagListScene
   @type_bitmap: AnimatedBitmap
   @viewport: Viewport
 
+  def start_scene: () -> void
+
+  def snag_entry: () -> void
+
+  def end_scene: () -> void
+
+
+  private
+
   def update: () -> void
 
   def set_icon_bitmap: (untyped species) -> void
-
-  def start_scene: () -> void
 
   def get_snag_list: () -> Array[snag_entry]
 
@@ -33,13 +39,6 @@ class PokemonSnagListScene
   def change_to_snag_entry: (Symbol species) -> void
 
   def snag_entry_on_index: (Integer index) -> void
-
-  def snag_entry: () -> void
-
-  def end_scene: () -> void
-
-  private
-
 
   def parse_pokemon_location: (Symbol species) -> String
 

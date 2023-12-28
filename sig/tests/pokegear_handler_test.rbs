@@ -1,3 +1,5 @@
+$window_activated: bool
+
 class PokegearHandlerTest < Minitest::Test
   @sample_pokemon: Pokemon
 

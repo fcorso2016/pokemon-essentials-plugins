@@ -15,7 +15,7 @@ class SeenShadowPokemon
 
   attr_reader ot: String
 
-  attr_reader otGender: Integer
+  attr_reader ot_gender: Integer
 
   attr_reader location: String
 

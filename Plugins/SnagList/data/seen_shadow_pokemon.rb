@@ -7,7 +7,7 @@ class SeenShadowPokemon
   attr_reader :ability
   attr_reader :moves
   attr_reader :ot
-  attr_reader :otGender
+  attr_reader :ot_gender
   attr_reader :location
   attr_reader :snagged
   attr_reader :purified
@@ -22,7 +22,7 @@ class SeenShadowPokemon
     @ability = pokemon.ability_index
     @moves = pokemon.moves
     @ot = pokemon.owner.name
-    @otGender = pokemon.owner.gender
+    @ot_gender = pokemon.owner.gender
     @location = location_name
     @snagged = false
     @purified = false

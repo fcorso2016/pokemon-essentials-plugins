@@ -1,9 +1,0 @@
-$drawn_text: Array[String]
-
-class WindowSnagListTest < Minitest::Test
-  def test_set_commands: -> void
-
-  private
-
-  def create_mock_snag_entry: (bool was_snagged) -> Minitest::Mock
-end

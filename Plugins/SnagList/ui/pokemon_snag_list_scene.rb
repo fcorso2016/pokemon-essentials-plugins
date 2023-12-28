@@ -1,5 +1,4 @@
 class PokemonSnagListScene
-  SPECIES_NAME_REGEX = "<ac>{1:s}</ac>"
 
   def update
     pbUpdateSpriteHash(@sprites)
@@ -34,6 +33,38 @@ class PokemonSnagListScene
     pbFadeInAndShow(@sprites)
   end
 
+  def snag_entry
+    pbActivateWindow(@sprites, "snagList") {
+      loop do
+        Graphics.update
+        Input.update
+        old_index = @sprites["snagList"].index
+        update
+        if old_index != @sprites["snagList"].index
+          $PokemonGlobal.snag_index = @sprites["snagList"].index
+
+          icon_species = @sprites["snagList"].species
+          set_icon_bitmap(icon_species)
+        end
+        if Input.trigger?(Input::BACK)
+          pbPlayCancelSE
+          break
+        elsif Input.trigger?(Input::USE)
+          pbPlayDecisionSE
+          snag_entry_on_index(@sprites["snagList"].index)
+        end
+      end
+    }
+  end
+
+  def end_scene
+    pbFadeOutAndHide(@sprites)
+    pbDisposeSpriteHash(@sprites)
+    @viewport.dispose
+  end
+
+  private
+
   def get_snag_list
     # @type var snag_list: Array[snag_entry]
     snag_list = []
@@ -47,7 +78,6 @@ class PokemonSnagListScene
     @snag_order = get_snag_list
     @sprites["snagList"].commands = @snag_order
     @sprites["snagList"].index    = index
-    @sprites["snagList"].refresh
     refresh
   end
 
@@ -166,10 +196,10 @@ class PokemonSnagListScene
     drawFormattedTextEx(overlay, 234, 308, 276, memo)
     owner_base = Color.new(64, 64, 64)
     owner_shadow = Color.new(176, 176, 176)
-    if $player.shadow_seen[species].otGender == 0 # male OT
+    if $player.shadow_seen[species].ot_gender == 0 # male OT
       owner_base = Color.new(24, 112, 216)
       owner_shadow = Color.new(136, 168, 208)
-    elsif $player.shadow_seen[species].otGender == 1 # female OT
+    elsif $player.shadow_seen[species].ot_gender == 1 # female OT
       owner_base = Color.new(248, 56, 32)
       owner_shadow = Color.new(224, 152, 144)
     end
@@ -205,45 +235,12 @@ class PokemonSnagListScene
     pbFadeInAndShow(@sprites, old_sprites)
   end
 
-  def snag_entry
-    pbActivateWindow(@sprites, "snagList") {
-      loop do
-        Graphics.update
-        Input.update
-        old_index = @sprites["snagList"].index
-        update
-        if old_index != @sprites["snagList"].index
-          $PokemonGlobal.snag_index = @sprites["snagList"].index
-
-          icon_species = @sprites["snagList"].species
-          set_icon_bitmap(icon_species)
-        end
-        if Input.trigger?(Input::BACK)
-          pbPlayCancelSE
-          break
-        elsif Input.trigger?(Input::USE)
-          pbPlayDecisionSE
-          snag_entry_on_index(@sprites["snagList"].index)
-        end
-      end
-    }
-  end
-
-  def end_scene
-    pbFadeOutAndHide(@sprites)
-    pbDisposeSpriteHash(@sprites)
-    @viewport.dispose
-  end
-
-  private
-
   def parse_pokemon_location(species)
     return "Fled" unless $player.shadow_seen[species].snagged
     $player.party.each do |pkmn|
       return "Party" if parse_evolution_line(species, pkmn)
     end
     (0...2).each { |i|
-      echoln $PokemonGlobal.day_care[i]
       return "Day Care" if parse_evolution_line(species, $PokemonGlobal.day_care[i].pokemon)
     }
     $PokemonStorage.boxes.each do |box|

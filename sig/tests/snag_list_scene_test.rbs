@@ -1,0 +1,20 @@
+$drawn_text: Array[String]
+$input_order: Array[button_enum]
+$cries_played: Array[Symbol]
+
+class Object
+  alias draw_shadow_text_snag_list_test pbDrawShadowText
+end
+
+class SnagListSceneTest < Minitest::Test
+
+  def test_set_commands: -> void
+
+  def test_cycle_current_snag_entry: -> void
+
+  def test_start_scene: -> void
+
+  private
+
+  def create_mock_snag_entry: (bool was_snagged, ?bool is_purified) -> Minitest::Mock
+end
