@@ -3,9 +3,12 @@
 require_relative '../test_helper'
 
 $window_activated = false
+$call_original_activate_method = false
 
-def pbActivateWindow(sprites, key)
+alias original_activate_window pbActivateWindow
+def pbActivateWindow(sprites, key, &block)
   $window_activated = true
+  original_activate_window(sprites, key, &block) if $call_original_activate_method
 end
 
 class PokegearHandlerTest < Minitest::Test

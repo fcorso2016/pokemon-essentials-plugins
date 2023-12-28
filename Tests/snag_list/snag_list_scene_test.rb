@@ -46,12 +46,18 @@ class SnagListSceneTest < Minitest::Test
     $player.snag_order.clear
     $player.shadow_seen.clear
     $drawn_text.clear
+    $input_order.clear
+    $cries_played.clear
+    $call_original_activate_method = true
   end
 
   def teardown
     $player.snag_order.clear
     $player.shadow_seen.clear
     $drawn_text.clear
+    $input_order.clear
+    $cries_played.clear
+    $call_original_activate_method = false
   end
 
   def test_set_commands
@@ -81,8 +87,10 @@ class SnagListSceneTest < Minitest::Test
   end
 
   def test_start_scene
-    $player.shadow_seen[:PIKACHU] = create_mock_snag_entry(false)
-    $player.shadow_seen[:ELEKID] = create_mock_snag_entry(true)
+    $player.shadow_seen = {
+      :PIKACHU => create_mock_snag_entry(false),
+      :ELEKID => create_mock_snag_entry(true)
+    }
     $player.snag_order = [:ELEKID, :PIKACHU]
 
     scene = PokemonSnagListScene.new
@@ -91,8 +99,10 @@ class SnagListSceneTest < Minitest::Test
   end
 
   def test_cycle_current_snag_entry
-    $player.shadow_seen[:PIKACHU] = create_mock_snag_entry(false)
-    $player.shadow_seen[:ELEKID] = create_mock_snag_entry(true)
+    $player.shadow_seen = {
+      :PIKACHU => create_mock_snag_entry(false),
+      :ELEKID => create_mock_snag_entry(true)
+    }
     $player.snag_order = [:ELEKID, :PIKACHU]
 
     scene = PokemonSnagListScene.new
@@ -100,6 +110,7 @@ class SnagListSceneTest < Minitest::Test
 
     $drawn_text.clear
     $input_order = [Input::DOWN, Input::UP, Input::UP, Input::USE, Input::USE, Input::DOWN, Input::USE, Input::BACK, Input::BACK]
+    $call_original_activate_method = true
     scene.snag_entry
 
     assert_equal([:ELEKID, :ELEKID, :PIKACHU, :PIKACHU], $cries_played)
@@ -108,7 +119,7 @@ class SnagListSceneTest < Minitest::Test
   private
 
   def create_mock_snag_entry(was_snagged, is_purified = false)
-    mock = Minitest::Mock
+    mock = Minitest::Mock.new
 
     if was_snagged
       def mock.snagged
