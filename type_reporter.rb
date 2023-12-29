@@ -53,6 +53,8 @@ def process_steep_report(report_contents)
       }
     end
   end
+
+  yield current_issue
 end
 
 if File.exist?("rbs_report.txt")
