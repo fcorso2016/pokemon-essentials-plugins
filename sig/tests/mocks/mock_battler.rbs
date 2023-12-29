@@ -1,0 +1,9 @@
+class MockBattler
+  @shadowPokemon: bool
+
+  attr_reader pokemon: MockPokemon | Pokemon
+
+  def initialize: (MockPokemon | Pokemon pokemon, bool shadow) -> void
+
+  def shadowPokemon?: -> bool
+end

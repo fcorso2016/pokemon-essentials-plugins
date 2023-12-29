@@ -1,18 +1,7 @@
 require_relative '../test_helper'
+require_relative 'mocks'
 
   class BattleEncounterTest < Minitest::Test
-    def before_setup
-      $show_window = false
-      require_relative '../../game_core'
-
-      $DEBUG = true
-      PluginManager.runPlugins
-      Compiler.main
-      Game.initialize
-      Game.set_up_system
-      Game.start_new
-      require_relative 'mocks'
-    end
 
     def setup
       mock_poke1 = Minitest::Mock.new

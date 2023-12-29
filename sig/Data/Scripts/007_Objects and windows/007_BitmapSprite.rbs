@@ -47,7 +47,7 @@ end
 
 class ChangelingSprite < Sprite
   @bitmaps: Hash[String, AnimatedBitmap]
-  @currentBitmap: nil
+  @currentBitmap: AnimatedBitmap
 
   def initialize: (?Integer x, ?Integer y, ?Viewport? viewport) -> void
   def addBitmap: (String key, String path) -> void

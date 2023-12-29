@@ -2,17 +2,16 @@
 
 require_relative '../test_helper'
 
-class PokegearHandlerTest < Minitest::Test
-  def before_setup
-    $show_window = false
-    require_relative '../../game_core'
+$window_activated = false
+$call_original_activate_method = false
 
-    PluginManager.runPlugins
-    Compiler.main
-    Game.initialize
-    Game.set_up_system
-    Game.start_new
-  end
+alias original_activate_window pbActivateWindow
+def pbActivateWindow(sprites, key, &block)
+  $window_activated = true
+  original_activate_window(sprites, key, &block) if $call_original_activate_method
+end
+
+class PokegearHandlerTest < Minitest::Test
 
   def setup
     @sample_pokemon = Pokemon.new(:PIKACHU, 24)
@@ -46,7 +45,6 @@ class PokegearHandlerTest < Minitest::Test
     $player.shadow_seen = {:PIKACHU => SeenShadowPokemon.new(@sample_pokemon, "test") }
     $player.snag_order = [:PIKACHU]
     $window_activated = false
-    require_relative 'mocks/mock_active_window'
     MenuHandlers.call(:pokegear_menu, :snag_list, "effect")
     assert($window_activated)
   end

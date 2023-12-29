@@ -86,7 +86,7 @@ class PurifyChamber
   # Number of regular Pokemon in a set
   def setCount: (Integer set) -> Integer
 
-  def setList: (Integer set) -> Array[PurifyChamberSet]
+  def setList: (Integer set) -> Array[Pokemon]
 
   # For speeding up purification.
   def chamberFlow: (Integer chamber) -> Integer

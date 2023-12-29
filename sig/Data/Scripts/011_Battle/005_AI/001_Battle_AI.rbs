@@ -36,27 +36,27 @@ end
 #
 # ==============================================================================
 module Battle::AI::Handlers
-  MoveFailureCheck: HandlerHash[String]
+  MoveFailureCheck: HandlerHash[String, ^(Battle::Move, Battle::Battler, Battle::AI, Battle) -> bool]
 
-  MoveFailureAgainstTargetCheck: HandlerHash[String]
+  MoveFailureAgainstTargetCheck: HandlerHash[String, ^(Battle::Move, Battle::Battler, Battle::Battler, Battle::AI, Battle) -> bool]
 
-  MoveEffectScore: HandlerHash[String]
+  MoveEffectScore: HandlerHash[String, ^(Integer, Battle::Move, Battle::Battler, Battle::AI, Battle) -> Integer]
 
-  MoveEffectAgainstTargetScore: HandlerHash[String]
+  MoveEffectAgainstTargetScore: HandlerHash[String, ^(Integer, Battle::Move, Battle::Battler, Battle::Battler, Battle::AI, Battle) -> Integer]
 
-  MoveBasePower: HandlerHash[String]
+  MoveBasePower: HandlerHash[String, ^(Integer, Integer, Battle::Move, Battle::Battler, Battle::Battler, Battle::AI, Battle) -> Integer]
 
-  GeneralMoveScore: HandlerHash[String]
+  GeneralMoveScore: HandlerHash[String, ^(Integer, Battle::Move, Battle::Battler, Battle::AI, Battle) -> Integer]
 
-  GeneralMoveAgainstTargetScore: HandlerHash[String]
+  GeneralMoveAgainstTargetScore: HandlerHash[String, ^(Integer, Battle::Move, Battle::Battler, Battle::Battler, Battle::AI, Battle) -> Integer]
 
-  ShouldSwitch: HandlerHash[Symbol]
+  ShouldSwitch: HandlerHash[Symbol, ^(Battle::Battler, Array[Pokemon], Battle::AI, Battle) -> Integer]
 
-  ShouldNotSwitch: HandlerHash[Symbol]
+  ShouldNotSwitch: HandlerHash[Symbol, ^(Battle::Battler, Array[Pokemon], Battle::AI, Battle) -> Integer]
 
-  AbilityRanking: AbilityHandlerHash
+  AbilityRanking: AbilityHandlerHash[^(Symbol, Integer, Battle::Battler, Battle::AI) -> Integer]
 
-  ItemRanking: ItemHandlerHash
+  ItemRanking: ItemHandlerHash[^(Symbol, Integer, Battle::Battler, Battle::AI) -> Integer]
 
   def self.move_will_fail?: (String function_code, *untyped args) -> bool
 

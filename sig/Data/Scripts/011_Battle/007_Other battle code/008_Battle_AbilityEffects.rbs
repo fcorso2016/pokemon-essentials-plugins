@@ -2,116 +2,117 @@
 #
 # ==============================================================================
 module Battle::AbilityEffects
-  SpeedCalc: AbilityHandlerHash
+  SpeedCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Numeric) -> Numeric]
 
-  WeightCalc: AbilityHandlerHash
+  WeightCalc: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Numeric) -> Numeric]
 
   # Battler's HP/stat changed
-  OnHPDroppedBelowHalf: AbilityHandlerHash
+  OnHPDroppedBelowHalf: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle) -> boolish]
 
   # Battler's status problem
-  StatusCheckNonIgnorable: AbilityHandlerHash
+  StatusCheckNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol) -> boolish]
 
-  StatusImmunity: AbilityHandlerHash
+  StatusImmunity: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol) -> boolish]
 
-  StatusImmunityNonIgnorable: AbilityHandlerHash
+  StatusImmunityNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol) -> boolish]
 
-  StatusImmunityFromAlly: AbilityHandlerHash
+  StatusImmunityFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol) -> boolish]
 
-  OnStatusInflicted: AbilityHandlerHash
+  OnStatusInflicted: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Symbol) -> void]
 
-  StatusCure: AbilityHandlerHash
+  StatusCure: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler) -> void]
 
   # Battler's stat stages
-  StatLossImmunity: AbilityHandlerHash
+  StatLossImmunity: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol, Battle, bool) -> boolish]
 
-  StatLossImmunityNonIgnorable: AbilityHandlerHash
+  StatLossImmunityNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol, Battle, bool) -> boolish]
 
-  StatLossImmunityFromAlly: AbilityHandlerHash
+  StatLossImmunityFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol, Battle, bool) -> boolish]
 
-  OnStatGain: AbilityHandlerHash
+  OnStatGain: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol, Battle::Battler) -> void]
 
-  OnStatLoss: AbilityHandlerHash
+  OnStatLoss: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Symbol, Battle::Battler) -> void]
 
   # Priority and turn order
-  PriorityChange: AbilityHandlerHash
+  PriorityChange: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Move, Integer) -> Integer]
 
-  PriorityBracketChange: AbilityHandlerHash
+  PriorityBracketChange: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> Integer]
 
-  PriorityBracketUse: AbilityHandlerHash
+  PriorityBracketUse: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
   # Move usage failures
-  OnFlinch: AbilityHandlerHash
+  OnFlinch: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
-  MoveBlocking: AbilityHandlerHash
+  MoveBlocking: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Array[Battle::Battler], Battle::Move, Battle) -> boolish]
 
-  MoveImmunity: AbilityHandlerHash
+  MoveImmunity: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Symbol, Battle, bool) -> boolish]
+
 
   # Move usage
-  ModifyMoveBaseType: AbilityHandlerHash
+  ModifyMoveBaseType: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Accuracy calculation
-  AccuracyCalcFromUser: AbilityHandlerHash
+  AccuracyCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromAlly: AbilityHandlerHash
+  AccuracyCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromTarget: AbilityHandlerHash
+  AccuracyCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Damage calculation
-  DamageCalcFromUser: AbilityHandlerHash
+  DamageCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromAlly: AbilityHandlerHash
+  DamageCalcFromAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTarget: AbilityHandlerHash
+  DamageCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTargetNonIgnorable: AbilityHandlerHash
+  DamageCalcFromTargetNonIgnorable: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTargetAlly: AbilityHandlerHash
+  DamageCalcFromTargetAlly: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  CriticalCalcFromUser: AbilityHandlerHash
+  CriticalCalcFromUser: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
-  CriticalCalcFromTarget: AbilityHandlerHash
+  CriticalCalcFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
   # Upon a move hitting a target
-  OnBeingHit: AbilityHandlerHash
+  OnBeingHit: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Battle) -> void]
 
-  OnDealingHit: AbilityHandlerHash
+  OnDealingHit: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, Battle) -> void]
 
   # Abilities that trigger at the end of using a move
-  OnEndOfUsingMove: AbilityHandlerHash
+  OnEndOfUsingMove: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Array[Battle::Battler], Battle::Move, Battle) -> void]
 
-  AfterMoveUseFromTarget: AbilityHandlerHash
+  AfterMoveUseFromTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle::Move, bool, Battle) -> void]
 
   # End Of Round
-  EndOfRoundWeather: AbilityHandlerHash
+  EndOfRoundWeather: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Symbol, Battle::Battler, Battle) -> void]
 
-  EndOfRoundHealing: AbilityHandlerHash
+  EndOfRoundHealing: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
-  EndOfRoundEffect: AbilityHandlerHash
+  EndOfRoundEffect: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
-  EndOfRoundGainItem: AbilityHandlerHash
+  EndOfRoundGainItem: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
   # Switching and fainting
-  CertainSwitching: AbilityHandlerHash
+  CertainSwitching: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> bool]
 
-  TrappingByTarget: AbilityHandlerHash
+  TrappingByTarget: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle::Battler, Battle) -> bool]
 
-  OnSwitchIn: AbilityHandlerHash
+  OnSwitchIn: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle, bool) -> void]
 
-  OnSwitchOut: AbilityHandlerHash
+  OnSwitchOut: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, bool) -> void]
 
-  ChangeOnBattlerFainting: AbilityHandlerHash
+  ChangeOnBattlerFainting: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, bool, Battle) -> void]
 
-  OnBattlerFainting: AbilityHandlerHash
+  OnBattlerFainting: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, bool, Battle) -> void]
 
-  OnTerrainChange: AbilityHandlerHash
+  OnTerrainChange: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle, bool) -> void]
 
-  OnIntimidated: AbilityHandlerHash
+  OnIntimidated: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler, Battle) -> void]
 
   # Running from battle
-  CertainEscapeFromBattle: AbilityHandlerHash
+  CertainEscapeFromBattle: AbilityHandlerHash[^(Symbol | String | GameData::Ability, Battle::Battler) -> boolish]
 
-  def self.trigger: (AbilityHandlerHash hash, *untyped args, ?ret: bool) -> untyped
+  def self.trigger: (AbilityHandlerHash[Proc] hash, *untyped args, ?ret: bool) -> untyped
 
   def self.triggerSpeedCalc: (Symbol ability, Battle::Battler battler, Numeric mult) -> Numeric
 

@@ -10,7 +10,7 @@ module GameData
   class Evolution
     type schema = {
         :id => Symbol,
-        :parameter => class,
+        :parameter => Class,
         :any_level_up => bool,
         :level_up_proc => ^(Pokemon, untyped) -> bool,
         :use_item_proc => ^(Pokemon, untyped) -> bool,

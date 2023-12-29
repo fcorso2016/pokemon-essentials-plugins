@@ -2,25 +2,25 @@
 # ItemHandlers
 # ==============================================================================
 module ItemHandlers
-  UseText: ItemHandlerHash
+  UseText: ItemHandlerHash[^(Symbol | GameData::Item) -> String]
 
-  UseFromBag: ItemHandlerHash
+  UseFromBag: ItemHandlerHash[^(Symbol | GameData::Item) -> void]
 
-  ConfirmUseInField: ItemHandlerHash
+  ConfirmUseInField: ItemHandlerHash[^(Symbol | GameData::Item) -> boolish]
 
-  UseInField: ItemHandlerHash
+  UseInField: ItemHandlerHash[^(Symbol | GameData::Item) -> boolish]
 
-  UseOnPokemon: ItemHandlerHash
+  UseOnPokemon: ItemHandlerHash[^(Symbol | GameData::Item, Integer, Pokemon, _Scene) -> boolish]
 
-  UseOnPokemonMaximum: ItemHandlerHash
+  UseOnPokemonMaximum: ItemHandlerHash[^(Symbol | GameData::Item, Integer, Pokemon, _Scene) -> Integer]
 
-  CanUseInBattle: ItemHandlerHash
+  CanUseInBattle: ItemHandlerHash[^(Symbol, Pokemon, Battle::Battler, Integer, bool, Battle, _Scene, bool) -> boolish]
 
-  UseInBattle: ItemHandlerHash
+  UseInBattle: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> void]
 
-  BattleUseOnBattler: ItemHandlerHash
+  BattleUseOnBattler: ItemHandlerHash[^(Symbol, Battle::Battler, _Scene) -> void]
 
-  BattleUseOnPokemon: ItemHandlerHash
+  BattleUseOnPokemon: ItemHandlerHash[^(Symbol, Pokemon, Battle::Battler, [Symbol, Integer, Battle::Move, Integer], _Scene) -> void]
 
   def self.hasUseText: (Symbol item) -> bool
 

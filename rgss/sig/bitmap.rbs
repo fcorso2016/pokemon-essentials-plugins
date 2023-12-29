@@ -2,7 +2,7 @@
 
 # Classes
 class Bitmap
-  include _Disposable
+  include _CheckedDisposable
   include _Drawable
 
   def self.max_size: -> Rect

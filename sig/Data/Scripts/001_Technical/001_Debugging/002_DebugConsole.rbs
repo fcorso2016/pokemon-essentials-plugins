@@ -29,7 +29,7 @@ module Console
   def self?.font_options: -> Hash[Symbol, String]
   def self?.markup_colors: -> (Hash[String, Symbol])
   def self?.markup_options: -> (Hash[String, Symbol])
-  def self?.markup_style: (String string, text: Symbol, bg: Symbol, **Symbol) -> String
+  def self?.markup_style: (String string, ?text: Symbol, ?bg: Symbol, **Symbol) -> String
   def self?.markup_all_options: -> (Hash[String, Symbol])
   def self?.markup_component: (String string, String component, String key, Hash[String, Hash[Symbol, String]] options) -> [String, Hash[String, Hash[Symbol, String]]]
   def self?.markup_breakdown: (String string, ?Hash[String, Hash[Symbol, String]] options) -> [String, Hash[String, Hash[Symbol, String]]]

@@ -23,12 +23,12 @@ class NamedEvent
   def trigger: (*untyped args) -> void
 end
 
-class HandlerHash[K]
-  @hash: Hash[K, Proc]
+class HandlerHash[K, V]
+  @hash: Hash[K, V]
 
   def initialize: -> void
-  def []: (K id) -> Proc?
-  def add: (K id, ?Proc handler) -> void
+  def []: (K id) -> V?
+  def add: (K id, ?V? handler) -> void
   def copy: (K src, *K dests) -> void
   def remove: (K key) -> void
   def clear: -> void
@@ -37,28 +37,28 @@ class HandlerHash[K]
   def trigger: (K id, *untyped args) -> untyped
 end
 
-class HandlerHashSymbol
-  @hash: Hash[Symbol, Proc?]
-  @add_ifs: Hash[Symbol, [Proc, Proc?]]
+class HandlerHashSymbol[T]
+  @hash: Hash[Symbol, T?]
+  @add_ifs: Hash[Symbol, [Proc, T?]]
 
   def initialize: -> void
-  def []: (Symbol sym) -> Proc?
-  def add: (Symbol sym, ?Proc? handler) -> void
-  def addIf: (Symbol sym, ^(Symbol) -> bool conditionProc, ?Proc? handler) { (*untyped) -> untyped } -> void
+  def []: (Symbol sym) -> T?
+  def add: (Symbol sym, ?T? handler) -> void
+  def addIf: (Symbol sym, ^(Symbol) -> bool conditionProc, ?T? handler) { (*untyped) -> untyped } -> void
   def copy: (Symbol src, *Symbol dests) -> void
   def remove: (Symbol key) -> void
   def clear: -> void
   def trigger: (Symbol sym, *untyped args) -> untyped
 end
 
-class HandlerHashEnum
+class HandlerHashEnum[T]
   @mod: Module
-  @hash: Hash[Symbol, Proc?]
-  @addIfs: Array[[Proc, Proc?]]
+  @hash: Hash[Symbol, T?]
+  @addIfs: Array[[Proc, T?]]
   @symbolCache: Hash[Symbol, Symbol]
 
   def initialize: (Module mod) -> void
-  def []: (Symbol sym) -> Proc
+  def []: (Symbol sym) -> T
   def fromSymbol: (Symbol sym) -> void
   def toSymbol: (Symbol sym) -> void
   def add: (Symbol sym, ?Proc? handler) -> void
@@ -68,16 +68,16 @@ class HandlerHashEnum
   def trigger: (Symbol sym, *untyped args) -> void
 end
 
-class SpeciesHandlerHash < HandlerHashSymbol
+class SpeciesHandlerHash[Schema] < HandlerHashSymbol[Schema]
 end
 
-class AbilityHandlerHash < HandlerHashSymbol
+class AbilityHandlerHash[T] < HandlerHashSymbol[T]
 end
 
-class ItemHandlerHash < HandlerHashSymbol
+class ItemHandlerHash[T] < HandlerHashSymbol[T]
 end
 
-class MoveHandlerHash < HandlerHashSymbol
+class MoveHandlerHash[T] < HandlerHashSymbol[T]
 end
 
 

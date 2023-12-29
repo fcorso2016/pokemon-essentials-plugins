@@ -2,84 +2,84 @@
 #
 # ==============================================================================
 module Battle::ItemEffects
-  SpeedCalc: ItemHandlerHash
+  SpeedCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Numeric) -> Numeric]
 
-  WeightCalc: ItemHandlerHash
+  WeightCalc: ItemHandlerHash[^(Symbol, Battle::Battler, Numeric) -> Numeric]
 
   # Battler's HP/stat changed
-  HPHeal: ItemHandlerHash
+  HPHeal: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> bool]
 
-  OnStatLoss: ItemHandlerHash
+  OnStatLoss: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle) -> bool]
 
   # Battler's status problem
-  StatusCure: ItemHandlerHash
+  StatusCure: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> bool]
 
   # Priority and turn order
-  PriorityBracketChange: ItemHandlerHash
+  PriorityBracketChange: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> Integer]
 
-  PriorityBracketUse: ItemHandlerHash
+  PriorityBracketUse: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> void]
 
   # Move usage failures
-  OnMissingTarget: ItemHandlerHash
+  OnMissingTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle::Move, Integer, Battle) -> void]
 
   # Accuracy calculation
-  AccuracyCalcFromUser: ItemHandlerHash
+  AccuracyCalcFromUser: ItemHandlerHash[^(Symbol, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
-  AccuracyCalcFromTarget: ItemHandlerHash
+  AccuracyCalcFromTarget: ItemHandlerHash[^(Symbol, Hash[Symbol, Numeric], Battle::Battler, Battle::Battler, Battle::Move, Symbol) -> void]
 
   # Damage calculation
-  DamageCalcFromUser: ItemHandlerHash
+  DamageCalcFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  DamageCalcFromTarget: ItemHandlerHash
+  DamageCalcFromTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Move, Hash[Symbol, Numeric], Integer, Symbol) -> void]
 
-  CriticalCalcFromUser: ItemHandlerHash
+  CriticalCalcFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
-  CriticalCalcFromTarget: ItemHandlerHash
+  CriticalCalcFromTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Integer) -> Integer]
 
   # Upon a move hitting a target
-  OnBeingHit: ItemHandlerHash
+  OnBeingHit: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle::Move, Battle) -> void]
 
-  OnBeingHitPositiveBerry: ItemHandlerHash
+  OnBeingHitPositiveBerry: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> bool]
 
   # Items that trigger at the end of using a move
-  AfterMoveUseFromTarget: ItemHandlerHash
+  AfterMoveUseFromTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle::Move, bool, Battle) -> void]
 
-  AfterMoveUseFromUser: ItemHandlerHash
+  AfterMoveUseFromUser: ItemHandlerHash[^(Symbol, Battle::Battler, Array[Battle::Battler], Battle::Move, Integer, Battle) -> void]
 
-  OnEndOfUsingMove: ItemHandlerHash
+  OnEndOfUsingMove: ItemHandlerHash[^(Symbol, Battle::Battler, Array[Battle::Battler], Battle::Move, Battle) -> void]
 
-  OnEndOfUsingMoveStatRestore: ItemHandlerHash
+  OnEndOfUsingMoveStatRestore: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> bool]
 
   # Experience and EV gain
-  ExpGainModifier: ItemHandlerHash
+  ExpGainModifier: ItemHandlerHash[^(Symbol, Battle::Battler, Integer) -> Integer]
 
-  EVGainModifier: ItemHandlerHash
+  EVGainModifier: ItemHandlerHash[^(Symbol, Battle::Battler, Hash[Symbol, Integer]) -> void]
 
   # Weather and terrin
-  WeatherExtender: ItemHandlerHash
+  WeatherExtender: ItemHandlerHash[^(Symbol, Symbol, Integer, Battle::Battler, Battle) -> Integer]
 
-  TerrainExtender: ItemHandlerHash
+  TerrainExtender: ItemHandlerHash[^(Symbol, Symbol, Integer, Battle::Battler, Battle) -> Integer]
 
-  TerrainStatBoost: ItemHandlerHash
+  TerrainStatBoost: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> bool]
 
   # End Of Round
-  EndOfRoundHealing: ItemHandlerHash
+  EndOfRoundHealing: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> void]
 
-  EndOfRoundEffect: ItemHandlerHash
+  EndOfRoundEffect: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> void]
 
   # Switching and fainting
-  CertainSwitching: ItemHandlerHash
+  CertainSwitching: ItemHandlerHash[^(Symbol, Battle::Battler, Battle) -> bool]
 
-  TrappingByTarget: ItemHandlerHash
+  TrappingByTarget: ItemHandlerHash[^(Symbol, Battle::Battler, Battle::Battler, Battle) -> bool]
 
-  OnSwitchIn: ItemHandlerHash
+  OnSwitchIn: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> void]
 
-  OnIntimidated: ItemHandlerHash
+  OnIntimidated: ItemHandlerHash[^(Symbol, Battle::Battler, Battle, bool) -> void]
 
   # Running from battle
-  CertainEscapeFromBattle: ItemHandlerHash
+  CertainEscapeFromBattle: ItemHandlerHash[^(Symbol, Battle::Battler) -> bool]
 
-  def self.trigger: (ItemHandlerHash hash, *untyped args, ?ret: bool) -> untyped
+  def self.trigger: (ItemHandlerHash[Proc] hash, *untyped args, ?ret: bool) -> untyped
 
   def self.triggerSpeedCalc: (Symbol item, Battle::Battler battler, Numeric mult) -> Numeric
 

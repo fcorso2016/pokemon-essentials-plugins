@@ -70,6 +70,7 @@ end
 class PokemonSpeciesIconSprite < Sprite
   include _Refreshable
 
+  @animBitmap: AnimatedBitmap?
   @current_frame: Integer
   @frames_count: Integer
   @offset: Integer

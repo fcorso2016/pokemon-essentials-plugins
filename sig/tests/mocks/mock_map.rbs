@@ -1,0 +1,5 @@
+class MockMap
+  attr_reader name: String
+
+  def initialize: (String name) -> void
+end

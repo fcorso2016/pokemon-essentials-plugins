@@ -18,7 +18,7 @@ end
 
 class Window
   @_windowskin: Bitmap?
-  @sprites: Hash[String, _Visualizable]
+  @sprites: Hash[String, Sprite]
   @spritekeys: Array[String]
   @sidebitmaps: Array[Integer?]
   @cursorbitmap: Bitmap?

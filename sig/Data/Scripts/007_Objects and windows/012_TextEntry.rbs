@@ -53,7 +53,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   @cursorColumn: Integer
   @cursor_timer_start: Numeric
   @cursor_shown: bool
-  @textchars: Array[String]
+  @textchars: Array[line_broken_text]
 
   def initialize: (String text, Integer x, Integer y, Integer width, Integer height) -> void
   attr_reader baseColor: Color
@@ -66,7 +66,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   def maxlength=: (Integer value) -> void
   def insert: (String ch) -> bool
   def delete: -> bool
-  def getTextChars: -> Array[String]
+  def getTextChars: -> Array[line_broken_text]
   def getTotalLines: -> Integer
   def getLineY: (Integer line) -> Integer
   def getColumnsInLine: (Integer line) -> Integer

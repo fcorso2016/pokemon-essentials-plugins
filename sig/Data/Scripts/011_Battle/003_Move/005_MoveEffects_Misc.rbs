@@ -193,6 +193,7 @@ end
 # User turns 1/4 of max HP into a substitute. (Substitute)
 # ==============================================================================
 class Battle::Move::UserMakeSubstitute < Battle::Move
+  @subLife: Integer
 end
 
 # ==============================================================================
@@ -212,6 +213,7 @@ end
 # User switches places with its ally. (Ally Switch)
 # ==============================================================================
 class Battle::Move::UserSwapsPositionsWithAlly < Battle::Move
+  @idxAlly: Integer
 end
 
 # ==============================================================================

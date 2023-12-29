@@ -2,14 +2,14 @@
 
 # Classes
 module Input
-  USE: Symbol
-  BACK: Symbol
-  ACTION: Symbol
-  JUMPUP: Symbol
-  JUMPDOWN: Symbol
-  SPECIAL: Symbol
-  AUX1: Symbol
-  AUX2: Symbol
+  USE: button_enum
+  BACK: button_enum
+  ACTION: button_enum
+  JUMPUP: button_enum
+  JUMPDOWN: button_enum
+  SPECIAL: button_enum
+  AUX1: button_enum
+  AUX2: button_enum
 
   alias self.update_KGC_ScreenCapture self.update
 end

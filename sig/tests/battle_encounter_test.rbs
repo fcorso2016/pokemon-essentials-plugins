@@ -1,0 +1,11 @@
+TEST_MAP1: String
+
+class BattleEncounterTest < Minitest::Test
+  @battle: Battle
+
+  def test_caught_pokemon_add: -> void
+
+  def test_on_battle_entry_with_shadow: -> void
+
+  def test_on_battle_entry_without_shadow: -> void
+end

@@ -1,0 +1,10 @@
+EXPECTED_IVS: Hash[Symbol, Integer]
+
+class ShadowPokemonDataTest < Minitest::Test
+  def test_register_snag_and_purify: -> void
+
+  def test_shadow_and_snag_order: -> void
+
+  def test_snag_index: -> void
+
+end

@@ -4,20 +4,28 @@
 module EventHandlers
   @@events: Hash[Symbol, NamedEvent]
 
-  def self.add: (Symbol event, Symbol key, Proc proc) -> void
-  def self.remove: (Symbol event, Symbol key) -> void
+  def self.add: (Symbol event, String key, Proc proc) -> void
+  def self.remove: (Symbol event, String key) -> void
   def self.clear: (Symbol key) -> void
   def self.trigger: (Symbol event, *untyped args) -> void
 end
 
 module MenuHandlers
-  @@handlers: Hash[Symbol, HandlerHash[Symbol]]
+  type hash_schema = {
+      "name" => _ToS | ^() -> _ToS,
+      "icon_name" => String,
+      "order" => Integer,
+      "condition" => ^() -> boolish,
+      "effect" => ^(?untyped) -> boolish
+    }
 
-  def self.add: (Symbol menu, Symbol option, Hash[String, untyped] hash) -> void
+  @@handlers: Hash[Symbol, HandlerHash[Symbol, hash_schema]]
+
+  def self.add: (Symbol menu, Symbol option, hash_schema hash) -> void
   def self.remove: (Symbol menu, Symbol option) -> void
   def self.clear: (Symbol menu) -> void
   def self.each: (Symbol menu) -> void
-  def self.each_available: (Symbol menu, *untyped args) { (Symbol, HandlerHash[Symbol], String) -> void } -> void
+  def self.each_available: (Symbol menu, *untyped args) { (Symbol, HandlerHash[Symbol, hash_schema], String) -> void } -> void
   def self.call: (Symbol menu, Symbol option, String function, *untyped args) -> void
 end
 

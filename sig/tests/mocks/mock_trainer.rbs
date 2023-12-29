@@ -1,0 +1,6 @@
+class MockTrainer
+  attr_reader gender: Integer
+  attr_reader name: String
+
+  def initialize: (String name, Integer gender) -> void
+end

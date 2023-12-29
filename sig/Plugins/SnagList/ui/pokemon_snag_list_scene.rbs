@@ -1,21 +1,35 @@
 class PokemonSnagListScene
-  SPECIES_NAME_REGEX: String
+
+  type sprite_hash = {
+      "background" => AnimatedPlane,
+      "snagEntry" => AnimatedPlane,
+      "snagList" => WindowSnagList,
+      "icon" => PokemonSprite,
+      "overlay" => BitmapSprite,
+      "entryicon" => PokemonSprite
+    }
 
   @hw_bitmap: AnimatedBitmap
   @shape_bitmap: AnimatedBitmap
   @slider_bitmap: AnimatedBitmap
   @snag_order: Array[snag_entry]
-  @sprites: Hash[String, AnimatedSprite]
+  @sprites: sprite_hash
   @type_bitmap: AnimatedBitmap
   @viewport: Viewport
+
+  def start_scene: () -> void
+
+  def snag_entry: () -> void
+
+  def end_scene: () -> void
+
+
+  private
 
   def update: () -> void
 
   def set_icon_bitmap: (untyped species) -> void
 
-  def start_scene: () -> void
-
-  type snag_entry = {:species => Symbol, :name => String}
   def get_snag_list: () -> Array[snag_entry]
 
   def refresh_snag_list: (?Integer index) -> void
@@ -26,22 +40,15 @@ class PokemonSnagListScene
 
   def snag_entry_on_index: (Integer index) -> void
 
-  def snag_entry: () -> void
-
-  def end_scene: () -> void
-
-  private
-
-
   def parse_pokemon_location: (Symbol species) -> String
 
-  def parse_evolution_line: (Symbol original, Pokemon pkmn) -> bool
+  def parse_evolution_line: (Symbol original, Pokemon? pkmn) -> bool
 
   def window_loop: (Integer current_index, Integer new_page, Integer page, Integer ret) -> void
 
-  def cursor_down: (Integer current_index, Integer new_page, Integer page) -> void
+  def cursor_down: (Integer current_index, Integer new_page, Integer page) -> [Integer, Integer]
 
-  def cursor_up: (Integer current_index, Integer new_page, Integer page) -> void
+  def cursor_up: (Integer current_index, Integer new_page, Integer page) -> [Integer, Integer]
 
   def on_window_cancel: (Integer page) -> void
 end

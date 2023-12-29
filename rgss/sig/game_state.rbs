@@ -1,0 +1,3 @@
+class GameState
+  def initialize: (String window_name, Array[String] args, ?bool show) -> void
+end

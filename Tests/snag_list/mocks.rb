@@ -24,10 +24,10 @@ class MockPokemon
     @level = level
     @gender = gender
     @form = form
-    @iv = ivs
+    @iv = convert_ivs(ivs)
     @nature = nature
     @ability_index = ability
-    @moves = moves
+    @moves = convert_moves(moves)
     @owner = owner
     @shadow = shadow
   end
@@ -35,6 +35,24 @@ class MockPokemon
   def shadowPokemon?
     @shadow
   end
+
+  private
+  def convert_ivs(ivs)
+    # @type var ret: Hash[Symbol, Integer]
+    ret = {}
+    index = 0
+    GameData::Stat.each_main do |stat|
+      ret[stat.id] = ivs[index]
+      index += 1
+    end
+
+    return ret
+  end
+
+  def convert_moves(moves)
+    return moves.map {|id| next Pokemon::Move.new(id) }
+  end
+
 end
 
 class MockBattler
