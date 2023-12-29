@@ -23,11 +23,11 @@ jobs:
 
       - name: Validate Types
         continue-on-error: true
-        run: steep validate --log-output=steep_log.txt --severity-level=hint > rbs_report.txt
+        run: steep validate --log-output=steep_log.txt --severity-level=information > rbs_report.txt
 
       - name: Check Type Usages
         continue-on-error: true
-        run: steep check --log-output=steep_log.txt --severity-level=hint >> rbs_report.txt
+        run: steep check --log-output=steep_log.txt --severity-level=information >> rbs_report.txt
 
       - name: Generate Report
         run: ruby ./type_reporter.rb

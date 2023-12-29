@@ -25,12 +25,12 @@ class Trainer
   end
 
   def register_snag(pokemon)
-    return unless @shadow_seen[pokemon.species]
+    return unless @shadow_seen.has_key?(pokemon.species)
     @shadow_seen[pokemon.species].register_snagged(pokemon)
   end
 
   def register_purification(pokemon)
-    return unless @shadow_seen[pokemon.species]
+    return unless @shadow_seen.has_key?(pokemon.species)
     @shadow_seen[pokemon.species].register_purified
   end
 end

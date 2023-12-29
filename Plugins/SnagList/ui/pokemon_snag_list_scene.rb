@@ -259,7 +259,7 @@ class PokemonSnagListScene
 
   def parse_evolution_line(original, pkmn)
     return false if pkmn.nil?
-    return false unless $player.shadow_seen[original]
+    return false unless $player.shadow_seen.has_key?(original)
     return true if original == pkmn.species
     branches = GameData::Species.get(original).get_evolutions(true)
     branches.each do |evo|
@@ -295,12 +295,12 @@ class PokemonSnagListScene
 
   def cursor_down(current_index, new_page, page)
     next_index = -1
-    (current_index + 1...@snag_order.length).each { |i|
+    (current_index + 1...@snag_order.length).each do |i|
       if $player.shadow_seen[@snag_order[i][:species]]
         next_index = i
-        break
+        break (current_index + 1..i)
       end
-    }
+    end
     if next_index >= 0
       current_index = next_index
       new_page = page

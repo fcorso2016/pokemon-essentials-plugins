@@ -34,7 +34,7 @@ class WindowSnagList < Window_DrawableCommand
     return if index >= self.top_row + self.page_item_max
     rect = Rect.new(rect.x + 16, rect.y, rect.width - 16, rect.height)
     species = @commands[index][:species]
-    if $player.shadow_seen[species]
+    if $player.shadow_seen.has_key?(species)
       if $player.shadow_seen[species].snagged
         pbCopyBitmap(self.contents, @pokeball_snagged.bitmap, rect.x - 6, rect.y + 8)
       else
