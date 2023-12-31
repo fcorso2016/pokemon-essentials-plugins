@@ -771,14 +771,14 @@ end
 
 # Replaces first argument with a localized version and formats the other
 # parameters by replacing {1}, {2}, etc. with those placeholders.
-def _INTL(*arg)
+def _INTL(fmt, *arg)
   begin
-    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, arg[0])
+    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
     string = arg[0]
   end
   string = string.clone
-  (1...arg.length).each do |i|
+  (0...arg.length).each do |i|
     string.gsub!(/\{#{i}\}/, arg[i].to_s)
   end
   return string
@@ -787,14 +787,14 @@ end
 # Replaces first argument with a localized version and formats the other
 # parameters by replacing {1}, {2}, etc. with those placeholders.
 # This version acts more like sprintf, supports e.g. {1:d} or {2:s}
-def _ISPRINTF(*arg)
+def _ISPRINTF(fmt, *arg)
   begin
-    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, arg[0])
+    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
     string = arg[0]
   end
   string = string.clone
-  (1...arg.length).each do |i|
+  (0...arg.length).each do |i|
     string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
@@ -804,19 +804,19 @@ def _I(str, *arg)
   return _MAPINTL($game_map.map_id, str, *arg)
 end
 
-def _MAPINTL(mapid, *arg)
-  string = MessageTypes.getFromMapHash(mapid, arg[0])
+def _MAPINTL(mapid, fmt, *arg)
+  string = MessageTypes.getFromMapHash(mapid, fmt)
   string = string.clone
-  (1...arg.length).each do |i|
+  (0...arg.length).each do |i|
     string.gsub!(/\{#{i}\}/, arg[i].to_s)
   end
   return string
 end
 
-def _MAPISPRINTF(mapid, *arg)
-  string = MessageTypes.getFromMapHash(mapid, arg[0])
+def _MAPISPRINTF(mapid, fmt, *arg)
+  string = MessageTypes.getFromMapHash(mapid, fmt)
   string = string.clone
-  (1...arg.length).each do |i|
+  (0...arg.length).each do |i|
     string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
