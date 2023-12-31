@@ -1,15 +1,18 @@
 # TypeProf 0.21.3
 
+type zero = 0
+type message_data = Array[Array[Hash[String, String]] | Hash[String, String]]
+
 # Classes
 class Object
   private
   def pbGetMessage: (Integer `type`, Integer id) -> String
   def pbGetMessageFromHash: (Integer `type`, String id) -> String
-  def _INTL: (String formt, *_ToS args) -> String
-  def _ISPRINTF: (String formt, *_ToS args) -> String
-  def _I: (String str, *_ToS arg) -> String
-  def _MAPINTL: (Integer mapid, String formt, *_ToS args) -> String
-  def _MAPISPRINTF: (Integer mapid, String formt, *_ToS args) -> String
+  def _INTL: (String formt, *(_ToS & _Clonable) args) -> String
+  def _ISPRINTF: (String formt, *(_ToS & _Clonable) args) -> String
+  def _I: (String str, *(_ToS & _Clonable) arg) -> String
+  def _MAPINTL: (Integer mapid, String formt, *(_ToS & _Clonable) args) -> String
+  def _MAPISPRINTF: (Integer mapid, String formt, *(_ToS & _Clonable) args) -> String
 end
 
 module Translator
@@ -25,33 +28,33 @@ module Translator
 end
 
 class Translation
-  @default_core_messages: Array[indexed_set[String]]?
-  @default_game_messages: Array[indexed_set[String]]?
+  @default_core_messages: message_data?
+  @default_game_messages: message_data?
   @filename: String?
 
-  attr_reader core_messages: Array[indexed_set[String]]?
-  attr_reader game_messages: Array[indexed_set[String]]?
+  attr_reader core_messages: message_data?
+  attr_reader game_messages: message_data?
   def self.stringToKey: (String str) -> String
   def initialize: (?String? filename, ?bool delay_load) -> void
-  def default_core_messages: -> Array[indexed_set[String]]?
-  def default_game_messages: -> Array[indexed_set[String]]?
+  def default_core_messages: -> message_data?
+  def default_game_messages: -> message_data?
   def load_message_files: (String? filename) -> void
-  def load_default_messages: -> Array[indexed_set[String]]?
+  def load_default_messages: -> void
   def save_default_messages: -> void
-  def setMessages: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def addMessages: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def setMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def addMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def setMapMessagesAsHash: (Integer map_id, Array[indexed_set[String]] array) -> void
-  def addMapMessagesAsHash: (Integer map_id, Array[indexed_set[String]] array) -> void
+  def setMessages: (Integer `type`, Array[String] array) -> void
+  def addMessages: (Integer `type`, Array[String] array) -> void
+  def setMessagesAsHash: (Integer `type`, Array[String] array) -> void
+  def addMessagesAsHash: (Integer `type`, Array[String] array) -> void
+  def setMapMessagesAsHash: (Integer map_id, Array[String] array) -> void
+  def addMapMessagesAsHash: (Integer map_id, Array[String] array) -> void
   def get: (Integer `type`, Integer id) -> String
   def getFromHash: (Integer `type`, String text) -> String
   def getFromMapHash: (Integer map_id, String text) -> String
 
   private
   def delayed_load_message_files: -> void
-  def priv_add_to_array: (Integer `type`, Array[indexed_set[String]] array, Array[indexed_set[String]] ret) -> Array[String]
-  def priv_add_to_hash: (Integer `type`, Array[indexed_set[String]] array, Array[indexed_set[String]] ret, ?Integer map_id) -> Hash[Integer, String]
+  def priv_add_to_array: (Integer `type`, Array[String] array, Array[String]? ret) -> Array[String]
+  def priv_add_to_hash: (Integer `type`, Array[String] array, Hash[String, String]? ret, ?Integer map_id) -> Hash[String, String]
 end
 
 module MessageTypes
@@ -88,15 +91,15 @@ module MessageTypes
   POKEMON_NICKNAMES: Integer
   @@messages: Translation
 
-  def self.load_default_messages: -> Array[indexed_set[String]]?
+  def self.load_default_messages: -> void
   def self.load_message_files: (String filename) -> void
   def self.save_default_messages: -> void
-  def self.setMessages: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def self.addMessages: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def self.setMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def self.addMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def self.setMapMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
-  def self.addMapMessagesAsHash: (Integer `type`, Array[indexed_set[String]] array) -> void
+  def self.setMessages: (Integer `type`, Array[String] array) -> void
+  def self.addMessages: (Integer `type`, Array[String] array) -> void
+  def self.setMessagesAsHash: (Integer `type`, Array[String] array) -> void
+  def self.addMessagesAsHash: (Integer `type`, Array[String] array) -> void
+  def self.setMapMessagesAsHash: (Integer `type`, Array[String] array) -> void
+  def self.addMapMessagesAsHash: (Integer `type`, Array[String] array) -> void
   def self.get: (Integer `type`, Integer id) -> String
   def self.getFromHash: (Integer `type`, String key) -> String
   def self.getFromMapHash: (Integer `type`, String key) -> String

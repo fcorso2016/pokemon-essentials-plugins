@@ -12,7 +12,7 @@ class Object
   def strsplit: (String str, Regexp re) -> Array[String]
   def canonicalize: (String c) -> String
   def pbRgssExists?: (String filename) -> bool
-  def pbRgssOpen: (String file, ?string | int mode) -> FileInputMixin
+  def pbRgssOpen: (String file, ?string | int mode) { (String) -> void } -> FileInputMixin?
   def pbGetFileChar: (String file) -> String?
   def pbTryString: (String x) -> String?
   def pbGetFileString: (String file) -> String?
@@ -60,7 +60,7 @@ class StringInput
 
   attr_reader lineno: Integer
   attr_reader string: String
-  def self.new: (String str) -> StringInput
+  def self.new: (String str) ?{(String) -> void } -> StringInput
   alias self.open self.new
   def initialize: (String str) -> void
   def close: -> void

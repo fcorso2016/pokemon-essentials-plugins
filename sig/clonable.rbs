@@ -1,0 +1,5 @@
+interface _Clonable
+
+  def clone: -> instance
+
+end
