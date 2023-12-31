@@ -1,0 +1,3 @@
+interface _OneArgConsumer[R, T]
+  def call: (T) -> R
+end
