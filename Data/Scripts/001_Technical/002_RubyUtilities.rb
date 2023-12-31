@@ -309,7 +309,7 @@ class Color
     case color
     when Color
       return color
-    when String, Numeric
+    when String, Integer
       return Color.new(color)
     end
     # returns nothing if wrong input
@@ -367,15 +367,18 @@ def rand(*args)
   Kernel.rand(*args)
 end
 
-class << Kernel
-  alias oldRand rand unless method_defined?(:oldRand)
+module Kernel
+  class <<self
+    alias oldRand rand unless method_defined?(:oldRand)
+  end
+
   def rand(a = nil, b = nil)
     if a.is_a?(Range)
       lo = a.min
       hi = a.max
       return lo + oldRand(hi - lo + 1)
-    elsif a.is_a?(Numeric)
-      if b.is_a?(Numeric)
+    elsif a.is_a?(Integer)
+      if b.is_a?(Integer)
         return a + oldRand(b - a + 1)
       else
         return oldRand(a)

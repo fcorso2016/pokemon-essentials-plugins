@@ -24,7 +24,7 @@ module PluginManager
   def self.credits: (String plugin_name) -> Array[String]?
   def self.compare_versions: (String v1, String v2) -> Integer
   def self.pluginErrorMsg: (String name, String script) -> void
-  def self.readMeta: (String dir, String file) -> void
+  def self.readMeta: (String dir, String file) -> Hash[Symbol, plugin]
   def self.listAll: -> Array[String]
   def self.validateDependencies: (String name, Hash[String, plugin] meta, ?Array[String]? og) -> nil
   def self.sortLoadOrder: (Array[String] order, Hash[String, plugin] plugins) -> Array[String]

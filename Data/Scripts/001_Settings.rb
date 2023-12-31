@@ -423,7 +423,7 @@ module Settings
   # called messages_FRAGMENT_core.dat and messages_FRAGMENT_game.dat (if they
   # exist).
   LANGUAGES = [
-#    ["English", "english"],
+    ["English", "english"],
 #    ["Deutsch", "deutsch"]
   ]
 

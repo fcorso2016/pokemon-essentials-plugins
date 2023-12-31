@@ -297,6 +297,7 @@ module Translator
       section_name = getConstantName(MessageTypes, i, false)
       next if !section_name
       if i == MessageTypes::EVENT_TEXTS
+        # @type var i: message_array_index
         if separate_map_files
           map_infos = pbLoadMapInfos
           default_messages[i].each_with_index do |map_msgs, map_id|
@@ -328,6 +329,7 @@ module Translator
           end
         end
       else   # MessageTypes sections
+        # @type var i: Integer
         next if !default_messages[i] || default_messages[i].length == 0
         File.open(dir_name + "/" + section_name + ".txt", "wb") do |f|
           write_header.call(f, true)
@@ -456,13 +458,20 @@ module Translator
         target_section = (is_map) ? all_text[MessageTypes::EVENT_TEXTS][section_id] : all_text[section_id]
         if target_section
           if text_hash.is_a?(Hash)
+            # @type var text_hash: Hash[String, String]
+            # @type var target_section: Hash[String, String]
             text_hash.each_key { |key| target_section[key] = text_hash[key] if text_hash[key] }
           else   # text_hash is an array
+            # @type var text_hash: Array[Hash[String, String]]
+            # @type var target_section: Array[Hash[String, String]]
             text_hash.each_with_index { |line, j| target_section[j] = line if line }
           end
         elsif is_map
+          # @type var text_hash: Hash[String, String]
           all_text[MessageTypes::EVENT_TEXTS][section_id] = text_hash
         else
+          # @type var section_id: Integer
+          # @type var text_hash: Hash[String, String]
           all_text[section_id] = text_hash
         end
       end
@@ -771,15 +780,15 @@ end
 
 # Replaces first argument with a localized version and formats the other
 # parameters by replacing {1}, {2}, etc. with those placeholders.
-def _INTL(*arg)
+def _INTL(fmt, *arg)
   begin
-    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, arg[0])
+    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
-    string = arg[0]
+    string = fmt
   end
   string = string.clone
-  (1...arg.length).each do |i|
-    string.gsub!(/\{#{i}\}/, arg[i].to_s)
+  (0...arg.length).each do |i|
+    string.gsub!(/\{#{i + 1}\}/, arg[i].to_s)
   end
   return string
 end
@@ -787,15 +796,15 @@ end
 # Replaces first argument with a localized version and formats the other
 # parameters by replacing {1}, {2}, etc. with those placeholders.
 # This version acts more like sprintf, supports e.g. {1:d} or {2:s}
-def _ISPRINTF(*arg)
+def _ISPRINTF(fmt, *arg)
   begin
-    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, arg[0])
+    string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
-    string = arg[0]
+    string = fmt
   end
   string = string.clone
-  (1...arg.length).each do |i|
-    string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
+  (0...arg.length).each do |i|
+    string.gsub!(/\{#{i + 1}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
 end
@@ -804,20 +813,20 @@ def _I(str, *arg)
   return _MAPINTL($game_map.map_id, str, *arg)
 end
 
-def _MAPINTL(mapid, *arg)
-  string = MessageTypes.getFromMapHash(mapid, arg[0])
+def _MAPINTL(mapid, fmt, *arg)
+  string = MessageTypes.getFromMapHash(mapid, fmt)
   string = string.clone
-  (1...arg.length).each do |i|
-    string.gsub!(/\{#{i}\}/, arg[i].to_s)
+  (0...arg.length).each do |i|
+    string.gsub!(/\{#{i + 1}\}/, arg[i].to_s)
   end
   return string
 end
 
-def _MAPISPRINTF(mapid, *arg)
-  string = MessageTypes.getFromMapHash(mapid, arg[0])
+def _MAPISPRINTF(mapid, fmt, *arg)
+  string = MessageTypes.getFromMapHash(mapid, fmt)
   string = string.clone
-  (1...arg.length).each do |i|
-    string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
+  (0...arg.length).each do |i|
+    string.gsub!(/\{#{i + 1}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
 end

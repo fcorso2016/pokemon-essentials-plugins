@@ -25,7 +25,7 @@ class Object
     (Window_AdvancedTextPokemon msgwindow, String message, ?bool letterbyletter, ?(^(Window_AdvancedTextPokemon) -> Integer)? commandProc) -> String
   def pbMessage: (String message, ?Array[String]? commands, ?Integer cmdIfCancel, ?String? skin, ?Integer defaultCmd) {(Window_AdvancedTextPokemon) -> Integer} -> Integer
   def pbConfirmMessage: (String message) {(Window_AdvancedTextPokemon) -> Integer} -> bool
-  def pbConfirmMessageSerious: (String message) {(Window_AdvancedTextPokemon) -> Integer} -> bool
+  def pbConfirmMessageSerious: (String message) ?{(Window_AdvancedTextPokemon) -> Integer} -> bool
   def pbMessageChooseNumber: (String message, ChooseNumberParams params) -> Integer
   def pbShowCommands: (Window_AdvancedTextPokemon msgwindow, ?Array[String]? commands, ?Integer cmdIfCancel, ?Integer defaultCmd) -> Integer
   def pbShowCommandsWithHelp: (Window_AdvancedTextPokemon msgwindow, Array[String] commands, Array[String] help, ?Integer cmdIfCancel, ?Integer defaultCmd) -> Integer
