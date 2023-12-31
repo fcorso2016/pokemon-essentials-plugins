@@ -1,0 +1,5 @@
+interface _OptionalConsumer[R, T]
+
+  def call: (?T) -> R
+
+end

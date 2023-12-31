@@ -15,8 +15,8 @@ module MenuHandlers
       "name" => _ToS | ^() -> _ToS,
       "icon_name" => String,
       "order" => Integer,
-      "condition" => ^() -> boolish,
-      "effect" => ^(?untyped) -> boolish
+      "condition" => _Producer[boolish],
+      "effect" => _OptionalConsumer[boolish, untyped]
     }
 
   @@handlers: Hash[Symbol, HandlerHash[Symbol, hash_schema]]

@@ -1,0 +1,5 @@
+interface _Producer[T]
+
+  def call: -> [T]
+
+end
