@@ -1,14 +1,5 @@
 class PokemonSnagListScene
 
-  type sprite_hash = {
-      "background" => AnimatedPlane,
-      "snagEntry" => AnimatedPlane,
-      "snagList" => WindowSnagList,
-      "icon" => PokemonSprite,
-      "overlay" => BitmapSprite,
-      "entryicon" => PokemonSprite
-    }
-
   interface _SpriteHash
 
     def []: ("background" | "snagEntry") -> AnimatedPlane |
