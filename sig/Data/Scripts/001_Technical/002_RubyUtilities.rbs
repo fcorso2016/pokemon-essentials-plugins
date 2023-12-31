@@ -44,7 +44,7 @@ end
 # ==============================================================================
 class Array[unchecked out Elem]
   # xor of two arrays
-  def ^: [T] (Array[T] other) -> Array[T | Elem]
+  def ^: (Array[Elem] other) -> Array[Elem]
 
   def swap: (Elem val1, Elem val2) -> void
 end
@@ -53,7 +53,7 @@ end
 # class Hash
 # ==============================================================================
 class Hash[unchecked out K, unchecked out V]
-  def deep_merge: [S, T] (Hash[S, T] hash) -> Hash[S | K, T | V]
+  def deep_merge: (Hash[K, V] hash) -> Hash[K, V]
 
   def deep_merge!: (Hash[K, V] hash) -> void
 end
@@ -172,10 +172,10 @@ class Object
   # ==============================================================================
   # Kernel methods
   # ==============================================================================
-  def rand: () -> number
+  def rand: () -> Float
     | (Integer arg0, ?Integer? arg1) -> Integer
     | (::Range[Integer] arg0) -> Integer
-    | (::Range[number] arg0) -> number
+    | (::Range[Float] arg0) -> Float
 end
 
 module Kernel

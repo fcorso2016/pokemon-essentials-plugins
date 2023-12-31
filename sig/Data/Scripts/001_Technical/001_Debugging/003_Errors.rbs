@@ -3,8 +3,8 @@
 # Classes
 class Object
   private
-  def pbGetExceptionMessage: (Exception? e, ?String _script) -> String
-  def pbPrintException: (Exception? e) -> void
+  def pbGetExceptionMessage: ((Exception | String)? e, ?String _script) -> String
+  def pbPrintException: ((Exception | String)? e) -> void
   def pbCriticalCode: {() -> void } -> Integer
 end
 

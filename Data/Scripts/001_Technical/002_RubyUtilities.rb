@@ -38,7 +38,6 @@ class String
     string_width = 0
     text = []
     string.scan(/./).each do |char|
-      # @type var char: String
       wdh = bitmap.text_size(char).width
       next if (wdh + string_width) > width
       string_width += wdh
@@ -181,7 +180,6 @@ class Color
   # New constructor, accepts RGB values as well as a hex number or string value.
   def initialize(*args)
     pbPrintException("Wrong number of arguments! At least 1 is needed!") if args.length < 1
-    # @type var args: [Integer] | [String] | [Numeric, Numeric, Numeric] | [Numeric, Numeric, Numeric, Numeric]
     case args.length
     when 1
       first = args.first

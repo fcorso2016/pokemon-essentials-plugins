@@ -4,7 +4,7 @@
 class Object
   private
 
-  def getCubicPoint2: [T < number] (Array[T] src, Integer t) -> [T, T]
+  def getCubicPoint2: [T < Numeric] (Array[T] src, Integer t) -> [T, T]
 
   def setPictureSprite: (Sprite_Picture sprite, PictureEx picture, ?bool iconSprite) -> void
 

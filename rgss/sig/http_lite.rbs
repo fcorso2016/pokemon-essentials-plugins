@@ -10,7 +10,7 @@ type http_response = {
 module HTTPLite
   def self.get: (String url, ?Hash[String, String] headers, ?bool follow_redirects) -> http_response
   def self.post: (String url, Hash[String, String] stringhash, ?Hash[String, String] headers, ?bool follow_redirects) -> http_response
-  def self.post_body: (String url, String bodycontent, String contenttype, ?Hash[String, String] headers, ?bool follow_redirects) -> http_response
+  def self.post_body: (String url, String bodycontent, String contenttype, ?Hash[String, String?] headers, ?bool follow_redirects) -> http_response
 
   module JSON
     def self.stringify: (untyped obj) -> String

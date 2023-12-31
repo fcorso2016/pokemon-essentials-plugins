@@ -5,7 +5,7 @@ class Object
   private
   def safeIsDirectory?: (String | IO f) -> bool
   def safeExists?: (String | IO f) -> bool
-  def safeGlob: (String dir, String wildcard) -> Array[String]?
+  def safeGlob: (String dir, String wildcard) {(String) -> void} -> Array[String]?
   def pbResolveAudioSE: (String file) -> String?
   def pbResolveBitmap: (String x) -> String?
   def pbBitmapName: (String x) -> String
