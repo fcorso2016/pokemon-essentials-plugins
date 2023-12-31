@@ -8,11 +8,11 @@ class Object
   private
   def pbGetMessage: (Integer `type`, Integer id) -> String
   def pbGetMessageFromHash: (Integer `type`, String id) -> String
-  def _INTL: (String formt, *(_ToS & _Clonable) args) -> String
-  def _ISPRINTF: (String formt, *(_ToS & _Clonable) args) -> String
-  def _I: (String str, *(_ToS & _Clonable) arg) -> String
-  def _MAPINTL: (Integer mapid, String formt, *(_ToS & _Clonable) args) -> String
-  def _MAPISPRINTF: (Integer mapid, String formt, *(_ToS & _Clonable) args) -> String
+  def _INTL: (String formt, *_ToS args) -> String
+  def _ISPRINTF: (String formt, *_ToS args) -> String
+  def _I: (String str, *_ToS arg) -> String
+  def _MAPINTL: (Integer mapid, String formt, *_ToS args) -> String
+  def _MAPISPRINTF: (Integer mapid, String formt, *_ToS args) -> String
 end
 
 module Translator
