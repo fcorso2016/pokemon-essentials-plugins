@@ -16,9 +16,9 @@ module Console
   def self?.echo_h1: (String msg) -> void
   def self?.echo_h2: (String msg, **Symbol) -> void
   def self?.echo_h3: (String msg) -> void
-  def self?.echo_li: (Array[String] msg, ?Integer pad, ?Symbol color) -> void
-  def self?.echoln_li: (Array[String] msg, ?Integer pad, ?Symbol color) -> void
-  def self?.echoln_li_done: (Array[String] msg) -> void
+  def self?.echo_li: (String msg, ?Integer pad, ?Symbol color) -> void
+  def self?.echoln_li: (String msg, ?Integer pad, ?Symbol color) -> void
+  def self?.echoln_li_done: (String msg) -> void
   def self?.echo_p: (String msg) -> void
   def self?.echo_warn: (String msg) -> void
   def self?.echo_error: (String msg) -> void

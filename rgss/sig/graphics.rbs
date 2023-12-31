@@ -68,9 +68,9 @@ module Graphics
   def self?.last_mile_scaling=: (bool value) -> bool
 
 
-  def self?.full_screen: -> bool
+  def self?.fullscreen: -> bool
 
-  def self?.full_screen=: (bool value) -> bool
+  def self?.fullscreen=: (bool value) -> bool
 end
 
 

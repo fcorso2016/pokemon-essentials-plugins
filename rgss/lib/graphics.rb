@@ -129,11 +129,11 @@ module Graphics
     fail NotImplementedError
   end
 
-  def full_screen
+  def fullscreen
     fail NotImplementedError
   end
 
-  def full_screen=(value)
+  def fullscreen=(value)
     fail NotImplementedError
   end
 
