@@ -10,7 +10,7 @@ module RPG
     def self.debug: -> untyped
     def self.setKey: (String key, Bitmap obj) -> void
     def self.fromCache: (Array[Integer | String] | String i) -> nil
-    def self.tileEx: (String filename, Integer tile_id, Numeric hue, ?Integer width, ?Integer height) ?{ (untyped) -> untyped } -> BitmapWrapper
+    def self.tileEx: (String filename, Integer tile_id, number hue, ?Integer width, ?Integer height) ?{ (untyped) -> untyped } -> BitmapWrapper
     def self.transition: (String filename) -> BitmapWrapper?
     def self.ui: (String filename) -> BitmapWrapper?
     def self.retain: (String folder_name, ?String filename, ?Integer hue) -> true?

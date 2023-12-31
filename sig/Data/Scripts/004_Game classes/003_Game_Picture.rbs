@@ -3,40 +3,40 @@
 # Classes
 class Game_Picture
   @duration: Integer
-  @move_timer_start: Numeric?
-  @target_x: Numeric
-  @target_y: Numeric
-  @target_zoom_x: Numeric
-  @target_zoom_y: Numeric
-  @target_opacity: Numeric
+  @move_timer_start: number?
+  @target_x: number
+  @target_y: number
+  @target_zoom_x: number
+  @target_zoom_y: number
+  @target_opacity: number
   @tone_target: Tone
-  @tone_duration: Numeric
-  @tone_timer_start: Numeric?
-  @rotate_speed: Numeric
-  @initial_x: Numeric?
-  @initial_y: Numeric?
-  @initial_zoom_x: Numeric?
-  @initial_zoom_y: Numeric?
-  @initial_opacity: Numeric?
-  @rotate_timer: Numeric?
+  @tone_duration: number
+  @tone_timer_start: number?
+  @rotate_speed: number
+  @initial_x: number?
+  @initial_y: number?
+  @initial_zoom_x: number?
+  @initial_zoom_y: number?
+  @initial_opacity: number?
+  @rotate_timer: number?
   @tone_initial: Tone?
 
   attr_reader number: Integer
   attr_reader name: String
   attr_reader origin: Integer
-  attr_reader x: Numeric
-  attr_reader y: Numeric
-  attr_reader zoom_x: Numeric
-  attr_reader zoom_y: Numeric
-  attr_reader opacity: Numeric
-  attr_reader blend_type: Numeric
+  attr_reader x: number
+  attr_reader y: number
+  attr_reader zoom_x: number
+  attr_reader zoom_y: number
+  attr_reader opacity: number
+  attr_reader blend_type: number
   attr_reader tone: Tone
-  attr_reader angle: Numeric
+  attr_reader angle: number
   def initialize: (Integer number) -> void
-  def show: (String name, Integer origin, Numeric x, Numeric y, Numeric zoom_x, Numeric zoom_y, Numeric opacity, Integer blend_type) -> void
-  def move: (Numeric duration, Integer origin, Numeric x, Numeric y, Numeric zoom_x, Numeric zoom_y, Numeric opacity, Integer blend_type) -> void
-  def rotate: (Numeric speed) -> void
-  def start_tone_change: (Tone tone, Numeric duration) -> void
+  def show: (String name, Integer origin, number x, number y, number zoom_x, number zoom_y, number opacity, Integer blend_type) -> void
+  def move: (number duration, Integer origin, number x, number y, number zoom_x, number zoom_y, number opacity, Integer blend_type) -> void
+  def rotate: (number speed) -> void
+  def start_tone_change: (Tone tone, number duration) -> void
   def erase: -> void
   def update: -> void
 end

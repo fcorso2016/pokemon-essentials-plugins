@@ -56,8 +56,8 @@ class PokemonPokedex_Scene
   type dex_option = {
       :species => Symbol,
       :name    => String,
-      :height  => Numeric,
-      :weight  => Numeric,
+      :height  => number,
+      :weight  => number,
       :number  => Integer,
       :shift   => bool,
       :types   => Array[Symbol],

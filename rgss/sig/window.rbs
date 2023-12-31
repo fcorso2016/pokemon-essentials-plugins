@@ -29,9 +29,9 @@ class Window
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer
-  attr_accessor opacity: Numeric
-  attr_accessor back_opacity: Numeric
-  attr_accessor contents_opacity: Numeric
+  attr_accessor opacity: number
+  attr_accessor back_opacity: number
+  attr_accessor contents_opacity: number
 end
 
 

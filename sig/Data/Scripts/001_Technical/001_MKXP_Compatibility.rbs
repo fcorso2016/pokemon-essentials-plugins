@@ -7,7 +7,7 @@ end
 class Object
   def pbSetWindowText: (String string) -> void
 
-  def pbSetResizeFactor: (String factor) -> void
+  def pbSetResizeFactor: (Integer factor) -> void
 end
 
 

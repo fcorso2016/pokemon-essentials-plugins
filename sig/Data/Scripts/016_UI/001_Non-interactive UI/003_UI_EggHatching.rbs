@@ -29,7 +29,7 @@ class PokemonEggHatch_Scene
   def swingEgg: (Integer speed, ?Integer swingTimes) -> void
 
   # Can be used for "wait" effect.
-  def updateScene: (?Numeric duration) -> void
+  def updateScene: (?number duration) -> void
 end
 
 # ==============================================================================

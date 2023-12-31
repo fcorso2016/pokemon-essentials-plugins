@@ -6,7 +6,7 @@ module RPG
     include _Disposable
     include _Updatable
 
-    @fade_time: Numeric
+    @fade_time: number
     @fading: bool
     @new_max: Integer
     @new_sprite_lifetimes: Array[Integer]
@@ -21,8 +21,8 @@ module RPG
     @target_max: Integer
     @target_tone: Tone
     @target_type: Symbol
-    @tile_x: Numeric
-    @tile_y: Numeric
+    @tile_x: number
+    @tile_y: number
     @tiles: Array[Sprite]
     @tiles_tall: Integer
     @tiles_wide: Integer
@@ -30,7 +30,7 @@ module RPG
     @time_until_flash: Integer
     @viewport: Viewport
 
-    @weatherTypes: Hash[Symbol, [GameData::Weather, Array[Bitmap], Array[Bitmap], Numeric, Numeric, Numeric, Numeric, Numeric]]
+    @weatherTypes: Hash[Symbol, [GameData::Weather, Array[Bitmap], Array[Bitmap], number, number, number, number, number]]
 
     attr_reader type: Symbol
 

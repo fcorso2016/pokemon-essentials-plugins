@@ -25,7 +25,7 @@ class IntroEventScene < EventScene
 
   @pic2: PictureEx
 
-  @timer: Numeric
+  @timer: number
 
   def initialize: (?Viewport? viewport) -> void
 

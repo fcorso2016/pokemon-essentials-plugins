@@ -38,6 +38,7 @@ class String
     string_width = 0
     text = []
     string.scan(/./).each do |char|
+      # @type var char: String
       wdh = bitmap.text_size(char).width
       next if (wdh + string_width) > width
       string_width += wdh
@@ -180,13 +181,15 @@ class Color
   # New constructor, accepts RGB values as well as a hex number or string value.
   def initialize(*args)
     pbPrintException("Wrong number of arguments! At least 1 is needed!") if args.length < 1
+    # @type var args: [Integer] | [String] | [Numeric, Numeric, Numeric] | [Numeric, Numeric, Numeric, Numeric]
     case args.length
     when 1
-      case args.first
+      first = args.first
+      case first
       when Integer
-        hex = args.first.to_s(16)
+        hex = first.to_s(16)
       when String
-        try_rgb_format = args.first.split(",")
+        try_rgb_format = first.split(",")
         init_original(*try_rgb_format.map(&:to_i)) if try_rgb_format.length.between?(3, 4)
         hex = args.first.delete("#")
       end
@@ -341,10 +344,10 @@ end
 # wrapper.execute  #=>  "Hi"
 #===============================================================================
 class CallbackWrapper
-  @params = {}
 
   def initialize(&block)
     @code_block = block
+    @params = {}
   end
 
   def execute(given_block = nil, *args)

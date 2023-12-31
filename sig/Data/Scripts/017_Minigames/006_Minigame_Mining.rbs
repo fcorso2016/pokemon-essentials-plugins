@@ -32,7 +32,7 @@ class MiningGameCursor < BitmapSprite
   @cursorbitmap: AnimatedBitmap
   @hit: Integer
 
-  @hit_timer_start: Numeric
+  @hit_timer_start: number
   @hitsbitmap: AnimatedBitmap
   @toolbitmap: AnimatedBitmap
 
@@ -40,7 +40,7 @@ class MiningGameCursor < BitmapSprite
 
   attr_accessor mode: untyped
 
-  HIT_FRAME_DURATION: Float
+  HIT_FRAME_DURATION: number
 
   TOOL_POSITIONS: Array[Array[Integer]]
 

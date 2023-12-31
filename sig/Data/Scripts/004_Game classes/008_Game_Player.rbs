@@ -16,11 +16,11 @@ class Game_Player
 
   SCREEN_CENTER_X: Integer
   SCREEN_CENTER_Y: Integer
-  SURF_BOB_DURATION: Float
+  SURF_BOB_DURATION: number
   @lastdir: Integer
   @lastdirframe: Integer
   @move_route_forcing: bool
-  @move_speed: Numeric
+  @move_speed: number
   @bumping: bool
   @x: Integer
   @y: Integer
@@ -28,8 +28,8 @@ class Game_Player
   @direction: Integer
   @opacity: Integer
   @blend_type: Integer
-  @real_x: Numeric
-  @real_y: Numeric
+  @real_x: number
+  @real_y: number
   @last_terrain_tag: Integer
   @moved_last_frame: bool
   @moved_this_frame: bool
@@ -78,7 +78,7 @@ class Game_Player
   def update_move: -> void
   def update_stop: -> void
   def update_pattern: -> void
-  def update_screen_position: (Numeric last_real_x, Numeric last_real_y) -> void
+  def update_screen_position: (number last_real_x, number last_real_y) -> void
   def update_event_triggering: -> void
 end
 

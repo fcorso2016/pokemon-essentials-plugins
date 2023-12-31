@@ -5,7 +5,7 @@ class Object
   private
   def pbGetExceptionMessage: (Exception? e, ?String _script) -> String
   def pbPrintException: (Exception? e) -> void
-  def pbCriticalCode: -> Integer
+  def pbCriticalCode: {() -> void } -> Integer
 end
 
 class Reset < Exception

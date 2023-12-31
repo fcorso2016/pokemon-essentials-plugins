@@ -40,8 +40,8 @@ class PokemonDuel
   @event: Game_Event
 
   @hp: [Integer, Integer]
-  @oldeventspeed: Numeric
-  @oldmovespeed: Numeric
+  @oldeventspeed: number
+  @oldmovespeed: number
   @special: [bool, bool]
   @sprites: Hash[String, _Visualizable]
   @viewport: Viewport

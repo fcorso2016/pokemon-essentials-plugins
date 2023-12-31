@@ -13,8 +13,8 @@ class Game_System
 
   attr_reader map_interpreter: Interpreter
   attr_reader battle_interpreter: Interpreter
-  attr_accessor timer_start: Numeric?
-  attr_accessor timer_duration: Numeric
+  attr_accessor timer_start: number?
+  attr_accessor timer_duration: number
   attr_accessor save_disabled: bool
   attr_accessor menu_disabled: false
   attr_accessor encounter_disabled: false
@@ -29,11 +29,11 @@ class Game_System
   def bgm_play: (?RPG::AudioFile? | String bgm, ?Integer? track) -> Integer
   def bgm_play_internal2: (String name, Integer volume, Integer pitch, Integer position, ?Integer? track) -> void
   def bgm_play_internal: (?RPG::AudioFile? bgm, Integer position, Integer? track) -> void
-  def bgm_pause: (?Float fadetime) -> void
+  def bgm_pause: (?number fadetime) -> void
   def bgm_unpause: -> void
   def bgm_resume: (RPG::AudioFile? | String bgm) -> void
   def bgm_stop: (?Integer? track) -> void
-  def bgm_fade: (Float time, ?Integer? track) -> void
+  def bgm_fade: (number time, ?Integer? track) -> void
   def playing_bgm: -> RPG::AudioFile?
   def bgm_memorize: -> void
   def bgm_restore: -> Integer
@@ -41,11 +41,11 @@ class Game_System
   def setDefaultBGM: (?RPG::AudioFile? | String bgm, ?Integer volume, ?Integer pitch) -> Integer
   def me_play: (RPG::AudioFile | String me) -> void
   def bgs_play: (?RPG::AudioFile? | String bgs) -> void
-  def bgs_pause: (?Float fadetime) -> void
+  def bgs_pause: (?number fadetime) -> void
   def bgs_unpause: -> void
   def bgs_resume: (RPG::AudioFile bgs) -> void
   def bgs_stop: -> void
-  def bgs_fade: (Float time) -> void
+  def bgs_fade: (number time) -> void
   def playing_bgs: -> RPG::AudioFile
   def bgs_memorize: -> void
   def bgs_restore: -> void
@@ -58,7 +58,7 @@ class Game_System
   attr_writer battle_end_me: RPG::AudioFile
   def windowskin_name: -> String
   attr_writer windowskin_name: String
-  def timer: -> Numeric
+  def timer: -> number
   def update: -> void
 end
 

@@ -26,8 +26,8 @@ class Window
   @disposed: bool
   @blankcontents: Bitmap
   @rpgvx: bool
-  @cursoropacity: Numeric
-  @pauseopacity: Numeric?
+  @cursoropacity: number
+  @pauseopacity: number?
   @pauseframe: Integer
   @backbitmap: Bitmap?
   @_contents: Bitmap?
@@ -36,12 +36,12 @@ class Window
   attr_reader color: Color
   attr_reader blend_type: Integer
   attr_reader contents_blend_type: Integer
-  attr_reader openness: Numeric
-  def openness=: (Numeric value) -> void
+  attr_reader openness: number
+  def openness=: (number value) -> void
   def tone=: (Tone value) -> void
   def color=: (Color value) -> void
   def blend_type=: (Integer value) -> void
-  def flash: (Color color, Numeric duration) -> void
+  def flash: (Color color, number duration) -> void
 
   private
   def ensureBitmap: (Bitmap? bitmap, Integer dwidth, Integer dheight) -> void

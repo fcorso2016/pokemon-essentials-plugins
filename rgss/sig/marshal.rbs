@@ -1,0 +1,5 @@
+module Marshal
+  def self.neverload: -> bool
+
+  def self.neverload=: (bool) -> bool
+end

@@ -13,15 +13,15 @@ module Console
   def self.readInput: -> String
   def self.readInput2: -> String
   def self.get_input: -> void
-  def self?.echo_h1: (Object msg) -> void
-  def self?.echo_h2: (Object msg, **Symbol) -> void
-  def self?.echo_h3: (Object msg) -> void
-  def self?.echo_li: (Object msg, ?Integer pad, ?Symbol color) -> void
-  def self?.echoln_li: (Object msg, ?Integer pad, ?Symbol color) -> void
-  def self?.echoln_li_done: (Object msg) -> void
-  def self?.echo_p: (Object msg) -> void
-  def self?.echo_warn: (Object msg) -> void
-  def self?.echo_error: (Object msg) -> void
+  def self?.echo_h1: (String msg) -> void
+  def self?.echo_h2: (String msg, **Symbol) -> void
+  def self?.echo_h3: (String msg) -> void
+  def self?.echo_li: (Array[String] msg, ?Integer pad, ?Symbol color) -> void
+  def self?.echoln_li: (Array[String] msg, ?Integer pad, ?Symbol color) -> void
+  def self?.echoln_li_done: (Array[String] msg) -> void
+  def self?.echo_p: (String msg) -> void
+  def self?.echo_warn: (String msg) -> void
+  def self?.echo_error: (String msg) -> void
   def self?.echo_status: (bool status) -> void
   def self?.echo_done: (bool status) -> void
   def self?.string_colors: -> Hash[Symbol, String]

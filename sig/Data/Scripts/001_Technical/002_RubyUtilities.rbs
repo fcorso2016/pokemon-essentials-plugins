@@ -62,7 +62,7 @@ end
 # module Enumerable
 # ==============================================================================
 module Enumerable[unchecked out Elem]
-  def transform: () -> Array[Elem]
+  def transform: () { (Elem) -> Elem } -> Array[Elem]
 end
 
 # ==============================================================================
@@ -87,16 +87,14 @@ end
 # class Color
 # ==============================================================================
 class Color
+  # New constructor, accepts RGB values as well as a hex number or string value.
+  def initialize: (number red, number green, number blue, ?number alpha) -> void
+    | (Integer | String rgb) -> void
+
   # alias for old constructor
   alias init_original initialize
 
-  # New constructor, accepts RGB values as well as a hex number or string value.
-  def initialize: (_Number red, _Number green, _Number blue, ?_Number alpha) -> void
-                  | () -> void
-                  | (Integer rgb) -> void
-                  | (String rgb) -> void
-
-  def self.new_from_rgb: (Integer param) -> Color
+  def self.new_from_rgb: (String param) -> Color
 
   # @return [String] the 15-bit representation of this color in a string, ignoring its alpha
   def to_rgb15: () -> String
@@ -163,7 +161,7 @@ class CallbackWrapper[U]
   @code_block: ^(::Array[untyped]) [self: ::Array[untyped]] -> U
 
 
-  def initialize: (^(::Array[untyped]) [self: ::Array[untyped]] -> U block) -> void
+  def initialize: () {(::Array[untyped]) [self: ::Array[untyped]] -> U } -> void
 
   def execute: (?(^(::Array[untyped]) [self: ::Array[untyped]] -> U)? given_block, *untyped args) -> U
 
@@ -174,33 +172,15 @@ class Object
   # ==============================================================================
   # Kernel methods
   # ==============================================================================
-  def rand: () -> Float
+  def rand: () -> number
     | (Integer arg0, ?Integer? arg1) -> Integer
     | (::Range[Integer] arg0) -> Integer
-    | (::Range[Float] arg0) -> Float
+    | (::Range[number] arg0) -> number
 end
 
 module Kernel
   alias self.oldRand self.rand
   alias oldRand rand
-end
-
-interface _Number
-  include _ToI
-  include _ToF
-
-  def +: (_Number | Float | Integer) -> _Number
-  def -: (_Number | Float | Integer) -> _Number
-  def *: (_Number | Float | Integer) -> _Number
-  def /: (_Number | Float | Integer) -> _Number
-  def %: (_Number | Float | Integer) -> _Number
-  def **: (_Number | Float | Integer) -> _Number
-
-  def <: (_Number | Float | Integer) -> bool
-  def <=: (_Number | Float | Integer) -> bool
-  def >: (_Number | Float | Integer) -> bool
-  def >=: (_Number | Float | Integer) -> bool
-
 end
 
 class Object
@@ -212,7 +192,7 @@ class Object
   #   - the time passed since the start of the change (delta), or
   #   - the start time of the change (delta) and the current time (now)
   # ==============================================================================
-  def lerp: (_Number start_val, _Number end_val, _Number duration, _Number delta, ?_Number? now) -> _Number
+  def lerp: (number start_val, number end_val, number duration, number delta, ?number? now) -> number
 end
 
 

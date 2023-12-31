@@ -4,9 +4,9 @@
 class Object
   private
   def getOggPage: (File file) -> ([String, Integer, Integer, Integer]?)
-  def oggfiletime: (File file) -> Numeric
-  def getPlayTime: (String filename) -> (Numeric?)
-  def getPlayTime2: (String filename) -> Numeric
+  def oggfiletime: (File file) -> number
+  def getPlayTime: (String filename) -> (number?)
+  def getPlayTime2: (String filename) -> number
 end
 
 

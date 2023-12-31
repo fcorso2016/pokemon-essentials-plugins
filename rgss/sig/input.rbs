@@ -47,11 +47,7 @@ module Input
   def self?.mouse_x: -> Integer
   def self?.mouse_y: -> Integer
   def self?.mouse_in_window?: -> bool
-  def self?.time?: (button_enum i) -> Numeric
-
-  attr_accessor text_input: bool
-  attr_accessor clipboard: String
-  attr_accessor show_cursor: bool
+  def self?.time?: (button_enum i) -> number
 
   module Controller
 
@@ -62,13 +58,20 @@ module Input
     def repeatex?: (Symbol | Integer sym) -> bool
     def releaseex?: (Symbol | Integer sym) -> bool
     def power_level: -> Symbol
-    def axes_left: -> Float
-    def axes_right: -> Float
-    def axes_trigger: -> Array[Float]
+    def axes_left: -> number
+    def axes_right: -> number
+    def axes_trigger: -> Array[number]
     def raw_button_states: -> Array[bool]
-    def raw_axes: -> Array[Float]
+    def raw_axes: -> Array[number]
 
   end
+
+  def self?.text_input: -> bool
+  def self?.text_input=: (bool) -> bool
+  def self?.clipboard: -> String
+  def self?.clipboard=: (String) -> String
+  def self?.show_cursor: -> bool
+  def self?.show_cursort=: (bool) -> bool
 
 end
 

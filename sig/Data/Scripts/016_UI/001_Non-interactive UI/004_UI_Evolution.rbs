@@ -24,9 +24,9 @@ class PokemonEvolutionScene
   # Opens the evolution screen
   def pbEvolution: (?bool cancancel) -> void
 
-  def pbUpdateNarrowScreen: (Numeric timer_start) -> void
+  def pbUpdateNarrowScreen: (number timer_start) -> void
 
-  def pbUpdateExpandScreen: (Numeric timer_start) -> void
+  def pbUpdateExpandScreen: (number timer_start) -> void
 
   def pbFlashInOut: (bool canceled) -> void
 

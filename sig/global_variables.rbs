@@ -31,5 +31,5 @@ $save_engine_version: String
 $save_game_version: String
 $stats: GameStats
 
-
-
+$INTERNAL: bool
+$ResizeInitialized: bool

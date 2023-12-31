@@ -24,8 +24,8 @@ class Window_AdvancedTextPokemon < SpriteWindow_Base
 
   @endOfText: Rect?
   @scrollstate: Integer
-  @scrollY: Numeric
-  @scroll_timer_start: Numeric?
+  @scrollY: number
+  @scroll_timer_start: number?
   @realframes: Integer
   @nodraw: bool
   @lineHeight: Integer
@@ -36,12 +36,12 @@ class Window_AdvancedTextPokemon < SpriteWindow_Base
   @lastDrawnChar: Integer
   @fmtchars: Array[String]
   @text_delay_changed: bool
-  @text_delay: Numeric?
+  @text_delay: number?
   @pausesprite: AnimatedSprite?
   @numtextchars: Integer
-  @wait_timer_start: Numeric?
-  @display_timer: Numeric
-  @display_last_updated: Numeric?
+  @wait_timer_start: number?
+  @display_timer: number
+  @display_last_updated: number?
   @curchar: Integer
   @drawncurchar: Integer
   @textlength: Integer
@@ -57,17 +57,17 @@ class Window_AdvancedTextPokemon < SpriteWindow_Base
   attr_reader baseColor: Color
   attr_reader shadowColor: Color
   attr_accessor letterbyletter: bool
-  attr_reader waitcount: Numeric
+  attr_reader waitcount: number
   def initialize: (?String text) -> void
   def self.newWithSize: (String text, Integer x, Integer y, Integer width, Integer height, ?Viewport? viewport) -> Window_AdvancedTextPokemon
-  def waitcount=: (Numeric value) -> void
+  def waitcount=: (number value) -> void
   attr_reader cursorMode: Integer
   def cursorMode=: (Integer value) -> nil
   def lineHeight=: (Integer value) -> void
   def baseColor=: (Color value) -> void
   def shadowColor=: (Color value) -> void
-  def textspeed: -> Numeric
-  def textspeed=: (Numeric value) -> Numeric
+  def textspeed: -> number
+  def textspeed=: (number value) -> number
   def width=: (Integer value) -> String?
   def height=: (Integer value) -> String?
   def resizeToFit: (String text, ?Integer maxwidth) -> String?
@@ -100,7 +100,7 @@ class Window_InputNumberPokemon < SpriteWindow_Base
 
   @digits_max: Integer
   @number: Integer
-  @cursor_timer_start: Numeric
+  @cursor_timer_start: number
   @cursor_shown: bool
   @negative: bool
   @baseColor: Color

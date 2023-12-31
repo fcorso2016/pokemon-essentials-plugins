@@ -115,9 +115,29 @@ module Input
     end
 
 
-    attr_accessor :text_input
-    attr_accessor :clipboard
-    attr_accessor :show_cursor
+  def text_input
+    fail NotImplementedError
+  end
+
+  def text_input=(value)
+    fail NotImplementedError
+  end
+
+  def clipboard
+    fail NotImplementedError
+  end
+
+  def clipboard=(value)
+    fail NotImplementedError
+  end
+
+  def show_cursor
+    fail NotImplementedError
+  end
+
+  def show_cursor=(value)
+    fail NotImplementedError
+  end
 
     module Controller
 

@@ -23,17 +23,17 @@ class Sprite
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer
-  attr_accessor zoom_x: Numeric
-  attr_accessor zoom_y: Numeric
+  attr_accessor zoom_x: number
+  attr_accessor zoom_y: number
   attr_accessor angle: Integer
-  attr_accessor wave_amp: Numeric
-  attr_accessor wave_length: Numeric
-  attr_accessor wave_speed: Numeric
-  attr_accessor wave_phase: Numeric
+  attr_accessor wave_amp: number
+  attr_accessor wave_length: number
+  attr_accessor wave_speed: number
+  attr_accessor wave_phase: number
   attr_accessor mirror: bool
   attr_accessor bush_depth: Integer
   attr_accessor bush_opacity: Integer
-  attr_accessor opacity: Numeric
+  attr_accessor opacity: number
   attr_accessor blend_type: Integer
   attr_accessor color: Color
   attr_accessor tone: Tone
@@ -44,8 +44,8 @@ class Sprite
   attr_accessor pattern_scroll_x: Integer
   attr_accessor pattern_scroll_y: Integer
   attr_accessor pattern_opacity: Integer
-  attr_accessor pattern_zoom_x: Float
-  attr_accessor pattern_zoom_y: Float
+  attr_accessor pattern_zoom_x: number
+  attr_accessor pattern_zoom_y: number
   attr_accessor invert: bool
 end
 

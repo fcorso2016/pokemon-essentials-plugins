@@ -23,45 +23,45 @@ module BattleAnimationEditor
   #
   # ============================================================================
   class PointPath
-    include Enumerable[[Numeric, Numeric]]
+    include Enumerable[[number, number]]
     include _Inspectable
 
-    @distances: Array[Numeric]
-    @points: Array[[Numeric, Numeric]]
+    @distances: Array[number]
+    @points: Array[[number, number]]
 
-    @totaldist: Numeric
+    @totaldist: number
 
     def initialize: () -> void
 
-    def []: (Integer x) -> [Numeric, Numeric]
+    def []: (Integer x) -> [number, number]
 
-    def each: () { ([Numeric, Numeric]) -> void } -> void
+    def each: () { ([number, number]) -> void } -> void
 
     def size: () -> Integer
 
     def length: () -> Integer
 
-    def totalDistance: () -> Numeric
+    def totalDistance: () -> number
 
-    def isEndPoint?: (Numeric x, Numeric y) -> bool
+    def isEndPoint?: (number x, number y) -> bool
 
-    def addPoint: (Numeric x, Numeric y) -> void
+    def addPoint: (number x, number y) -> void
 
     def clear: () -> void
 
     def smoothPointPath: (Integer frames, ?bool roundValues) -> PointPath
 
-    def pointOnPath: (Numeric t) -> [Integer, Integer]?
+    def pointOnPath: (number t) -> [Integer, Integer]?
   end
 
   # ============================================================================
   #
   # ============================================================================
-  def self?.catmullRom: (Numeric p1, Numeric p2, Numeric p3, Numeric p4, Numeric t) -> Numeric
+  def self?.catmullRom: (number p1, number p2, number p3, number p4, number t) -> number
 
-  def self?.getCatmullRomPoint: (PointPath src, Numeric t) -> [Numeric, Numeric]
+  def self?.getCatmullRomPoint: (PointPath src, number t) -> [number, number]
 
-  def self?.getCurvePoint: (PointPath src, Numeric t) -> [Numeric, Numeric]
+  def self?.getCurvePoint: (PointPath src, number t) -> [number, number]
 
   def self?.curveToPointPath: (PointPath curve, Integer numpoints) -> void
 

@@ -1,4 +1,0 @@
-type indexed_set[T] = Array[T] | Hash[Integer, T]
-
-
-

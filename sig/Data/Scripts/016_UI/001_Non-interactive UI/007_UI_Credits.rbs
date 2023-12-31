@@ -58,8 +58,8 @@ class Scene_Credits
   @credit_sprites: Array[Sprite]
   @quit: bool
 
-  @realOY: Numeric
-  @timer_start: Numeric
+  @realOY: number
+  @timer_start: number
 
   @total_height: Integer
   @trim: Integer

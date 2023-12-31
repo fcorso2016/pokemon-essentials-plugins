@@ -541,11 +541,11 @@ class Translation
     return if @default_core_messages
     begin
       if FileTest.exist?("Data/messages_core.dat")
-        pbRgssOpen("Data/messages_core.dat", "rb") { |f| @default_core_messages = Marshal.load(f) }
+        pbRgssOpen("Data/messages_core.dat", "rb") { |f| @default_core_messages = Marshal.load(f.read) }
       end
       @default_core_messages = [] if !@default_core_messages.is_a?(Array)
       if FileTest.exist?("Data/messages_game.dat")
-        pbRgssOpen("Data/messages_game.dat", "rb") { |f| @default_game_messages = Marshal.load(f) }
+        pbRgssOpen("Data/messages_game.dat", "rb") { |f| @default_game_messages = Marshal.load(f.read) }
       end
       @default_game_messages = [] if !@default_game_messages.is_a?(Array)
     rescue

@@ -20,6 +20,7 @@ class Bitmap
       # rect, string & alignment
       mkxp_draw_text(x, y, width)
     else
+      # @type var x: Integer
       y -= (@text_offset_y || 0)
       height = text_size(text).height
       mkxp_draw_text(x, y, width, height, text, align)

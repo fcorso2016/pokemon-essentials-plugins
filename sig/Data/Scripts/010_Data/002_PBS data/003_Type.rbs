@@ -47,22 +47,22 @@ module Effectiveness
   NOT_VERY_EFFECTIVE: Integer
   NORMAL_EFFECTIVE: Integer
   SUPER_EFFECTIVE: Integer
-  INEFFECTIVE_MULTIPLIER: Float
-  NOT_VERY_EFFECTIVE_MULTIPLIER: Float
-  NORMAL_EFFECTIVE_MULTIPLIER: Float
-  SUPER_EFFECTIVE_MULTIPLIER: Float
+  INEFFECTIVE_MULTIPLIER: number
+  NOT_VERY_EFFECTIVE_MULTIPLIER: number
+  NORMAL_EFFECTIVE_MULTIPLIER: number
+  SUPER_EFFECTIVE_MULTIPLIER: number
 
-  def self?.ineffective?: (Numeric value) -> bool
-  def self?.not_very_effective?: (Numeric value) -> bool
-  def self?.resistant?: (Numeric value) -> bool
-  def self?.normal?: (Numeric value) -> bool
-  def self?.super_effective?: (Numeric value) -> bool
+  def self?.ineffective?: (number value) -> bool
+  def self?.not_very_effective?: (number value) -> bool
+  def self?.resistant?: (number value) -> bool
+  def self?.normal?: (number value) -> bool
+  def self?.super_effective?: (number value) -> bool
   def self?.ineffective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.not_very_effective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.resistant_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.normal_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.super_effective_type?: (Symbol attack_type, *Symbol defend_types) -> bool
   def self?.get_type_effectiveness: (Symbol attack_type, Symbol defend_type) -> Integer
-  def self?.calculate: (Symbol attack_type, *Symbol defend_types) -> Numeric
+  def self?.calculate: (Symbol attack_type, *Symbol defend_types) -> number
 end
 

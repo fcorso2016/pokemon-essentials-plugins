@@ -11,15 +11,15 @@ class SpriteAnimation
   @_animation: RPG::Animation?
   @_animation_hit: bool
   @_animation_height: Integer
-  @_animation_duration: Numeric
+  @_animation_duration: number
   @_animation_index: Integer
-  @_animation_time_per_frame: Numeric
-  @_animation_timer_start: Numeric
+  @_animation_time_per_frame: number
+  @_animation_timer_start: number
   @_loop_animation: RPG::Animation?
-  @_loop_animation_duration: Numeric
+  @_loop_animation_duration: number
   @_loop_animation_index: Integer
-  @_loop_animation_time_per_frame: Numeric
-  @_loop_animation_timer_start: Numeric
+  @_loop_animation_time_per_frame: number
+  @_loop_animation_timer_start: number
   @@_animations: Array[RPG::Animation]
   @@_reference_count: Hash[Bitmap, Integer]
 
@@ -31,7 +31,7 @@ class SpriteAnimation
   def viewport: () -> Viewport
   def flash: (Color color, Integer duration) -> void
   def src_rect: () -> Rect
-  def opacity: () -> Numeric
+  def opacity: () -> number
   def tone: () -> Tone
   def self.clear: -> void
   def animation: (RPG::Animation? animation, bool hit, ?Integer height) -> void
