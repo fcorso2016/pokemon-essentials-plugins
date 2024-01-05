@@ -582,7 +582,6 @@ module PluginManager
       meta = plugins[o].clone
       meta.delete(:scripts)
       meta.delete(:dir)
-      # @type var data: [String, Hash[String, plugin], Array[[File, String]]
       dat = [o, meta, []]
       # iterate through each file to deflate
       plugins[o][:scripts].each do |file|

@@ -297,7 +297,6 @@ module Translator
       section_name = getConstantName(MessageTypes, i, false)
       next if !section_name
       if i == MessageTypes::EVENT_TEXTS
-        # @type var i: message_array_index
         if separate_map_files
           map_infos = pbLoadMapInfos
           default_messages[i].each_with_index do |map_msgs, map_id|
@@ -329,7 +328,6 @@ module Translator
           end
         end
       else   # MessageTypes sections
-        # @type var i: Integer
         next if !default_messages[i] || default_messages[i].length == 0
         File.open(dir_name + "/" + section_name + ".txt", "wb") do |f|
           write_header.call(f, true)
@@ -458,20 +456,13 @@ module Translator
         target_section = (is_map) ? all_text[MessageTypes::EVENT_TEXTS][section_id] : all_text[section_id]
         if target_section
           if text_hash.is_a?(Hash)
-            # @type var text_hash: Hash[String, String]
-            # @type var target_section: Hash[String, String]
             text_hash.each_key { |key| target_section[key] = text_hash[key] if text_hash[key] }
           else   # text_hash is an array
-            # @type var text_hash: Array[Hash[String, String]]
-            # @type var target_section: Array[Hash[String, String]]
             text_hash.each_with_index { |line, j| target_section[j] = line if line }
           end
         elsif is_map
-          # @type var text_hash: Hash[String, String]
           all_text[MessageTypes::EVENT_TEXTS][section_id] = text_hash
         else
-          # @type var section_id: Integer
-          # @type var text_hash: Hash[String, String]
           all_text[section_id] = text_hash
         end
       end
@@ -541,11 +532,11 @@ class Translation
     return if @default_core_messages
     begin
       if FileTest.exist?("Data/messages_core.dat")
-        pbRgssOpen("Data/messages_core.dat", "rb") { |f| @default_core_messages = Marshal.load(f.read) }
+        pbRgssOpen("Data/messages_core.dat", "rb") { |f| @default_core_messages = Marshal.load(f) }
       end
       @default_core_messages = [] if !@default_core_messages.is_a?(Array)
       if FileTest.exist?("Data/messages_game.dat")
-        pbRgssOpen("Data/messages_game.dat", "rb") { |f| @default_game_messages = Marshal.load(f.read) }
+        pbRgssOpen("Data/messages_game.dat", "rb") { |f| @default_game_messages = Marshal.load(f) }
       end
       @default_game_messages = [] if !@default_game_messages.is_a?(Array)
     rescue
@@ -784,11 +775,11 @@ def _INTL(fmt, *arg)
   begin
     string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
-    string = fmt
+    string = arg[0]
   end
   string = string.clone
   (0...arg.length).each do |i|
-    string.gsub!(/\{#{i + 1}\}/, arg[i].to_s)
+    string.gsub!(/\{#{i}\}/, arg[i].to_s)
   end
   return string
 end
@@ -800,11 +791,11 @@ def _ISPRINTF(fmt, *arg)
   begin
     string = MessageTypes.getFromHash(MessageTypes::SCRIPT_TEXTS, fmt)
   rescue
-    string = fmt
+    string = arg[0]
   end
   string = string.clone
   (0...arg.length).each do |i|
-    string.gsub!(/\{#{i + 1}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
+    string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
 end
@@ -813,20 +804,20 @@ def _I(str, *arg)
   return _MAPINTL($game_map.map_id, str, *arg)
 end
 
-def _MAPINTL(mapid, fmt, *arg)
-  string = MessageTypes.getFromMapHash(mapid, fmt)
+def _MAPINTL(mapid, *arg)
+  string = MessageTypes.getFromMapHash(mapid, arg[0])
   string = string.clone
-  (0...arg.length).each do |i|
-    string.gsub!(/\{#{i + 1}\}/, arg[i].to_s)
+  (1...arg.length).each do |i|
+    string.gsub!(/\{#{i}\}/, arg[i].to_s)
   end
   return string
 end
 
-def _MAPISPRINTF(mapid, fmt, *arg)
-  string = MessageTypes.getFromMapHash(mapid, fmt)
+def _MAPISPRINTF(mapid, *arg)
+  string = MessageTypes.getFromMapHash(mapid, arg[0])
   string = string.clone
-  (0...arg.length).each do |i|
-    string.gsub!(/\{#{i + 1}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
+  (1...arg.length).each do |i|
+    string.gsub!(/\{#{i}\:([^\}]+?)\}/) { |m| next sprintf("%" + $1, arg[i]) }
   end
   return string
 end

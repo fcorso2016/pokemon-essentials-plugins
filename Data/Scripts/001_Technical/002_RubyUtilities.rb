@@ -182,12 +182,11 @@ class Color
     pbPrintException("Wrong number of arguments! At least 1 is needed!") if args.length < 1
     case args.length
     when 1
-      first = args.first
-      case first
+      case args.first
       when Integer
-        hex = first.to_s(16)
+        hex = args.first.to_s(16)
       when String
-        try_rgb_format = first.split(",")
+        try_rgb_format = args.first.split(",")
         init_original(*try_rgb_format.map(&:to_i)) if try_rgb_format.length.between?(3, 4)
         hex = args.first.delete("#")
       end
@@ -310,7 +309,7 @@ class Color
     case color
     when Color
       return color
-    when String, Integer
+    when String, Numeric
       return Color.new(color)
     end
     # returns nothing if wrong input
@@ -368,18 +367,15 @@ def rand(*args)
   Kernel.rand(*args)
 end
 
-module Kernel
-  class <<self
-    alias oldRand rand unless method_defined?(:oldRand)
-  end
-
+class << Kernel
+  alias oldRand rand unless method_defined?(:oldRand)
   def rand(a = nil, b = nil)
     if a.is_a?(Range)
       lo = a.min
       hi = a.max
       return lo + oldRand(hi - lo + 1)
-    elsif a.is_a?(Integer)
-      if b.is_a?(Integer)
+    elsif a.is_a?(Numeric)
+      if b.is_a?(Numeric)
         return a + oldRand(b - a + 1)
       else
         return oldRand(a)
