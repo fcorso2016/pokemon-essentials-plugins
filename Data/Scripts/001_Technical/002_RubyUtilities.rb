@@ -341,10 +341,10 @@ end
 # wrapper.execute  #=>  "Hi"
 #===============================================================================
 class CallbackWrapper
-  @params = {}
 
   def initialize(&block)
     @code_block = block
+    @params = {}
   end
 
   def execute(given_block = nil, *args)

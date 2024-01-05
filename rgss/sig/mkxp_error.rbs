@@ -1,0 +1,2 @@
+class MKXPError < Exception
+end

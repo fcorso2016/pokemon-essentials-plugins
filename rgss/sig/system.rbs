@@ -8,15 +8,17 @@ type power_state = {
 
 # Classes
 module System
+  VERSION: String
+
   attr_accessor window_tile: String
 
   def self?.data_directory: -> String
   def self?.lauch: (String cmd, Array[String] args) -> void
   def self?.user_language: -> String
-  def self?.game_tile: -> String
+  def self?.game_title: -> String
   def self?.show_settings: -> void
   def self?.power_state: -> power_state
-  def self?.uptime: -> Float
+  def self?.uptime: -> number
   def self?.platform: -> String
   def self?.is_windows?: -> bool
   def self?.is_mac?: -> bool
@@ -30,6 +32,8 @@ module System
   def self?.reload_cache: -> void
   def self?.unmount: (String path, ?bool reload) -> void
   def self.user_name: -> String
+
+  def self?.set_window_title: (String) -> void
 end
 
 

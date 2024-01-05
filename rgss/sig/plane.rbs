@@ -14,8 +14,8 @@ class Plane
   attr_accessor z: Integer
   attr_accessor ox: Integer
   attr_accessor oy: Integer
-  attr_accessor zoom_x: Float
-  attr_accessor zoom_y: Float
+  attr_accessor zoom_x: number
+  attr_accessor zoom_y: number
   attr_accessor opacity: Integer
   attr_accessor blend_type: Integer
   attr_accessor color: Color

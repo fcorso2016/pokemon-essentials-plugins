@@ -65,31 +65,31 @@ class GameStats
   attr_accessor battle_points_spent: Integer
   attr_accessor soot_collected: Integer
   attr_accessor gym_leader_attempts: Array[Integer]
-  attr_accessor times_to_get_badges: Array[Numeric]
+  attr_accessor times_to_get_badges: Array[number]
   attr_accessor elite_four_attempts: Integer
   attr_accessor hall_of_fame_entry_count: Integer
-  attr_accessor time_to_enter_hall_of_fame: Numeric
+  attr_accessor time_to_enter_hall_of_fame: number
   attr_accessor safari_pokemon_caught: Integer
   attr_accessor most_captures_per_safari_game: Integer
   attr_accessor bug_contest_count: Integer
   attr_accessor bug_contest_wins: Integer
-  attr_writer play_time: Numeric
+  attr_writer play_time: number
   attr_accessor play_sessions: Integer
-  attr_accessor time_last_saved: Numeric
+  attr_accessor time_last_saved: number
   def initialize: -> void
   def distance_moved: -> Integer
   def caught_pokemon_count: -> Integer
   def save_count: -> Integer
-  def set_time_to_badge: (Integer number) -> Numeric
-  def set_time_to_hall_of_fame: -> Numeric?
-  def play_time: -> Numeric
-  def play_time_per_session: -> Numeric
-  def set_time_last_saved: -> Numeric
-  def time_since_last_save: -> Numeric
+  def set_time_to_badge: (Integer number) -> number
+  def set_time_to_hall_of_fame: -> number?
+  def play_time: -> number
+  def play_time_per_session: -> number
+  def set_time_last_saved: -> number
+  def time_since_last_save: -> number
 end
 
 class Game_Temp
-  attr_accessor last_uptime_refreshed_play_time: Numeric
+  attr_accessor last_uptime_refreshed_play_time: number
 end
 
 

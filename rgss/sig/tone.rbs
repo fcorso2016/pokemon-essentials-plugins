@@ -2,15 +2,15 @@
 
 # Classes
 class Tone
-  def initialize: (Numeric red, Numeric green, Numeric blue, Numeric gray) -> void
+  def initialize: (number red, number green, number blue, number gray) -> void
                 | () -> void
-  def set: (Numeric red, Numeric green, Numeric blue, Numeric gray) -> void
+  def set: (number red, number green, number blue, number gray) -> void
          | (Tone tone) -> void
 
-  attr_accessor red: Numeric
-  attr_accessor green: Numeric
-  attr_accessor blue: Numeric
-  attr_accessor gray: Numeric
+  attr_accessor red: number
+  attr_accessor green: number
+  attr_accessor blue: number
+  attr_accessor gray: number
 end
 
 

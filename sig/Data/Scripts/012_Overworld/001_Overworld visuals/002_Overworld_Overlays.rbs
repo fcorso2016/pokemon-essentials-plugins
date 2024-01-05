@@ -5,13 +5,13 @@ class LocationWindow
   include _CheckedDisposable
   include _Updatable
 
-  APPEAR_TIME: Float
+  APPEAR_TIME: number
 
-  LINGER_TIME: Float
+  LINGER_TIME: number
 
   @currentmap: Integer
   @delayed: bool
-  @timer_start: Numeric
+  @timer_start: number
   @window: Window_AdvancedTextPokemon
 
   def initialize: (String name) -> void

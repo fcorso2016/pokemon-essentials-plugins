@@ -63,7 +63,7 @@ class Battle
   attr_reader sideSizes: [Integer, Integer]
   attr_accessor backdrop: String
   attr_accessor backdropBase: String?
-  attr_accessor time: Numeric
+  attr_accessor time: number
   attr_accessor environment: Symbol
   attr_reader turnCount: Integer
   attr_accessor decision: Integer

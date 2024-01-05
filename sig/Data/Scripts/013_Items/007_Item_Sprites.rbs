@@ -15,7 +15,7 @@ class ItemIconSprite < Sprite
   ANIM_ICON_SIZE: Integer
 
   # Time in seconds for one animation cycle of this item icon.
-  ANIMATION_DURATION: Float
+  ANIMATION_DURATION: number
 
   def initialize: (Integer x, Integer y, Symbol item, ?Viewport? viewport) -> void
 

@@ -3,7 +3,8 @@ D = Steep::Diagnostic
 target :lib do
   signature "sig", "rgss/sig"
 
-  check "Plugins"
+  check "Data/Scripts/001_Technical"
+  #check "Plugins"
 
   library "json"
   library "minitest"

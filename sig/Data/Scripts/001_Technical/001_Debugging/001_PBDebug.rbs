@@ -4,7 +4,7 @@
 module PBDebug
   @@log: Array[String]
 
-  def self.logonerr: -> void
+  def self.logonerr: {() -> void } -> void
   def self.flush: -> void
   def self.log: (String? msg) -> void
   def self.log_header: (String msg) -> void

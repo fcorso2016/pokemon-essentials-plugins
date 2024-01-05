@@ -3,7 +3,7 @@
 # Classes
 class Object
   private
-  def pbPostData: (String url, Hash[Object, Object] postdata, ?String? filename, ?Integer depth) -> String
+  def pbPostData: (String url, Hash[_ToS, _ToS] postdata, ?String? filename, ?Integer depth) -> String
   def pbDownloadData: (String url, ?String? filename, ?String? authorization, ?Integer depth) -> String
   def pbDownloadToString: (String url) -> String
   def pbDownloadToFile: (String url, String file) -> void

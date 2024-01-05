@@ -28,7 +28,7 @@ module GameData
         :floor_decoration_large_density => Integer,
         :void_decoration_density => Integer,
         :void_decoration_large_density => Integer,
-        :rng_seed => Numeric,
+        :rng_seed => number,
         :flags => Array[String],
         :pbs_file_suffix => String
     }

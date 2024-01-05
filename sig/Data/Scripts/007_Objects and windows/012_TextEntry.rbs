@@ -27,7 +27,7 @@ class Window_TextEntry < SpriteWindow_Base
   @shadowColor: Color
   @helper: CharacterEntryHelper
   @heading: String?
-  @cursor_timer_start: Numeric
+  @cursor_timer_start: number
   @cursor_shown: bool
 
   def initialize: (String text, Integer x, Integer y, Integer width, Integer height, ?String? heading, ?bool usedarkercolor) -> void
@@ -51,7 +51,7 @@ class Window_MultilineTextEntry < SpriteWindow_Base
   @firstline: Integer
   @cursorLine: Integer
   @cursorColumn: Integer
-  @cursor_timer_start: Numeric
+  @cursor_timer_start: number
   @cursor_shown: bool
   @textchars: Array[line_broken_text]
 

@@ -3,7 +3,7 @@
 # Classes
 module RPG
   class Sprite < ::Sprite
-    @_animation_duration: Numeric
+    @_animation_duration: number
     @_animation_frame: Integer
     @animations: Array[SpriteAnimation]
     @loopAnimations: Array[SpriteAnimation]
@@ -25,13 +25,13 @@ module RPG
 end
 
 class FloatSprite
-  @float_x: Float
-  @float_y: Float
+  @float_x: number
+  @float_y: number
 
-  def x: -> Float
-  def y: -> Float
-  def x=: (Float value) -> Float
-  def y=: (Float value) -> Float
+  def x: -> number
+  def y: -> number
+  def x=: (number value) -> number
+  def y=: (number value) -> number
 end
 
 

@@ -6,7 +6,7 @@ class PokemonBoxIcon < IconSprite
 
   @pokemon: Pokemon
 
-  @release_timer_start: Numeric?
+  @release_timer_start: number?
 
   def initialize: (Pokemon pokemon, ?Viewport? viewport) -> void
 
@@ -42,11 +42,11 @@ end
 class AutoMosaicPokemonSprite < MosaicPokemonSprite
   INITIAL_MOSAIC: Integer
 
-  @mosaic_duration: Numeric?
-  @mosaic_timer_start: Numeric?
+  @mosaic_duration: number?
+  @mosaic_timer_start: number?
   @start_mosaic: Integer
 
-  def mosaic_duration=: (Numeric val) -> void
+  def mosaic_duration=: (number val) -> void
 end
 
 # ==============================================================================
@@ -65,12 +65,12 @@ end
 class PokemonBoxArrow < Sprite
   include _BoxSprite
 
-  @grabbing_timer_start: Numeric?
+  @grabbing_timer_start: number?
   @handsprite: ChangelingSprite
   @heldpkmn: PokemonBoxIcon?
   @holding: bool
 
-  @placing_timer_start: Numeric?
+  @placing_timer_start: number?
   @spriteX: Integer
   @spriteY: Integer
   @updating: bool
@@ -79,7 +79,7 @@ class PokemonBoxArrow < Sprite
 
   # Time in seconds for the cursor to move down and back up to grab/drop a
   # PokÃƒÂ©mon.
-  GRAB_TIME: Float
+  GRAB_TIME: number
 
   def initialize: (?Viewport? viewport) -> void
 

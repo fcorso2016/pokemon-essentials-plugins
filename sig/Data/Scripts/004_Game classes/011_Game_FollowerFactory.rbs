@@ -10,7 +10,7 @@ class FollowerData
   attr_accessor y: Integer
   attr_accessor direction: Integer
   attr_accessor character_name: String
-  attr_accessor character_hue: Numeric
+  attr_accessor character_hue: number
   attr_accessor name: Integer?
   attr_accessor common_event_id: Integer?
   attr_accessor visible: bool
@@ -58,7 +58,7 @@ end
 class FollowerSprites
   @viewport: Viewport
   @sprites: Array[Sprite]
-  @last_update: Numeric?
+  @last_update: number?
   @disposed: bool
 
   def initialize: (Viewport viewport) -> void

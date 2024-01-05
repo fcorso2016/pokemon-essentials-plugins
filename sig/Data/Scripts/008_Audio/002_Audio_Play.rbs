@@ -8,20 +8,20 @@ class Object
                           (String str, ?Integer? volume, ?Integer? pitch) -> RPG::AudioFile
   def pbBGMPlay: (RPG::AudioFile? file, ?Integer? volume, ?Integer? pitch) -> void |
                  (String filename, ?Integer? volume, ?Integer? pitch) -> void
-  def pbBGMFade: (?Float x) -> void
-  def pbBGMStop: (?Float timeInSeconds) -> void
+  def pbBGMFade: (?number x) -> void
+  def pbBGMStop: (?number timeInSeconds) -> void
   def pbMEPlay: (RPG::AudioFile? file, ?Integer? volume, ?Integer? pitch) -> void |
                 (String filename, ?Integer? volume, ?Integer? pitch) -> void
-  def pbMEFade: (?Float x) -> void
-  def pbMEStop: (?Float timeInSeconds) -> void
+  def pbMEFade: (?number x) -> void
+  def pbMEStop: (?number timeInSeconds) -> void
   def pbBGSPlay:  (RPG::AudioFile? file, ?Integer? volume, ?Integer? pitch) -> void |
                   (String filename, ?Integer? volume, ?Integer? pitch) -> void
-  def pbBGSFade: (?Float x) -> void
-  def pbBGSStop: (?Float timeInSeconds) -> void
+  def pbBGSFade: (?number x) -> void
+  def pbBGSStop: (?number timeInSeconds) -> void
   def pbSEPlay:  (RPG::AudioFile? file, ?Integer? volume, ?Integer? pitch) -> void |
                  (String filename, ?Integer? volume, ?Integer? pitch) -> void
-  def pbSEFade: (?Float x) -> void
-  def pbSEStop: (?Float _timeInSeconds) -> void
+  def pbSEFade: (?number x) -> void
+  def pbSEStop: (?number _timeInSeconds) -> void
   def pbPlayCursorSE: -> void
   def pbPlayDecisionSE: -> void
   def pbPlayCancelSE: -> void

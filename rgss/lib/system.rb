@@ -13,7 +13,7 @@ module System
     fail NotImplementedError
   end
 
-  def self.game_tile
+  def self.game_title
     fail NotImplementedError
   end
 
@@ -79,6 +79,10 @@ module System
 
   def self.user_name
     fail NotImplementedError
+  end
+
+  def self.set_window_title(i)
+    # code here
   end
 
 end

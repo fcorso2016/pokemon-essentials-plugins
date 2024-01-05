@@ -43,7 +43,7 @@ class PokemonIconSprite < Sprite
   # Time in seconds for one animation cycle of this PokÃƒÂ©mon icon. It is doubled
   # if the PokÃƒÂ©mon is at 50% HP or lower, and doubled again if it is at 25% HP
   # or lower. The icon doesn't animate at all if the PokÃƒÂ©mon is fainted.
-  ANIMATION_DURATION: Float
+  ANIMATION_DURATION: number
 
   def initialize: (Pokemon pokemon, ?Viewport? viewport) -> void
 
@@ -84,7 +84,7 @@ class PokemonSpeciesIconSprite < Sprite
   attr_reader shiny: boolish
 
   # Time in seconds for one animation cycle of this PokÃƒÂ©mon icon.
-  ANIMATION_DURATION: Float
+  ANIMATION_DURATION: number
 
   def initialize: (Symbol species, ?untyped? viewport) -> void
 

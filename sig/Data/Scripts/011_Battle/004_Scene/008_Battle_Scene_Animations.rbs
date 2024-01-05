@@ -8,7 +8,7 @@ class Battle::Scene::Animation::Intro < Battle::Scene::Animation
 
   def createProcesses: () -> void
 
-  def makeSlideSprite: (String spriteName, Numeric deltaMult, Numeric appearTime, ?Integer? origin) -> void
+  def makeSlideSprite: (String spriteName, number deltaMult, number appearTime, ?Integer? origin) -> void
 end
 
 # ==============================================================================
@@ -42,7 +42,7 @@ class Battle::Scene::Animation::LineupAppear < Battle::Scene::Animation
 
   def createProcesses: () -> void
 
-  def createBall: (Integer idxBall, Numeric delay, Integer dir) -> void
+  def createBall: (Integer idxBall, number delay, Integer dir) -> void
 end
 
 # ==============================================================================

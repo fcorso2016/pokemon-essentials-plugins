@@ -11,12 +11,12 @@ module RPG
     attr_accessor panorama_name: String
     attr_accessor panorama_hue: Integer
     attr_accessor fog_name: String
-    attr_accessor fog_hue: Numeric
-    attr_accessor fog_opacity: Numeric
-    attr_accessor fog_blend_type: Numeric
-    attr_accessor fog_zoom: Numeric
-    attr_accessor fog_sx: Numeric
-    attr_accessor fog_sy: Numeric
+    attr_accessor fog_hue: number
+    attr_accessor fog_opacity: number
+    attr_accessor fog_blend_type: number
+    attr_accessor fog_zoom: number
+    attr_accessor fog_sx: number
+    attr_accessor fog_sy: number
     attr_accessor battleback_name: String
     attr_accessor passages: Table
     attr_accessor priorities: Table

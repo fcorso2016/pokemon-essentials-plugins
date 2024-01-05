@@ -22,8 +22,8 @@ class SlotMachineReel < BitmapSprite
 
   @shading: AnimatedBitmap
   @slipping: Integer
-  @spin_speed: Numeric
-  @spin_timer_start: Numeric
+  @spin_speed: number
+  @spin_timer_start: number
   @spinning: bool
   @stopping: bool
   @toppos: Integer

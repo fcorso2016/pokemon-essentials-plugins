@@ -18,9 +18,9 @@ class Spriteset_Map
   @fog: AnimatedPlane?
   @character_sprites: Array[Sprite_Character]
   @panorama_name: String
-  @panorama_hue: Numeric
+  @panorama_hue: number
   @fog_name: String
-  @fog_hue: Numeric
+  @fog_hue: number
   @usersprites: Array[AnimationContainerSprite]
   @@viewport0: Viewport
   @@viewport1: Viewport

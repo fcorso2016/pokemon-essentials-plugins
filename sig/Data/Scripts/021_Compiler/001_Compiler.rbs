@@ -87,7 +87,7 @@ module Compiler
   def self?.csvPosInt!: (String str, ?Integer _line) -> Integer
 
   # Unused
-  def self?.csvFloat!: (String str, ?Integer _line) -> Float
+  def self?.csvFloat!: (String str, ?Integer _line) -> number
 
   # Unused
   def self?.csvEnumField!: (String value, untyped enumer, String _key, untyped _section) -> untyped

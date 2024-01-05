@@ -14,7 +14,7 @@ class PokemonLoadPanel < Sprite
   @refreshing: bool
   @title: String
 
-  @totalsec: Numeric
+  @totalsec: number
   @trainer: Player
 
   attr_reader selected: untyped

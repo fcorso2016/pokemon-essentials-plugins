@@ -10,7 +10,7 @@ class Battle::AI
 
   # Returns a value between 0.0 and 1.0. All move scores are lowered by this
   # value multiplied by the highest-scoring move's score.
-  def move_score_threshold: () -> Float
+  def move_score_threshold: () -> number
 
   # Get scores for the user's moves.
   # NOTE: For any move with a target type that can target a foe (or which

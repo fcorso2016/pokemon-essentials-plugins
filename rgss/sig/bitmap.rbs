@@ -27,7 +27,7 @@ class Bitmap
   def radial_blur: (Integer angle, Integer division) -> void
   def draw_text: (Integer x, Integer y, Integer width, Integer height, String str, ?Integer align) -> void
                | (Rect rect, String str, ?Integer align) -> void
-  def text_size: (String str) -> Integer
+  def text_size: (String str) -> Rect
   def mega?: -> bool
   def to_file: (String path) -> void
 

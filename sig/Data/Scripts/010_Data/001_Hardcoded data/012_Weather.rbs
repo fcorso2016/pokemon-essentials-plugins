@@ -14,7 +14,7 @@ module GameData
         :particle_delta_opacity => Integer,
         :tile_delta_x => Integer,
         :tile_delta_y => Integer,
-        :tone_proc => ^(Numeric) -> Tone
+        :tone_proc => ^(number) -> Tone
       }
     DATA: Hash[Symbol, Weather]
 
@@ -31,14 +31,14 @@ module GameData
     attr_reader particle_delta_opacity: Integer
     attr_reader tile_delta_x: Integer
     attr_reader tile_delta_y: Integer
-    attr_reader tone_proc: ^(Numeric) -> Tone
+    attr_reader tone_proc: ^(number) -> Tone
     def self.load: -> void
     def self.save: -> void
     def initialize: (schema hash) -> void
     alias name real_name
     def has_particles?: -> bool
     def has_tiles?: -> bool
-    def tone: (Numeric strength) -> Tone
+    def tone: (number strength) -> Tone
   end
 end
 

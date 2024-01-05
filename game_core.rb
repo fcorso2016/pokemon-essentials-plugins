@@ -39,7 +39,7 @@ $show_window = true if $show_window.nil?
 $game_state = GameState.new("Pokemon Essentials", ["debug"], $show_window)
 
 alias native_load_data load_data
-def load_data(filename)
+def load_data(filename, restore = true)
   ret = native_load_data(filename)
   if ret.nil?
     raise sprintf("Failed to load file: %s/%s", Dir.getwd, filename)

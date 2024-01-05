@@ -371,7 +371,7 @@ module Settings
   SCREEN_HEIGHT: Integer
 
   # The default screen scale factor. Possible values are 0.5, 1.0, 1.5 and 2.0.
-  SCREEN_SCALE: Float
+  SCREEN_SCALE: number
 
   # Available speech frames. These are graphic files in "Graphics/Windowskins/".
   SPEECH_WINDOWSKINS: Array[String]

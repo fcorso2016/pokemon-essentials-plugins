@@ -17,16 +17,16 @@ module Transitions
     @disposed: bool
     @duration: Integer
     @parameters: Array[Integer]
-    @timer_start: Float
+    @timer_start: number
     @overworld_bitmap: Bitmap
     @viewport: Viewport
     @sprites: Array[Sprite]
     @overworld_sprite: Sprite
-    @timings: Array[Float]
+    @timings: Array[number]
 
     def initialize: (Integer duration, *Integer args) -> void
     def new_sprite: (Integer x, Integer y, ?Bitmap? bitmap, ?Integer ox, ?Integer oy) -> Sprite
-    def timer: -> Float
+    def timer: -> number
     def dispose: -> void
     def disposed?: -> bool
     def update: -> void
@@ -92,7 +92,7 @@ module Transitions
     MAX_PIXELLATION_FACTOR: Integer
     @buffer_original: Bitmap?
     @buffer_temp: Bitmap?
-    @start_black_fade: Float
+    @start_black_fade: number
 
     def initialize_bitmaps: -> void
     def set_up_timings: -> void
@@ -109,14 +109,14 @@ module Transitions
   end
 
   class SnakeSquares < Transition_Base
-    DURATION: Float
-    TIME_TO_ZOOM: Float
+    DURATION: number
+    TIME_TO_ZOOM: number
     NUM_SPRITES_X: Integer
     NUM_SPRITES_Y: Integer
     TOTAL_SPRITES: Integer
     @black_bitmap: Bitmap?
-    @zoom_x_target: Float
-    @zoom_y_target: Float
+    @zoom_x_target: number
+    @zoom_y_target: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -126,14 +126,14 @@ module Transitions
   end
 
   class DiagonalBubble < Transition_Base
-    DURATION: Float
-    TIME_TO_ZOOM: Float
+    DURATION: number
+    TIME_TO_ZOOM: number
     NUM_SPRITES_X: Integer
     NUM_SPRITES_Y: Integer
     TOTAL_SPRITES: Integer
     @bitmap: Bitmap
-    @zoom_x_target: Float
-    @zoom_y_target: Float
+    @zoom_x_target: number
+    @zoom_y_target: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -143,20 +143,20 @@ module Transitions
   end
 
   class RisingSplash < Transition_Base
-    DURATION: Float
+    DURATION: number
     MAX_WAVE_AMPLITUDE: Integer
-    WAVE_SPACING: Float
-    WAVE_SPEED: Float
+    WAVE_SPACING: number
+    WAVE_SPEED: number
     MAX_BUBBLE_AMPLITUDE: Integer
-    BUBBLES_WAVE_SPEED: Float
+    BUBBLES_WAVE_SPEED: number
     @bubble_bitmap: Bitmap
     @splash_bitmap: Bitmap
     @black_bitmap: Bitmap
     @bubbles_sprite: Bitmap
     @splash_sprite: Bitmap
     @black_sprite: Bitmap
-    @splash_rising_start: Float
-    @black_rising_start: Float
+    @splash_rising_start: number
+    @black_rising_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -166,12 +166,12 @@ module Transitions
   end
 
   class TwoBallPass < Transition_Base
-    DURATION: Float
+    DURATION: number
     @black_bitmap: Bitmap
     @ball_bitmap: Bitmap
     @ball_sprites: Array[Sprite]
     @ball_start_x: [Integer, Integer]
-    @ball_roll_end: Float
+    @ball_roll_end: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -181,14 +181,14 @@ module Transitions
   end
 
   class SpinBallSplit < Transition_Base
-    DURATION: Float
+    DURATION: number
     @black_bitmap: Bitmap
     @ball_bitmap: Bitmap
     @overworld_sprites: Array[Sprite]
     @black_sprites: Array[Sprite]
     @ball_sprites: Array[Sprite]
-    @ball_spin_end: Float
-    @slide_start: Float
+    @ball_spin_end: number
+    @slide_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -198,17 +198,17 @@ module Transitions
   end
 
   class ThreeBallDown < Transition_Base
-    DURATION: Float
+    DURATION: number
     NUM_SPRITES_X: Integer
     NUM_SPRITES_Y: Integer
     TOTAL_SPRITES: Integer
     BALL_START_Y_OFFSETS: Array[Integer]
     @black_bitmap: Bitmap
     @ball_bitmap: Bitmap
-    @zoom_x_target: Float
-    @zoom_y_target: Float
+    @zoom_x_target: number
+    @zoom_y_target: number
     @ball_sprites: Array[Sprite]
-    @black_appear_start: Float
+    @black_appear_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -218,12 +218,12 @@ module Transitions
   end
 
   class BallDown < Transition_Base
-    DURATION: Float
+    DURATION: number
     @black_bitmap: Bitmap
     @curve_bitmap: Bitmap
     @ball_bitmap: Bitmap
     @ball_sprite: Bitmap
-    @ball_appear_end: Float
+    @ball_appear_end: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -233,16 +233,16 @@ module Transitions
   end
 
   class WavyThreeBallUp < Transition_Base
-    DURATION: Float
-    BALL_OFFSETS: Array[Float]
+    DURATION: number
+    BALL_OFFSETS: Array[number]
     MAX_WAVE_AMPLITUDE: Integer
-    WAVE_SPACING: Float
-    WAVE_SPEED: Float
+    WAVE_SPACING: number
+    WAVE_SPEED: number
     @black_bitmap: Bitmap
     @ball_bitmap: Bitmap
     @ball_sprites: Array[Sprite]
     @black_trail_sprites: Array[Sprite]
-    @ball_rising_start: Float
+    @ball_rising_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -252,16 +252,16 @@ module Transitions
   end
 
   class WavySpinBall < Transition_Base
-    DURATION: Float
+    DURATION: number
     MAX_WAVE_AMPLITUDE: Integer
-    WAVE_SPACING: Float
-    WAVE_SPEED: Float
+    WAVE_SPACING: number
+    WAVE_SPEED: number
     @black_bitmap: Bitmap
     @ball_bitmap: Bitmap
     @ball_sprite: Sprite
     @black_sprite: Sprite
-    @ball_appear_end: Float
-    @black_appear_start: Float
+    @ball_appear_end: number
+    @black_appear_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -271,14 +271,14 @@ module Transitions
   end
 
   class FourBallBurst < Transition_Base
-    DURATION: Float
+    DURATION: number
     @black_1_bitmap: Bitmap
     @black_2_bitmap: Bitmap
     @black_3_bitmap: Bitmap
     @black_4_bitmap: Bitmap
     @ball_bitmap: Sprite
     @ball_sprites: Array[Sprite]
-    @ball_appear_end: Float
+    @ball_appear_end: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -288,7 +288,7 @@ module Transitions
   end
 
   class VSTrainer < Transition_Base
-    DURATION: Float
+    DURATION: number
     BAR_Y: Integer
     BAR_SCROLL_SPEED: Integer
     BAR_MASK: Array[Integer]
@@ -311,18 +311,18 @@ module Transitions
     @text_sprite: Sprite
     @black_sprite: Sprite
     @bar_x: Integer
-    @bar_appear_end: Float
-    @vs_appear_start: Float
-    @vs_appear_start_2: Float
-    @vs_shrink_time: Float
-    @vs_appear_final: Float
-    @foe_appear_start: Float
-    @foe_appear_end: Float
-    @flash_start: Float
-    @flash_duration: Float
-    @fade_to_white_start: Float
-    @fade_to_white_end: Float
-    @fade_to_black_start: Float
+    @bar_appear_end: number
+    @vs_appear_start: number
+    @vs_appear_start_2: number
+    @vs_shrink_time: number
+    @vs_appear_final: number
+    @foe_appear_start: number
+    @foe_appear_end: number
+    @flash_start: number
+    @flash_duration: number
+    @fade_to_white_start: number
+    @fade_to_white_end: number
+    @fade_to_black_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -332,7 +332,7 @@ module Transitions
   end
 
   class VSEliteFour < Transition_Base
-    DURATION: Float
+    DURATION: number
     BAR_X_INDENT: Integer
     BAR_Y_INDENT: Integer
     BAR_OVERSHOOT: Integer
@@ -365,19 +365,19 @@ module Transitions
     @vs_1_sprite: Sprite
     @vs_2_sprite: Sprite
     @black_sprite: Sprite
-    @flash_1_start: Float
-    @flash_1_duration: Float
-    @bar_appear_start: Float
-    @bar_appear_end: Float
-    @vs_appear_start: Float
-    @vs_appear_start_2: Float
-    @vs_shrink_time: Float
-    @vs_appear_final: Float
-    @flash_start: Float
-    @flash_duration: Float
-    @fade_to_white_start: Float
-    @fade_to_white_end: Float
-    @fade_to_black_start: Float
+    @flash_1_start: number
+    @flash_1_duration: number
+    @bar_appear_start: number
+    @bar_appear_end: number
+    @vs_appear_start: number
+    @vs_appear_start_2: number
+    @vs_shrink_time: number
+    @vs_appear_final: number
+    @flash_start: number
+    @flash_duration: number
+    @fade_to_white_start: number
+    @fade_to_white_end: number
+    @fade_to_black_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -387,19 +387,19 @@ module Transitions
   end
 
   class RocketGrunt < Transition_Base
-    DURATION: Float
-    ROCKET_X: Array[Float]
-    ROCKET_Y: Array[Float]
-    ROCKET_ANGLE: Array[Float]
+    DURATION: number
+    ROCKET_X: Array[number]
+    ROCKET_Y: Array[number]
+    ROCKET_ANGLE: Array[number]
     @black_1_bitmap: Bitmap
     @black_2_bitmap: Bitmap
     @black_3_bitmap: Bitmap
     @black_4_bitmap: Bitmap
     @rocket_bitmap: Bitmap
     @rocket_sprites: Array[Sprite]
-    @rocket_appear_end: Float
-    @rocket_appear_delay: Float
-    @rocket_appear_time: Float
+    @rocket_appear_end: number
+    @rocket_appear_delay: number
+    @rocket_appear_time: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void
@@ -409,7 +409,7 @@ module Transitions
   end
 
   class VSRocketAdmin < Transition_Base
-    DURATION: Float
+    DURATION: number
     STROBE_SCROLL_SPEED: Integer
     FOE_SPRITE_Y: Integer
     @strobes_bitmap: Bitmap
@@ -424,16 +424,16 @@ module Transitions
     @text_sprite: Sprite
     @black_sprite: Sprite
     @strobes_x: Integer
-    @strobe_appear_end: Float
-    @bg_1_appear_start: Float
-    @bg_1_appear_end: Float
-    @bg_2_appear_start: Float
-    @bg_2_appear_end: Float
-    @flash_end: Float
-    @foe_disappear_start: Float
-    @foe_disappear_end: Float
-    @fade_to_white_end: Float
-    @fade_to_black_start: Float
+    @strobe_appear_end: number
+    @bg_1_appear_start: number
+    @bg_1_appear_end: number
+    @bg_2_appear_start: number
+    @bg_2_appear_end: number
+    @flash_end: number
+    @foe_disappear_start: number
+    @foe_disappear_end: number
+    @fade_to_white_end: number
+    @fade_to_black_start: number
 
     def initialize_bitmaps: -> void
     def initialize_sprites: -> void

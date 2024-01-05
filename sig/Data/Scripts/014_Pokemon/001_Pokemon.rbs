@@ -227,9 +227,9 @@ class Pokemon
   # @return [Integer] this PokÃƒÂ©mon's base Experience value
   def base_exp: () -> Integer
 
-  # @return [Float] a number between 0 and 1 indicating how much of the current level's
+  # @return [number] a number between 0 and 1 indicating how much of the current level's
   #   Exp this PokÃƒÂ©mon has
-  def exp_fraction: () -> Float
+  def exp_fraction: () -> number
 
   # Sets the PokÃƒÂ©mon's health.
   # @param value [Integer] new HP value
@@ -589,7 +589,7 @@ class Pokemon
   def calcHP: (Integer base, Integer level, Integer iv, Integer ev) -> Integer
 
   # @return [Integer] the specified stat of this PokÃƒÂ©mon (not used for total HP)
-  def calcStat: (Integer base, Integer level, Integer iv, Integer ev, Numeric nat) -> untyped
+  def calcStat: (Integer base, Integer level, Integer iv, Integer ev, number nat) -> untyped
 
   # Recalculates this PokÃƒÂ©mon's stats.
   def calc_stats: () -> void

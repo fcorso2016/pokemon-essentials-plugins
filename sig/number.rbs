@@ -1,0 +1,11 @@
+type number = Numeric
+
+class Numeric
+  include _ToI
+  include _ToF
+
+  def *: (Numeric) -> Numeric
+
+  def /: (Numeric) -> Numeric
+
+end

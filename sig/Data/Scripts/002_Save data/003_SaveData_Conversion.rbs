@@ -25,9 +25,9 @@ module SaveData
 
     private
     def display_title: (String new_title) -> void
-    def essentials_version: (Numeric version) -> void |
+    def essentials_version: (number version) -> void |
                             (String version) -> void
-    def game_version: (Numeric version) -> void |
+    def game_version: (number version) -> void |
                       (String version) -> void
     def to_value: (Symbol value_id) -> void
     def to_all: -> void
