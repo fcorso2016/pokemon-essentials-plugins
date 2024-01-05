@@ -9,9 +9,5 @@ target :lib do
   library "json"
   library "minitest"
 
-  configure_code_diagnostics(D::Ruby.strict) do |hash|
-    hash[D::Ruby::NoMethodByNil] = nil
-    hash[D::Ruby::ArgumentTypeNilabilityMismatch] = nil
-    hash[D::Ruby::FallbackAny] = nil
-  end
+  configure_code_diagnostics(D::Ruby.strict)
 end
