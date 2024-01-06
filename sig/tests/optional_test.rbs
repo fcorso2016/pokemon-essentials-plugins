@@ -1,0 +1,21 @@
+class OptionalTest < Minitest::Test
+  def test_filter: -> void
+
+  def test_flat_map: -> void
+
+  def test_if_present: -> void
+
+  def test_if_present_or_else: -> void
+
+  def test_is_present_and_is_empty: -> void
+
+  def test_map: -> void
+
+  def test_or: -> void
+
+  def test_or_else: -> void
+
+  def test_or_else_get: -> void
+
+  def test_or_else_throw: -> void
+end

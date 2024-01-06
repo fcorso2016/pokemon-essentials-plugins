@@ -1,0 +1,35 @@
+class Optional[T]
+  @value: T?
+
+  def self.empty: [T] -> Optional[T]
+
+  def self.of: [T] (T value) -> Optional[T]
+
+  def self.of_nilable: [T] (T? value) -> Optional[T]
+
+  def initialize: (?T? value) -> void
+
+  def ==: (Optional[T] other) -> bool
+
+  def filter: { (T) -> bool } -> Optional[T]
+
+  def flat_map: [U] { (T) -> Optional[U] } -> Optional[U]
+
+  def if_present: { (T) -> void } -> void
+
+  def if_present_or_else: (_Consumer[T] action, _Runnable empty_action) -> void
+
+  def is_empty?: -> bool
+
+  def is_present?: -> bool
+
+  def map: [U] { (T) -> U? } -> Optional[U]
+
+  def or: { -> Optional[T] } -> Optional[T]
+
+  def or_else: (T default) -> T
+
+  def or_else_get: { -> T } -> T
+
+  def or_else_throw: [X < StandardError] ?{ -> X } -> T
+end
