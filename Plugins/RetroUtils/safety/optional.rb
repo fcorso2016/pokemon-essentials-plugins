@@ -33,7 +33,16 @@ class Optional
   end
 
   def to_s
-    return @value.nil? ? "<Empty>" : @value.to_s
+    case @value
+    when nil
+      return "Optional: <Empty>"
+    when String
+      return "Optional: #{@value.to_json}"
+    when Symbol
+      return "Optional: :#{@value.to_s}"
+    else
+      return "Optional: #{@value.to_s}"
+    end
   end
 
   ##

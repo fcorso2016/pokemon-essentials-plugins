@@ -129,4 +129,11 @@ class OptionalTest < Minitest::Test
     optional.if_present_or_else(proc {|value| output = value}, proc { output = -1 })
     assert_equal(-1, output)
   end
+
+  def test_to_s
+    assert_equal("Optional: <Empty>", Optional.empty.to_s)
+    assert_equal("Optional: \"This is a string\"", Optional.of("This is a string").to_s)
+    assert_equal("Optional: :symbol", Optional.of(:symbol).to_s)
+    assert_equal("Optional: 10", Optional.of(10).to_s)
+  end
 end
