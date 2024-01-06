@@ -1,0 +1,9 @@
+interface _SpriteHash
+
+  def []: (String key) -> _SceneElement
+  def []=: (String key, _SceneElement value) -> void
+
+  def each: { ([String, _SceneElement]) -> void } -> void
+  def each_key: { (String) -> void } -> void
+
+end

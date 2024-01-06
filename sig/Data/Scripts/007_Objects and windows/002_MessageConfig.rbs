@@ -20,11 +20,11 @@ class Object
   def pbSetNarrowFont: (Bitmap bitmap) -> void
   def pbAlphaBlend: (Color dstColor, Color srcColor) -> Color
   def pbSrcOver: (Color dstColor, Color srcColor) -> Color
-  def pbSetSpritesToColor: (Hash[String, _Visualizable] sprites, Color color) -> void
+  def pbSetSpritesToColor: (_SpriteHash sprites, Color color) -> void
   def using: (Window window) -> void
-  def pbUpdateSpriteHash: [T] (T windows) -> void
-  def pbDisposeSpriteHash: [T] (T sprites) -> void
-  def pbDisposeSprite: [T] (T sprites, Integer id) -> void
+  def pbUpdateSpriteHash: (_SpriteHash windows) -> void
+  def pbDisposeSpriteHash: (_SpriteHash sprites) -> void
+  def pbDisposeSprite: (_SpriteHash sprites, String id) -> void
   def pbDisposed?: (_CheckedDisposable x) -> bool
   def pbPushFade: -> void
   def pbPopFade: -> void
@@ -32,13 +32,13 @@ class Object
   def pbFadeOutIn: (?Integer z, ?bool nofadeout) ?{ -> void } -> void
   def pbFadeOutInWithUpdate: (Integer z, Hash[String, _Visualizable] sprites, ?bool nofadeout) -> void
   def pbFadeOutInWithMusic: (?Integer zViewport) -> void
-  def pbFadeOutAndHide: [T] (T sprites) -> T
-  def pbFadeInAndShow: [S, T] (S sprites, ?T? visiblesprites) -> void
-  def pbRestoreActivations: [S, T] (S sprites, T activeStatuses) -> void
-  def pbDeactivateWindows: [T] (T sprites) ?{ -> void } -> void
-  def pbActivateWindow: [T] (T sprites, String? key) { -> void } -> void
-  def addBackgroundPlane: [T] (T sprites, String planename, String background, ?Viewport? viewport) -> void
-  def addBackgroundOrColoredPlane: [T] (T sprites, String planename, String background, Color color, ?Viewport? viewport) -> void
+  def pbFadeOutAndHide: [T < _SpriteHash] (T sprites) -> T
+  def pbFadeInAndShow: (_SpriteHash sprites, ?_SpriteHash? visiblesprites) -> void
+  def pbRestoreActivations: [S, T] (_SpriteHash sprites, Hash[String, boolish] activeStatuses) -> void
+  def pbDeactivateWindows: (_SpriteHash sprites) ?{ -> void } -> void
+  def pbActivateWindow: (_SpriteHash sprites, String? key) { -> void } -> void
+  def addBackgroundPlane: (_SpriteHash sprites, String planename, String background, ?Viewport? viewport) -> void
+  def addBackgroundOrColoredPlane: (_SpriteHash sprites, String planename, String background, Color color, ?Viewport? viewport) -> void
 end
 
 module MessageConfig

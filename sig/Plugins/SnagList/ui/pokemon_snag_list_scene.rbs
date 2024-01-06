@@ -32,7 +32,7 @@ class PokemonSnagListScene
 
   def update: () -> void
 
-  def set_icon_bitmap: (untyped species) -> void
+  def set_icon_bitmap: (Symbol species) -> void
 
   def get_snag_list: () -> Array[snag_entry]
 
