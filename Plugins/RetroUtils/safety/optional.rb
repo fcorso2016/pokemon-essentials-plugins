@@ -5,25 +5,35 @@ class Optional
   ##
   # Returns an Optional describing the given non-null value.
   def self.of(value)
-    return Optional.new(value)
+    return self.new(value)
   end
 
   ##
   # Returns an Optional describing the given value, if non-null, otherwise returns an empty Optional.
   def self.of_nilable(value)
-    return Optional.new(value)
+    return self.new(value)
   end
 
   ##
   # Returns an empty Optional instance.
   def self.empty
-    return Optional.new
+    return self.new
   end
 
   private_class_method :new
 
   def initialize(value = nil)
-    @value = nil
+    @value = value
+  end
+
+  def ==(other)
+    return true if is_empty? && other.is_empty?
+    return false if is_present? != other.is_present?
+    return @value == other.or_else_throw
+  end
+
+  def to_s
+    return @value.nil? ? "<Empty>" : @value.to_s
   end
 
   ##
@@ -76,7 +86,7 @@ class Optional
   # If a value is present, and the value matches the given predicate, returns an Optional describing the value,
   # otherwise returns an empty Optional.
   def filter(&predicate)
-    return !@value.nil? && predicate.call(get) ? @value : Optional.empty
+    return !@value.nil? && predicate.call(@value) ? self : Optional.empty
   end
 
   ##

@@ -9,6 +9,8 @@ class Optional[T]
 
   def initialize: (?T? value) -> void
 
+  def ==: (Optional[T] other) -> bool
+
   def filter: { (T) -> bool } -> Optional[T]
 
   def flat_map: [U] { (T) -> Optional[U] } -> Optional[U]
