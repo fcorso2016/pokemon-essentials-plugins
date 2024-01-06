@@ -11,9 +11,13 @@ class Optional[T]
 
   def filter: { (T) -> bool } -> Optional[T]
 
+  def flat_map: [U] { (T) -> Optional[U] } -> Optional[U]
+
   def if_present: { (T) -> void } -> void
 
   def if_present_or_else: (_Consumer[T] action, _Runnable empty_action) -> void
+
+  def is_empty?: -> bool
 
   def is_present?: -> bool
 
