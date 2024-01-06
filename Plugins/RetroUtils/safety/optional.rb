@@ -60,10 +60,10 @@ class Optional
   end
 
   def if_present_or_else(action, empty_action)
-    unless @value.nil?
-      return action.call(@value)
-    else
+    if @value.nil?
       return empty_action.call
+    else
+      return action.call(@value)
     end
   end
 
