@@ -1,0 +1,5 @@
+interface _Consumer[T]
+
+  def call: (T) -> void
+
+end
