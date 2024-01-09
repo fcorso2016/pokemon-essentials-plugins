@@ -1,8 +1,8 @@
 interface _SceneElement
   include _CheckedDisposable
 
-  def bitmap=: (Bitmap? value)-> void
-  def visible=: (bool value) -> void
   def color: -> Color
+
+  def is_a?: (Module type) -> bool
 
 end

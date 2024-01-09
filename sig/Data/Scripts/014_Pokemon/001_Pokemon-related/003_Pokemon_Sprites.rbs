@@ -18,7 +18,7 @@ class PokemonSprite < Sprite
 
   def setPokemonBitmapSpecies: (Pokemon pokemon, Symbol species, ?bool back) -> void
 
-  def setSpeciesBitmap: (Symbol species, ?Integer gender, ?Integer form, ?bool shiny, ?bool shadow, ?bool back, ?bool egg) -> void
+  def setSpeciesBitmap: (Symbol? species, ?Integer gender, ?Integer form, ?bool shiny, ?bool shadow, ?bool back, ?bool egg) -> void
 end
 
 # ==============================================================================

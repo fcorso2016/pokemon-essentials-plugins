@@ -1,4 +1,4 @@
-class Optional[T]
+class Optional[unchecked out T]
   @value: T?
 
   def self.empty: [T] -> Optional[T]

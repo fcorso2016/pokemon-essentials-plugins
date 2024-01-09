@@ -77,7 +77,7 @@ class Optional
     return @value unless @value.nil?
 
     if block_given?
-      yield
+      raise yield
     else
       raise NoSuchElementException
     end
@@ -122,11 +122,8 @@ class Optional
   ##
   # If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
   def if_present_or_else(action, empty_action)
-    if @value.nil?
-      return empty_action.call
-    else
-      return action.call(@value)
-    end
+    return action.call(@value) unless @value.nil?
+    return empty_action.call
   end
 
 end

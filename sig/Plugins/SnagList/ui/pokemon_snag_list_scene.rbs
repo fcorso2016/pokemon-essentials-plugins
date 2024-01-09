@@ -13,11 +13,52 @@ class PokemonSnagListScene
       ("overlay", BitmapSprite) -> void
   end
 
+  class SpriteHash
+
+    include ::_SpriteHash
+
+    @background: Optional[AnimatedPlane]
+    @snag_entry: Optional[AnimatedPlane]
+    @snag_list: Optional[WindowSnagList]
+    @icon: Optional[PokemonSprite]
+    @entry_icon: Optional[PokemonSprite]
+    @overlay: Optional[BitmapSprite]
+
+    def initialize: -> void
+
+    def background: -> AnimatedPlane
+
+    def entry_icon: -> PokemonSprite
+
+    def entry_icon=: (PokemonSprite value) -> void
+
+    def icon: -> PokemonSprite
+
+    def icon=: (PokemonSprite value) -> void
+
+    def overlay: -> BitmapSprite
+
+    def overlay=: (BitmapSprite value) -> void
+
+    def snag_entry: -> AnimatedPlane
+
+    def snag_list: -> WindowSnagList
+
+    def snag_list=: (WindowSnagList value) -> void
+
+    private
+
+    def get_value: [T] (String key, Optional[T] value) -> T
+
+    def raise_type_mismatch_error: (String key, Class desired_type) -> void
+
+  end
+
   @hw_bitmap: AnimatedBitmap
   @shape_bitmap: AnimatedBitmap
   @slider_bitmap: AnimatedBitmap
   @snag_order: Array[snag_entry]
-  @sprites: _SpriteHash
+  @sprites: SpriteHash
   @type_bitmap: AnimatedBitmap
   @viewport: Viewport
 
@@ -32,7 +73,7 @@ class PokemonSnagListScene
 
   def update: () -> void
 
-  def set_icon_bitmap: (Symbol species) -> void
+  def set_icon_bitmap: (Symbol? species) -> void
 
   def get_snag_list: () -> Array[snag_entry]
 
