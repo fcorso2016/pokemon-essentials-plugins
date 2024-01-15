@@ -1,11 +1,11 @@
-class Optional[unchecked out T]
+class Optional[T < Object]
   @value: T?
 
-  def self.empty: [T] -> Optional[T]
+  def self.empty: [T < Object] -> Optional[T]
 
-  def self.of: [T] (T value) -> Optional[T]
+  def self.of: [T < Object] (T value) -> Optional[T]
 
-  def self.of_nilable: [T] (T? value) -> Optional[T]
+  def self.of_nilable: [T < Object] (T? value) -> Optional[T]
 
   def initialize: (?T? value) -> void
 
@@ -13,7 +13,7 @@ class Optional[unchecked out T]
 
   def filter: { (T) -> bool } -> Optional[T]
 
-  def flat_map: [U] { (T) -> Optional[U] } -> Optional[U]
+  def flat_map: [U < Object] { (T) -> Optional[U] } -> Optional[U]
 
   def if_present: { (T) -> void } -> void
 
@@ -23,7 +23,7 @@ class Optional[unchecked out T]
 
   def is_present?: -> bool
 
-  def map: [U] { (T) -> U? } -> Optional[U]
+  def map: [U < Object] { (T) -> U? } -> Optional[U]
 
   def or: { -> Optional[T] } -> Optional[T]
 

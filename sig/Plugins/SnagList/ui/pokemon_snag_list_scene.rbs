@@ -48,7 +48,7 @@ class PokemonSnagListScene
 
     private
 
-    def get_value: [T] (String key, Optional[T] value) -> T
+    def get_value: [T < Object] (String key, Optional[T] value) -> T
 
     def raise_type_mismatch_error: (String key, Class desired_type) -> void
 
