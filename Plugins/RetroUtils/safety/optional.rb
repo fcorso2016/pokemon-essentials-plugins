@@ -34,7 +34,7 @@ class Optional
 
   def to_s
     case @value
-    when nil
+    when NilClass
       return "Optional: <Empty>"
     when String
       return "Optional: #{@value.to_json}"
@@ -61,14 +61,14 @@ class Optional
   # If a value is present, returns the value, otherwise returns default.
   def or_else(default)
     value = @value
-    return value  ? value : default
+    return value.nil?  ? default : value
   end
 
   ##
   # If a value is present, returns the value, otherwise returns the result produced by the supplying block.
   def or_else_get(&default)
     value = @value
-    return value ? value : default.call
+    return value.nil? ? default.call : value
   end
 
   ##
@@ -77,7 +77,7 @@ class Optional
   # If not such block is provided, then throw NoSuchElementException
   def or_else_throw
     value = @value
-    return value if value
+    return value unless value.nil?
 
     if block_given?
       raise yield
@@ -91,7 +91,7 @@ class Optional
   # supplying block.
   def or
     value = @value
-    return self if value
+    return self unless value.nil?
     return yield
   end
 
@@ -100,7 +100,7 @@ class Optional
   # otherwise returns an empty Optional.
   def filter(&predicate)
     value = @value
-    return value && predicate.call(value) ? self : Optional.empty
+    return !value.nil? && predicate.call(value) ? self : Optional.empty
   end
 
   ##
@@ -108,7 +108,7 @@ class Optional
   # mapping function to the value, otherwise returns an empty Optional.
   def map
     value = @value
-    return value ? Optional.of_nilable(yield value) : Optional.empty
+    return value.nil? ? Optional.empty : Optional.of_nilable(yield value)
   end
 
   ##
@@ -116,7 +116,7 @@ class Optional
   # otherwise returns an empty Optional.
   def flat_map
     value = @value
-    return yield value if value
+    return yield value unless value.nil?
     return Optional.empty
   end
 
@@ -124,17 +124,17 @@ class Optional
   # If a value is present, performs the given action with the value, otherwise does nothing.
   def if_present
     value = @value
-    yield value if value
+    yield value unless value.nil?
   end
 
   ##
   # If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
   def if_present_or_else(action, empty_action)
     value = @value
-    if value
-      action.call(value)
-    else
+    if value.nil?
       empty_action.call
+    else
+      action.call(value)
     end
   end
 

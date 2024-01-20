@@ -7,7 +7,7 @@ class OptionalTest < Minitest::Test
     assert(optional.is_present?)
     assert(!optional.is_empty?)
 
-    optional = Optional.of_nilable(10)
+    optional = Optional.of_nilable(false)
     assert(optional.is_present?)
     assert(!optional.is_empty?)
 
@@ -24,8 +24,8 @@ class OptionalTest < Minitest::Test
     optional = Optional.of(10)
     assert_equal(10, optional.or_else(11))
 
-    optional = Optional.of_nilable(10)
-    assert_equal(10, optional.or_else(11))
+    optional = Optional.of_nilable(false)
+    assert(!optional.or_else(true))
 
     optional = Optional.of_nilable(nil)
     assert_equal(11, optional.or_else(11))
@@ -38,8 +38,8 @@ class OptionalTest < Minitest::Test
     optional = Optional.of(10)
     assert_equal(10, optional.or_else_get { next 11 })
 
-    optional = Optional.of_nilable(10)
-    assert_equal(10, optional.or_else_get { next 11 })
+    optional = Optional.of_nilable(false)
+    assert(!optional.or_else_get { next true })
 
     optional = Optional.of_nilable(nil)
     assert_equal(11, optional.or_else_get { next 11 })
@@ -52,8 +52,8 @@ class OptionalTest < Minitest::Test
     optional = Optional.of(10)
     assert_equal(10, optional.or_else_throw)
 
-    optional = Optional.of_nilable(10)
-    assert_equal(10, optional.or_else_throw)
+    optional = Optional.of_nilable(false)
+    assert(!optional.or_else_throw)
 
     optional = Optional.of_nilable(nil)
     assert_raises(NoSuchElementException) do
