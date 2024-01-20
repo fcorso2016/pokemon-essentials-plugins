@@ -5,4 +5,6 @@ interface _SceneElement
 
   def is_a?: (Module type) -> bool
 
+  def nil?: () -> bool
+
 end

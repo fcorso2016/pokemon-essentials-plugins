@@ -35,40 +35,28 @@ class PokemonSnagListScene
     def []=(key, value)
       case key
       when "background"
-        if value.is_a?(AnimatedPlane)
-          @background = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, AnimatedPlane)
+        check_for_bad_type(key, value, AnimatedPlane) do |elem|
+          @background = value.is_a?(AnimatedPlane) ? Optional.of(value) : Optional.empty
         end
       when "snagEntry"
-        if value.is_a?(AnimatedPlane)
-          @snag_entry = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, AnimatedPlane)
+        check_for_bad_type(key, value, AnimatedPlane) do |elem|
+          @snag_entry = value.is_a?(AnimatedPlane) ? Optional.of(value) : Optional.empty
         end
       when "snagList"
-        if value.is_a?(WindowSnagList)
-          @snag_list = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, WindowSnagList)
+        check_for_bad_type(key, value, WindowSnagList) do |elem|
+          @snag_list = value.is_a?(WindowSnagList) ? Optional.of(value) : Optional.empty
         end
       when "icon"
-        if value.is_a?(PokemonSprite)
-          @icon = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, AnimatedPlane)
+        check_for_bad_type(key, value, PokemonSprite) do |elem|
+          @icon = value.is_a?(PokemonSprite) ? Optional.of(value) : Optional.empty
         end
       when "entryicon"
-        if value.is_a?(PokemonSprite)
-          @entry_icon = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, PokemonSprite)
+        check_for_bad_type(key, value, PokemonSprite) do |elem|
+          @entry_icon = value.is_a?(PokemonSprite) ? Optional.of(value) : Optional.empty
         end
       when "overlay"
-        if value.is_a?(BitmapSprite)
-          @overlay = Optional.of(value)
-        else
-          raise_type_mismatch_error(key, BitmapSprite)
+        check_for_bad_type(key, value, BitmapSprite) do |elem|
+          @overlay = value.is_a?(BitmapSprite) ? Optional.of(value) : Optional.empty
         end
       else
         raise NoSuchElementException.new(sprintf("Key %s is not a valid sprite key", key))
@@ -81,23 +69,23 @@ class PokemonSnagListScene
       end
 
       @snag_entry.if_present do |value|
-        yield ["background", value]
+        yield ["snagEntry", value]
       end
 
       @snag_list.if_present do |value|
-        yield ["background", value]
+        yield ["snagList", value]
       end
 
       @icon.if_present do |value|
-        yield ["background", value]
+        yield ["icon", value]
       end
 
       @entry_icon.if_present do |value|
-        yield ["background", value]
+        yield ["entryicon", value]
       end
 
       @overlay.if_present do |value|
-        yield ["background", value]
+        yield ["overlay", value]
       end
     end
 
@@ -105,6 +93,21 @@ class PokemonSnagListScene
       each do |pair|
         yield pair[0]
       end
+    end
+
+    def each_value
+      each do |pair|
+        yield pair[1]
+      end
+    end
+
+    def clear
+      @background = Optional.empty
+      @snag_entry = Optional.empty
+      @snag_list = Optional.empty
+      @icon = Optional.empty
+      @entry_icon = Optional.empty
+      @overlay = Optional.empty
     end
     
     def background
@@ -149,8 +152,9 @@ class PokemonSnagListScene
 
     private
 
-    def raise_type_mismatch_error(key, desired_type)
-      raise TypeMismatchError.new("Sprite key <#{key}> must be of type #{desired_type.name}")
+    def check_for_bad_type(key, elem, desired_type)
+      raise TypeMismatchError.new("Sprite key <#{key}> must be of type #{desired_type.name}") unless elem.is_a?(desired_type) || elem.nil?
+      yield
     end
 
     def get_value(key, value)

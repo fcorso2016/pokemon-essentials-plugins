@@ -28,6 +28,8 @@ class PokemonSnagListScene
 
     def background: -> AnimatedPlane
 
+    def empty_or_throw: [T < Object] (_SceneElement? elem, Class type) -> Optional[T]
+
     def entry_icon: -> PokemonSprite
 
     def entry_icon=: (PokemonSprite value) -> void
@@ -50,7 +52,7 @@ class PokemonSnagListScene
 
     def get_value: [T < Object] (String key, Optional[T] value) -> T
 
-    def raise_type_mismatch_error: (String key, Class desired_type) -> void
+    def check_for_bad_type: (String key, (Object & _SceneElement)? elem, Class desired_type) { () -> void } -> void
 
   end
 

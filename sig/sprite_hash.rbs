@@ -1,9 +1,11 @@
 interface _SpriteHash
 
-  def []: (String key) -> _SceneElement
-  def []=: (String key, _SceneElement value) -> void
+  def []: (String key) -> (Object & _SceneElement)
+  def []=: (String key, (Object & _SceneElement)? value) -> void
 
-  def each: { ([String, _SceneElement]) -> void } -> void
+  def each: { ([String, (Object & _SceneElement)]) -> void } -> void
   def each_key: { (String) -> void } -> void
+  def each_value: {(Object & _SceneElement) -> void} -> void
+  def clear: -> void
 
 end
