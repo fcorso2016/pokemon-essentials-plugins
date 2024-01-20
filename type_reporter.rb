@@ -54,7 +54,7 @@ def process_steep_report(report_contents)
     end
   end
 
-  yield current_issue
+  yield current_issue unless current_issue.empty?
 end
 
 if File.exist?("rbs_report.txt")
