@@ -18,4 +18,6 @@ class OptionalTest < Minitest::Test
   def test_or_else_get: -> void
 
   def test_or_else_throw: -> void
+
+  def test_to_s: -> void
 end

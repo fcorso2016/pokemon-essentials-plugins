@@ -1,13 +1,181 @@
 class PokemonSnagListScene
 
+  class SpriteHash
+
+    public
+
+    def initialize
+      @background = Optional.empty
+      @snag_entry = Optional.empty
+      @snag_list = Optional.empty
+      @icon = Optional.empty
+      @entry_icon = Optional.empty
+      @overlay = Optional.empty
+    end
+
+    def [](key)
+      case key
+      when "background"
+        return get_value(key, @background)
+      when "snagEntry"
+        return get_value(key, @snag_entry)
+      when "snagList"
+        return get_value(key, @snag_list)
+      when "icon"
+        return get_value(key, @icon)
+      when "entryicon"
+        return get_value(key, @entry_icon)
+      when "overlay"
+        return get_value(key, @overlay)
+      else
+          raise NoSuchElementException.new(sprintf("Key %s is not a valid sprite key", key))
+      end
+    end
+
+    def []=(key, value)
+      case key
+      when "background"
+        check_for_bad_type(key, value, AnimatedPlane) do |elem|
+          @background = value.is_a?(AnimatedPlane) ? Optional.of(value) : Optional.empty
+        end
+      when "snagEntry"
+        check_for_bad_type(key, value, AnimatedPlane) do |elem|
+          @snag_entry = value.is_a?(AnimatedPlane) ? Optional.of(value) : Optional.empty
+        end
+      when "snagList"
+        check_for_bad_type(key, value, WindowSnagList) do |elem|
+          @snag_list = value.is_a?(WindowSnagList) ? Optional.of(value) : Optional.empty
+        end
+      when "icon"
+        check_for_bad_type(key, value, PokemonSprite) do |elem|
+          @icon = value.is_a?(PokemonSprite) ? Optional.of(value) : Optional.empty
+        end
+      when "entryicon"
+        check_for_bad_type(key, value, PokemonSprite) do |elem|
+          @entry_icon = value.is_a?(PokemonSprite) ? Optional.of(value) : Optional.empty
+        end
+      when "overlay"
+        check_for_bad_type(key, value, BitmapSprite) do |elem|
+          @overlay = value.is_a?(BitmapSprite) ? Optional.of(value) : Optional.empty
+        end
+      else
+        raise NoSuchElementException.new(sprintf("Key %s is not a valid sprite key", key))
+      end
+    end
+
+    def each
+      @background.if_present do |value|
+        yield ["background", value]
+      end
+
+      @snag_entry.if_present do |value|
+        yield ["snagEntry", value]
+      end
+
+      @snag_list.if_present do |value|
+        yield ["snagList", value]
+      end
+
+      @icon.if_present do |value|
+        yield ["icon", value]
+      end
+
+      @entry_icon.if_present do |value|
+        yield ["entryicon", value]
+      end
+
+      @overlay.if_present do |value|
+        yield ["overlay", value]
+      end
+    end
+
+    def each_key
+      each do |pair|
+        yield pair[0]
+      end
+    end
+
+    def each_value
+      each do |pair|
+        yield pair[1]
+      end
+    end
+
+    def clear
+      @background = Optional.empty
+      @snag_entry = Optional.empty
+      @snag_list = Optional.empty
+      @icon = Optional.empty
+      @entry_icon = Optional.empty
+      @overlay = Optional.empty
+    end
+    
+    def background
+      return @background.or_else_throw
+    end
+    
+    def snag_entry
+      return @snag_entry.or_else_throw
+    end
+    
+    def snag_list
+      return @snag_list.or_else_throw
+    end
+    
+    def snag_list=(value)
+      return @snag_list = Optional.of(value)
+    end
+    
+    def icon
+      return @icon.or_else_throw
+    end
+    
+    def icon=(value)
+      return @icon = Optional.of(value)
+    end
+
+    def entry_icon
+      return @entry_icon.or_else_throw
+    end
+
+    def entry_icon=(value)
+      return @entry_icon = Optional.of(value)
+    end
+    
+    def overlay
+      return @overlay.or_else_throw
+    end
+    
+    def overlay=(value)
+      return @overlay = Optional.of(value)
+    end
+
+    private
+
+    def check_for_bad_type(key, elem, desired_type)
+      raise TypeMismatchError.new("Sprite key <#{key}> must be of type #{desired_type.name}") unless elem.is_a?(desired_type) || elem.nil?
+      yield
+    end
+
+    def get_value(key, value)
+      return value.or_else_throw { raise NotInitializedException.new(sprintf("Key %s has not been initialized key", key)) }
+    end
+
+  end
+
   def update
     pbUpdateSpriteHash(@sprites)
   end
 
   def set_icon_bitmap(species)
-    gender = ($player.shadow_seen[species].gender rescue 0)
-    form = ($player.shadow_seen[species].form rescue 0)
-    @sprites["icon"].setSpeciesBitmap(species, gender, form, false, !$player.shadow_seen[species].purified)
+    if species.nil?
+      @sprites.icon.visible = false
+    else
+      gender = ($player.shadow_seen[species].gender rescue 0)
+      form = ($player.shadow_seen[species].form rescue 0)
+      @sprites.icon.setSpeciesBitmap(species, gender, form, false, !$player.shadow_seen[species].purified)
+      @sprites.icon.visible = true
+    end
   end
 
   def start_scene
@@ -15,19 +183,19 @@ class PokemonSnagListScene
     @type_bitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_types"))
     @shape_bitmap = AnimatedBitmap.new("Graphics/UI/Pokedex/icon_shapes")
     @hw_bitmap = AnimatedBitmap.new(_INTL("Graphics/UI/Pokedex/icon_hw"))
-    @sprites = {}
+    @sprites = SpriteHash.new
     @viewport = Viewport.new(0, 0, Graphics.width, Graphics.height)
     @viewport.z = 99999
     addBackgroundPlane(@sprites, "background", "SnagList/bg", @viewport)
     addBackgroundPlane(@sprites, "snagEntry", "SnagList/entry_bg", @viewport)
-    @sprites["snagEntry"].visible=false
-    @sprites["snagList"] = WindowSnagList.new(206, 30, 276, 364, @viewport)
-    @sprites["icon"] = PokemonSprite.new(@viewport)
-    @sprites["icon"].setOffset(PictureOrigin::CENTER)
-    @sprites["icon"].x = 112
-    @sprites["icon"].y = 196
-    @sprites["overlay"] = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
-    pbSetSystemFont(@sprites["overlay"].bitmap)
+    @sprites.snag_entry.visible=false
+    @sprites.snag_list = WindowSnagList.new(206, 30, 276, 364, @viewport)
+    @sprites.icon = PokemonSprite.new(@viewport)
+    @sprites.icon.setOffset(PictureOrigin::CENTER)
+    @sprites.icon.x = 112
+    @sprites.icon.y = 196
+    @sprites.overlay = BitmapSprite.new(Graphics.width, Graphics.height, @viewport)
+    pbSetSystemFont(@sprites.overlay.bitmap)
     refresh_snag_list($PokemonGlobal.snag_index)
     pbDeactivateWindows(@sprites)
     pbFadeInAndShow(@sprites)
@@ -38,12 +206,12 @@ class PokemonSnagListScene
       loop do
         Graphics.update
         Input.update
-        old_index = @sprites["snagList"].index
+        old_index = @sprites.snag_list.index
         update
-        if old_index != @sprites["snagList"].index
-          $PokemonGlobal.snag_index = @sprites["snagList"].index
+        if old_index != @sprites.snag_list.index
+          $PokemonGlobal.snag_index = @sprites.snag_list.index
 
-          icon_species = @sprites["snagList"].species
+          icon_species = @sprites.snag_list.species
           set_icon_bitmap(icon_species)
         end
         if Input.trigger?(Input::BACK)
@@ -51,7 +219,7 @@ class PokemonSnagListScene
           break
         elsif Input.trigger?(Input::USE)
           pbPlayDecisionSE
-          snag_entry_on_index(@sprites["snagList"].index)
+          snag_entry_on_index(@sprites.snag_list.index)
         end
       end
     }
@@ -76,17 +244,17 @@ class PokemonSnagListScene
 
   def refresh_snag_list(index = 0)
     @snag_order = get_snag_list
-    @sprites["snagList"].commands = @snag_order
-    @sprites["snagList"].index    = index
+    @sprites.snag_list.commands = @snag_order
+    @sprites.snag_list.index    = index
     refresh
   end
 
   def refresh
-    overlay = @sprites["overlay"].bitmap
+    overlay = @sprites.overlay.bitmap
     overlay.clear
     base = Color.new(88, 88, 80)
     shadow = Color.new(168, 184, 184)
-    icon_species = @sprites["snagList"].species
+    icon_species = @sprites.snag_list.species
     icon_species = nil unless icon_species.is_a?(Symbol) && $player.shadow_seen[icon_species]
 
     seen_no = 0
@@ -111,7 +279,7 @@ class PokemonSnagListScene
     set_icon_bitmap(icon_species)
 
     # Draw slider arrows
-    item_list = @sprites["snagList"]
+    item_list = @sprites.snag_list
     show_slider = false
     if item_list.top_row > 0
       overlay.blt(468, 48, @slider_bitmap.bitmap, Rect.new(0, 0, 40, 30))
@@ -142,13 +310,13 @@ class PokemonSnagListScene
   end
 
   def change_to_snag_entry(species)
-    @sprites["entryicon"] = PokemonSprite.new(@viewport)
-    @sprites["entryicon"].setOffset(PictureOrigin::CENTER)
-    @sprites["entryicon"].visible = true
-    @sprites["snagEntry"].visible = true
-    @sprites["overlay"].visible = true
-    @sprites["overlay"].bitmap.clear
-    overlay = @sprites["overlay"].bitmap
+    @sprites.entry_icon = PokemonSprite.new(@viewport)
+    @sprites.entry_icon.setOffset(PictureOrigin::CENTER)
+    @sprites.entry_icon.visible = true
+    @sprites.snag_entry.visible = true
+    @sprites.overlay.visible = true
+    @sprites.overlay.bitmap.clear
+    overlay = @sprites.overlay.bitmap
     pokemon = $player.shadow_seen[species].party_poke
     # @type var image_pos: Array[image_position]
     image_pos = []
@@ -212,9 +380,9 @@ class PokemonSnagListScene
     pbDrawTextPositions(overlay, text_pos)
     gender = $player.shadow_seen[species].gender
     form = $player.shadow_seen[species].form
-    @sprites["entryicon"].setSpeciesBitmap(species, gender, form, false, !$player.shadow_seen[species].purified)
-    @sprites["entryicon"].x = 112
-    @sprites["entryicon"].y = 196
+    @sprites.entry_icon.setSpeciesBitmap(species, gender, form, false, !$player.shadow_seen[species].purified)
+    @sprites.entry_icon.x = 112
+    @sprites.entry_icon.y = 196
     GameData::Species.play_cry_from_species(species)
   end
 
@@ -230,8 +398,8 @@ class PokemonSnagListScene
       window_loop(current_index, new_page, page, ret)
     }
     $PokemonGlobal.snag_index = current_index
-    @sprites["snagList"].index = current_index
-    @sprites["snagList"].refresh
+    @sprites.snag_list.index = current_index
+    @sprites.snag_list.refresh
     pbFadeInAndShow(@sprites, old_sprites)
   end
 
@@ -287,7 +455,7 @@ class PokemonSnagListScene
       if new_page > 0
         page = new_page
         new_page = 0
-        @sprites["entryicon"].dispose
+        @sprites.entry_icon.dispose
         change_to_snag_entry(@snag_order[current_index][:species])
       end
     end
@@ -331,8 +499,8 @@ class PokemonSnagListScene
     if page == 1
       pbPlayCancelSE
       pbFadeOutAndHide(@sprites)
-      @sprites["entryicon"].dispose
-      @sprites["snagEntry"].visible = false
+      @sprites.entry_icon.dispose
+      @sprites.snag_entry.visible = false
       refresh
     end
   end

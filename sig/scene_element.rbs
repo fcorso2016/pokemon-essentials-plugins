@@ -1,0 +1,10 @@
+interface _SceneElement
+  include _CheckedDisposable
+
+  def color: -> Color
+
+  def is_a?: (Module type) -> bool
+
+  def nil?: () -> bool
+
+end

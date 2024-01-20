@@ -27,13 +27,22 @@ class Optional
   end
 
   def ==(other)
-    return true if is_empty? && other.is_empty?
-    return false if is_present? != other.is_present?
+    return true if @value.nil? && other.is_empty?
+    return false if !@value.nil? != other.is_present?
     return @value == other.or_else_throw
   end
 
   def to_s
-    return @value.nil? ? "<Empty>" : @value.to_s
+    case @value
+    when NilClass
+      return "Optional: <Empty>"
+    when String
+      return "Optional: #{@value.to_json}"
+    when Symbol
+      return "Optional: :#{@value.to_s}"
+    else
+      return "Optional: #{@value.to_s}"
+    end
   end
 
   ##
@@ -51,13 +60,15 @@ class Optional
   ##
   # If a value is present, returns the value, otherwise returns default.
   def or_else(default)
-    return @value.nil? ? default : @value
+    value = @value
+    return value.nil?  ? default : value
   end
 
   ##
   # If a value is present, returns the value, otherwise returns the result produced by the supplying block.
   def or_else_get(&default)
-    return @value.nil? ? default.call : @value
+    value = @value
+    return value.nil? ? default.call : value
   end
 
   ##
@@ -65,10 +76,11 @@ class Optional
   #
   # If not such block is provided, then throw NoSuchElementException
   def or_else_throw
-    return @value unless @value.nil?
+    value = @value
+    return value unless value.nil?
 
     if block_given?
-      yield
+      raise yield
     else
       raise NoSuchElementException
     end
@@ -78,7 +90,8 @@ class Optional
   # If a value is present, returns an Optional describing the value, otherwise returns an Optional produced by the
   # supplying block.
   def or
-    return self unless @value.nil?
+    value = @value
+    return self unless value.nil?
     return yield
   end
 
@@ -86,37 +99,42 @@ class Optional
   # If a value is present, and the value matches the given predicate, returns an Optional describing the value,
   # otherwise returns an empty Optional.
   def filter(&predicate)
-    return !@value.nil? && predicate.call(@value) ? self : Optional.empty
+    value = @value
+    return !value.nil? && predicate.call(value) ? self : Optional.empty
   end
 
   ##
   # If a value is present, returns an Optional describing (as if by of_nilable(T)) the result of applying the given
   # mapping function to the value, otherwise returns an empty Optional.
   def map
-    return !@value.nil? ? Optional.of_nilable(yield @value) : Optional.empty
+    value = @value
+    return value.nil? ? Optional.empty : Optional.of_nilable(yield value)
   end
 
   ##
   # If a value is present, returns the result of applying the given Optional-bearing mapping function to the value,
   # otherwise returns an empty Optional.
   def flat_map
-    return yield @value unless @value.nil?
+    value = @value
+    return yield value unless value.nil?
     return Optional.empty
   end
 
   ##
   # If a value is present, performs the given action with the value, otherwise does nothing.
   def if_present
-    yield @value unless @value.nil?
+    value = @value
+    yield value unless value.nil?
   end
 
   ##
   # If a value is present, performs the given action with the value, otherwise performs the given empty-based action.
   def if_present_or_else(action, empty_action)
-    if @value.nil?
-      return empty_action.call
+    value = @value
+    if value.nil?
+      empty_action.call
     else
-      return action.call(@value)
+      action.call(value)
     end
   end
 
